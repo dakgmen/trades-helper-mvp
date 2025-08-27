@@ -1,0 +1,464 @@
+
+We are building an MVP web app called Trades Helper-On-Demand, a two-sided marketplace that connects tradies (skilled workers) with helpers (labourers) for short-term tasks like site cleanup, material handling, or job preparation.
+The goal is to quickly validate demand, so the MVP should be lean, mobile-friendly, and focus on job posting, job matching, and payments.
+
+Core goals: job posting, job matching, escrow payments.
+---
+
+# 1 — Auth & Profiles
+
+**Purpose:** Authenticate users and store app profile info (role, verification, White Card). Uses Supabase Auth for signup/login and `profiles` table for app data.
+
+**Endpoints / Auth**
+
+* `POST /auth/signup` (handled by Supabase Auth; client uses Supabase SDK)
+* `POST /auth/login` (Supabase Auth)
+* `GET /profiles/:id` — Bearer token required
+* `PATCH /profiles/:id` — Bearer token required
+
+**Headers**
+
+```
+Authorization: Bearer <JWT>
+Content-Type: application/json
+```
+
+**Create profile (after auth) — request**
+`PATCH /profiles/:id`
+
+```json
+{
+  "full_name": "Kwame Mensah",
+  "phone": "+61412345678",
+  "bio": "Casual helper, reliable",
+  "skills": ["site-prep","material-handling"],
+  "white_card_url": "https://.../whitecard.jpg",
+  "id_document_url": "https://.../id.jpg"
+}
+```
+
+**Response 200**
+
+```json
+{
+  "id": "uuid-user-id",
+  "role": "helper",
+  "full_name": "Kwame Mensah",
+  "phone": "+61412345678",
+  "skills": ["site-prep","material-handling"],
+  "verified": false,
+  "created_at": "2025-08-01T10:00:00Z"
+}
+```
+
+**DB Action**
+
+```sql
+INSERT INTO profiles (id, role, full_name, phone, skills, white_card_url, id_document_url)
+VALUES (:auth_user_id, :role, :full_name, :phone, :skills, :white_card_url, :id_document_url);
+```
+
+or `UPDATE` existing profile.
+
+**Acceptance Criteria**
+
+* Signup via Supabase returns JWT.
+* `PATCH /profiles/:id` saves profile and returns profile with `verified=false`.
+* `GET /profiles/:id` returns profile only if requester is owner or admin.
+
+**Notes**
+
+* Enforce role in payload (`tradie` or `helper`).
+* Store file URLs in Supabase Storage; return public or signed URLs per policy.
+
+---
+
+# 2 — Job Posting
+
+**Purpose:** Allow tradies to create jobs with location, time, duration, and pay rate.
+
+**Endpoint**
+
+* `POST /jobs` — Bearer token (tradie only)
+* `GET /jobs?status=open` — list open jobs
+* `GET /jobs/:id` — job detail
+* `PATCH /jobs/:id` — update (tradie only)
+
+**Create job — request**
+`POST /jobs`
+
+```json
+{
+  "tradie_id": "uuid-tradie-id",
+  "title": "Site cleanup - morning",
+  "description": "Clear debris, load skip, sweep",
+  "location": "123 Example St, Sydney NSW",
+  "date_time": "2025-09-10T08:00:00Z",
+  "duration_hours": 4,
+  "pay_rate": 35.00
+}
+```
+
+**Response 201**
+
+```json
+{
+  "id": "uuid-job-id",
+  "tradie_id": "uuid-tradie-id",
+  "title": "Site cleanup - morning",
+  "status": "open",
+  "created_at": "2025-08-24T09:00:00Z"
+}
+```
+
+**DB Action**
+
+```sql
+INSERT INTO jobs (id, tradie_id, title, description, location, date_time, duration_hours, pay_rate)
+VALUES (gen_random_uuid(), :tradie_id, :title, :description, :location, :date_time, :duration_hours, :pay_rate);
+```
+
+**Acceptance Criteria**
+
+* Only profiles with `role=tradie` can call `POST /jobs`.
+* Newly created job returns `status=open`.
+* Location stored as string (map later).
+
+**Notes**
+
+* Validate `date_time` is in the future.
+* If payments required at posting, trigger `POST /payments` flow after job creation.
+
+---
+
+# 3 — Job Feed & Matching
+
+**Purpose:** Helpers discover nearby open jobs and apply quickly.
+
+**Endpoints**
+
+* `GET /jobs?status=open&lat=X&lng=Y&max_distance=20`
+* (Fallback) `GET /jobs?status=open&city=Sydney`
+
+**Job feed response sample**
+`GET /jobs?status=open`
+
+```json
+[
+  {
+    "id": "uuid-job-id",
+    "title": "Site cleanup - morning",
+    "pay_rate": 35.00,
+    "date_time": "2025-09-10T08:00:00Z",
+    "location": "123 Example St, Sydney NSW",
+    "distance_km": 3.2
+  }
+]
+```
+
+**DB Action**
+
+* Query `jobs` where `status='open'` and `date_time` within window; optionally compute distance in app or via PostGIS.
+
+**Acceptance Criteria**
+
+* Helpers see open jobs sorted by earliest date and nearest distance.
+* Filter supports `max_distance` and `min_pay_rate`.
+
+**Notes**
+
+* If no coordinates, use city filter.
+* Show `verified` badge for tradie on job detail.
+
+---
+
+# 4 — Job Applications & Assignment
+
+**Purpose:** Helpers apply; tradies accept and assign a helper. Moves job status to `assigned`.
+
+**Endpoints**
+
+* `POST /job_applications` — helper applies
+* `GET /job_applications?job_id=...` — tradie views applicants
+* `PATCH /job_applications/:id/status` — tradie accepts/rejects
+
+**Helper applies — request**
+`POST /job_applications`
+
+```json
+{
+  "job_id": "uuid-job-id",
+  "helper_id": "uuid-helper-id"
+}
+```
+
+**Response 201**
+
+```json
+{
+  "id": "uuid-application-id",
+  "job_id": "uuid-job-id",
+  "helper_id": "uuid-helper-id",
+  "status": "pending",
+  "created_at": "2025-08-24T10:00:00Z"
+}
+```
+
+**Tradie accepts — request**
+`PATCH /job_applications/uuid-application-id/status`
+
+```json
+{
+  "status": "accepted"
+}
+```
+
+**Server actions on accept**
+
+* Update `job_applications.status = 'accepted'`
+* Update competing applications to `rejected`
+* Update `jobs.status = 'assigned'` and set `assigned_helper_id` (optional)
+* Create payment escrow: call `POST /payments`
+
+**DB Actions**
+
+```sql
+UPDATE job_applications SET status='accepted' WHERE id=:application_id;
+UPDATE job_applications SET status='rejected' WHERE job_id=:job_id AND id<>:application_id;
+UPDATE jobs SET status='assigned' WHERE id=:job_id;
+```
+
+**Acceptance Criteria**
+
+* Only tradie who owns job can accept applications.
+* On accept, job status becomes `assigned`.
+* Client notified by push/email.
+
+**Notes**
+
+* If `auto-assign` enabled, assign to first `verified` applicant; still create escrow.
+
+---
+
+# 5 — Payments (Escrow)
+
+**Purpose:** Hold tradie payment in escrow and release to helper on completion. Use Stripe Connect.
+
+**Endpoints**
+
+* `POST /payments` — create payment session (tradie pays)
+* `PATCH /payments/:id/release` — release funds to helper
+* Webhook `POST /webhooks/stripe` — handle payment events
+
+**Create payment — request**
+`POST /payments`
+
+```json
+{
+  "job_id": "uuid-job-id",
+  "tradie_id": "uuid-tradie-id",
+  "helper_id": "uuid-helper-id",
+  "amount": 140.00
+}
+```
+
+**Response 201**
+
+```json
+{
+  "id": "uuid-payment-id",
+  "job_id": "uuid-job-id",
+  "amount": 140.00,
+  "status": "escrow",
+  "stripe_session_url": "https://checkout.stripe.com/session/xxx",
+  "stripe_payment_id": "pi_1ABC..."
+}
+```
+
+**Release payment — request**
+`PATCH /payments/uuid-payment-id/release`
+
+```json
+{}
+```
+
+**Response 200**
+
+```json
+{
+  "id": "uuid-payment-id",
+  "status": "released",
+  "released_at": "2025-08-24T16:00:00Z"
+}
+```
+
+**Server Actions**
+
+* `POST` to Stripe Checkout / PaymentIntent with platform fee (application\_fee\_amount) if using Connect.
+* Store `stripe_payment_id` in `payments`.
+* On release: create Stripe Transfer to helper connected account or send payout via platform depending on Connect setup.
+
+**DB Actions**
+
+```sql
+INSERT INTO payments (job_id, tradie_id, helper_id, amount, status, stripe_payment_id) VALUES (...);
+UPDATE payments SET status='released', released_at=now() WHERE id=:payment_id;
+```
+
+**Acceptance Criteria**
+
+* Escrow record created before helper starts job.
+* Payment status updates to `released` after tradie marks job complete and after any manual dispute window.
+* Stripe webhooks validated to update payment status reliably.
+
+**Notes**
+
+* For MVP, you can accept payment via Stripe Checkout and hold until `release`. Use Stripe Connect for helper payouts. If Connect integration delayed, use manual payout and mark `released` after manual transfer.
+
+---
+
+# 6 — Messages (Job Thread)
+
+**Purpose:** Enable tradie and helper to coordinate per job.
+
+**Endpoints**
+
+* `POST /messages`
+* `GET /messages?job_id=:id`
+
+**Send message — request**
+`POST /messages`
+
+```json
+{
+  "job_id": "uuid-job-id",
+  "sender_id": "uuid-user-id",
+  "receiver_id": "uuid-user-id",
+  "content": "I will meet you at site gate. Bring gloves."
+}
+```
+
+**Response 201**
+
+```json
+{
+  "id": "uuid-message-id",
+  "job_id": "uuid-job-id",
+  "sender_id": "uuid-user-id",
+  "content": "I will meet you at site gate. Bring gloves.",
+  "created_at": "2025-08-24T11:00:00Z"
+}
+```
+
+**DB Action**
+
+```sql
+INSERT INTO messages (job_id, sender_id, receiver_id, content) VALUES (...);
+```
+
+**Acceptance Criteria**
+
+* Messages saved and retrieved per job.
+* Only job participants or admin can read thread.
+
+**Notes**
+
+* For MVP, simple polling is fine. Add realtime (WebSocket) later.
+
+---
+
+# 7 — Admin Verification & Actions
+
+**Purpose:** Admin reviews helper uploads and marks verification status.
+
+**Endpoints**
+
+* `GET /admin/profiles/pending` — list pending helper verifications (admin only)
+* `PATCH /admin/profiles/{id}/verify` — set `verified` true/false
+* `POST /admin_actions` — log actions (disputes, refunds)
+
+**Verify helper — request**
+`PATCH /admin/profiles/uuid-helper-id/verify`
+
+```json
+{
+  "verified": true,
+  "notes": "White Card valid; ID matched selfie."
+}
+```
+
+**Response 200**
+
+```json
+{
+  "id": "uuid-helper-id",
+  "verified": true,
+  "verified_at": "2025-08-24T12:00:00Z"
+}
+```
+
+**DB Actions**
+
+```sql
+UPDATE profiles SET verified=true WHERE id=:helper_id;
+INSERT INTO admin_actions (admin_id, target_profile, action, notes) VALUES (...);
+```
+
+**Acceptance Criteria**
+
+* Only admin role can call verify endpoint.
+* Verified flag visible on helper profile to tradies.
+
+**Notes**
+
+* Keep audit trail in `admin_actions`.
+* Consider third-party KYC provider in P1.
+
+---
+
+## Quick Implementation Notes (Dev Checklist)
+
+* Enforce RBAC using JWT claims (role claim read from `profiles` or Supabase user metadata).
+* Use Supabase Row-Level Security policies to limit data access per role.
+* Store file uploads in Supabase Storage; return signed URLs for private files.
+* Secure Stripe webhook endpoint; validate signature.
+* Log all state transitions (job status, payment status) for audit and dispute resolution.
+
+---
+winget install --id GitHub.cli
+
+
+
+Example: 🔑 User Roles & Flow 
+
+Tradie (Job Poster)
+
+Signup/login (email, phone, or OAuth)
+
+Post job (task type, date/time, location, duration, pay rate)
+
+Review applicants → accept one → confirm booking
+
+Pay upfront (escrow) → mark complete → helper gets paid
+
+Helper (Job Taker)
+
+Signup/login
+
+Create profile (bio, skills, ID + White Card upload)
+
+Browse job feed → apply → complete work
+
+Payment released → withdraw via Stripe/PayPal
+
+Admin
+
+Approves/rejects helpers
+
+Resolves disputes, refunds
+
+Views analytics (jobs, completions, revenue)
+
+
+Generate clean, production-ready code for this MVP. Prioritize speed, simplicity, and functionality.
+Implement the user flow described above. Keep code modular so we can expand later.

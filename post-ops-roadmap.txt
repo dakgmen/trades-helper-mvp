@@ -1,0 +1,97 @@
+
+
+# ⚡ Trades Helper-On-Demand — Post-MVP Roadmap
+
+## **Phase 2: Trust & Safety (Immediate Next Sprint)**
+
+**Goal:** Build user trust and reduce risk so early adopters feel secure.
+**Features:**
+
+1. **Ratings & Reviews System**
+
+   * JSON schema: `{ job_id, helper_id, tradie_id, rating (1-5), comment, created_at }`
+   * Display reviews in profile view.
+2. **Dispute Resolution Flow**
+
+   * Add “Raise a Dispute” button after job completion.
+   * Admin dashboard extension: dispute status (`open / in_review / resolved`).
+3. **Basic T\&Cs + Liability Disclaimers**
+
+   * Show and require acceptance at signup.
+   * Store consent record in DB.
+
+---
+
+## **Phase 3: Payments & Compliance**
+
+**Goal:** Ensure smooth payouts and compliance with AU regulations.
+**Features:**
+
+1. **Stripe Connect Payouts (AU Helpers)**
+
+   * Helpers onboard as Stripe Express accounts.
+   * Validate AU bank account linking & identity verification.
+2. **Automated ID Verification (Optional KYC API)**
+
+   * Integrate OCR / AU KYC APIs (e.g. FrankieOne, SumSub) to reduce manual workload.
+3. **Escrow Enhancements**
+
+   * Auto-refunds after X days if job unresolved.
+   * Transaction fee transparency (platform cut visible to both sides).
+
+---
+
+## **Phase 4: Growth & Retention**
+
+**Goal:** Build network effects and make helpers/tradies stick.
+**Features:**
+
+1. **Referral Program**
+
+   * Tradie invites another tradie = both get credit.
+   * Helper invites another helper = priority access to jobs.
+2. **Helper Availability Calendar**
+
+   * Helpers mark when they’re free.
+   * Tradies can “book in advance” with confirmed helpers.
+3. **Job Categories/Tags**
+
+   * Add job\_type column (`cleanup, materials handling, painting prep`).
+   * Improves discovery and targeted matching.
+4. **Job Completion Badge System**
+
+   * Helpers earn badges (“5 jobs done”, “Top Rated”).
+   * Boosts trust & retention.
+
+---
+
+## **Phase 5: Ops & Scalability**
+
+**Goal:** Strengthen backend, monitoring, and fraud prevention for growth.
+**Features:**
+
+1. **Admin Monitoring Dashboard 2.0**
+
+   * Add analytics: jobs posted per week, avg pay rate, churn rates.
+   * Fraud detection (e.g., repeat fake jobs).
+2. **Notification Enhancements**
+
+   * Expand from in-app → SMS + Email for critical events (job accepted, payment released).
+3. **Support Ticket System**
+
+   * Lightweight: allow users to submit issues linked to jobs/payments.
+   * Admin can track resolution.
+4. **Logging & Monitoring**
+
+   * Error tracking (Sentry) + performance monitoring.
+   * Real-time health dashboard (jobs, payments, chat uptime).
+
+---
+
+✅ **Implementation Order Recommendation**
+
+1. **Phase 2 (Trust & Safety)** → Without this, scaling is risky.
+2. **Phase 3 (Payments & Compliance)** → Ensures helpers can actually cash out.
+3. **Phase 4 (Growth & Retention)** → Fuels acquisition loops once trust + payments are solid.
+4. **Phase 5 (Ops & Scalability)** → Required before expanding beyond pilot regions.
+
