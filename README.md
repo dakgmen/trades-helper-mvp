@@ -1,6 +1,6 @@
 # TradieHelper MVP
 
-A two-sided marketplace connecting tradies with reliable helpers for short-term tasks.
+A two-sided marketplace connecting tradies with reliable helpers for short-term tasks. Built with React, TypeScript, Supabase, and Stripe Connect.
 
 ## Getting Started
 
