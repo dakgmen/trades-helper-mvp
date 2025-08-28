@@ -9,7 +9,8 @@ import { JobPostForm } from './components/jobs/JobPostForm'
 import { JobFeed } from './components/jobs/JobFeed'
 import { ApplicationsList } from './components/applications/ApplicationsList'
 import { PaymentStatus } from './components/payments/PaymentStatus'
-import { AdminDashboard } from './components/admin/AdminDashboard'
+import { EnhancedAdminDashboard } from './components/admin/EnhancedAdminDashboard'
+import { AvailabilityCalendar } from './components/availability/AvailabilityCalendar'
 import './App.css'
 
 function Navigation() {
@@ -35,6 +36,7 @@ function Navigation() {
                 <>
                   <a href="/jobs" className="text-gray-700 hover:text-blue-600">Find Jobs</a>
                   <a href="/applications" className="text-gray-700 hover:text-blue-600">My Applications</a>
+                  <a href="/availability" className="text-gray-700 hover:text-blue-600">My Availability</a>
                 </>
               )}
               <a href="/payments" className="text-gray-700 hover:text-blue-600">Payments</a>
@@ -230,12 +232,26 @@ function App() {
               }
             />
             <Route
+              path="/availability"
+              element={
+                <ProtectedRoute requiredRole="helper">
+                  <div>
+                    <Navigation />
+                    <div className="max-w-6xl mx-auto p-6">
+                      <h2 className="text-2xl font-bold mb-6">My Availability</h2>
+                      <AvailabilityCalendar />
+                    </div>
+                  </div>
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="/admin"
               element={
                 <ProtectedRoute requiredRole="admin">
                   <div>
                     <Navigation />
-                    <AdminDashboard />
+                    <EnhancedAdminDashboard />
                   </div>
                 </ProtectedRoute>
               }

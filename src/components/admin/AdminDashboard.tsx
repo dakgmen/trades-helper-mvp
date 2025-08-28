@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
 import { useAuth } from '../../context/AuthContext'
+import { AnalyticsService } from '../../services/analyticsService'
+import { SupportService } from '../../services/supportService'
+import { DisputeService } from '../../services/disputeService'
+import { BadgeService } from '../../services/badgeService'
 
 interface DashboardStats {
   totalUsers: number

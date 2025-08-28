@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
+import { TermsAndConditions } from '../legal/TermsAndConditions'
 
 interface SignupFormProps {
   onSuccess?: () => void
@@ -14,6 +15,8 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLog
   const [role, setRole] = useState<'tradie' | 'helper'>('helper')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [showTerms, setShowTerms] = useState(false)
+  const [termsAccepted, setTermsAccepted] = useState(false)
 
   const handleReset = async () => {
     console.log('🔄 Clearing cached authentication state')
@@ -26,20 +29,24 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLog
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
-    setError(null)
-
+    
     if (password !== confirmPassword) {
       setError('Passwords do not match')
-      setLoading(false)
       return
     }
 
     if (password.length < 6) {
       setError('Password must be at least 6 characters long')
-      setLoading(false)
       return
     }
+
+    if (!termsAccepted) {
+      setShowTerms(true)
+      return
+    }
+
+    setLoading(true)
+    setError(null)
 
     // Add timeout protection
     const signupTimeout = setTimeout(() => {
@@ -64,6 +71,34 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLog
     } finally {
       setLoading(false)
     }
+  }
+
+  const handleTermsAccept = async () => {
+    setTermsAccepted(true)
+    setShowTerms(false)
+    // Store consent record (you can extend this to call an API)
+    const consentData = {
+      termsVersion: '1.0',
+      ipAddress: 'unknown', // You'd get this from API
+      userAgent: navigator.userAgent,
+      consentedAt: new Date().toISOString()
+    }
+    localStorage.setItem('termsConsent', JSON.stringify(consentData))
+  }
+
+  const handleTermsDecline = () => {
+    setShowTerms(false)
+    setTermsAccepted(false)
+  }
+
+  if (showTerms) {
+    return (
+      <TermsAndConditions
+        onAccept={handleTermsAccept}
+        onDecline={handleTermsDecline}
+        isRequired={true}
+      />
+    )
   }
 
   return (
@@ -134,6 +169,29 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLog
             minLength={6}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           />
+        </div>
+
+        <div className="flex items-center">
+          <input
+            id="terms"
+            type="checkbox"
+            checked={termsAccepted}
+            onChange={(e) => e.target.checked ? setShowTerms(true) : setTermsAccepted(false)}
+            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
+            I agree to the{' '}
+            <button
+              type="button"
+              onClick={() => setShowTerms(true)}
+              className="text-blue-600 hover:text-blue-500 underline"
+            >
+              Terms and Conditions
+            </button>
+            {termsAccepted && (
+              <span className="ml-2 text-green-600 font-medium">✓ Accepted</span>
+            )}
+          </label>
         </div>
 
         <div className="space-y-2">
