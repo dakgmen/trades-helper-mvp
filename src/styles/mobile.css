@@ -1,0 +1,258 @@
+/* Mobile-first responsive styles for Tradie Helper */
+
+/* Mobile-specific utilities and improvements */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Touch-friendly interactive elements */
+.touch-friendly {
+  @apply min-h-12 min-w-12 p-3;
+  touch-action: manipulation;
+}
+
+/* Mobile navigation improvements */
+.mobile-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50;
+  @apply flex justify-around items-center py-2;
+  height: env(safe-area-inset-bottom, 0px) + 60px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.mobile-nav-item {
+  @apply flex flex-col items-center p-2 text-xs;
+  @apply min-w-16 touch-friendly;
+}
+
+.mobile-nav-item.active {
+  @apply text-blue-600;
+}
+
+/* Mobile form improvements */
+.mobile-form {
+  @apply space-y-4 px-4 pb-20; /* Extra padding for mobile nav */
+}
+
+.mobile-form input,
+.mobile-form textarea,
+.mobile-form select {
+  @apply text-base; /* Prevent zoom on iOS */
+  @apply min-h-12 px-4 py-3;
+}
+
+/* Mobile button improvements */
+.mobile-button {
+  @apply min-h-12 px-6 py-3 text-base font-medium;
+  @apply touch-friendly;
+}
+
+.mobile-button-primary {
+  @apply mobile-button bg-blue-600 text-white rounded-lg;
+  @apply active:bg-blue-700 transition-colors;
+}
+
+.mobile-button-secondary {
+  @apply mobile-button bg-gray-100 text-gray-700 rounded-lg;
+  @apply active:bg-gray-200 transition-colors;
+}
+
+/* Mobile card improvements */
+.mobile-card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 mb-4;
+  @apply p-4 space-y-3;
+}
+
+/* Mobile layout containers */
+.mobile-container {
+  @apply px-4 py-4 pb-20; /* Account for mobile nav */
+}
+
+.mobile-header {
+  @apply flex items-center justify-between p-4 bg-white border-b border-gray-200;
+  @apply sticky top-0 z-40;
+}
+
+/* Mobile-specific spacing */
+.mobile-spacing {
+  @apply space-y-4;
+}
+
+.mobile-grid {
+  @apply grid grid-cols-1 gap-4;
+}
+
+/* Mobile typography */
+.mobile-heading {
+  @apply text-xl font-bold text-gray-900 mb-2;
+}
+
+.mobile-subheading {
+  @apply text-lg font-semibold text-gray-800 mb-3;
+}
+
+.mobile-text {
+  @apply text-base text-gray-600 leading-relaxed;
+}
+
+/* Safe area handling for newer mobile devices */
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Mobile-specific animations */
+.mobile-fade-in {
+  animation: mobileSlideUp 0.3s ease-out;
+}
+
+@keyframes mobileSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile modal improvements */
+.mobile-modal {
+  @apply fixed inset-0 z-50 flex items-end justify-center;
+  @apply bg-black bg-opacity-50;
+}
+
+.mobile-modal-content {
+  @apply bg-white rounded-t-xl w-full max-h-[90vh] overflow-y-auto;
+  @apply p-6 pb-8;
+  padding-bottom: env(safe-area-inset-bottom, 0px) + 2rem;
+}
+
+/* Mobile file upload */
+.mobile-file-upload {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-6;
+  @apply text-center touch-friendly;
+}
+
+.mobile-file-upload.dragover {
+  @apply border-blue-500 bg-blue-50;
+}
+
+/* Mobile job card specific styles */
+.mobile-job-card {
+  @apply mobile-card relative;
+}
+
+.mobile-job-actions {
+  @apply flex gap-2 mt-4;
+}
+
+.mobile-job-actions .mobile-button {
+  @apply flex-1 text-sm py-2;
+}
+
+/* Mobile messaging improvements */
+.mobile-message-container {
+  @apply flex flex-col h-screen;
+}
+
+.mobile-message-list {
+  @apply flex-1 overflow-y-auto px-4 py-4 pb-20;
+}
+
+.mobile-message-input {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4;
+  padding-bottom: env(safe-area-inset-bottom, 0px) + 1rem;
+}
+
+/* Mobile payment form improvements */
+.mobile-payment-form {
+  @apply space-y-6 p-4;
+}
+
+.mobile-payment-summary {
+  @apply bg-gray-50 rounded-lg p-4 space-y-2;
+}
+
+/* Mobile dashboard improvements */
+.mobile-dashboard {
+  @apply mobile-container space-y-6;
+}
+
+.mobile-stats-grid {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.mobile-stat-card {
+  @apply bg-white rounded-lg p-4 text-center border border-gray-200;
+}
+
+/* Mobile search and filter improvements */
+.mobile-search-bar {
+  @apply sticky top-0 bg-white p-4 border-b border-gray-200 z-30;
+}
+
+.mobile-filter-chips {
+  @apply flex gap-2 overflow-x-auto pb-2 px-4;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.mobile-filter-chips::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.mobile-filter-chip {
+  @apply flex-shrink-0 px-3 py-1 text-sm bg-gray-100 rounded-full;
+  @apply active:bg-gray-200 transition-colors;
+}
+
+.mobile-filter-chip.active {
+  @apply bg-blue-100 text-blue-600;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  /* Hide mobile-specific elements on tablet and desktop */
+  .mobile-nav {
+    @apply hidden;
+  }
+  
+  .mobile-container,
+  .mobile-form {
+    @apply pb-4; /* Remove mobile nav padding */
+  }
+  
+  /* Adjust layout for larger screens */
+  .mobile-grid {
+    @apply md:grid-cols-2;
+  }
+  
+  .mobile-stats-grid {
+    @apply md:grid-cols-4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-grid {
+    @apply lg:grid-cols-3;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .mobile-nav {
+    @apply h-12; /* Reduce height in landscape */
+  }
+  
+  .mobile-nav-item {
+    @apply text-xs p-1;
+  }
+  
+  .mobile-container,
+  .mobile-form {
+    @apply pb-14; /* Adjust for smaller nav */
+  }
+}

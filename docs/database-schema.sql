@@ -15,6 +15,24 @@ CREATE TYPE payment_status AS ENUM ('pending', 'escrow', 'released', 'refunded',
 CREATE TYPE admin_action_type AS ENUM ('verify_user', 'reject_verification', 'resolve_dispute', 'refund_payment', 'ban_user', 'unban_user');
 
 -- ============================================================================
+-- FILE_UPLOADS TABLE - Track uploaded files for verification and jobs
+-- ============================================================================
+CREATE TABLE file_uploads (
+  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  filename VARCHAR(255) NOT NULL,
+  file_path TEXT NOT NULL,
+  file_size INTEGER NOT NULL,
+  mime_type VARCHAR(100) NOT NULL,
+  category VARCHAR(50) NOT NULL CHECK (category IN ('profile_image', 'white_card', 'id_document', 'job_image', 'other')),
+  verified BOOLEAN DEFAULT FALSE,
+  verified_at TIMESTAMPTZ,
+  verified_by UUID REFERENCES auth.users(id),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ============================================================================
 -- PROFILES TABLE - Core user profiles with role-based data
 -- ============================================================================
 CREATE TABLE profiles (
@@ -330,6 +348,11 @@ CREATE INDEX idx_admin_actions_created_at ON admin_actions(created_at DESC);
 CREATE INDEX idx_reviews_job_id ON reviews(job_id);
 CREATE INDEX idx_reviews_reviewee ON reviews(reviewee_id);
 CREATE INDEX idx_reviews_visible ON reviews(reviewee_id, visible) WHERE visible = TRUE;
+
+-- File uploads indexes
+CREATE INDEX idx_file_uploads_user_id ON file_uploads(user_id);
+CREATE INDEX idx_file_uploads_category ON file_uploads(category);
+CREATE INDEX idx_file_uploads_verified ON file_uploads(verified) WHERE verified = TRUE;
 
 -- Notifications indexes
 CREATE INDEX idx_notifications_user_unread ON notifications(user_id, read) WHERE read = FALSE;

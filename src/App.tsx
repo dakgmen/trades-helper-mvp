@@ -12,8 +12,10 @@ import { PaymentStatus } from './components/payments/PaymentStatus'
 import { EnhancedAdminDashboard } from './components/admin/EnhancedAdminDashboard'
 import { AvailabilityCalendar } from './components/availability/AvailabilityCalendar'
 import { EnhancedNavigation } from './components/layout/EnhancedNavigation'
+import MobileNavigation from './components/layout/MobileNavigation'
 import { EnhancedTradieDashboard } from './components/dashboard/EnhancedTradieDashboard'
 import { EnhancedHelperDashboard } from './components/dashboard/EnhancedHelperDashboard'
+import GlobalErrorBoundary from './components/error/GlobalErrorBoundary'
 import './App.css'
 
 
@@ -105,16 +107,18 @@ function Dashboard() {
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <div className="App">
-          <Routes>
+    <GlobalErrorBoundary>
+      <AuthProvider>
+        <Router>
+          <div className="App">
+            <Routes>
             <Route path="/auth" element={<AuthPage />} />
             <Route
               path="/"
               element={
                 <ProtectedRoute>
                   <Dashboard />
+                  <MobileNavigation />
                 </ProtectedRoute>
               }
             />
@@ -124,9 +128,10 @@ function App() {
                 <ProtectedRoute>
                   <div>
                     <EnhancedNavigation />
-                    <div className="max-w-4xl mx-auto p-6">
+                    <div className="max-w-4xl mx-auto mobile-container">
                       <ProfileForm />
                     </div>
+                    <MobileNavigation />
                   </div>
                 </ProtectedRoute>
               }
@@ -137,9 +142,10 @@ function App() {
                 <ProtectedRoute requiredRole="tradie">
                   <div>
                     <EnhancedNavigation />
-                    <div className="max-w-4xl mx-auto p-6">
+                    <div className="max-w-4xl mx-auto mobile-container">
                       <JobPostForm onSuccess={() => window.location.href = '/'} />
                     </div>
+                    <MobileNavigation />
                   </div>
                 </ProtectedRoute>
               }
@@ -150,7 +156,10 @@ function App() {
                 <ProtectedRoute>
                   <div>
                     <EnhancedNavigation />
-                    <JobFeed />
+                    <div className="mobile-container">
+                      <JobFeed />
+                    </div>
+                    <MobileNavigation />
                   </div>
                 </ProtectedRoute>
               }
@@ -161,9 +170,10 @@ function App() {
                 <ProtectedRoute>
                   <div>
                     <EnhancedNavigation />
-                    <div className="max-w-6xl mx-auto p-6">
+                    <div className="max-w-6xl mx-auto mobile-container">
                       <ApplicationsListWrapper />
                     </div>
+                    <MobileNavigation />
                   </div>
                 </ProtectedRoute>
               }
@@ -174,9 +184,10 @@ function App() {
                 <ProtectedRoute>
                   <div>
                     <EnhancedNavigation />
-                    <div className="max-w-6xl mx-auto p-6">
+                    <div className="max-w-6xl mx-auto mobile-container">
                       <PaymentStatus />
                     </div>
+                    <MobileNavigation />
                   </div>
                 </ProtectedRoute>
               }
@@ -205,6 +216,7 @@ function App() {
         </div>
       </Router>
     </AuthProvider>
+  </GlobalErrorBoundary>
   )
 }
 

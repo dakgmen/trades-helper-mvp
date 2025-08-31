@@ -14,6 +14,7 @@ ALTER TABLE messages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE admin_actions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE reviews ENABLE ROW LEVEL SECURITY;
 ALTER TABLE notifications ENABLE ROW LEVEL SECURITY;
+ALTER TABLE file_uploads ENABLE ROW LEVEL SECURITY;
 
 -- ============================================================================
 -- HELPER FUNCTIONS FOR RLS POLICIES
@@ -379,6 +380,35 @@ CREATE POLICY "Users can mark notifications read" ON notifications
 -- Admins can view all notifications
 CREATE POLICY "Admins can view all notifications" ON notifications
     FOR SELECT USING (current_user_is_admin());
+
+-- ============================================================================
+-- FILE UPLOADS POLICIES
+-- ============================================================================
+
+-- Users can upload their own files
+CREATE POLICY "Users can upload own files" ON file_uploads
+    FOR INSERT WITH CHECK (user_id = auth.uid());
+
+-- Users can view their own files
+CREATE POLICY "Users can view own files" ON file_uploads
+    FOR SELECT USING (user_id = auth.uid());
+
+-- Users can update their own files (for verification status updates by admin)
+CREATE POLICY "Users can view own file updates" ON file_uploads
+    FOR UPDATE USING (user_id = auth.uid());
+
+-- Users can delete their own files
+CREATE POLICY "Users can delete own files" ON file_uploads
+    FOR DELETE USING (user_id = auth.uid());
+
+-- Admins can view all files (for verification)
+CREATE POLICY "Admins can view all files" ON file_uploads
+    FOR SELECT USING (current_user_is_admin());
+
+-- Admins can update file verification status
+CREATE POLICY "Admins can update file verification" ON file_uploads
+    FOR UPDATE USING (current_user_is_admin())
+    WITH CHECK (current_user_is_admin());
 
 -- ============================================================================
 -- ADDITIONAL SECURITY FUNCTIONS
