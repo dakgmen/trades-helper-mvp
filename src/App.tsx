@@ -7,6 +7,9 @@ import { ProtectedRoute } from './components/auth/ProtectedRoute'
 import { ProfileForm } from './components/profile/ProfileForm'
 import { JobPostForm } from './components/jobs/JobPostForm'
 import { JobFeed } from './components/jobs/JobFeed'
+import { JobDetail } from './components/jobs/JobDetail'
+import { PublicProfile } from './components/profile/PublicProfile'
+import { LandingPage } from './components/landing/LandingPage'
 import { ApplicationsList } from './components/applications/ApplicationsList'
 import { PaymentStatus } from './components/payments/PaymentStatus'
 import { EnhancedAdminDashboard } from './components/admin/EnhancedAdminDashboard'
@@ -112,7 +115,20 @@ function App() {
         <Router>
           <div className="App">
             <Routes>
+            {/* Public Landing Page */}
+            <Route path="/landing" element={<LandingPage />} />
+            
+            {/* Authentication */}
             <Route path="/auth" element={<AuthPage />} />
+            
+            {/* Job Detail - Public access */}
+            <Route path="/jobs/:id" element={<JobDetail />} />
+            
+            {/* Public Profile - Public access */}
+            <Route path="/users/:id" element={<PublicProfile />} />
+            <Route path="/tradies/:id" element={<PublicProfile />} />
+            <Route path="/helpers/:id" element={<PublicProfile />} />
+            
             <Route
               path="/"
               element={
