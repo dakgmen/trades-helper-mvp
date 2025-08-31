@@ -1,4 +1,4 @@
-import { test as setup, expect } from '@playwright/test'
+import { test as setup } from '@playwright/test'
 import { createClient } from '@supabase/supabase-js'
 import dotenv from 'dotenv'
 
@@ -63,7 +63,8 @@ setup('seed database with test data', async () => {
     console.log('Testing Supabase connection...')
     
     // Test basic connection first
-    const { data, error } = await supabase.from('profiles').select('count').limit(1)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { data: _data, error } = await supabase.from('profiles').select('count').limit(1)
     if (error) {
       console.log('Database connection test failed:', error.message)
       console.log('Proceeding with frontend-only tests...')
@@ -77,7 +78,8 @@ setup('seed database with test data', async () => {
     try {
       await supabase.from('profiles').delete().ilike('email', '%.test@example.com')
       console.log('Cleaned up existing test data')
-    } catch (cleanupError) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_cleanupError) {
       console.log('Note: Could not clean up existing data, may be first run')
     }
     
@@ -157,7 +159,8 @@ setup('seed database with test data', async () => {
           console.log('Note: Could not create sample job:', jobError.message)
         }
       }
-    } catch (jobError) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_jobError) {
       console.log('Note: Could not create sample job, may be schema issue')
     }
 

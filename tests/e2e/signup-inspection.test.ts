@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test } from '@playwright/test'
 
 test('inspect signup form after toggle', async ({ page }) => {
   test.setTimeout(30000)

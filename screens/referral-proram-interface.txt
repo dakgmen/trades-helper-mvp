@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Referral Program</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-text: #374151;
+        --neutral-background: #F9FAFB;
+        --neutral-border: #E5E7EB;
+      }
+    </style>
+</head>
+<body class="bg-[var(--neutral-background)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] px-10 py-4 bg-white">
+<div class="flex items-center gap-3 text-slate-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0L48 24L24 48L0 24L24 0ZM12 21H36L24 9L12 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h2 class="text-xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)] transition-colors" href="#">Post a Job</a>
+<a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)] transition-colors" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-white text-[var(--primary-color)] border border-[var(--primary-color)] text-sm font-bold leading-normal tracking-tight hover:bg-blue-50 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-tight hover:bg-blue-700 transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-col gap-10">
+<div class="text-center">
+<h1 class="text-4xl font-extrabold tracking-tighter text-slate-900 sm:text-5xl">Refer a Mate, Get Rewarded!</h1>
+<p class="mt-4 max-w-2xl mx-auto text-lg text-[var(--neutral-text)]">
+                Invite your friends to join TradieHelper and earn rewards when they complete their first job or hire. It's a win-win!
+              </p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h2 class="text-2xl font-bold text-slate-800 mb-4">Your Referral Code</h2>
+<p class="text-[var(--neutral-text)] mb-6">Share your code with mates via text, email, or social media. The more mates you refer, the more you earn!</p>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<div class="relative flex-grow w-full">
+<input class="form-input w-full rounded-md border-[var(--neutral-border)] bg-[var(--neutral-background)] h-14 pl-4 pr-12 text-lg text-slate-800 font-mono tracking-wider" readonly="" value="TRADIE-MATE-123"/>
+<button class="absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 hover:text-[var(--primary-color)] transition-colors" title="Copy to clipboard">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path>
+</svg>
+</button>
+</div>
+<div class="flex gap-4 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-md h-12 px-5 bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-colors">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H224a8,8,0,0,0,8-8V56A8,8,0,0,0,224,48Zm-8,135.55L132.61,128,216,72.45ZM40,183.55V72.45L123.39,128ZM140,136.41L128,144l-12-7.59L49.09,192H206.91Z"></path></svg>
+<span>Email</span>
+</button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-md h-12 px-5 bg-[var(--primary-color)] text-white text-sm font-bold hover:bg-blue-700 transition-colors">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M240,128a88.1,88.1,0,0,1-88,88,8,8,0,0,1,0-16,72.08,72.08,0,0,0,72-72,8,8,0,0,1,16,0Zm-8,24v32a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V72a8,8,0,0,1,8-8h88a8,8,0,0,1,0,16H56v96H168V160a8,8,0,0,1,16,0v-8a56,56,0,1,0-56-56,8,8,0,0,1-16,0,72,72,0,1,1,80,71.22V152A8,8,0,0,1,232,152Z"></path></svg>
+<span>Socials</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white p-8 rounded-lg shadow-md">
+<h2 class="text-2xl font-bold text-slate-800 mb-6">Your Progress</h2>
+<div class="flex items-center justify-between mb-2">
+<p class="text-base font-medium text-slate-700">Referrals Completed</p>
+<p class="text-sm font-bold text-[var(--primary-color)]">3 / 5</p>
+</div>
+<div class="w-full bg-[var(--neutral-border)] rounded-full h-3">
+<div class="bg-[var(--secondary-color)] h-3 rounded-full" style="width: 60%;"></div>
+</div>
+<p class="mt-3 text-sm text-[var(--neutral-text)]">
+                  You're on your way to earning a <span class="font-bold text-[var(--accent-color)]">$50 bonus!</span> Keep it up!
+                </p>
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+<div class="bg-[var(--neutral-background)] p-4 rounded-md">
+<p class="text-sm font-medium text-slate-600">Total Referrals</p>
+<p class="text-3xl font-bold text-slate-800">12</p>
+</div>
+<div class="bg-[var(--neutral-background)] p-4 rounded-md">
+<p class="text-sm font-medium text-slate-600">Successful Referrals</p>
+<p class="text-3xl font-bold text-[var(--secondary-color)]">8</p>
+</div>
+<div class="bg-[var(--neutral-background)] p-4 rounded-md">
+<p class="text-sm font-medium text-slate-600">Total Earnings</p>
+<p class="text-3xl font-bold text-slate-800">$120 <span class="text-sm font-medium text-slate-500">AUD</span></p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h2 class="text-2xl font-bold text-slate-800 mb-6">How It Works</h2>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 h-8 w-8 rounded-full bg-[var(--primary-color)] text-white flex items-center justify-center font-bold">1</div>
+<div>
+<h3 class="font-bold text-slate-800">Share Your Code</h3>
+<p class="text-sm text-[var(--neutral-text)]">Send your unique referral code to your mates.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 h-8 w-8 rounded-full bg-[var(--primary-color)] text-white flex items-center justify-center font-bold">2</div>
+<div>
+<h3 class="font-bold text-slate-800">Your Mate Signs Up</h3>
+<p class="text-sm text-[var(--neutral-text)]">They use your code when signing up for TradieHelper.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 h-8 w-8 rounded-full bg-[var(--secondary-color)] text-white flex items-center justify-center font-bold">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M136,32v3.29C157.34,40.16,176,58.66,176,80a8,8,0,0,1-16,0c0-15.4-12.6-28-28-28s-28,12.6-28,28a8,8,0,0,1-16,0c0-21.34,18.66-40.16,40-44.71V32a8,8,0,0,1,16,0ZM216,96.38a8,8,0,0,0-8.6-7.83C184.86,90.41,160,103.58,160,128a8,8,0,0,0,16,0c0-15.4,12.6-28,28-28s28,12.6,28,28C232,154.2,192,160,192,192a8,8,0,0,0,16,0c0-15.4,12.6-28,28-28s28,12.6,28,28C264,233.42,128,240,128,240S-8,233.42,0,192c8.2-42.33,48-48,48-64,0-15.4,12.6-28,28-28s28,12.6,28,28a8,8,0,0,0,16,0c0-24.42-24.86-37.59-46.4-39.45a8,8,0,0,0-8.6,7.83c-1.85,30.77,38.15,37.3,38.15,63.62,0,24.42-38.2,30.7-38.2,63.62C64,220.8,96.48,224,128,224.5c31.52-.48,64-3.7,64-32.38C192,159.3,225.85,152.77,227.7,122a8,8,0,0,0-11.7-25.62Z"></path></svg>
+</div>
+<div>
+<h3 class="font-bold text-slate-800">You Both Get Rewarded</h3>
+<p class="text-sm text-[var(--neutral-text)]">Once they complete a job, you both get a <span class="font-bold">$15 reward!</span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

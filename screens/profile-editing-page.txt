@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-text: #4B5563;--neutral-bg: #F3F4F6;}
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+      .btn-primary {
+        @apply bg-[var(--primary-color)] text-white hover:bg-blue-700;
+      }
+      .btn-secondary {
+        @apply bg-[var(--neutral-bg)] text-gray-800 hover:bg-gray-200;
+      }
+      .form-input {
+        @apply border-gray-300 rounded-lg shadow-sm focus:border-[var(--primary-color)] focus:ring focus:ring-[var(--primary-color)] focus:ring-opacity-50;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(96,112,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48-48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 bg-white px-10 py-4 shadow-sm">
+<div class="flex items-center gap-3 text-gray-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h1 class="text-2xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<nav class="flex items-center gap-8">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Find Helpers</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Pricing</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="btn-secondary flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 text-sm font-bold tracking-wide">
+<span>Post a Job</span>
+</button>
+<button class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-11 border-2 border-transparent hover:border-[var(--primary-color)] transition-colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBopwd08JFD39-haaV-rBqpIB4EFrd9TiMKnxDZy7qTA3pJ6NtlNwu-xu8fi7QzIGTl4N77vs6APBAFBsBaMP92S_GvU4rDGoRh5NKcGKBEyNrZlXPWfsfF-DQcgmUn1OhxgCFZ_apAgiGputbUU-41NeNp0Pwcy7nllxsmkoOgNUn-unZxGVcpAUOUGBR7DM9Jo-ZmeuYMPiIX5HtjUVODjwRWy4erNbzuHJZ1uyJdU14FArE8j5DkSgHfU67k9j38ygSzFQzdWyVr");'></div>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex flex-1 justify-center py-12 bg-gray-50">
+<div class="layout-content-container flex flex-col w-full max-w-4xl px-4 md:px-8">
+<h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-8">Edit Profile</h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-1 space-y-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Profile Photo</h3>
+<div class="w-full bg-center bg-no-repeat bg-cover aspect-square rounded-lg mb-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0ceKPGaTlPNOfJAD2NSOphPGGLcUxueyQ0xD60tZ3R47QrUkvzOUhewO5WkuTxk8B_NBw-SzvLcFBaeMKaY29dV1lXyXFPjcS1l8oU1l88U9lKJtLi3_9W6hIXgk2cEcQUWxTOdZzB8-M9epYhkbzvxCiwpzzQ88zs0DvlJ_-QoTVVxQXcE4fyUdvOltghW_0aX-kp4qoDfhFGx_NM-Lf2N9H47ehN52CQdxnwvKygJUS_K_LunKh0t8yXr4KWoKi7RrT9VQuQILj");'></div>
+<button class="btn-secondary w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-bold leading-normal tracking-[0.015em]">
+<span>Upload New Photo</span>
+</button>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Documents</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between gap-4 p-3 rounded-lg bg-gray-50 border border-gray-200">
+<div class="flex items-center gap-4">
+<div class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-blue-100 shrink-0 size-10">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path></svg>
+</div>
+<div>
+<p class="text-gray-800 text-sm font-medium">Resume.pdf</p>
+<p class="text-[var(--neutral-text)] text-xs">Uploaded 2 days ago</p>
+</div>
+</div>
+<button class="text-gray-500 hover:text-red-600 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"></path></svg>
+</button>
+</div>
+<div class="flex items-center justify-between gap-4 p-3 rounded-lg bg-gray-50 border border-gray-200">
+<div class="flex items-center gap-4">
+<div class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-blue-100 shrink-0 size-10">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path></svg>
+</div>
+<div>
+<p class="text-gray-800 text-sm font-medium">License.pdf</p>
+<p class="text-[var(--neutral-text)] text-xs">Uploaded 1 week ago</p>
+</div>
+</div>
+<button class="text-gray-500 hover:text-red-600 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"></path></svg>
+</button>
+</div>
+</div>
+<button class="btn-secondary w-full mt-4 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-sm font-bold leading-normal tracking-[0.015em]">
+<span>Upload Document</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-2 bg-white p-6 sm:p-8 rounded-lg shadow-sm">
+<form class="space-y-6">
+<div>
+<h3 class="text-xl font-bold text-gray-900 mb-6">Personal Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col">
+<p class="text-sm font-medium text-[var(--neutral-text)] pb-2">Full Name</p>
+<input class="form-input" type="text" value="John Doe"/>
+</label>
+<label class="flex flex-col">
+<p class="text-sm font-medium text-[var(--neutral-text)] pb-2">Email Address</p>
+<input class="form-input" type="email" value="john.doe@example.com"/>
+</label>
+<label class="flex flex-col">
+<p class="text-sm font-medium text-[var(--neutral-text)] pb-2">Phone Number</p>
+<input class="form-input" type="tel" value="0412 345 678"/>
+</label>
+<label class="flex flex-col">
+<p class="text-sm font-medium text-[var(--neutral-text)] pb-2">Time Zone</p>
+<select class="form-input h-11 bg-[image:--select-button-svg]">
+<option>Australia/Sydney (AEST)</option>
+<option>Australia/Melbourne (AEST)</option>
+<option>Australia/Brisbane (AEST)</option>
+<option>Australia/Perth (AWST)</option>
+<option>Australia/Adelaide (ACST)</option>
+<option>Australia/Darwin (ACST)</option>
+</select>
+</label>
+</div>
+</div>
+<hr class="border-gray-200"/>
+<div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Professional Details</h3>
+<label class="flex flex-col">
+<p class="text-sm font-medium text-[var(--neutral-text)] pb-2">Address</p>
+<input class="form-input" placeholder="e.g., 123 Aussie St, Sydney, NSW 2000" type="text"/>
+</label>
+<div class="mt-4 w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+<img alt="Map of location" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4dCS8SYmgdIHo8dV1gIOgFBxnEPyqtnrR8J9LVaMgt609s3_jzUOUrCGYUSoSJo5Nz8imQYmG2_DUcvu9Ypx4GnUSB7vX-70KJ9iDCb77ifFD6xqukQg_q7fIyxGZimLb5FjwLv8ykfPexxk6Kjoqqihh5bi-8YwmLGBD52e1DxNdnbopNDRG4YNnRPuE6ay64C976LtogEXQmyqLHejbE7XFRPkXspSuxOgI3FTbprrRAQ9FDhZqTL3eHrX1teSBWwZJzGfv2nDm"/>
+</div>
+</div>
+<hr class="border-gray-200"/>
+<div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Skills</h3>
+<div class="flex flex-wrap gap-3 mb-4">
+<span class="flex items-center gap-x-2 rounded-full bg-[var(--secondary-color)] px-4 py-1.5 text-sm font-medium text-white">Plumbing<button class="text-white opacity-70 hover:opacity-100">×</button></span>
+<span class="flex items-center gap-x-2 rounded-full bg-[var(--secondary-color)] px-4 py-1.5 text-sm font-medium text-white">Electrical<button class="text-white opacity-70 hover:opacity-100">×</button></span>
+<span class="flex items-center gap-x-2 rounded-full bg-[var(--secondary-color)] px-4 py-1.5 text-sm font-medium text-white">Carpentry<button class="text-white opacity-70 hover:opacity-100">×</button></span>
+<span class="flex items-center gap-x-2 rounded-full bg-[var(--secondary-color)] px-4 py-1.5 text-sm font-medium text-white">Painting<button class="text-white opacity-70 hover:opacity-100">×</button></span>
+<span class="flex items-center gap-x-2 rounded-full bg-[var(--secondary-color)] px-4 py-1.5 text-sm font-medium text-white">Landscaping<button class="text-white opacity-70 hover:opacity-100">×</button></span>
+</div>
+<label class="flex flex-col">
+<p class="text-sm font-medium text-[var(--neutral-text)] pb-2">Add a new skill</p>
+<input class="form-input" placeholder="Type a skill and press Enter" type="text"/>
+</label>
+</div>
+<hr class="border-gray-200"/>
+<div class="flex justify-end gap-4 pt-4">
+<button class="btn-secondary h-11 px-6 text-sm font-bold rounded-lg" type="button">Cancel</button>
+<button class="btn-primary h-11 px-8 text-sm font-bold rounded-lg" type="submit">Save Changes</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

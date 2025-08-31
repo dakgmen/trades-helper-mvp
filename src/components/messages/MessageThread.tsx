@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { supabase } from '../../lib/supabase'
 import type { Message } from '../../types'
 import { useAuth } from '../../context/AuthContext'
@@ -44,13 +44,14 @@ export const MessageThread: React.FC<MessageThreadProps> = ({
     return () => {
       subscription.unsubscribe()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jobId])
 
   useEffect(() => {
     scrollToBottom()
   }, [messages])
 
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('messages')
@@ -73,7 +74,7 @@ export const MessageThread: React.FC<MessageThreadProps> = ({
     } finally {
       setLoading(false)
     }
-  }
+  }, [jobId])
 
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault()

@@ -1,48 +1,51 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
+// Create mock functions that we can control per test
+const mockUpload = vi.fn()
+const mockRemove = vi.fn()
+const mockGetPublicUrl = vi.fn()
+const mockCreateSignedUrl = vi.fn()
+const mockInsert = vi.fn()
+const mockSelect = vi.fn()
+const mockSingle = vi.fn()
+const mockEq = vi.fn()
+const mockOrder = vi.fn()
+const mockDelete = vi.fn()
+
 // Mock Supabase
 vi.mock('../../lib/supabase', () => ({
   supabase: {
     storage: {
       from: vi.fn(() => ({
-        upload: vi.fn(),
-        remove: vi.fn(),
-        getPublicUrl: vi.fn(() => ({ data: { publicUrl: 'https://test.com/file.jpg' } })),
-        createSignedUrl: vi.fn(),
+        upload: mockUpload,
+        remove: mockRemove,
+        getPublicUrl: mockGetPublicUrl,
+        createSignedUrl: mockCreateSignedUrl,
       })),
     },
     from: vi.fn(() => ({
-      insert: vi.fn(() => ({
-        select: vi.fn(() => ({
-          single: vi.fn(),
-        })),
-      })),
-      select: vi.fn(() => ({
-        eq: vi.fn(() => ({
-          eq: vi.fn(() => ({
-            single: vi.fn(),
-          })),
-          order: vi.fn(() => ({
-            order: vi.fn(),
-          })),
-        })),
-      })),
-      delete: vi.fn(() => ({
-        eq: vi.fn(() => ({
-          eq: vi.fn(),
-        })),
-      })),
+      insert: mockInsert,
+      select: mockSelect,
+      single: mockSingle,
+      eq: mockEq,
+      order: mockOrder,
+      delete: mockDelete,
     })),
   },
 }))
 
 // Import after mocking
 const { fileUploadService } = await import('../../services/fileUploadService')
-const { supabase } = await import('../../lib/supabase')
 
 describe('FileUploadService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    // Reset all mocks to return themselves for chaining
+    mockInsert.mockReturnValue({ select: mockSelect })
+    mockSelect.mockReturnValue({ single: mockSingle, eq: mockEq })
+    mockEq.mockReturnValue({ eq: mockEq, single: mockSingle, order: mockOrder })
+    mockOrder.mockReturnValue({ order: mockOrder })
+    mockDelete.mockReturnValue({ eq: mockEq })
   })
 
   describe('uploadFile', () => {
@@ -59,18 +62,14 @@ describe('FileUploadService', () => {
         created_at: '2024-01-01T00:00:00Z',
       }
 
-      // Mock storage upload
-      const mockStorageFrom = (supabase as any).storage.from()
-      mockStorageFrom.upload.mockResolvedValueOnce({
+      // Mock storage upload success
+      mockUpload.mockResolvedValueOnce({
         data: { path: 'user123/profile_image/123456.jpg' },
         error: null,
       })
 
-      // Mock database insert
-      const mockFrom = (supabase as any).from()
-      const mockInsert = mockFrom.insert()
-      const mockSelect = mockInsert.select()
-      mockSelect.single.mockResolvedValueOnce({
+      // Mock database insert success
+      mockSingle.mockResolvedValueOnce({
         data: mockFileUpload,
         error: null,
       })
@@ -102,8 +101,8 @@ describe('FileUploadService', () => {
     it('should handle storage upload error', async () => {
       const mockFile = new File(['test'], 'test.jpg', { type: 'image/jpeg' })
 
-      const mockStorageFrom = (supabase as any).storage.from()
-      mockStorageFrom.upload.mockResolvedValueOnce({
+      // Mock storage upload error
+      mockUpload.mockResolvedValueOnce({
         data: null,
         error: { message: 'Storage error' },
       })
@@ -146,8 +145,7 @@ describe('FileUploadService', () => {
       ]
 
       // Mock successful uploads
-      const mockStorageFrom = mockSupabase.storage.from()
-      mockStorageFrom.upload
+      mockUpload
         .mockResolvedValueOnce({
           data: { path: 'user123/profile_image/123456.jpg' },
           error: null,
@@ -157,10 +155,8 @@ describe('FileUploadService', () => {
           error: null,
         })
 
-      const mockFrom = mockSupabase.from()
-      const mockInsert = mockFrom.insert()
-      const mockSelect = mockInsert.select()
-      mockSelect.single
+      // Mock database insert chain for multiple files
+      mockSingle
         .mockResolvedValueOnce({
           data: mockFileUploads[0],
           error: null,
@@ -191,29 +187,26 @@ describe('FileUploadService', () => {
         created_at: '2024-01-01T00:00:00Z',
       }
 
-      // Mock database fetch
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq1 = mockSelect.eq()
-      const mockEq2 = mockEq1.eq()
-      mockEq2.single.mockResolvedValueOnce({
+      // Reset mocks for this test
+      mockSingle.mockResolvedValueOnce({
         data: mockFileRecord,
         error: null,
       })
-
-      // Mock storage delete
-      const mockStorageFrom = mockSupabase.storage.from()
-      mockStorageFrom.remove.mockResolvedValueOnce({
+      
+      // Mock storage remove success
+      mockRemove.mockResolvedValueOnce({
+        data: null,
         error: null,
       })
-
-      // Mock database delete
-      const mockDelete = mockFrom.delete()
-      const mockDeleteEq1 = mockDelete.eq()
-      const mockDeleteEq2 = mockDeleteEq1.eq()
-      mockDeleteEq2.mockResolvedValueOnce({
-        error: null,
-      })
+      
+      // Mock database delete success - need to ensure the delete chain works
+      // The delete operation calls: .delete().eq('id', fileId).eq('user_id', userId)
+      const deleteChain = {
+        eq: vi.fn().mockReturnValue({
+          eq: vi.fn().mockResolvedValueOnce({ error: null })
+        })
+      }
+      mockDelete.mockReturnValueOnce(deleteChain)
 
       const result = await fileUploadService.deleteFile('1', 'user123')
 
@@ -237,10 +230,7 @@ describe('FileUploadService', () => {
         },
       ]
 
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq = mockSelect.eq()
-      const mockOrder = mockEq.order()
+      // Mock database query success
       mockOrder.mockResolvedValueOnce({
         data: mockFiles,
         error: null,
@@ -266,11 +256,7 @@ describe('FileUploadService', () => {
         },
       ]
 
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq1 = mockSelect.eq()
-      const mockEq2 = mockEq1.eq()
-      const mockOrder = mockEq2.order()
+      // Mock database query success with category filter
       mockOrder.mockResolvedValueOnce({
         data: mockFiles,
         error: null,

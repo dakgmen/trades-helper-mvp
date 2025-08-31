@@ -1,0 +1,215 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Rejected Applications</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<meta charset="utf-8"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563EB;
+        --color-secondary: #16A34A;
+        --color-accent: #EA580C;
+        --color-neutral-background: #f8fafc;
+        --color-neutral-text: #475569;
+        --color-neutral-border: #e2e8f0;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-[var(--color-neutral-background)]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--color-neutral-border)] bg-white px-10 py-4 shadow-sm">
+<div class="flex items-center gap-4 text-slate-800">
+<svg class="text-[var(--color-primary)] size-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h2 class="text-slate-900 text-xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6">
+<nav class="flex items-center gap-8">
+<a class="text-slate-600 hover:text-[var(--color-primary)] text-sm font-medium" href="#">Dashboard</a>
+<a class="text-slate-600 hover:text-[var(--color-primary)] text-sm font-medium" href="#">Jobs</a>
+<a class="text-[var(--color-primary)] text-sm font-semibold" href="#">Applications</a>
+<a class="text-slate-600 hover:text-[var(--color-primary)] text-sm font-medium" href="#">Payments</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDevs9__bxAUxgxGpR0H2KbGOw7KP-NDy5oFHmkhd_iLI9UHGEBlfLUm8ptsurOYvTmOA0dYD194AmrGObUqoPuSyff5b-exrGbcbI3ULAtM7hNTEq4usRqQXZljNQc5SFHwAQKbksQaBB9B8rELXdobDsKVdUIbK6O_aB4c9ugYl11kNGJKyokaBBN_oWg_kz9ONhytVdegHXgpNSFu075q_90AsFiLnZb7TtsJoL4wVLyHZCr3PjKzIhKoGcuAbtec54Ga4fQBv5o");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center px-4 py-8 sm:px-6 lg:px-8">
+<div class="w-full max-w-7xl">
+<div class="mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900">Rejected Applications</h1>
+<p class="text-[var(--color-neutral-text)] mt-1 text-base">Manage and review rejected applications for your job postings.</p>
+</div>
+<div class="mb-6 border-b border-[var(--color-neutral-border)]">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-[var(--color-primary)] text-[var(--color-primary)] whitespace-nowrap border-b-2 py-4 px-1 text-sm font-semibold" href="#"> All </a>
+<a class="border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" href="#"> Active </a>
+<a class="border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" href="#"> Archived </a>
+</nav>
+</div>
+<div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<div class="relative w-full max-w-xs">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="size-5 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="block w-full rounded-md border-0 bg-white py-2.5 pl-10 pr-3 text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-[var(--color-primary)] sm:text-sm sm:leading-6" placeholder="Search applications..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">
+<span>Status</span>
+<svg class="size-5 text-slate-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" fill-rule="evenodd"></path>
+</svg>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">
+<span>Date</span>
+<svg class="size-5 text-slate-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" fill-rule="evenodd"></path>
+</svg>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">
+<span>Job</span>
+<svg class="size-5 text-slate-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="mb-8">
+<h2 class="text-xl font-bold text-slate-900 mb-4">Application Statistics</h2>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<p class="text-sm font-medium text-[var(--color-neutral-text)]">Total Rejected</p>
+<p class="text-3xl font-bold text-slate-900 mt-2">125</p>
+</div>
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<p class="text-sm font-medium text-[var(--color-neutral-text)]">Average Rejection Time</p>
+<p class="text-3xl font-bold text-slate-900 mt-2">3 days</p>
+</div>
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<p class="text-sm font-medium text-[var(--color-neutral-text)]">Rejection Rate</p>
+<p class="text-3xl font-bold text-slate-900 mt-2">15%</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 mb-4">Rejected Applications</h2>
+<div class="space-y-6">
+<div class="flex flex-col md:flex-row items-start gap-6 rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<div class="w-full md:w-48 md:h-32 flex-shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat aspect-video md:aspect-auto bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkRGOukDoUE1b2uJPqN6JGlvYMqPs6K1Pt21zpc39JTUe6GRGMV4mfRDeKx8VQvCkll4UFuLzZyXT1nU9HdczCcJdGcTInW_NBpezGG7XjKsmpfDNCLjdu2o6KJlxoRqk-nBMrc8YQAPbTu5WyTX8qeBe4V30AOQEyV34SlV2b9LGIuo4J7tJ_KSaZP800dDoAUSgPLMDO1xwOTqkgC0UsdONe5croCk5Kwr3K5LyvzlW44VnF5ClaRct4GizWnz39IS0-Z_cNHc3u");'></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Rejected</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mt-2">Application for Electrician</h3>
+<p class="text-sm text-[var(--color-neutral-text)] mt-1">Applicant: Sarah Johnson | Date: 20 Jul 2024</p>
+<div class="mt-4 flex items-center gap-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-[var(--color-primary)] text-white text-sm font-semibold shadow-sm hover:bg-blue-700">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-white text-slate-900 ring-1 ring-inset ring-slate-300 text-sm font-semibold shadow-sm hover:bg-slate-50">
+<span class="truncate">Provide Feedback</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-start gap-6 rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<div class="w-full md:w-48 md:h-32 flex-shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat aspect-video md:aspect-auto bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgOUJjrCR-jAfq26yAZYoubgzEK5jM28ore0iTNSmlkcwp7dAubE0MUSMBxM7HU6yjjOXylsI4jXSUUIo0PlFkQWD4yJ4MkS5_xTAFRQejEXk8VL76lpopnO3sPNCO0RAfsjlg00wjOQIBzo_mY5tcYYvTl6BmerpDYGmtZyP1H2WGLjNGSq6JGLCjlIglIer6BMF9lQNur_hN9kJXEGjtM8JS_dJNLnNL1uGRJlXtmKDgcG2Eo-tY0kqOaoCbwLIqhbyZqb9MaLMB");'></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Rejected</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mt-2">Application for Plumber</h3>
+<p class="text-sm text-[var(--color-neutral-text)] mt-1">Applicant: Michael Brown | Date: 18 Jul 2024</p>
+<div class="mt-4 flex items-center gap-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-[var(--color-primary)] text-white text-sm font-semibold shadow-sm hover:bg-blue-700">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-white text-slate-900 ring-1 ring-inset ring-slate-300 text-sm font-semibold shadow-sm hover:bg-slate-50">
+<span class="truncate">Provide Feedback</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-start gap-6 rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<div class="w-full md:w-48 md:h-32 flex-shrink-0">
+<div class="w-full h-full bg-center bg-no-repeat aspect-video md:aspect-auto bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArCRo6nEWmL0iwFcqR_gcrYOWGiTUTkmnQai6Bfk4MFFtzMId4n-Q1jwgBt6R42U0S1Hbv4qw4e8OmZiQspY6g87czLtif07sL3qEmbjMi4hZ-JW3crcbtUppvcfkJx9Mdxl2l5rSNeeK4UiWtb98UpFrHEAWPjOs_G7L_XWmv6FSbacHtZptpbHlOBl47dhJO7_qn9wjrHtHUwLuc4yUZvq_MaAdpWL3PG9SPAXNGoJ_8h2-dSWnelpTlRKC03Mv3P02KxltT2XdD");'></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Rejected</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 mt-2">Application for Carpenter</h3>
+<p class="text-sm text-[var(--color-neutral-text)] mt-1">Applicant: Emily Davis | Date: 15 Jul 2024</p>
+<div class="mt-4 flex items-center gap-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-[var(--color-primary)] text-white text-sm font-semibold shadow-sm hover:bg-blue-700">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-9 px-4 bg-white text-slate-900 ring-1 ring-inset ring-slate-300 text-sm font-semibold shadow-sm hover:bg-slate-50">
+<span class="truncate">Provide Feedback</span>
+</button>
+</div>
+</div>
+</div>
+<nav class="flex items-center justify-between border-t border-slate-200 px-4 py-3 sm:px-6">
+<div class="flex flex-1 justify-between sm:hidden">
+<a class="relative inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50" href="#">Previous</a>
+<a class="relative ml-3 inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50" href="#">Next</a>
+</div>
+<div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center">
+<div>
+<nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+<a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0" href="#">
+<span class="sr-only">Previous</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a aria-current="page" class="relative z-10 inline-flex items-center bg-blue-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" href="#">1</a>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0" href="#">2</a>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">3</a>
+<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-700 ring-1 ring-inset ring-slate-300 focus:outline-offset-0">...</span>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">10</a>
+<a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0" href="#">
+<span class="sr-only">Next</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</nav>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

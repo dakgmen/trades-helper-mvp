@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Work+Sans%3Awght%40400%3B500%3B600%3B700&amp;family=Inter%3Awght%40400%3B500%3B600%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper Admin - Disputes</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563EB;
+        --color-secondary: #16A34A;
+        --color-accent: #EA580C;
+        --color-neutral-100: #F3F4F6;
+        --color-neutral-200: #E5E7EB;
+        --color-neutral-400: #9CA3AF;
+        --color-neutral-500: #6B7280;
+        --color-neutral-800: #1F2937;
+        --color-neutral-900: #111827;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-white border-r border-gray-200 flex flex-col fixed h-full">
+<div class="flex items-center gap-3 p-6 border-b border-gray-200">
+<img alt="TradieHelper Logo" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQc7tJSOIJ2hvg50SZOGXVHTjg4Or8IVo_z0SYEf4VYdwLpJR_gKxlaajQs4OdjhPPxm0SOhDxAvX-UkyUYFa2dKn-8B4aX9PwFf1Aq0We_NlV3JB4qmnerBfwXh6sohWetviZIH4v2gOLaQH_rz0cSUy2A7MRYSv81gLaM_Vh_bRZFOvXduGGLF8iTp8_SbA-FgRhv165Ml_fvUV0di7wXQCK4NoSWBn1NSbQLta8rD3HVYaxI1VrUCw3RC1G5t68KVMiZHs_fyKd"/>
+<h1 class="text-xl font-bold text-[var(--color-neutral-900)]">TradieHelper</h1>
+</div>
+<nav class="flex-1 p-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" href="#">
+<svg class="w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" href="#">
+<svg class="w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+<span>Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" href="#">
+<svg class="w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+<span>Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" href="#">
+<svg class="w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="12" rx="2" width="20" x="2" y="6"></rect><path d="M2 12h20"></path></svg>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[var(--color-primary)] bg-blue-50 rounded-lg font-semibold" href="#">
+<svg class="w-5 h-5" fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m12 2-8 4v5c0 6 8 10 8 10s8-4 8-10V6l-8-4zM9.5 13.5 7 11l1.5-1.5L9.5 11l3.5-3.5L14.5 9l-5 5z"></path></svg>
+<span>Disputes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" href="#">
+<svg class="w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+<span>Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-gray-200">
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" href="#">
+<svg class="w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+<span>Help &amp; Support</span>
+</a>
+</div>
+</aside>
+<main class="ml-64 flex-1 p-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-8">
+<h1 class="text-4xl font-bold text-[var(--color-neutral-900)]">Disputes</h1>
+<p class="text-lg text-[var(--color-neutral-500)] mt-1">Manage and resolve disputes between users on the TradieHelper platform.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+<h3 class="text-base font-medium text-[var(--color-neutral-500)]">Open Disputes</h3>
+<p class="text-4xl font-bold text-[var(--color-accent)] mt-2">15</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+<h3 class="text-base font-medium text-[var(--color-neutral-500)]">Resolved This Month</h3>
+<p class="text-4xl font-bold text-[var(--color-secondary)] mt-2">45</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+<h3 class="text-base font-medium text-[var(--color-neutral-500)]">Avg. Resolution Time</h3>
+<p class="text-4xl font-bold text-[var(--color-primary)] mt-2">3 Days</p>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-200 flex justify-between items-center">
+<h2 class="text-xl font-bold text-[var(--color-neutral-900)]">Dispute Queue</h2>
+<div class="flex items-center gap-4">
+<div class="relative">
+<svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" fill-rule="evenodd"></path>
+</svg>
+<input class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Search disputes..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition">
+<svg class="w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M3 18v-2h18v2"></path><path d="M3 12v-2h18v2"></path><path d="M3 6V4h18v2"></path></svg>
+                        Filter
+                    </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50">
+<tr>
+<th class="px-6 py-3" scope="col">Dispute ID</th>
+<th class="px-6 py-3" scope="col">Job Title</th>
+<th class="px-6 py-3" scope="col">Parties Involved</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col">Date Opened (AEST)</th>
+<th class="px-6 py-3 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">#D-12345</td>
+<td class="px-6 py-4">Bathroom Renovation</td>
+<td class="px-6 py-4">Sarah J. vs Mark L.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                        Open
+                      </span>
+</td>
+<td class="px-6 py-4">20 July 2024</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--color-primary)] hover:underline" href="#">View Details</a>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">#D-12346</td>
+<td class="px-6 py-4">Kitchen Installation</td>
+<td class="px-6 py-4">Emily R. vs David C.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        Resolved
+                      </span>
+</td>
+<td class="px-6 py-4">15 July 2024</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--color-primary)] hover:underline" href="#">View Details</a>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">#D-12347</td>
+<td class="px-6 py-4">Electrical Wiring</td>
+<td class="px-6 py-4">Jessica P. vs Michael B.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                        Open
+                      </span>
+</td>
+<td class="px-6 py-4">10 July 2024</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--color-primary)] hover:underline" href="#">View Details</a>
+</td>
+</tr>
+<tr class="bg-white border-b hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">#D-12348</td>
+<td class="px-6 py-4">Plumbing Repair</td>
+<td class="px-6 py-4">Olivia M. vs Chris T.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        Resolved
+                      </span>
+</td>
+<td class="px-6 py-4">05 July 2024</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--color-primary)] hover:underline" href="#">View Details</a>
+</td>
+</tr>
+<tr class="bg-white hover:bg-gray-50">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">#D-12349</td>
+<td class="px-6 py-4">Landscaping Project</td>
+<td class="px-6 py-4">Sophia N. vs Ben G.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                        Under Review
+                      </span>
+</td>
+<td class="px-6 py-4">30 June 2024</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--color-primary)] hover:underline" href="#">View Details</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-gray-200 flex justify-between items-center">
+<span class="text-sm text-gray-700">
+                    Showing <span class="font-semibold">1</span> to <span class="font-semibold">5</span> of <span class="font-semibold">15</span> Disputes
+                </span>
+<div class="inline-flex mt-2 xs:mt-0">
+<button class="px-4 py-2 text-sm font-medium text-gray-800 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100">
+                        Prev
+                    </button>
+<button class="px-4 py-2 text-sm font-medium text-gray-800 bg-white rounded-r-lg border-t border-b border-r border-gray-300 hover:bg-gray-100">
+                        Next
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

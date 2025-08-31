@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { signIn, signOut, signUp, TEST_USERS } from './helpers/auth'
+import { signIn, signOut, signUp } from './helpers/auth'
 
 test.describe('Authentication Flow', () => {
   test.beforeEach(async ({ page }) => {

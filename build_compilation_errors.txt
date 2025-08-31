@@ -1,0 +1,19 @@
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run build
+
+> tradie-helper@0.0.0 build
+> tsc -b && vite build
+
+src/tests/services/notificationService.test.ts:104:58 - error TS2339: Property 'PushManager' does not exist on type '{}'.
+
+104       delete (global as Record<string, unknown>).window?.PushManager
+                                                             ~~~~~~~~~~~
+
+src/tests/services/notificationService.test.ts:199:58 - error TS2339: Property 'Notification' does not exist on type '{}'.
+
+199       delete (global as Record<string, unknown>).window?.Notification
+                                                             ~~~~~~~~~~~~
+
+
+Found 2 errors.
+
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> 

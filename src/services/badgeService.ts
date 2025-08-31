@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase'
-import type { Badge, UserBadge, BadgeCriteria } from '../types'
+import type { Badge, UserBadge, UserStatistics, BadgeRequirementsResult, LeaderboardUser } from '../types'
 
 export class BadgeService {
   // Get all available badges
@@ -90,7 +90,7 @@ export class BadgeService {
   static async awardBadge(
     userId: string,
     badgeId: string,
-    criteriaData: Record<string, any>
+    criteriaData: Record<string, string | number | boolean>
   ): Promise<UserBadge | null> {
     try {
       const { data, error } = await supabase
@@ -145,35 +145,35 @@ export class BadgeService {
       }
 
       // Get job statistics
-      const { data: jobs, error: jobsError } = await supabase
+      const { data: jobs } = await supabase
         .from('jobs')
         .select('tradie_id, assigned_helper_id, status, date_time')
         .or(`tradie_id.eq.${userId},assigned_helper_id.eq.${userId}`)
         .eq('status', 'completed')
 
       // Get rating statistics
-      const { data: aggregateRating, error: ratingError } = await supabase
+      const { data: aggregateRating } = await supabase
         .from('aggregate_ratings')
         .select('*')
         .eq('user_id', userId)
         .single()
 
       // Get referral count
-      const { data: referrals, error: referralsError } = await supabase
+      const { data: referrals } = await supabase
         .from('referrals')
         .select('id')
         .eq('referrer_id', userId)
         .eq('status', 'completed')
 
       // Get payment statistics
-      const { data: payments, error: paymentsError } = await supabase
+      const { data: payments } = await supabase
         .from('payments')
         .select('amount')
         .or(`tradie_id.eq.${userId},helper_id.eq.${userId}`)
         .eq('status', 'released')
 
       // Get recent reviews for consecutive ratings
-      const { data: recentReviews, error: reviewsError } = await supabase
+      const { data: recentReviews } = await supabase
         .from('reviews')
         .select('rating')
         .eq('reviewee_id', userId)
@@ -242,12 +242,12 @@ export class BadgeService {
   // Check if user meets requirements for a specific badge
   private static async checkBadgeRequirements(
     badge: Badge,
-    stats: any
-  ): Promise<{ eligible: boolean; criteriaData: Record<string, any> }> {
+    stats: UserStatistics
+  ): Promise<BadgeRequirementsResult> {
     try {
       const criteria = badge.criteria
       let eligible = true
-      const criteriaData: Record<string, any> = {}
+      const criteriaData: Record<string, string | number | boolean> = {}
 
       // First Job Completed
       if (criteria.first_job && stats.totalJobsCompleted < 1) {
@@ -255,55 +255,55 @@ export class BadgeService {
       }
 
       // Job completion thresholds
-      if (criteria.jobs_completed && stats.totalJobsCompleted < criteria.jobs_completed) {
+      if (criteria.jobs_completed && typeof criteria.jobs_completed === 'number' && stats.totalJobsCompleted < criteria.jobs_completed) {
         eligible = false
       }
 
       // Rating requirements
-      if (criteria.min_rating && stats.averageRating < criteria.min_rating) {
+      if (criteria.min_rating && typeof criteria.min_rating === 'number' && stats.averageRating < criteria.min_rating) {
         eligible = false
       }
 
-      if (criteria.min_reviews && stats.totalReviews < criteria.min_reviews) {
+      if (criteria.min_reviews && typeof criteria.min_reviews === 'number' && stats.totalReviews < criteria.min_reviews) {
         eligible = false
       }
 
       // Consecutive five star ratings
-      if (criteria.consecutive_five_stars && stats.consecutiveFiveStarRatings < criteria.consecutive_five_stars) {
+      if (criteria.consecutive_five_stars && typeof criteria.consecutive_five_stars === 'number' && stats.consecutiveFiveStarRatings < criteria.consecutive_five_stars) {
         eligible = false
       }
 
       // Years active
-      if (criteria.years_active && stats.yearsActive < criteria.years_active) {
+      if (criteria.years_active && typeof criteria.years_active === 'number' && stats.yearsActive < criteria.years_active) {
         eligible = false
       }
 
       // Referral requirements
-      if (criteria.referrals_made && stats.referralsMade < criteria.referrals_made) {
+      if (criteria.referrals_made && typeof criteria.referrals_made === 'number' && stats.referralsMade < criteria.referrals_made) {
         eligible = false
       }
 
       // Skills verification
-      if (criteria.skills_verified && stats.skillsVerified.length < criteria.skills_verified) {
+      if (criteria.skills_verified && typeof criteria.skills_verified === 'number' && stats.skillsVerified.length < criteria.skills_verified) {
         eligible = false
       }
 
       // Earnings threshold
-      if (criteria.min_earnings && stats.totalEarnings < criteria.min_earnings) {
+      if (criteria.min_earnings && typeof criteria.min_earnings === 'number' && stats.totalEarnings < criteria.min_earnings) {
         eligible = false
       }
 
       // Role-specific requirements
-      if (criteria.tradie_jobs && stats.totalJobsAsTradie < criteria.tradie_jobs) {
+      if (criteria.tradie_jobs && typeof criteria.tradie_jobs === 'number' && stats.totalJobsAsTradie < criteria.tradie_jobs) {
         eligible = false
       }
 
-      if (criteria.helper_jobs && stats.totalJobsAsHelper < criteria.helper_jobs) {
+      if (criteria.helper_jobs && typeof criteria.helper_jobs === 'number' && stats.totalJobsAsHelper < criteria.helper_jobs) {
         eligible = false
       }
 
-      // Store relevant stats in criteria data
-      criteriaData.stats_at_earning = {
+      // Store relevant stats in criteria data as string
+      criteriaData.stats_at_earning = JSON.stringify({
         totalJobsCompleted: stats.totalJobsCompleted,
         averageRating: stats.averageRating,
         totalReviews: stats.totalReviews,
@@ -311,7 +311,7 @@ export class BadgeService {
         referralsMade: stats.referralsMade,
         totalEarnings: stats.totalEarnings,
         earned_at: new Date().toISOString()
-      }
+      })
 
       return { eligible, criteriaData }
     } catch (error) {
@@ -432,11 +432,7 @@ export class BadgeService {
   }
 
   // Get badge leaderboard
-  static async getBadgeLeaderboard(limit = 50): Promise<Array<{
-    user: any
-    badge_count: number
-    latest_badge: Badge | null
-  }>> {
+  static async getBadgeLeaderboard(limit = 50): Promise<LeaderboardUser[]> {
     try {
       const { data, error } = await supabase
         .from('user_badges')
@@ -455,12 +451,12 @@ export class BadgeService {
       // Group by user and count badges
       const userBadgeMap = new Map()
       
-      data.forEach((item: any) => {
+      data.forEach((item: { user_id: string; profiles: { id: string; full_name: string; role: string }[]; badge: Badge[]; earned_at?: string }) => {
         const userId = item.user_id
         
         if (!userBadgeMap.has(userId)) {
           userBadgeMap.set(userId, {
-            user: item.profiles,
+            user: item.profiles[0],
             badge_count: 0,
             latest_badge: null,
             latest_earned_at: null
@@ -470,8 +466,8 @@ export class BadgeService {
         const userEntry = userBadgeMap.get(userId)
         userEntry.badge_count++
         
-        if (!userEntry.latest_earned_at || item.earned_at > userEntry.latest_earned_at) {
-          userEntry.latest_badge = item.badge
+        if (!userEntry.latest_earned_at || (item.earned_at && item.earned_at > userEntry.latest_earned_at)) {
+          userEntry.latest_badge = item.badge[0]
           userEntry.latest_earned_at = item.earned_at
         }
       })

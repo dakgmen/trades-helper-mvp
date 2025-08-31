@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Profile Completion</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563EB;
+        --color-secondary: #16A34A;
+        --color-accent: #EA580C;
+        --color-neutral-100: #F3F4F6;
+        --color-neutral-200: #E5E7EB;
+        --color-neutral-400: #9CA3AF;
+        --color-neutral-600: #4B5563;
+        --color-neutral-800: #1F2937;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 bg-white">
+<div class="flex items-center gap-3 text-gray-900">
+<svg class="h-8 w-8 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 8.5V17.5L12 22L22 17.5V8.5L12 2ZM5.208 10L12 14.292L18.792 10L12 5.708L5.208 10Z"></path>
+</svg>
+<h1 class="text-2xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+<a class="text-gray-600 hover:text-[var(--color-primary)] transition-colors" href="#">Find Work</a>
+<a class="text-gray-600 hover:text-[var(--color-primary)] transition-colors" href="#">Find Helpers</a>
+<a class="text-gray-600 hover:text-[var(--color-primary)] transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-[var(--color-secondary)] text-white text-sm font-bold leading-normal tracking-wide hover:bg-green-700 transition-colors">
+<span class="truncate">Post a Job</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-gray-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbXEeuoxB6jp-FfuhG_CIqUFVaJLL_jZVezeZkYywD_raS8L_9rHcusDedbosff--clShlo_tnu-KjEc9YCcJNxJtH9pROBVfDYNI2719679aXJoPWfxLHJn7mPVj138nxmkcahAjc8awfQkNV2dovDFBVNOotVMpkh-vDrwm9UdHJTpz5o6t89SyGmlXOoN9_c4Zi8DlAcfDQdK8TxXehjwZhL8O5V-DYC7uxg2yg2I634GppCrp9QhoJDVUI1hWlvo9JodUs8Y34");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-2xl space-y-8">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-lg font-semibold text-[var(--color-neutral-800)]">Profile Completion</h2>
+<span class="text-sm font-medium text-[var(--color-neutral-600)]">Step 1 of 4</span>
+</div>
+<div class="w-full bg-[var(--color-neutral-200)] rounded-full h-2.5">
+<div class="bg-[var(--color-primary)] h-2.5 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md border border-gray-200">
+<div class="mb-8">
+<h3 class="text-3xl font-bold text-gray-900">Tell us about your business</h3>
+<p class="mt-2 text-sm text-gray-500">This information will be displayed on your public profile.</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-[var(--color-neutral-600)]" for="business-name">Business Name</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] sm:text-sm h-12 px-4" id="business-name" name="business-name" placeholder="e.g., Bob's Building Co." type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--color-neutral-600)]" for="abn">ABN (Australian Business Number)</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] sm:text-sm h-12 px-4" id="abn" name="abn" placeholder="Enter your 11 digit ABN" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--color-neutral-600)]" for="address">Business Address</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] sm:text-sm h-12 px-4" id="address" name="address" placeholder="123 Main Street, Sydney NSW 2000" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-[var(--color-neutral-600)]" for="contact-number">Contact Number</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] sm:text-sm h-12 px-4" id="contact-number" name="contact-number" placeholder="0412 345 678" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-[var(--color-neutral-600)]" for="email">Email Address</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] sm:text-sm h-12 px-4" id="email" name="email" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+</div>
+<div class="pt-6 flex justify-end">
+<button class="flex w-full md:w-auto justify-center rounded-md border border-transparent bg-[var(--color-primary)] py-3 px-8 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)] transition-all" type="submit">
+                    Next: Services
+                  </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

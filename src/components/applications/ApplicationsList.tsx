@@ -1,7 +1,28 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { supabase } from '../../lib/supabase'
-// JobApplication type not used currently
 import { useAuth } from '../../context/AuthContext'
+
+interface JobApplication {
+  id: string
+  job_id: string
+  helper_id: string
+  status: string
+  created_at: string
+  jobs: {
+    id: string
+    title: string
+    pay_rate: number
+    duration_hours: number
+    date_time: string
+    location: string
+  }
+  helper: {
+    full_name: string
+    phone: string
+    skills: string[]
+    verified: boolean
+  }
+}
 
 interface ApplicationsListProps {
   jobId?: string
@@ -10,15 +31,11 @@ interface ApplicationsListProps {
 
 export const ApplicationsList: React.FC<ApplicationsListProps> = ({ jobId, viewType }) => {
   const { user } = useAuth()
-  const [applications, setApplications] = useState<any[]>([])
+  const [applications, setApplications] = useState<JobApplication[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    fetchApplications()
-  }, [jobId, viewType])
-
-  const fetchApplications = async () => {
+  const fetchApplications = useCallback(async () => {
     if (!user) return
 
     try {
@@ -67,11 +84,16 @@ export const ApplicationsList: React.FC<ApplicationsListProps> = ({ jobId, viewT
         setApplications(data || [])
       }
     } catch (err) {
+      console.error('Error loading applications:', err)
       setError('Failed to load applications')
     } finally {
       setLoading(false)
     }
-  }
+  }, [user, jobId, viewType])
+
+  useEffect(() => {
+    fetchApplications()
+  }, [fetchApplications])
 
   const handleAcceptApplication = async (applicationId: string) => {
     try {
@@ -141,6 +163,7 @@ export const ApplicationsList: React.FC<ApplicationsListProps> = ({ jobId, viewT
       await fetchApplications()
       alert('Application rejected')
     } catch (err) {
+      console.error('Error rejecting application:', err)
       alert('Failed to reject application')
     }
   }

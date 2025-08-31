@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Profile Completion</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary: #2563EB;
+        --secondary: #16A34A;
+        --accent: #EA580C;
+        --neutral-text: #374151;
+        --neutral-background: #F9FAFB;
+        --neutral-border: #E5E7EB;
+        --text-color: #111827;
+      }
+      body {
+        font-family: "Work Sans", "Noto Sans", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-neutral-background text-text-color">
+<div class="relative flex size-full min-h-screen flex-col group/design-root" style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(107, 114, 128)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-border px-10 py-4 bg-white shadow-sm">
+<div class="flex items-center gap-3 text-neutral-text">
+<div class="h-8 w-8 text-[var(--primary)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<nav class="flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary)] transition-colors" href="#">Find Work</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary)] transition-colors" href="#">My Jobs</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary)] transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaPjztgr0VzPakG7CgqZ-NnwHvyCygxoUgNTlVdzjCmFKJrzJLKgWeFfX8BEK1FmM4mT7WIkxhtVhRd5VU8Yfr0jKbka0slnqW-iRs6dbXT1MtEuLDf2kEAMSv-7Cs-8SAWVZqu55TL9TSK-O_S8QaObGPIDCJ7eamxBkWysbj2eu1EXgo1_-Xa_HQO63A3p2xUaluNNdJKvMkMQrqEcH_bfbqHjIHp9JhcWuhy9-8Guko4a2RMwQheqjbTipVQxAhm94BLp-OzNM9");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-2xl">
+<div class="bg-white rounded-lg shadow-lg p-8">
+<div class="mb-8">
+<div class="flex justify-between items-center mb-2">
+<p class="text-sm font-medium text-gray-700">Profile Completion</p>
+<p class="text-sm font-medium text-gray-500">Step 1 of 4</p>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary)] h-2.5 rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<div class="text-center mb-8">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Tell us about your skills</h2>
+<p class="mt-2 text-md text-gray-600">This helps us match you with the right tradies.</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 pb-2" for="primary-skill">What's your primary trade?</label>
+<select class="form-select w-full rounded-md border-neutral-border focus:ring-[var(--primary)] focus:border-[var(--primary)] h-12 px-4 text-base placeholder:text-gray-400" id="primary-skill">
+<option disabled="" selected="">Select a trade (e.g., Carpentry, Plumbing)</option>
+<option>Carpentry</option>
+<option>Plumbing</option>
+<option>Electrical</option>
+<option>Painting</option>
+<option>Landscaping</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 pb-2" for="experience-level">How much experience do you have?</label>
+<select class="form-select w-full rounded-md border-neutral-border focus:ring-[var(--primary)] focus:border-[var(--primary)] h-12 px-4 text-base placeholder:text-gray-400" id="experience-level">
+<option disabled="" selected="">Select your experience level</option>
+<option>Apprentice / Just starting</option>
+<option>1-3 years</option>
+<option>3-5 years</option>
+<option>5+ years</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 pb-2" for="experience-description">Describe your experience</label>
+<textarea class="form-textarea w-full rounded-md border-neutral-border focus:ring-[var(--primary)] focus:border-[var(--primary)] min-h-36 p-4 text-base placeholder:text-gray-400" id="experience-description" placeholder="E.g., 'Completed a Cert III in Carpentry, experience in residential framing and fit-outs.'"></textarea>
+</div>
+<div class="flex justify-end pt-4">
+<button class="flex min-w-[120px] items-center justify-center rounded-md h-12 px-6 bg-[var(--primary)] text-white text-base font-bold leading-normal tracking-wide shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)] transition-all" type="submit">
+<span>Next: Availability</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

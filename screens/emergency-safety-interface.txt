@@ -1,0 +1,149 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+      }
+      body {
+        font-family: "Work Sans", "Noto Sans", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 bg-white">
+<div class="flex items-center gap-4 text-gray-900">
+<div class="size-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h1 class="text-gray-900 text-xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors">
+<div class="text-gray-700" data-icon="Bell" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</div>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCac-ozqGjZ1ApSCg3txUYo7g-LWWnX4PZtiHlGdfFb0xkrlrW1UmsVfcguXQTbSeRxs-3msgUu7OZoDdFKuUKNDBXFm7UugjsJlEA-bHWSvQoY5RoxsIEC8yEZNgvjO3yVLxMUWA5F1ZlEe726UzggpVkkWlPKwN0BjapVGx66L8wIrSD37QJOe8pyp_eFoF4LLixGt7O3ljyoWOy8gq4XuCviy5b4KXXAUOLpIf_qqfHyF4haYl63lY32gi_7Jf-5N3pCJwq-EeQK");'></div>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="max-w-4xl mx-auto">
+<div class="mb-8 flex items-center justify-between">
+<h1 class="text-gray-900 text-4xl font-bold tracking-tight">Emergency Safety</h1>
+<span class="inline-flex items-center gap-2 rounded-full bg-red-100 px-4 py-2 text-sm font-medium text-red-700">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.031-1.742 3.031H4.42c-1.532 0-2.492-1.697-1.742-3.031l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" fill-rule="evenodd"></path>
+</svg>
+                Emergency Mode Active
+              </span>
+</div>
+<div class="space-y-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h2 class="text-gray-900 text-xl font-bold mb-4">Emergency Contacts</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 rounded-lg h-14 px-6 bg-[var(--accent-color)] text-white text-lg font-bold hover:bg-orange-700 transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Call Emergency Services (000)</span>
+</button>
+<button class="flex items-center justify-center gap-3 rounded-lg h-14 px-6 bg-[var(--primary-color)] text-white text-lg font-bold hover:bg-blue-700 transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 8l2-2m0 0l2 2m-2-2v5l-2 2m-2-2l-2-2m2 2l-2 2m6-2l-2 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Call Supervisor</span>
+</button>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h2 class="text-gray-900 text-xl font-bold mb-4">Safety Controls</h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-[var(--primary-color)] shrink-0 size-12">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path></svg>
+</div>
+<div>
+<p class="text-gray-800 text-base font-medium">Location Sharing</p>
+<p class="text-gray-500 text-sm">Share your location with your supervisor and emergency contacts.</p>
+</div>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-gray-200 p-0.5 has-[:checked]:bg-[var(--primary-color)] has-[:checked]:justify-end">
+<div class="h-full w-[27px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-[var(--primary-color)] shrink-0 size-12">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path></svg>
+</div>
+<div>
+<p class="text-gray-800 text-base font-medium">Automatic Check-In</p>
+<p class="text-gray-500 text-sm">Every 30 mins. If no response, contacts will be notified.</p>
+</div>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-gray-200 p-0.5 has-[:checked]:bg-[var(--primary-color)] has-[:checked]:justify-end">
+<div class="h-full w-[27px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h2 class="text-gray-900 text-xl font-bold mb-4">Emergency Information</h2>
+<p class="text-gray-600 text-sm mb-4">This information will be shared with emergency services:</p>
+<div class="divide-y divide-gray-200">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-4">
+<p class="text-gray-500 font-medium">Your Name</p>
+<p class="text-gray-800 md:col-span-2">Sarah Johnson</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-4">
+<p class="text-gray-500 font-medium">Your Location</p>
+<p class="text-gray-800 md:col-span-2">123 Main Street, Sydney, NSW (Live)</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-4">
+<p class="text-gray-500 font-medium">Nature of Emergency</p>
+<p class="text-gray-800 md:col-span-2">Injury on site</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-4">
+<p class="text-gray-500 font-medium">Supervisor Contact</p>
+<p class="text-gray-800 md:col-span-2">Michael Smith - 0412 345 678</p>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="flex items-center justify-center gap-2 rounded-lg h-11 px-5 bg-gray-100 text-gray-800 text-sm font-bold hover:bg-gray-200 transition-colors">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
+<path clip-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" fill-rule="evenodd"></path>
+</svg>
+<span>Update Information</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

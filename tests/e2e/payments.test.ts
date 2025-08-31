@@ -279,7 +279,8 @@ test.describe('Payment System Integration', () => {
       for (let i = 0; i < count; i++) {
         const payment = escrowPayments.nth(i)
         // Should not have release button unless job is completed
-        const releaseButton = payment.getByRole('button', { name: 'Release Payment' })
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const _releaseButton = payment.getByRole('button', { name: 'Release Payment' })
         // This depends on the job status - if job is not completed, no release button
       }
     })

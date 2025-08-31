@@ -1,0 +1,235 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>TradieHelper - Advanced Job Search</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-background: #F8FAFC;
+        --neutral-text: #475569;
+        --neutral-border: #E2E8F0;
+      }
+      body {
+        font-family: 'Work Sans', 'Noto Sans', sans-serif;
+      }
+      .btn-primary {
+        @apply bg-[var(--primary-color)] text-white;
+      }
+      .btn-secondary {
+        @apply bg-[var(--secondary-color)] text-white;
+      }
+      .btn-accent {
+        @apply bg-[var(--accent-color)] text-white;
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden" style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(96,112,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] bg-white px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4ZM20 32L32 20L20 32Z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M20 16L28 24L20 16Z" fill="currentColor" fill-opacity="0.5"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h1 class="text-2xl font-bold tracking-tighter text-slate-900">TradieHelper</h1>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)]" href="#">Find Jobs</a>
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)]" href="#">Find Helpers</a>
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)]" href="#">Post a Job</a>
+<a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)]" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)]">Log In</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 btn-primary text-sm font-bold leading-normal tracking-wide shadow-sm transition-all hover:shadow-md">
+<span>Sign Up</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1">
+<aside class="w-80 shrink-0 border-r border-[var(--neutral-border)] bg-white p-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-slate-800">Filters</h2>
+<button class="text-sm font-medium text-[var(--primary-color)] hover:underline">Clear all</button>
+</div>
+<div class="mt-6 space-y-6">
+<div>
+<label class="block text-sm font-medium text-slate-700" for="keyword">Keywords</label>
+<input class="form-input mt-1 block w-full rounded-md border-[var(--neutral-border)] shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm" id="keyword" placeholder="e.g., Electrician, Plumber" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700" for="location">Location</label>
+<input class="form-input mt-1 block w-full rounded-md border-[var(--neutral-border)] shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm" id="location" placeholder="e.g., Sydney, NSW" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700" for="trade-category">Trade Category</label>
+<select class="form-select mt-1 block w-full rounded-md border-[var(--neutral-border)] shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm" id="trade-category">
+<option>All Categories</option>
+<option>Electrical</option>
+<option>Plumbing</option>
+<option>Carpentry</option>
+<option>Painting</option>
+</select>
+</div>
+<div class="space-y-2">
+<h3 class="text-sm font-medium text-slate-700">Job Type</h3>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="full-time" name="job-type" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600" for="full-time">Full-time</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="part-time" name="job-type" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600" for="part-time">Part-time</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="contract" name="job-type" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600" for="contract">Contract/Temp</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700" for="hourly-rate">Hourly Rate (AUD)</label>
+<div class="mt-2 flex items-center space-x-2">
+<input class="form-input w-full rounded-md border-[var(--neutral-border)] text-sm" placeholder="$30" type="text"/>
+<span>-</span>
+<input class="form-input w-full rounded-md border-[var(--neutral-border)] text-sm" placeholder="$100+" type="text"/>
+</div>
+<input class="mt-2 h-2 w-full appearance-none rounded-lg bg-gray-200 accent-[var(--primary-color)]" max="150" min="30" type="range" value="50"/>
+</div>
+<button class="w-full rounded-md bg-[var(--primary-color)] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Apply Filters</button>
+</div>
+</aside>
+<section class="flex-1 p-8">
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-2xl font-bold text-slate-800">Search Results</h2>
+<p class="text-sm text-slate-500">Showing 1-10 of 42 results for 'Electrician' in Sydney, NSW</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center rounded-md border border-[var(--neutral-border)] bg-white">
+<button class="p-2 text-slate-500 hover:bg-gray-100 rounded-l-md">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" fill-rule="evenodd"></path>
+</svg>
+</button>
+<button class="border-l border-gray-200 p-2 text-slate-500 hover:bg-gray-100">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+<path clip-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.022 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" fill-rule="evenodd"></path>
+</svg>
+</button>
+<button class="border-l border-gray-200 p-2 text-slate-500 hover:bg-gray-100 rounded-r-md">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+</svg>
+</button>
+</div>
+<button class="flex items-center gap-2 rounded-md bg-[var(--secondary-color)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 2a6 6 0 00-6 6v3.586l-1.707 1.707A1 1 0 003 15h14a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+</svg>
+                  Create Job Alert
+                </button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="rounded-lg border-2 border-[var(--accent-color)] bg-white shadow-lg transition-shadow hover:shadow-xl">
+<div class="flex items-start gap-4 p-4">
+<img alt="Tradie profile picture" class="h-24 w-24 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADKkg_JeYcrmeHyp0HV0_tQGMrh0OM26TT6h4p-n32sHimdrr2JxweJVPDqj6SFT-k1ixaY_lEffgQgaiTelbsSRMa82-y0kHpL9Ae9sWNtHvyJVoQm2PnF_VMJOWrqHWEK4uDk-dadp04vyBZjBRyMQu1egqjNFAQPylL4vw84rcFt5O8RPMmMShXfsldARWPZGC5Abielc5CSlbMWXRD4ZjczculEAV14JL4YH_fqQiWZO79ZTZGWHM9zcASqgb0r7AtI9FOSUZy"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<p class="text-xs font-bold uppercase tracking-wider text-[var(--accent-color)]">Featured</p>
+<span class="text-xl font-bold text-slate-800">$55/hr</span>
+</div>
+<h3 class="text-lg font-bold text-slate-800">Alex Johnson - Master Electrician</h3>
+<p class="text-sm text-slate-500">Sydney, NSW | 10+ years experience</p>
+<div class="mt-2 flex items-center gap-1 text-sm text-yellow-500">
+<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<span>4.9 (152 reviews)</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 bg-gray-50 px-4 py-3">
+<button class="w-full rounded-md bg-[var(--primary-color)] py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">View Profile &amp; Contact</button>
+</div>
+</div>
+<div class="rounded-lg border border-[var(--neutral-border)] bg-white shadow-sm transition-shadow hover:shadow-md">
+<div class="flex items-start gap-4 p-4">
+<img alt="Tradie profile picture" class="h-24 w-24 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVIkVPQQFq7-lqSOv_3fAG5BUxKw2gTuun4bv12XsPsgyLuOUuI3s3v2Fe0lqktMnMnNBgjFBMD87xWsKXik81MsXkIFOg8TVmuYwXs1tVWi5QbDDq_RwHuKIBzkf00eHd8dkKJTCN1E_Zn92Mr11tIdaS86FgiaVvpl5Mv7ckTl7gPUXy_cIgbntsFjWvrdXFS90o1YqOEdB-w20GNaffCgSIjW9LPYy-SBnv0E5s0_ylovm1lQZl_316Jp_WjM_VLjaDGBTvu71Z"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-800">Chris Williams - Licensed Electrician</h3>
+<span class="text-xl font-bold text-slate-800">$45/hr</span>
+</div>
+<p class="text-sm text-slate-500">Parramatta, NSW | 5 years experience</p>
+<div class="mt-2 flex items-center gap-1 text-sm text-yellow-500">
+<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<span>4.7 (88 reviews)</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 bg-gray-50 px-4 py-3">
+<button class="w-full rounded-md bg-[var(--primary-color)] py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">View Profile &amp; Contact</button>
+</div>
+</div>
+<div class="rounded-lg border border-[var(--neutral-border)] bg-white shadow-sm transition-shadow hover:shadow-md">
+<div class="flex items-start gap-4 p-4">
+<img alt="Tradie profile picture" class="h-24 w-24 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2db5a4TSj5HZb1jFuGDGeT7c402nuW-tiwZwsWcZO_lXO_4xBQG1-mUDIxSkZf_8eqqjfiKrJ1SaJptZuwNK9dnPSZ3EmF3cFXXDF70KagleErGW4fD1pM4ekSTrQqUWIK4cZNK6kImMEsc3XwlgsQCTHuZMx2rcRGZPQOegRWJjNUcjkEhIupJKpC1UVZmvv1sYN8b1XrLoCf8qQ9bjnWJTHbH8x8Hzo9F0WrW-hZjmn58IKehg8_J-vANXfT3U3sQUHzo7XVyGk"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-800">Sarah Chen - Commercial Electrician</h3>
+<span class="text-xl font-bold text-slate-800">$50/hr</span>
+</div>
+<p class="text-sm text-slate-500">Bondi, NSW | 7 years experience</p>
+<div class="mt-2 flex items-center gap-1 text-sm text-yellow-500">
+<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<span>4.8 (112 reviews)</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 bg-gray-50 px-4 py-3">
+<button class="w-full rounded-md bg-[var(--primary-color)] py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">View Profile &amp; Contact</button>
+</div>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-center">
+<nav aria-label="Pagination" class="inline-flex -space-x-px rounded-md shadow-sm">
+<a class="relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50" href="#">
+<span class="sr-only">Previous</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a aria-current="page" class="relative z-10 inline-flex items-center border border-blue-500 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600" href="#">1</a>
+<a class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50" href="#">2</a>
+<a class="relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 md:inline-flex" href="#">3</a>
+<span class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700">...</span>
+<a class="relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 md:inline-flex" href="#">5</a>
+<a class="relative inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50" href="#">
+<span class="sr-only">Next</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</nav>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+</body></html>

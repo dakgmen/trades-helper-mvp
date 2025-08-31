@@ -18,7 +18,7 @@ describe('StripeService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     // Reset fetch mock
-    ;(global.fetch as any).mockClear()
+    vi.clearAllMocks()
   })
 
   afterEach(() => {
@@ -31,7 +31,7 @@ describe('StripeService', () => {
         ok: true,
         json: () => Promise.resolve({ url: 'https://connect.stripe.com/test' }),
       }
-      ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+      vi.mocked(global.fetch).mockResolvedValueOnce(mockResponse as Response)
 
       const result = await stripeService.createConnectAccount('user123')
 
@@ -49,7 +49,7 @@ describe('StripeService', () => {
         ok: false,
         json: () => Promise.resolve({ error: 'Invalid user' }),
       }
-      ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+      vi.mocked(global.fetch).mockResolvedValueOnce(mockResponse as Response)
 
       const result = await stripeService.createConnectAccount('invalid-user')
 
@@ -58,7 +58,7 @@ describe('StripeService', () => {
     })
 
     it('should handle network error', async () => {
-      ;(global.fetch as any).mockRejectedValueOnce(new Error('Network error'))
+      vi.mocked(global.fetch).mockRejectedValueOnce(new Error('Network error'))
 
       const result = await stripeService.createConnectAccount('user123')
 
@@ -85,7 +85,7 @@ describe('StripeService', () => {
         ok: true,
         json: () => Promise.resolve({ account: mockAccount }),
       }
-      ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+      vi.mocked(global.fetch).mockResolvedValueOnce(mockResponse as Response)
 
       const result = await stripeService.getConnectAccountStatus('user123')
 
@@ -100,7 +100,7 @@ describe('StripeService', () => {
         ok: true,
         json: () => Promise.resolve({ clientSecret: 'pi_test_123' }),
       }
-      ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+      vi.mocked(global.fetch).mockResolvedValueOnce(mockResponse as Response)
 
       const result = await stripeService.createEscrowPayment('job123', 10000)
 
@@ -115,7 +115,7 @@ describe('StripeService', () => {
         ok: true,
         json: () => Promise.resolve({ success: true }),
       }
-      ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+      vi.mocked(global.fetch).mockResolvedValueOnce(mockResponse as Response)
 
       const result = await stripeService.releaseEscrowPayment('payment123')
 
@@ -130,7 +130,7 @@ describe('StripeService', () => {
         ok: true,
         json: () => Promise.resolve({ success: true }),
       }
-      ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+      vi.mocked(global.fetch).mockResolvedValueOnce(mockResponse as Response)
 
       const result = await stripeService.refundEscrowPayment('payment123', 'Job cancelled')
 

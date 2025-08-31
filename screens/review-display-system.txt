@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper Reviews</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-background: #F8FAFC;
+        --neutral-text: #475569;
+        --neutral-border: #E2E8F0;
+      }
+    </style>
+</head>
+<body class="bg-[var(--neutral-background)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] bg-white px-10 py-3">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-2xl font-bold text-gray-900" href="#">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<span>TradieHelper</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Find Tradies</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Pricing</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors">
+<span class="truncate">Post a Job</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZ5ZUhufQ3dUQkFg2o0uXQmam6_Em8n1EKQ3lOtsqtlfB1ea-2_A0ljiyRrAJND7TSlamayKEXvpPUK1on9wJ4N20HJunsV9BXd1nus3zxbGHBloGjsIjwT19XmesnP4WCgTHqDAHt6CY-FmazJ8CoqHYbddjo8b1zAtCQY2R6crBfd-2BaEWK94arKMkA83p0hiDx7PA0nEolAARM2MDL_dew4qD-dcx1iMqHFxYYB7iBvJ-gbP3mTjKg1k4VbyV2hHelNcCB4PTM");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-12">
+<div class="mx-auto max-w-4xl">
+<div class="mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Reviews for Sarah's Plumbing</h1>
+<p class="mt-2 text-lg text-[var(--neutral-text)]">A summary of ratings and feedback from the community.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="md:col-span-1 bg-white rounded-lg shadow-sm p-6 flex flex-col items-center justify-center text-center">
+<p class="text-7xl font-bold text-gray-900">4.8</p>
+<div class="flex gap-1 text-[var(--accent-color)] my-2">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path class="text-gray-300" d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z" fill="currentColor"></path><path d="M128,140.52a15.9,15.9,0,0,0-8.27,2.54l-51,31h0a16,16,0,0,0,8.19,29.94L128,175.45l51.07,31.05h0a16,16,0,0,0,8.19-29.94l-51-31A15.9,15.9,0,0,0,128,140.52Z" fill="currentColor"></path></svg>
+</div>
+<p class="text-sm text-[var(--neutral-text)]">Based on 123 reviews</p>
+</div>
+<div class="md:col-span-2 bg-white rounded-lg shadow-sm p-6">
+<h3 class="text-lg font-medium text-gray-900 mb-4">Rating Distribution</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-4 text-sm">
+<span class="text-gray-600">5 star</span>
+<div class="flex-1 h-2.5 bg-gray-200 rounded-full"><div class="h-2.5 bg-[var(--secondary-color)] rounded-full" style="width: 75%;"></div></div>
+<span class="w-10 text-right text-[var(--neutral-text)]">75%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="text-gray-600">4 star</span>
+<div class="flex-1 h-2.5 bg-gray-200 rounded-full"><div class="h-2.5 bg-[var(--secondary-color)] rounded-full" style="width: 15%;"></div></div>
+<span class="w-10 text-right text-[var(--neutral-text)]">15%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="text-gray-600">3 star</span>
+<div class="flex-1 h-2.5 bg-gray-200 rounded-full"><div class="h-2.5 bg-[var(--secondary-color)] rounded-full" style="width: 5%;"></div></div>
+<span class="w-10 text-right text-[var(--neutral-text)]">5%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="text-gray-600">2 star</span>
+<div class="flex-1 h-2.5 bg-gray-200 rounded-full"><div class="h-2.5 bg-[var(--secondary-color)] rounded-full" style="width: 3%;"></div></div>
+<span class="w-10 text-right text-[var(--neutral-text)]">3%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="text-gray-600">1 star</span>
+<div class="flex-1 h-2.5 bg-gray-200 rounded-full"><div class="h-2.5 bg-[var(--secondary-color)] rounded-full" style="width: 2%;"></div></div>
+<span class="w-10 text-right text-[var(--neutral-text)]">2%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-gray-900">All Reviews</h2>
+<div class="flex items-center gap-4">
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg border border-[var(--neutral-border)] bg-white px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">
+<span>Sort by: Most Recent</span>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-lg border border-[var(--neutral-border)] bg-white px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">
+<span>Filter: All Ratings</span>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+</button>
+</div>
+</div>
+<div class="space-y-8">
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0UMcWQGOawXwbHfkzEV_86-3NgvT3OXXsPOpt0nUaiZ7KJi52X2vQU5XSDIU30uRJjxo7GPxvQQf557C425qLapWecr0ieG7Pll-BY6p0FasdwL3UQQuoRRCGkwW-zPcsj-_4_UZ2zLKyPt-g5Aswn-SRoLARKFUlXUnM8PfQTeqAOE4IpfmljO1Mw86UyfJiSkuXrrGwCauL050smHAfneYDiU3T3Lfdc77Pa9o2qPdYK8fze7WZjDp3Qaa7Y6kiAArAIzdP-ZUE");'></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold text-gray-800">Michael T.</p>
+<p class="text-sm text-[var(--neutral-text)]">1 week ago</p>
+</div>
+<div class="flex gap-0.5 text-[var(--accent-color)]">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+</div>
+</div>
+<p class="mt-4 text-gray-700">Sarah did an excellent job fixing our leaky tap. She was prompt, professional, and the price was very reasonable. Highly recommend!</p>
+<div class="mt-4 flex items-center gap-6 text-[var(--neutral-text)]">
+<button class="flex items-center gap-2 hover:text-[var(--primary-color)] transition-colors"><svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"></path></svg><span>5</span></button>
+<button class="flex items-center gap-2 hover:text-red-500 transition-colors"><svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"></path></svg><span>1</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCD1JFqEGLg2o_IdviIbDjF7r57HgfQhPYF0MylsKuvLJewSWVPlOsbIIBwtkTIIcAa5fYoFaRYoYIDjb5z9Ls5_HUy2SlbgPa34BaO-YMOObJUnwjl3xMokuWN-Np3zMoLrEGo431Y1eIYG056--uO83ekqz1AFoKzgY0Fz8IKzBZ37hG-MJmIU7K-3TtifY9gi5mn7cCMoxZhQmBp-tgosSCHx4r_GsNwFjfE-ZJYUobjs0Qa-hVWdI2AAnghRkMro4m6EQUaq3at");'></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold text-gray-800">Jessica L.</p>
+<p class="text-sm text-[var(--neutral-text)]">2 weeks ago</p>
+</div>
+<div class="flex gap-0.5 text-[var(--accent-color)]">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path></svg>
+<svg class="text-gray-300" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"></path></svg>
+</div>
+</div>
+<p class="mt-4 text-gray-700">Sarah was great to work with. She arrived on time and completed the job efficiently. The only reason for 4 stars is a minor issue with the cleanup afterwards.</p>
+<div class="mt-4 flex items-center gap-6 text-[var(--neutral-text)]">
+<button class="flex items-center gap-2 hover:text-[var(--primary-color)] transition-colors"><svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"></path></svg><span>2</span></button>
+<button class="flex items-center gap-2 hover:text-red-500 transition-colors"><svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"></path></svg></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="Pagination" class="mt-12 flex items-center justify-center gap-2">
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100" href="#">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
+</a>
+<a aria-current="page" class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--primary-color)] text-white text-sm font-medium" href="#">1</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 text-sm font-medium" href="#">2</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 text-sm font-medium" href="#">3</a>
+<span class="inline-flex h-10 w-10 items-center justify-center text-gray-500">...</span>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 text-sm font-medium" href="#">10</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100" href="#">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg>
+</a>
+</nav>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

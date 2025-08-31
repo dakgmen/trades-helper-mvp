@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>TradieHelper - Profile Completion</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-bg: #F8FAFC;
+        --neutral-text: #475569;
+        --neutral-border: #E2E8F0;
+      }
+    </style>
+</head>
+<body class="bg-[var(--neutral-bg)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] px-10 py-4 bg-white">
+<div class="flex items-center gap-3 text-slate-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L1 9l4 1.5V17h2v-7h2v7h2v-7h2v7h2v-5.5L23 9z"></path><path d="M12 4.44L19.36 9h-2.72l-5.64-3.38L8.36 9H5.64z"></path></svg>
+<h1 class="text-slate-800 text-xl font-bold">TradieHelper</h1>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<nav class="flex items-center gap-6">
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium transition-colors" href="#">Find Work</a>
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium transition-colors" href="#">Post a Job</a>
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium transition-colors" href="#">About Us</a>
+</nav>
+<div class="h-6 w-px bg-[var(--neutral-border)]"></div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-white text-slate-700 border border-[var(--neutral-border)] hover:bg-slate-50 text-sm font-bold transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-[var(--primary-color)] text-white hover:bg-blue-700 text-sm font-bold transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 lg:py-16">
+<div class="w-full max-w-4xl px-4">
+<div class="bg-white rounded-xl shadow-sm p-8">
+<div class="mb-8">
+<div class="flex justify-between items-center mb-2">
+<h2 class="text-slate-800 text-lg font-semibold">Profile Completion</h2>
+<p class="text-[var(--neutral-text)] text-sm font-medium">Step 1 of 4</p>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<div class="space-y-10">
+<section>
+<h3 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-4 border-[var(--neutral-border)]">Personal Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<label class="flex flex-col gap-2">
+<p class="text-slate-700 text-sm font-medium">Full Name</p>
+<input class="form-input w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" placeholder="e.g. John Smith" type="text"/>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-slate-700 text-sm font-medium">Email Address</p>
+<input class="form-input w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" placeholder="you@example.com" type="email"/>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-slate-700 text-sm font-medium">Phone Number</p>
+<input class="form-input w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" placeholder="e.g. 0412 345 678" type="tel"/>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-slate-700 text-sm font-medium">Location (State)</p>
+<select class="form-select w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition text-slate-700">
+<option disabled="" selected="">Select your state...</option>
+<option>New South Wales</option>
+<option>Victoria</option>
+<option>Queensland</option>
+<option>Western Australia</option>
+<option>South Australia</option>
+<option>Tasmania</option>
+<option>Australian Capital Territory</option>
+<option>Northern Territory</option>
+</select>
+</label>
+<label class="flex flex-col gap-2 md:col-span-2">
+<div class="flex items-center gap-2">
+<p class="text-slate-700 text-sm font-medium">ABN (Australian Business Number)</p>
+<span class="material-symbols-outlined text-slate-400 cursor-help text-base" title="An ABN is required for all business in Australia.">help</span>
+</div>
+<input class="form-input w-full md:w-1/2 rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" placeholder="e.g. 53 004 085 616" type="text"/>
+</label>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-4 border-[var(--neutral-border)]">Upload Documents</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-[var(--neutral-border)] p-6 text-center">
+<span class="material-symbols-outlined text-5xl text-[var(--accent-color)]">badge</span>
+<h4 class="text-slate-800 text-base font-semibold">Upload White Card</h4>
+<p class="text-[var(--neutral-text)] text-sm max-w-xs">A construction induction card is required for site work.</p>
+<button class="flex items-center gap-2 min-w-[120px] justify-center rounded-md h-10 px-4 bg-[var(--accent-color)]/10 text-[var(--accent-color)] hover:bg-[var(--accent-color)]/20 text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-base">upload_file</span>
+<span class="truncate">Browse Files</span>
+</button>
+</div>
+<div class="flex flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed border-[var(--neutral-border)] p-6 text-center">
+<span class="material-symbols-outlined text-5xl text-[var(--secondary-color)]">id_card</span>
+<h4 class="text-slate-800 text-base font-semibold">Upload Photo ID</h4>
+<p class="text-[var(--neutral-text)] text-sm max-w-xs">e.g., Driver's Licence or Passport for verification.</p>
+<button class="flex items-center gap-2 min-w-[120px] justify-center rounded-md h-10 px-4 bg-[var(--secondary-color)]/10 text-[var(--secondary-color)] hover:bg-[var(--secondary-color)]/20 text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-base">upload_file</span>
+<span class="truncate">Browse Files</span>
+</button>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-4 border-[var(--neutral-border)]">Skills &amp; Trade</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<label class="flex flex-col gap-2">
+<p class="text-slate-700 text-sm font-medium">Primary Trade</p>
+<select class="form-select w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition text-slate-700">
+<option disabled="" selected="">Select your trade...</option>
+<option>Plumbing</option>
+<option>Electrical</option>
+<option>Carpentry</option>
+<option>Painting</option>
+<option>Landscaping</option>
+<option>Bricklaying</option>
+<option>Tiling</option>
+</select>
+</label>
+<div class="flex flex-col gap-2">
+<p class="text-slate-700 text-sm font-medium">Additional Skills (Optional)</p>
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-slate-100 hover:bg-slate-200 px-3 text-slate-600 transition-colors">
+<p class="text-sm font-medium">Demolition</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-slate-100 hover:bg-slate-200 px-3 text-slate-600 transition-colors">
+<p class="text-sm font-medium">First Aid Certified</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-slate-100 hover:bg-slate-200 px-3 text-slate-600 transition-colors">
+<p class="text-sm font-medium">Forklift Licence</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-[var(--primary-color)]/10 text-[var(--primary-color)] px-3">
+<p class="text-sm font-medium">Welding</p>
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-end pt-6 border-t border-[var(--neutral-border)]">
+<button class="flex min-w-[120px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-md h-11 px-6 bg-[var(--primary-color)] text-white hover:bg-blue-700 text-base font-bold transition-colors">
+<span class="truncate">Next Step</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

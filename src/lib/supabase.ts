@@ -12,12 +12,6 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     autoRefreshToken: true,
     detectSessionInUrl: true,
-    // Add timeout configuration for better reliability
-    timeout: 30000, // 30 second timeout
-  },
-  db: {
-    // Add database timeout configuration  
-    timeout: 20000, // 20 second timeout for database operations
   },
   global: {
     headers: {

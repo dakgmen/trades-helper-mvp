@@ -107,7 +107,8 @@ export class GeolocationService {
       )
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to start watching location' }
     }
   }
@@ -141,7 +142,8 @@ export class GeolocationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to update user location' }
     }
   }
@@ -223,7 +225,8 @@ export class GeolocationService {
       matches.sort((a, b) => b.score - a.score)
       
       return { matches: matches.slice(0, limit), error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { matches: [], error: 'Failed to find nearby jobs' }
     }
   }
@@ -282,7 +285,8 @@ export class GeolocationService {
       matches.sort((a, b) => b.score - a.score)
       
       return { helpers: matches.slice(0, limit), error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { helpers: [], error: 'Failed to find nearby helpers' }
     }
   }
@@ -306,7 +310,8 @@ export class GeolocationService {
       }
 
       return { address: null, error: 'Address not found' }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { address: null, error: 'Failed to reverse geocode' }
     }
   }

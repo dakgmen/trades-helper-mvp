@@ -55,7 +55,7 @@ export const JobPostForm: React.FC<JobPostFormProps> = ({ onSuccess }) => {
       } else {
         onSuccess?.(data.id)
       }
-    } catch (err) {
+    } catch {
       setError('Failed to create job')
     }
     

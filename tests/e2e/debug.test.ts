@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test } from '@playwright/test'
 
 test('debug application loading', async ({ page }) => {
   test.setTimeout(30000)

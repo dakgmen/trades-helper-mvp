@@ -115,7 +115,7 @@ test.describe('Performance and Load Tests', () => {
       console.log(`Total API calls for job feed: ${apiCallCount}`)
     })
 
-    test('should handle concurrent users simulation', async ({ page, context }) => {
+    test('should handle concurrent users simulation', async ({ page }) => {
       // Simulate multiple concurrent operations
       const operations = []
       
@@ -147,7 +147,7 @@ test.describe('Performance and Load Tests', () => {
       
       // Measure memory usage
       const initialMemory = await page.evaluate(() => {
-        return (performance as any).memory?.usedJSHeapSize || 0
+        return (performance as unknown as { memory?: { usedJSHeapSize: number } }).memory?.usedJSHeapSize || 0
       })
       
       // Navigate through multiple pages
@@ -157,7 +157,7 @@ test.describe('Performance and Load Tests', () => {
       await page.goto('/')
       
       const finalMemory = await page.evaluate(() => {
-        return (performance as any).memory?.usedJSHeapSize || 0
+        return (performance as unknown as { memory?: { usedJSHeapSize: number } }).memory?.usedJSHeapSize || 0
       })
       
       const memoryIncrease = finalMemory - initialMemory

@@ -203,7 +203,8 @@ test.describe('Job Applications Workflow', () => {
       await page.goto('/applications')
       
       // After accepting one application, others for same job should be rejected
-      const rejectedApplications = page.locator('.application-card:has-text("Rejected")')
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _rejectedApplications = page.locator('.application-card:has-text("Rejected")')
       // This verifies the business logic that auto-rejects competing applications
     })
 

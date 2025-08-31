@@ -1,0 +1,140 @@
+<html><head>
+<meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+    </style>
+<title>TradieHelper - Booking Confirmation</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="flex min-h-screen flex-col">
+<header class="bg-white shadow-sm">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-gray-900">TradieHelper</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)]" href="#">Find Tradies</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)]" href="#">Post a Job</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)]" href="#">How it Works</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--primary-color)]" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="rounded-md px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Log In</button>
+<button class="rounded-md bg-[var(--primary-color)] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">Sign Up</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+<div class="space-y-10">
+<div class="text-center">
+<span class="material-icons text-6xl text-[var(--secondary-color)]">check_circle</span>
+<h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Booking Confirmed!</h2>
+<p class="mt-4 text-lg text-gray-600">Your booking with Alex Johnson is confirmed. You'll receive a reminder 24 hours before the scheduled time.</p>
+</div>
+<div class="overflow-hidden rounded-lg bg-white shadow">
+<div class="px-4 py-5 sm:p-6">
+<h3 class="text-lg font-semibold leading-6 text-gray-900">Booking Details</h3>
+<div class="mt-5 border-t border-gray-200">
+<dl class="divide-y divide-gray-200">
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Tradie</dt><dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">Alex Johnson</dd></div>
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Service</dt><dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">Plumbing Repair</dd></div>
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Date &amp; Time</dt><dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">15 July 2024, 2:00 PM - 4:00 PM (AEST)</dd></div>
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Location</dt><dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">123 Main Street, Sydney, NSW</dd></div>
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Estimated Cost</dt><dd class="mt-1 text-sm font-semibold text-gray-900 sm:col-span-2 sm:mt-0">$150 - $200 AUD</dd></div>
+</dl>
+</div>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg bg-white shadow">
+<div class="p-6">
+<h3 class="text-lg font-semibold leading-6 text-gray-900">Tradie Profile</h3>
+<div class="mt-5 flex items-center gap-6">
+<div class="h-24 w-24 flex-shrink-0">
+<img alt="Alex Johnson" class="h-full w-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVduKIzntnt8iVyoaNjzj2_edPXCdF1VRoIKIfDTjkpkey8penNEjR2disoAvPSKJ5BBQ6guRV1d7nmaCM36mgT_DOf14D5-bUrIqIdnAXVfrTUPnJF89F0XU-_7H_dr_R_xczC4EkB6fp17vA7iW5guWLNFMA8zjv4RTueN6sborIFyPLF2Hnc7S4iwoKhH6YPnhAQWc5f6S5VnSAWb44Q4rMjBxcEgid0vz4XuXcPpcwcaPNrxOkFWI4x30ubccfzl3pkrhuOvGd"/>
+</div>
+<div>
+<h4 class="text-xl font-bold text-gray-900">Alex Johnson</h4>
+<p class="mt-1 text-sm text-gray-600">Plumber | 5 years experience</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="material-icons text-lg text-yellow-400">star</span>
+<span class="text-sm font-semibold text-gray-700">4.8</span>
+<span class="text-sm text-gray-500">(120 reviews)</span>
+</div>
+<button class="mt-4 rounded-md bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">View Profile</button>
+</div>
+</div>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg bg-white shadow">
+<div class="px-4 py-5 sm:p-6">
+<h3 class="text-lg font-semibold leading-6 text-gray-900">Location</h3>
+<div class="mt-5 h-64 w-full rounded-lg">
+<img alt="Location map" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC286XffdNsqp_w3mgod6Z_C7VwRLXHKvHsy8IQX31mQQTuNAuLkV84NHbhRosv330Jrkl26b5TYSwTrfNuWbITEkPDtuXi7hSob97DhptuSrnqu5Z0UDK6VJgisAKY2cTAYn1HtoWmOflgKpV9Rhi_4RogUPXj6D38Ob2dLIjI9AH-V9Mw2EkSwJVXK8WuKC04CT6P1AA0SgKTJ8rHTOl6Yo9jij0tvegnETw75u2b5AEQ3R94xF21z4tDUgBQFFI4Z7pmhk6ppBmi"/>
+</div>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg bg-white shadow">
+<div class="px-4 py-5 sm:p-6">
+<h3 class="text-lg font-semibold leading-6 text-gray-900">Contact Information</h3>
+<div class="mt-5 border-t border-gray-200">
+<dl class="divide-y divide-gray-200">
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Tradie's Phone</dt><dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">0412 345 678</dd></div>
+<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5"><dt class="text-sm font-medium text-gray-500">Tradie's Email</dt><dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">alex.johson@email.com</dd></div>
+</dl>
+</div>
+</div>
+</div>
+<div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+<button class="flex w-full items-center justify-center gap-2 rounded-md bg-[var(--accent-color)] px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 sm:w-auto">
+<span class="material-icons">event</span>
+                Add to Calendar
+              </button>
+<button class="w-full rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:w-auto">
+                Manage My Bookings
+              </button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-gray-100">
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 md:order-2">
+<a class="text-sm text-gray-500 hover:text-gray-900" href="#">About</a>
+<a class="text-sm text-gray-500 hover:text-gray-900" href="#">Contact</a>
+<a class="text-sm text-gray-500 hover:text-gray-900" href="#">Terms of Service</a>
+<a class="text-sm text-gray-500 hover:text-gray-900" href="#">Privacy Policy</a>
+</div>
+<p class="text-center text-sm text-gray-500 md:order-1">© 2024 TradieHelper. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

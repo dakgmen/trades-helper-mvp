@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Application History</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #16a34a;
+        --accent-color: #ea580c;
+        --neutral-background: #f8fafc;
+        --neutral-text: #475569;
+        --neutral-border: #e2e8f0;
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 19px;
+        width: 2px;
+        background-color: var(--neutral-border);
+        z-index: 0;
+      }
+    </style>
+</head>
+<body class="bg-[var(--neutral-background)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] bg-white px-10 py-4 shadow-sm">
+<div class="flex items-center gap-3 text-slate-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.9999 12.5L11 16.5L7 12.5L2.5 17H21.5L14.9999 12.5ZM12 2C10.1667 2 8.5 2.5 7 3.5C5.5 4.5 4.5 6.16667 3.5 8C2.5 9.83333 2 11.8333 2 14C2 15.0833 2.16667 16.0833 2.5 17H21.5C21.8333 16.0833 22 15.0833 22 14C22 11.8333 21.5 9.83333 20.5 8C19.5 6.16667 18.5 4.5 17 3.5C15.5 2.5 13.8333 2 12 2Z"></path>
+</svg>
+<h2 class="text-xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<div class="flex items-center gap-6">
+<nav class="flex items-center gap-6 text-sm font-medium text-slate-600">
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="text-[var(--primary-color)] font-semibold border-b-2 border-[var(--primary-color)] pb-1" href="#">My Jobs</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">My Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[100px] items-center justify-center rounded-md h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-semibold hover:bg-blue-700 transition-colors">
+<span class="truncate">Post a Job</span>
+</button>
+<button class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgW9Aubcv1KYYJlV00vAZAZckwgM4u4rGBN6DDTszL6rahu2NtxIJB3tAWesxTzOVXzT_rywvpyD0CetbN941AFAIRCTAXvX9a49T9B6WV8tql9zZg_SArVCy20ecVAFbq6zeD5BqwPw7hulw0ENHAUEjGz5Swn3a7bXqkm_qC44kxH4uGHcvF3UyOd9mihF7uU8eHNwPOkAtddGNRowEXl81QLtZ46IffpF0BKdBQHtDdMP8omHOL31dN9FlSKhW1SPVq1GjEzLiF");'></div>
+<div class="absolute bottom-0 right-0 size-3 rounded-full bg-[var(--secondary-color)] border-2 border-white"></div>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 px-8 lg:px-16 py-8">
+<div class="max-w-5xl mx-auto">
+<header class="mb-8">
+<h1 class="text-4xl font-bold text-slate-800 tracking-tight">Application History</h1>
+<p class="text-[var(--neutral-text)] mt-2">Review your past applications, track their outcomes, and gain insights to improve your job search.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2">
+<div class="space-y-8">
+<section>
+<h2 class="text-xl font-bold text-slate-700 mb-4 pb-2 border-b border-[var(--neutral-border)]">Recent Applications</h2>
+<div class="relative timeline space-y-6">
+<div class="relative flex items-start p-4 bg-white rounded-lg shadow-sm border border-[var(--neutral-border)] hover:border-[var(--primary-color)] transition-all">
+<div class="z-10 absolute top-5 left-[-9px] h-4 w-4 rounded-full bg-[var(--secondary-color)] border-2 border-white"></div>
+<div class="flex-1 pl-8">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold text-slate-800">Plumbing Assistant - Sydney</h3>
+<span class="text-xs font-medium text-white bg-[var(--secondary-color)] px-2.5 py-1 rounded-full">Accepted</span>
+</div>
+<p class="text-sm text-[var(--neutral-text)] mt-1">Applied on 15 May 2024</p>
+<p class="text-sm text-slate-600 mt-2">Pay: $35/hr</p>
+<div class="mt-4">
+<a class="text-sm font-semibold text-[var(--primary-color)] hover:underline" href="#">View Job Details</a>
+</div>
+</div>
+</div>
+<div class="relative flex items-start p-4 bg-white rounded-lg shadow-sm border border-[var(--neutral-border)] hover:border-[var(--primary-color)] transition-all">
+<div class="z-10 absolute top-5 left-[-9px] h-4 w-4 rounded-full bg-[var(--accent-color)] border-2 border-white"></div>
+<div class="flex-1 pl-8">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold text-slate-800">Electrician Helper - Melbourne</h3>
+<span class="text-xs font-medium text-white bg-[var(--accent-color)] px-2.5 py-1 rounded-full">Rejected</span>
+</div>
+<p class="text-sm text-[var(--neutral-text)] mt-1">Applied on 22 May 2024</p>
+<p class="text-sm text-slate-600 mt-2">Pay: $32/hr</p>
+<div class="mt-4">
+<a class="text-sm font-semibold text-[var(--primary-color)] hover:underline" href="#">Reapply</a>
+</div>
+</div>
+</div>
+<div class="relative flex items-start p-4 bg-white rounded-lg shadow-sm border border-[var(--neutral-border)] hover:border-[var(--primary-color)] transition-all">
+<div class="z-10 absolute top-5 left-[-9px] h-4 w-4 rounded-full bg-slate-400 border-2 border-white"></div>
+<div class="flex-1 pl-8">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold text-slate-800">Carpentry Assistant - Brisbane</h3>
+<span class="text-xs font-medium text-white bg-slate-400 px-2.5 py-1 rounded-full">In Review</span>
+</div>
+<p class="text-sm text-[var(--neutral-text)] mt-1">Applied on 28 May 2024</p>
+<p class="text-sm text-slate-600 mt-2">Pay: $30/hr</p>
+<div class="mt-4">
+<a class="text-sm font-semibold text-[var(--primary-color)] hover:underline" href="#">View Application</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-bold text-slate-700 mb-4 pb-2 border-b border-[var(--neutral-border)]">Past Applications (2024)</h2>
+<div class="relative timeline space-y-6">
+<div class="relative flex items-start p-4 bg-white rounded-lg shadow-sm border border-[var(--neutral-border)] hover:border-[var(--primary-color)] transition-all">
+<div class="z-10 absolute top-5 left-[-9px] h-4 w-4 rounded-full bg-[var(--secondary-color)] border-2 border-white"></div>
+<div class="flex-1 pl-8">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold text-slate-800">General Labourer - Perth</h3>
+<span class="text-xs font-medium text-white bg-[var(--secondary-color)] px-2.5 py-1 rounded-full">Accepted</span>
+</div>
+<p class="text-sm text-[var(--neutral-text)] mt-1">Applied on 10 April 2024</p>
+<p class="text-sm text-slate-600 mt-2">Pay: $28/hr</p>
+</div>
+</div>
+<div class="relative flex items-start p-4 bg-white rounded-lg shadow-sm border border-[var(--neutral-border)] hover:border-[var(--primary-color)] transition-all">
+<div class="z-10 absolute top-5 left-[-9px] h-4 w-4 rounded-full bg-[var(--accent-color)] border-2 border-white"></div>
+<div class="flex-1 pl-8">
+<div class="flex justify-between items-center">
+<h3 class="font-semibold text-slate-800">Painting Assistant - Adelaide</h3>
+<span class="text-xs font-medium text-white bg-[var(--accent-color)] px-2.5 py-1 rounded-full">Expired</span>
+</div>
+<p class="text-sm text-[var(--neutral-text)] mt-1">Applied on 05 March 2024</p>
+<p class="text-sm text-slate-600 mt-2">Pay: $29/hr</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<aside class="space-y-6">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-[var(--neutral-border)]">
+<h3 class="text-lg font-bold text-slate-800">Performance Metrics</h3>
+<div class="mt-4 space-y-4">
+<div class="flex justify-between items-center">
+<p class="text-slate-600">Success Rate</p>
+<p class="text-2xl font-bold text-[var(--primary-color)]">40%</p>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 40%"></div>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-slate-600">Total Applications</p>
+<p class="text-2xl font-bold text-slate-800">5</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-slate-600">Accepted</p>
+<p class="text-lg font-semibold text-[var(--secondary-color)]">2</p>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-slate-600">Rejected / Expired</p>
+<p class="text-lg font-semibold text-[var(--accent-color)]">3</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-[var(--neutral-border)]">
+<h3 class="text-lg font-bold text-slate-800">Learning &amp; Insights</h3>
+<div class="mt-4 space-y-3">
+<p class="text-sm text-[var(--neutral-text)]">
+                     Your success rate is based on accepted applications. To improve, try tailoring your profile and application to the specific job requirements.
+                    </p>
+<a class="text-sm font-semibold text-[var(--primary-color)] hover:underline flex items-center gap-1" href="#">
+<span>Improve your profile</span>
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Secure Payment</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563EB;
+        --color-secondary: #16A34A;
+        --color-accent: #EA580C;
+        --color-neutral-100: #F3F4F6;
+        --color-neutral-200: #E5E7EB;
+        --color-neutral-500: #6B7280;
+        --color-neutral-800: #1F2937;
+        --color-neutral-900: #111827;
+      }
+      .form-input:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 2px var(--color-primary);
+      }
+    </style>
+</head>
+<body class="bg-gray-50 font-['Work_Sans','Noto_Sans',sans-serif] text-gray-800">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<header class="bg-white shadow-sm">
+<nav class="container mx-auto flex items-center justify-between whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<svg class="h-8 w-8 text-[var(--color-primary)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h1 class="text-2xl font-bold text-[var(--color-neutral-900)]">TradieHelper</h1>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+<a class="hover:text-[var(--color-primary)]" href="#">Find Work</a>
+<a class="hover:text-[var(--color-primary)]" href="#">Find Tradies</a>
+<a class="hover:text-[var(--color-primary)]" href="#">Pricing</a>
+<a class="hover:text-[var(--color-primary)]" href="#">Help</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden md:flex min-w-[90px] items-center justify-center rounded-lg h-10 px-4 text-sm font-bold border border-gray-300 bg-white text-gray-700 hover:bg-gray-100">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[90px] items-center justify-center rounded-lg h-10 px-4 bg-[var(--color-primary)] text-white text-sm font-bold hover:bg-blue-700">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex flex-1 items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-lg space-y-8">
+<div class="bg-white p-8 shadow-lg rounded-xl">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold text-[var(--color-neutral-900)]">Secure Payment</h2>
+<p class="mt-2 text-sm text-[var(--color-neutral-500)]">
+                We use escrow to protect your payment until the job is marked as complete. This ensures peace of mind for everyone.
+              </p>
+</div>
+<div class="mt-8">
+<h3 class="text-lg font-bold text-[var(--color-neutral-900)]">Order Summary</h3>
+<div class="mt-4 space-y-4 rounded-lg border border-[var(--color-neutral-200)] bg-gray-50 p-4">
+<div class="flex justify-between text-sm">
+<p class="text-[var(--color-neutral-500)]">Job Total</p>
+<p class="font-medium text-[var(--color-neutral-800)]">$250.00 AUD</p>
+</div>
+<div class="flex justify-between text-sm">
+<p class="text-[var(--color-neutral-500)]">TradieHelper Fee (5%)</p>
+<p class="font-medium text-[var(--color-neutral-800)]">$12.50 AUD</p>
+</div>
+<div class="flex justify-between border-t border-[var(--color-neutral-200)] pt-4 text-base font-bold">
+<p class="text-[var(--color-neutral-800)]">Total Amount Due</p>
+<p class="text-[var(--color-primary)]">$262.50 AUD</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-lg font-bold text-[var(--color-neutral-900)]">Payment Method</h3>
+<div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
+<label class="flex cursor-pointer items-center justify-center rounded-lg border border-[var(--color-neutral-200)] p-4 text-sm font-medium text-[var(--color-neutral-800)] ring-2 ring-transparent has-[:checked]:ring-[var(--color-primary)] has-[:checked]:border-[var(--color-primary)]">
+                  Credit Card
+                  <input checked="" class="sr-only" name="payment-method" type="radio" value="card"/>
+</label>
+<label class="flex cursor-pointer items-center justify-center rounded-lg border border-[var(--color-neutral-200)] p-4 text-sm font-medium text-[var(--color-neutral-800)] ring-2 ring-transparent has-[:checked]:ring-[var(--color-primary)] has-[:checked]:border-[var(--color-primary)]">
+                  PayPal
+                  <input class="sr-only" name="payment-method" type="radio" value="paypal"/>
+</label>
+<label class="flex cursor-pointer items-center justify-center rounded-lg border border-[var(--color-neutral-200)] p-4 text-sm font-medium text-[var(--color-neutral-800)] ring-2 ring-transparent has-[:checked]:ring-[var(--color-primary)] has-[:checked]:border-[var(--color-primary)]">
+                  Bank Transfer
+                  <input class="sr-only" name="payment-method" type="radio" value="bank"/>
+</label>
+</div>
+</div>
+<form class="mt-8 space-y-6">
+<div class="space-y-4 rounded-md">
+<div>
+<label class="sr-only" for="card-number">Card Number</label>
+<input class="form-input relative block w-full appearance-none rounded-md border border-[var(--color-neutral-200)] bg-[var(--color-neutral-100)] px-3 py-3 text-sm placeholder-[var(--color-neutral-500)] focus:z-10 focus:outline-none" id="card-number" name="card-number" placeholder="Card Number" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="sr-only" for="expiry-date">Expiry Date (MM/YY)</label>
+<input class="form-input relative block w-full appearance-none rounded-md border border-[var(--color-neutral-200)] bg-[var(--color-neutral-100)] px-3 py-3 text-sm placeholder-[var(--color-neutral-500)] focus:z-10 focus:outline-none" id="expiry-date" name="expiry-date" placeholder="Expiry Date (MM/YY)" required="" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="cvv">CVV</label>
+<input class="form-input relative block w-full appearance-none rounded-md border border-[var(--color-neutral-200)] bg-[var(--color-neutral-100)] px-3 py-3 text-sm placeholder-[var(--color-neutral-500)] focus:z-10 focus:outline-none" id="cvv" name="cvv" placeholder="CVV" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="sr-only" for="name-on-card">Name on Card</label>
+<input class="form-input relative block w-full appearance-none rounded-md border border-[var(--color-neutral-200)] bg-[var(--color-neutral-100)] px-3 py-3 text-sm placeholder-[var(--color-neutral-500)] focus:z-10 focus:outline-none" id="name-on-card" name="name-on-card" placeholder="Name on Card" required="" type="text"/>
+</div>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-[var(--color-neutral-200)] text-[var(--color-primary)] focus:ring-[var(--color-primary)]" id="save-card" name="save-card" type="checkbox"/>
+<label class="ml-2 block text-sm text-[var(--color-neutral-800)]" for="save-card">Save this card for future payments</label>
+</div>
+<div>
+<button class="group relative flex w-full justify-center rounded-lg border border-transparent bg-[var(--color-primary)] py-3 px-4 text-base font-bold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)]" type="submit">
+                  Pay $262.50 AUD
+                </button>
+</div>
+</form>
+<div class="mt-6 flex items-center justify-center gap-4">
+<div class="flex items-center gap-2">
+<svg class="h-5 w-5 text-[var(--color-secondary)]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span class="text-xs text-gray-500">SSL Secure</span>
+</div>
+<div class="flex items-center gap-2">
+<svg class="h-5 w-5 text-[var(--color-secondary)]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2V7a5 5 0 00-5-5zm0 2a3 3 0 013 3v2H7V7a3 3 0 013-3z"></path>
+</svg>
+<span class="text-xs text-gray-500">PCI Compliant</span>
+</div>
+<img alt="Stripe logo" class="h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmD5RM1RYmPrCBECmnxhlxjkNcsk_dMg534pjw6pOSiMPtgzKe3A2XgQCci5E_RdzjmZoQkq4YRBjxGdwCNYxCK8rH6flCUcpcW1Ep-B4qTbpclzKmZDeWhZJ06ZkgbQ83wO5BPrGvW3R6EtCEMBKr2wwzLtbC27Mw_EG5AfIWyuCGvxVHNHp43ubXxSk1eZMVTTZZLpMz_aFvOPbFyHVlYQaK4aRcWsvswFBdOJaWRVa_iNW1LehGekCp98wCWzSI1h2JuUKRJqn3"/>
+</div>
+<p class="mt-4 text-center text-xs text-[var(--color-neutral-500)]">
+              Your payment is processed securely. By clicking "Pay", you agree to our <a class="font-medium text-[var(--color-primary)] hover:underline" href="#">Terms of Service</a>. We do not store your full card details on our servers.
+            </p>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

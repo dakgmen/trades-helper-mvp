@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<title>TradieHelper - Availability</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-bg: #F3F4F6;
+        --neutral-text: #4B5563;
+        --text-primary: #1F2937;
+      }
+      body {
+        font-family: 'Roboto', 'Work Sans', 'Noto Sans', sans-serif;
+      }
+      .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.5rem center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+        padding-right: 2.5rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="flex min-h-screen flex-col" style="font-family: 'Roboto', 'Work Sans', sans-serif;">
+<header class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-gray-200 bg-white px-6 py-4 shadow-sm">
+<div class="flex items-center gap-4">
+<svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0L0 14V38L24 52L48 38V14L24 0ZM24 4.16L4 16.32V35.68L24 47.84L44 35.68V16.32L24 4.16ZM22 22H36V26H22V22ZM12 30H26V34H12V30Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-2xl font-bold text-gray-900">TradieHelper</h1>
+</div>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-base font-medium text-gray-600 hover:text-blue-600" href="#">Dashboard</a>
+<a class="text-base font-medium text-gray-600 hover:text-blue-600" href="#">Jobs</a>
+<a class="text-base font-bold text-blue-600" href="#">Availability</a>
+<a class="text-base font-medium text-gray-600 hover:text-blue-600" href="#">Payments</a>
+<a class="text-base font-medium text-gray-600 hover:text-blue-600" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANrRJnv5RfkcwPABjFuewMdiQ8xYg16WXoK8DSvc5dsc9ZZbBOSpCYP9464wXxKSIOgj48CSC7fA1w-vBwxJtOKbmiA1lrbx1qUiqObc4x1ZGzZ9j9YPTgbHCFlrveyIDyYBC5Zibm2nGv3KWY_y6qS1dlvCU6EbjPvxXX2hlOax7lliWvGbAdm5_NqRBKWZtqGzEr9gKv9T9bQHs-9NMswY0GvqJG05XIVaiT_H7HGozc94xT5lHTQ62NLi_eWGsnI4kXXKbZhW23");'></div>
+</div>
+</header>
+<main class="container mx-auto flex-1 p-6 lg:p-8">
+<div class="mb-8">
+<h2 class="text-4xl font-bold text-gray-900">Availability</h2>
+<p class="text-lg text-gray-500">Set your available times for jobs and manage your schedule.</p>
+</div>
+<div class="rounded-xl border border-gray-200 bg-white p-6 shadow-lg">
+<div class="mb-6 border-b border-gray-200">
+<div class="flex space-x-8">
+<button class="border-b-2 border-blue-600 px-1 pb-3 text-base font-semibold text-blue-600">Weekly</button>
+<button class="border-b-2 border-transparent px-1 pb-3 text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Monthly</button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="md:col-span-1">
+<div class="flex items-center justify-between">
+<button class="rounded-full p-2 hover:bg-gray-100">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
+</button>
+<p class="text-lg font-semibold text-gray-900">July 2024</p>
+<button class="rounded-full p-2 hover:bg-gray-100">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg>
+</button>
+</div>
+<div class="mt-4 grid grid-cols-7 gap-1 text-center">
+<div class="py-2 text-sm font-medium text-gray-500">S</div>
+<div class="py-2 text-sm font-medium text-gray-500">M</div>
+<div class="py-2 text-sm font-medium text-gray-500">T</div>
+<div class="py-2 text-sm font-medium text-gray-500">W</div>
+<div class="py-2 text-sm font-medium text-gray-500">T</div>
+<div class="py-2 text-sm font-medium text-gray-500">F</div>
+<div class="py-2 text-sm font-medium text-gray-500">S</div>
+<div class="col-start-4 flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">1</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">2</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">3</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">4</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">5</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">6</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">7</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">8</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">9</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">10</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">11</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">12</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">13</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">14</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">15</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">16</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">17</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">18</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">19</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">20</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">21</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">22</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">23</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">24</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">25</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">26</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">27</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">28</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">29</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-sm font-medium text-blue-700">30</button></div>
+<div class="flex items-center justify-center"><button class="flex h-9 w-9 items-center justify-center rounded-full text-sm hover:bg-gray-100">31</button></div>
+</div>
+</div>
+<div class="md:col-span-2">
+<h3 class="text-xl font-bold text-gray-900">Friday, 5 July</h3>
+<p class="mb-6 text-gray-500">Drag to adjust times or add new slots.</p>
+<div class="space-y-4">
+<div class="group relative flex cursor-pointer items-center justify-between rounded-lg bg-green-50 p-4 transition-shadow duration-200 hover:shadow-md">
+<div class="absolute left-0 top-0 h-full w-1.5 rounded-l-lg bg-green-500"></div>
+<div>
+<p class="font-semibold text-green-800">Available</p>
+<p class="text-lg font-bold text-green-900">9:00 AM - 5:00 PM</p>
+<p class="text-sm text-green-700">All locations</p>
+</div>
+<div class="flex items-center space-x-2 opacity-0 transition-opacity group-hover:opacity-100">
+<button class="rounded-full p-2 text-gray-500 hover:bg-gray-200"><svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M227.31,73.37,182.63,28.69a16,16,0,0,0-22.62,0L36.69,152A15.86,15.86,0,0,0,32,164v40a16,16,0,0,0,16,16H88a15.86,15.86,0,0,0,12-4.69L227.31,96a16,16,0,0,0,0-22.62ZM88,200H48V164l24-24,40,40Zm28-28L76,132l88-88,40,40Z"></path></svg></button>
+<button class="rounded-full p-2 text-gray-500 hover:bg-gray-200"><svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM192,208H64V64H192Z"></path></svg></button>
+</div>
+</div>
+<div class="group relative flex cursor-pointer items-center justify-between rounded-lg bg-orange-50 p-4 transition-shadow duration-200 hover:shadow-md">
+<div class="absolute left-0 top-0 h-full w-1.5 rounded-l-lg bg-orange-500"></div>
+<div>
+<p class="font-semibold text-orange-800">Booked</p>
+<p class="text-lg font-bold text-orange-900">1:00 PM - 3:00 PM</p>
+<p class="text-sm text-orange-700">Job #1234 - Plumbing at Richmond</p>
+</div>
+</div>
+<button class="w-full rounded-lg border-2 border-dashed border-gray-300 py-4 text-center text-gray-500 hover:border-blue-500 hover:text-blue-600">
+<span class="font-semibold">+ Add a new time slot</span>
+</button>
+</div>
+<div class="mt-8">
+<h4 class="text-lg font-bold text-gray-800">Availability Settings</h4>
+<div class="mt-4 space-y-4">
+<div>
+<label class="mb-2 block text-sm font-medium text-gray-700" for="recurrence">Recurring Pattern</label>
+<select class="form-select w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" id="recurrence" name="recurrence">
+<option>Does not repeat</option>
+<option>Repeats every Friday</option>
+<option>Repeats daily</option>
+<option>Custom...</option>
+</select>
+</div>
+<div>
+<label class="mb-2 block text-sm font-medium text-gray-700" for="locationRadius">Location Radius</label>
+<input class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200" id="locationRadius" max="100" min="0" name="locationRadius" type="range" value="50"/>
+<div class="mt-1 text-right text-sm text-gray-500">50 km</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end border-t border-gray-200 pt-6">
+<button class="rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Save Changes
+              </button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

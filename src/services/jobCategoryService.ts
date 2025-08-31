@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase'
-import type { JobCategory } from '../types'
+import type { JobCategory, Job } from '../types'
 
 export class JobCategoryService {
   // Get all active job categories
@@ -46,7 +46,7 @@ export class JobCategoryService {
   }
 
   // Get jobs by category
-  static async getJobsByCategory(categoryId: string, limit = 20): Promise<any[]> {
+  static async getJobsByCategory(categoryId: string, limit = 20): Promise<Job[]> {
     try {
       const { data, error } = await supabase
         .from('jobs')
@@ -72,7 +72,7 @@ export class JobCategoryService {
   }
 
   // Search jobs by skills and category
-  static async searchJobsBySkills(skills: string[], limit = 50): Promise<any[]> {
+  static async searchJobsBySkills(skills: string[], limit = 50): Promise<Job[]> {
     try {
       const { data, error } = await supabase
         .from('jobs')

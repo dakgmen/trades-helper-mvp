@@ -1,0 +1,162 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Application View</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-color: #2563EB;
+      --secondary-color: #16A34A;
+      --accent-color: #EA580C;
+    }
+    body {
+      font-family: 'Work Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 bg-white">
+<div class="flex items-center gap-4">
+<div class="size-8 text-[var(--primary-color)]">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-bold text-gray-900">TradieHelper</h1>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Dashboard</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Jobs</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Helpers</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex size-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYaGDJ9s4_beOpQhAKafLY20mZVq36iCHyz0zcZHMxltt8XZs7MT156JwDiD0IJ4-_9LrmcWaGs9rIoyhesNKv-6JynvJ-RPf1FdyJ1P47jFTFL19RStEZE2m7Ma8i0ZCTsxq16wwnbqQ6yqx1KCnKQ_cIY-L08E80yyhq650ptigFtVSSrIT95KUq_fO1eE4CYVXH5aBqjjw4GBY-2QGTd7Bc0TJlHIymGKZcqbAMdiTkKeGTracVTbhRVnnC2mR4F8hxDtqqUStS");'></div>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 flex flex-col gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="mb-4">
+<p class="text-sm text-gray-500">
+<a class="hover:underline" href="#">Jobs</a> / <a class="hover:underline" href="#">Plumbing Installation</a> / <span class="font-medium text-gray-700">Alex Johnson's Application</span>
+</p>
+</div>
+<h2 class="text-3xl font-bold text-gray-900">Application: Plumbing Installation</h2>
+<p class="text-lg text-gray-600 mt-1">Submitted by Alex Johnson</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-gray-900 mb-6">Applicant Profile</h3>
+<div class="flex items-center gap-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 shadow-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUI-SEoCSoTBKLihtweyr3PkOGJEqSZBAb-lKH-dsQBcG6fRd55cQPklbXJg-PAjAau2L9xoI7EC90yHCHmD9sGC1zpXKMVooo9YI5isKZD-O8mmEoe6SGtC6Guhau1H5DozMDOwHIutFad9-OE3bFQc2IAByCsbp1l6X6PN_PG3rWzh4YiPgGxdHMH7TDza_iVJCdHQAfTidGpwjBoLrD3dyR8HqvtOFbM3iT9XGax0OaN31VZeU8oxiOr5nfngMkp9A1TA3TGFF5");'></div>
+<div>
+<p class="text-2xl font-bold text-gray-900">Alex Johnson</p>
+<p class="text-lg text-gray-600">Plumber | 5 years experience</p>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Location</p>
+<p class="text-base text-gray-900">Sydney, NSW</p>
+</div>
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Availability</p>
+<p class="text-base text-gray-900">Available immediately</p>
+</div>
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Hourly Rate</p>
+<p class="text-base text-gray-900">$45 AUD</p>
+</div>
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Skills</p>
+<p class="text-base text-gray-900">Plumbing, pipe fitting, drainage</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-gray-900 mb-6">Communication History</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBak7FN_jZc-0kex4zb2zul9Tn2nl72sXGyjpGoGAJUvwpdMZwMLxO9T9ezq0zg1EDfLVFZ6xs4O9AX-ZxzLsoKbQA9G6-cTC3kOhfCJ9mp8B2u60evB3E1cEb6TVw3kIXOcV6AD5miT6yPp9UQ7byDjNkwQuWfjNVL6ELmehvm2uOCKDansCIQQy1FBERTtTUmECMVz7C43YnGrpRVg5Mc9ElMlTrFvGhHB84sQRIaPqtY-rwp9CrFr8_eZ3bVMMAhdMKDtRXyglg3");'></div>
+<div class="flex flex-col items-start">
+<p class="text-sm font-medium text-gray-900 mb-1">Alex Johnson</p>
+<div class="bg-gray-100 rounded-lg rounded-tl-none p-4 max-w-lg">
+<p class="text-base text-gray-800">Hi, I'm very interested in this plumbing job. I have 5 years of experience and am available to start immediately. My hourly rate is $45 AUD. Please let me know if you'd like to schedule an interview.</p>
+</div>
+<p class="text-xs text-gray-500 mt-1">2 days ago</p>
+</div>
+</div>
+<div class="flex items-start justify-end gap-4">
+<div class="flex flex-col items-end">
+<p class="text-sm font-medium text-gray-900 mb-1">You</p>
+<div class="bg-[var(--primary-color)] text-white rounded-lg rounded-br-none p-4 max-w-lg">
+<p class="text-base">Hi Alex, thanks for your interest. Your application looks promising. Can you provide some references or examples of your previous work?</p>
+</div>
+<p class="text-xs text-gray-500 mt-1">1 day ago</p>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1H4WOwO4NvJDaumz7DVyMQGSXJrTowQgS0M7sZufiUpNQNvt_yZtgLFhfSQom7rvnpaacl7eCMyoT6VCBTiYq61u3agNIymXR38RFv-JyKU09Bwf1nVm99BkiQ_NQy3stOgHXkaVfQbblHxM4I9bW2N6n0a_VR5en6kz21T0zbWRTFkFL_e0Pyq1h0LCA-otOOCS4ufVzcXExBhRs4qWeSS7AriLi3CRXN7Rg7lVwkQ3FSSdcjxKQPbPl_LYZPVej5wWUUpw1xREl");'></div>
+</div>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBytI0_gcZ-QrGZKUwgU-UGmxO6ofjp0B3-I_NxXz6nKe3upwxX2t3B7W_eYSroafPRv0FR2IRMpap14re2vTf1vfwyvhV02PS1M2XcXIN35v5YKdCjxxV4tH5huTkmZ1Pxvsb_9fdIRQP6ClUBQKPMA0Ek9yjGIzu1ZG1TQ7FlfI-H2ZfCH7SSudEbBtvlI4rdqAdoEoRFOO2n9FD907X_x7NwnrfpUUxl9X0FanRJksRPs0MN1l5M6PZOOIn-W5832T7u8Zc-PqUj");'></div>
+<div class="flex-1 relative">
+<input class="form-input w-full rounded-full border-gray-300 focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] h-12 px-6 pr-24" placeholder="Type your message..." value=""/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-2">
+<button class="flex items-center justify-center p-2 text-gray-500 hover:text-[var(--primary-color)]">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path>
+</svg>
+</button>
+<button class="h-8 px-4 bg-[var(--primary-color)] text-white text-sm font-medium rounded-full hover:bg-blue-700 transition-colors">Send</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 flex flex-col gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-gray-900 mb-6">Job Details</h3>
+<div class="space-y-5">
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Job Title</p>
+<p class="text-base font-semibold text-gray-900">Plumbing Installation</p>
+</div>
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Location</p>
+<p class="text-base text-gray-900">Sydney, NSW</p>
+</div>
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Posted</p>
+<p class="text-base text-gray-900">2 days ago (AEST)</p>
+</div>
+<div class="border-t border-gray-200 pt-4">
+<p class="text-sm font-medium text-gray-500">Status</p>
+<p class="text-base font-semibold text-green-600">Open</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-bold text-gray-900 mb-6">Actions</h3>
+<div class="flex flex-col gap-3">
+<button class="flex w-full items-center justify-center rounded-lg h-12 px-4 bg-[var(--secondary-color)] text-white text-base font-bold hover:bg-green-700 transition-colors">Accept Application</button>
+<button class="flex w-full items-center justify-center rounded-lg h-12 px-4 bg-[var(--accent-color)] text-white text-base font-bold hover:bg-orange-700 transition-colors">Decline Application</button>
+<button class="flex w-full items-center justify-center rounded-lg h-12 px-4 bg-gray-200 text-gray-800 text-base font-bold hover:bg-gray-300 transition-colors">Contact Applicant</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

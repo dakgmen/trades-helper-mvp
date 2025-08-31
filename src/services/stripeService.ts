@@ -1,6 +1,7 @@
-import { loadStripe, Stripe } from '@stripe/stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
+import type { Stripe } from '@stripe/stripe-js'
 import { supabase } from '../lib/supabase'
-import type { StripeConnectAccount, Payment, StripeKYCStatus, PaymentTransaction } from '../types'
+import type { StripeConnectAccount, Payment, StripeKYCStatus, PaymentTransaction, StripeCardElement, StripePaymentMethod, PaymentFeeBreakdown, BankAccountDetails } from '../types'
 
 const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || ''
 
@@ -50,7 +51,8 @@ export class StripeService {
       }
 
       return { url: data.url, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { url: null, error: 'Network error creating Connect account' }
     }
   }
@@ -72,7 +74,8 @@ export class StripeService {
       }
 
       return { account: data.account, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { account: null, error: 'Network error getting account status' }
     }
   }
@@ -95,7 +98,8 @@ export class StripeService {
       }
 
       return { clientSecret: data.clientSecret, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { clientSecret: null, error: 'Network error creating payment intent' }
     }
   }
@@ -120,7 +124,8 @@ export class StripeService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Payment confirmation failed' }
     }
   }
@@ -143,7 +148,8 @@ export class StripeService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Network error releasing payment' }
     }
   }
@@ -166,13 +172,14 @@ export class StripeService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Network error refunding payment' }
     }
   }
 
   // Create payment method
-  async createPaymentMethod(cardElement: any): Promise<{ paymentMethod: any | null; error: string | null }> {
+  async createPaymentMethod(cardElement: StripeCardElement): Promise<{ paymentMethod: StripePaymentMethod | null; error: string | null }> {
     if (!this.stripe) {
       await this.initialize()
     }
@@ -184,15 +191,17 @@ export class StripeService {
     try {
       const { error, paymentMethod } = await this.stripe.createPaymentMethod({
         type: 'card',
-        card: cardElement,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        card: cardElement as any,
       })
 
       if (error) {
         return { paymentMethod: null, error: error.message || 'Failed to create payment method' }
       }
 
-      return { paymentMethod, error: null }
-    } catch (error) {
+      return { paymentMethod: paymentMethod as StripePaymentMethod, error: null }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { paymentMethod: null, error: 'Failed to create payment method' }
     }
   }
@@ -219,7 +228,8 @@ export class StripeService {
       }
 
       return { accountLink: data.accountLink, accountId: data.accountId, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { accountLink: null, accountId: null, error: 'Network error creating Express account' }
     }
   }
@@ -241,7 +251,8 @@ export class StripeService {
       }
 
       return { status: data.status, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { status: null, error: 'Network error getting KYC status' }
     }
   }
@@ -263,8 +274,8 @@ export class StripeService {
       }
 
       return true
-    } catch (error) {
-      console.error('Error updating KYC status:', error)
+    } catch (_error) {
+      console.error('Error updating KYC status:', _error)
       return false
     }
   }
@@ -291,7 +302,8 @@ export class StripeService {
       }
 
       return { clientSecret: data.clientSecret, paymentId: data.paymentId, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { clientSecret: null, paymentId: null, error: 'Network error creating escrow payment' }
     }
   }
@@ -310,7 +322,8 @@ export class StripeService {
       }
 
       return { transactions: data as PaymentTransaction[], error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { transactions: [], error: 'Network error fetching transactions' }
     }
   }
@@ -344,7 +357,7 @@ export class StripeService {
     tradieId: string,
     helperId: string,
     amount: number
-  ): Promise<{ payment: Payment | null; feeBreakdown: any; error: string | null }> {
+  ): Promise<{ payment: Payment | null; feeBreakdown: PaymentFeeBreakdown; error: string | null }> {
     try {
       const feeBreakdown = StripeService.calculateFees(amount)
 
@@ -384,8 +397,15 @@ export class StripeService {
         .insert(transactions)
 
       return { payment: payment as Payment, feeBreakdown, error: null }
-    } catch (error) {
-      return { payment: null, feeBreakdown: null, error: 'Network error creating payment' }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
+      const emptyFeeBreakdown: PaymentFeeBreakdown = {
+        grossAmount: 0,
+        platformFee: 0,
+        stripeFee: 0,
+        netAmount: 0
+      }
+      return { payment: null, feeBreakdown: emptyFeeBreakdown, error: 'Network error creating payment' }
     }
   }
 
@@ -418,7 +438,8 @@ export class StripeService {
       }
 
       return { verified: data.verified, confidence: data.confidence, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { verified: false, confidence: 0, error: 'Network error during identity verification' }
     }
   }
@@ -428,7 +449,7 @@ export class StripeService {
     accountNumber: string,
     bsb: string,
     accountHolderName: string
-  ): Promise<{ valid: boolean; accountDetails?: any; error: string | null }> {
+  ): Promise<{ valid: boolean; accountDetails?: BankAccountDetails; error: string | null }> {
     try {
       const response = await fetch('/api/stripe/validate-au-bank-account', {
         method: 'POST',
@@ -449,7 +470,8 @@ export class StripeService {
       }
 
       return { valid: data.valid, accountDetails: data.accountDetails, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { valid: false, error: 'Network error validating bank account' }
     }
   }

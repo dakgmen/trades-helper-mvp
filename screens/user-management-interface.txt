@@ -1,0 +1,214 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #eff6ff;
+        --primary-100: #dbeafe;
+        --primary-200: #bfdbfe;
+        --primary-300: #93c5fd;
+        --primary-400: #60a5fa;
+        --primary-500: #3b82f6;
+        --primary-600: #2563eb;
+        --primary-700: #1d4ed8;
+        --primary-800: #1e40af;
+        --primary-900: #1e3a8a;
+        --secondary-50: #f0fdf4;
+        --secondary-100: #dcfce7;
+        --secondary-200: #bbf7d0;
+        --secondary-300: #86efac;
+        --secondary-400: #4ade80;
+        --secondary-500: #22c55e;
+        --secondary-600: #16a34a;
+        --secondary-700: #15803d;
+        --secondary-800: #166534;
+        --secondary-900: #14532d;
+        --accent-50: #fff7ed;
+        --accent-100: #ffedd5;
+        --accent-200: #fed7aa;
+        --accent-300: #fdba74;
+        --accent-400: #fb923c;
+        --accent-500: #f97316;
+        --accent-600: #ea580c;
+        --accent-700: #c2410c;
+        --accent-800: #9a3412;
+        --accent-900: #7c2d12;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="flex min-h-screen">
+<aside class="w-64 flex-col bg-white p-4">
+<div class="flex items-center gap-2 px-2 py-4">
+<svg class="h-8 w-8 text-[var(--primary-600)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L1 9l4 1.5V21h4v-8h6v8h4V10.5L23 9z"></path>
+</svg>
+<h2 class="text-xl font-bold">TradieHelper</h2>
+</div>
+<nav class="mt-8 flex-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900" href="#"><svg class="h-5 w-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>Dashboard</a><a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900" href="#"><svg class="h-5 w-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect height="7" rx="1" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1" width="7" x="14" y="14"></rect>
+<rect height="7" rx="1" width="7" x="3" y="14"></rect>
+</svg>Jobs</a><a class="flex items-center gap-3 rounded-lg bg-[var(--primary-50)] px-3 py-2 text-[var(--primary-600)] transition-colors" href="#"><svg class="h-5 w-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>Users</a><a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900" href="#"><svg class="h-5 w-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<line x1="12" x2="12" y1="2" y2="22"></line>
+<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+</svg>Payments</a><a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900" href="#"><svg class="h-5 w-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+<path d="M12 17h.01"></path>
+</svg>Support</a>
+</nav>
+</aside>
+<main class="flex-1">
+<header class="flex h-16 items-center justify-end border-b bg-white px-6">
+<div class="flex items-center gap-4">
+<button class="rounded-full p-2 hover:bg-gray-100"><svg class="h-6 w-6 text-gray-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+</svg></button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsvq0rSkh_-LpcRZ7bYM3WM3cl0cbJxyaRvlIjnIAt_OuEjwMU7s0kV3G27qW9CdJIjRts8wl_XWFHotZX_xeEkvsrkcl2gS8wQiBBQdDqlxogSdC4b-Nk41wP-Nvk7Hozhicsk0eRlb0BF24ZIiXyehlsnVX-RniENAxVUkqXK03hxjxNisqMsAMeT4iWkGEbNvYLjF-Ic4EZoCxzO1I-aSLRtZfNURKzPxLyWvRSHACCbUjKCNSt11oxuLVV1HqX8i3rXMBb5Rey");'></div>
+</div>
+</header>
+<div class="p-6">
+<div class="mb-6 flex items-center justify-between">
+<div>
+<h1 class="text-3xl font-bold">User Management</h1>
+<p class="text-gray-500">Manage all users on the TradieHelper platform.</p>
+</div>
+<button class="flex items-center gap-2 rounded-lg bg-[var(--primary-600)] px-4 py-2 text-white hover:bg-[var(--primary-700)]">
+<svg class="h-5 w-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Add User</span>
+</button>
+</div>
+<div class="mb-4">
+<div class="relative">
+<svg class="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11" cy="11" r="8"></circle>
+<path d="m21 21-4.3-4.3"></path>
+</svg>
+<input class="w-full rounded-lg border border-gray-200 bg-white p-2 pl-10 focus:border-[var(--primary-500)] focus:outline-none focus:ring-1 focus:ring-[var(--primary-500)]" placeholder="Search users by name, email, or role..." type="search"/>
+</div>
+</div>
+<div class="overflow-x-auto rounded-lg border border-gray-200 bg-white">
+<table class="w-full text-left">
+<thead class="bg-gray-50">
+<tr>
+<th class="p-4 text-sm font-medium text-gray-600">User</th>
+<th class="p-4 text-sm font-medium text-gray-600">Account Status</th>
+<th class="p-4 text-sm font-medium text-gray-600">Verification</th>
+<th class="p-4 text-sm font-medium text-gray-600">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr class="hover:bg-gray-50">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsVg84gz5ui4eiUT6l0pSWXaQAE6vqwHwDWp9eBYix9_xS3EB_QkrQLi1wkBHh6BooaFilq0zvCu6f6CpmHIAzQzLe4jbrfYgmJtnHQ-8YKHeDvT8GHgCB3aQiRzG9u1Waeo7ti2JrVqua0PgayW8klKK9BdLVClNBfER37AdB9BK64vHfdZ6CXn5I7z4EeCPsxgNwOTJ4eWzRLcM5Tynof6i4a46mV9YmAL2241y4ZN6LwIFjeovQxZSn5qYiJgi-mPYXxdsIE6s3")'></div>
+<div>
+<p class="font-medium">Sarah Johnson</p>
+<p class="text-sm text-gray-500">sarah.j@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--secondary-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--secondary-800)]"><span class="mr-1.5 h-2 w-2 rounded-full bg-[var(--secondary-500)]"></span>Active</span></td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--primary-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--primary-800)]"><svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>Verified</span></td>
+<td class="p-4"><a class="font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View</a></td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsVg84gz5ui4eiUT6l0pSWXaQAE6vqwHwDWp9eBYix9_xS3EB_QkrQLi1wkBHh6BooaFilq0zvCu6f6CpmHIAzQzLe4jbrfYgmJtnHQ-8YKHeDvT8GHgCB3aQiRzG9u1Waeo7ti2JrVqua0PgayW8klKK9BdLVClNBfER37AdB9BK64vHfdZ6CXn5I7z4EeCPsxgNwOTJ4eWzRLcM5Tynof6i4a46mV9YmAL2241y4ZN6LwIFjeovQxZSn5qYiJgi-mPYXxdsIE6s3")'></div>
+<div>
+<p class="font-medium">Michael Brown</p>
+<p class="text-sm text-gray-500">michael.b@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"><span class="mr-1.5 h-2 w-2 rounded-full bg-gray-400"></span>Inactive</span></td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--accent-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--accent-800)]"><svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+</svg>Unverified</span></td>
+<td class="p-4"><a class="font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View</a></td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsVg84gz5ui4eiUT6l0pSWXaQAE6vqwHwDWp9eBYix9_xS3EB_QkrQLi1wkBHh6BooaFilq0zvCu6f6CpmHIAzQzLe4jbrfYgmJtnHQ-8YKHeDvT8GHgCB3aQiRzG9u1Waeo7ti2JrVqua0PgayW8klKK9BdLVClNBfER37AdB9BK64vHfdZ6CXn5I7z4EeCPsxgNwOTJ4eWzRLcM5Tynof6i4a46mV9YmAL2241y4ZN6LwIFjeovQxZSn5qYiJgi-mPYXxdsIE6s3")'></div>
+<div>
+<p class="font-medium">Emily Davis</p>
+<p class="text-sm text-gray-500">emily.d@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--secondary-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--secondary-800)]"><span class="mr-1.5 h-2 w-2 rounded-full bg-[var(--secondary-500)]"></span>Active</span></td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--primary-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--primary-800)]"><svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>Verified</span></td>
+<td class="p-4"><a class="font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View</a></td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsVg84gz5ui4eiUT6l0pSWXaQAE6vqwHwDWp9eBYix9_xS3EB_QkrQLi1wkBHh6BooaFilq0zvCu6f6CpmHIAzQzLe4jbrfYgmJtnHQ-8YKHeDvT8GHgCB3aQiRzG9u1Waeo7ti2JrVqua0PgayW8klKK9BdLVClNBfER37AdB9BK64vHfdZ6CXn5I7z4EeCPsxgNwOTJ4eWzRLcM5Tynof6i4a46mV9YmAL2241y4ZN6LwIFjeovQxZSn5qYiJgi-mPYXxdsIE6s3")'></div>
+<div>
+<p class="font-medium">David Wilson</p>
+<p class="text-sm text-gray-500">david.w@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--secondary-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--secondary-800)]"><span class="mr-1.5 h-2 w-2 rounded-full bg-[var(--secondary-500)]"></span>Active</span></td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--primary-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--primary-800)]"><svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>Verified</span></td>
+<td class="p-4"><a class="font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View</a></td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsVg84gz5ui4eiUT6l0pSWXaQAE6vqwHwDWp9eBYix9_xS3EB_QkrQLi1wkBHh6BooaFilq0zvCu6f6CpmHIAzQzLe4jbrfYgmJtnHQ-8YKHeDvT8GHgCB3aQiRzG9u1Waeo7ti2JrVqua0PgayW8klKK9BdLVClNBfER37AdB9BK64vHfdZ6CXn5I7z4EeCPsxgNwOTJ4eWzRLcM5Tynof6i4a46mV9YmAL2241y4ZN6LwIFjeovQxZSn5qYiJgi-mPYXxdsIE6s3")'></div>
+<div>
+<p class="font-medium">Olivia Green</p>
+<p class="text-sm text-gray-500">olivia.g@example.com</p>
+</div>
+</div>
+</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"><span class="mr-1.5 h-2 w-2 rounded-full bg-gray-400"></span>Inactive</span></td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-[var(--accent-100)] px-2.5 py-0.5 text-xs font-medium text-[var(--accent-800)]"><svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+</svg>Unverified</span></td>
+<td class="p-4"><a class="font-medium text-[var(--primary-600)] hover:text-[var(--primary-700)]" href="#">View</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<p class="text-sm text-gray-500">Showing 1 to 5 of 20 users</p>
+<div class="flex items-center gap-2">
+<button class="rounded-lg border bg-white px-3 py-1.5 text-sm hover:bg-gray-100 disabled:opacity-50" disabled="">Previous</button>
+<button class="rounded-lg border bg-white px-3 py-1.5 text-sm hover:bg-gray-100">Next</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

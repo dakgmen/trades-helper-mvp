@@ -7,6 +7,7 @@ export interface UserProfile {
   skills: string[] | null
   white_card_url: string | null
   id_document_url: string | null
+  avatar_url: string | null
   verified: boolean
   latitude: number | null
   longitude: number | null
@@ -68,6 +69,10 @@ export interface Message {
   receiver_id: string
   content: string
   created_at: string
+  read_at?: string
+  jobs?: {
+    title: string
+  }
 }
 
 // File upload interfaces
@@ -99,8 +104,23 @@ export interface Notification {
   message: string
   type: 'job' | 'application' | 'payment' | 'message' | 'system'
   read: boolean
-  data?: Record<string, any>
+  data?: Record<string, string | number | boolean>
   created_at: string
+}
+
+// Job filter interface for search/filtering
+export interface JobFilters {
+  location?: string
+  skills?: string[]
+  urgency?: JobUrgency
+  minPayRate?: number
+  maxPayRate?: number
+  dateRange?: {
+    start: string
+    end: string
+  }
+  radius?: number
+  status?: JobStatus[]
 }
 
 // Geolocation interfaces
@@ -131,6 +151,42 @@ export interface StripeConnectAccount {
   updated_at: string
 }
 
+// Basic System Metrics interface (legacy version)
+export interface BasicSystemMetrics {
+  total_users: number
+  active_users: number
+  total_jobs: number
+  completed_jobs: number
+  total_revenue: number
+  platform_revenue: number
+  [key: string]: number | string
+}
+
+// Basic Dispute interface (simplified version for backward compatibility)
+export interface BasicDispute {
+  id: string
+  job_id: string
+  complainant_id: string
+  respondent_id: string
+  reason: string
+  status: 'open' | 'investigating' | 'resolved' | 'closed'
+  created_at: string
+  resolved_at?: string
+  resolution?: string
+}
+
+// Basic Fraud Alert interface (legacy version)
+export interface BasicFraudAlert {
+  id: string
+  user_id: string
+  type: 'payment' | 'identity' | 'behavior' | 'other'
+  severity: 'low' | 'medium' | 'high' | 'critical'
+  description: string
+  status: 'active' | 'investigating' | 'resolved' | 'false_positive'
+  created_at: string
+  resolved_at?: string
+}
+
 export type UserRole = 'tradie' | 'helper' | 'admin'
 export type JobStatus = 'open' | 'assigned' | 'in_progress' | 'completed' | 'cancelled'
 export type ApplicationStatus = 'pending' | 'accepted' | 'rejected'
@@ -150,6 +206,9 @@ export interface Review {
   reviewer_type: 'tradie' | 'helper'
   created_at: string
   updated_at: string
+  // Populated fields when fetched with joins
+  reviewer?: UserProfile
+  job?: Job
 }
 
 export interface AggregateRating {
@@ -163,7 +222,7 @@ export interface AggregateRating {
   one_star: number
 }
 
-// Phase 2: Dispute Resolution
+// Phase 2: Enhanced Dispute Resolution (main interface)
 export interface Dispute {
   id: string
   job_id: string
@@ -180,8 +239,14 @@ export interface Dispute {
   resolved_by_admin_id: string | null
 }
 
+// Enhanced type unions (using latest definitions)
 export type DisputeStatus = 'open' | 'in_review' | 'resolved' | 'dismissed'
 export type DisputeReason = 'payment' | 'work_quality' | 'no_show' | 'safety' | 'communication' | 'other'
+
+// Legacy type unions for backward compatibility
+export type LegacyDisputeStatus = 'open' | 'investigating' | 'resolved' | 'closed'
+export type LegacyFraudAlertStatus = 'active' | 'investigating' | 'resolved' | 'false_positive'
+export type EnhancedFraudAlertStatus = 'pending' | 'investigating' | 'resolved' | 'false_positive'
 
 // Phase 2: Terms & Conditions
 export interface TermsConsent {
@@ -266,7 +331,7 @@ export interface Badge {
   name: string
   description: string
   icon_url: string | null
-  criteria: Record<string, any>  // JSON criteria for earning badge
+  criteria: Record<string, string | number | boolean>  // JSON criteria for earning badge
   is_active: boolean
   created_at: string
 }
@@ -276,7 +341,7 @@ export interface UserBadge {
   user_id: string
   badge_id: string
   earned_at: string
-  criteria_met: Record<string, any>
+  criteria_met: Record<string, string | number | boolean>
 }
 
 // Phase 5: Support System
@@ -307,7 +372,7 @@ export interface SupportMessage {
   created_at: string
 }
 
-// Phase 5: Analytics
+// Phase 5: Enhanced Analytics (main SystemMetrics interface)
 export interface SystemMetrics {
   date: string
   total_users: number
@@ -315,12 +380,16 @@ export interface SystemMetrics {
   new_registrations: number
   jobs_posted: number
   jobs_completed: number
+  total_jobs: number
+  completed_jobs: number
   total_payments: number
+  total_revenue: number
   average_job_value: number
   platform_revenue: number
   user_retention_rate: number
 }
 
+// Phase 5: Enhanced Fraud Alert (main interface)
 export interface FraudAlert {
   id: string
   user_id: string
@@ -344,3 +413,112 @@ export type ReferralStatus = 'pending' | 'completed' | 'expired'
 export type AvailabilityPattern = 'none' | 'daily' | 'weekly' | 'monthly'
 export type FraudAlertType = 'fake_job' | 'payment_fraud' | 'identity_fraud' | 'suspicious_behavior'
 export type AlertSeverity = 'low' | 'medium' | 'high' | 'critical'
+
+// Additional interfaces for service types
+export interface AvailableHelper {
+  id: string
+  full_name: string
+  phone: string | null
+  skills: string[] | null
+  latitude: number | null
+  longitude: number | null
+  verified: boolean
+}
+
+export interface AvailableHelperWithDistance {
+  helper: AvailableHelper
+  availability: Availability[]
+  distance?: number
+}
+
+export interface AvailabilitySlot {
+  date: string
+  start_time: string
+  end_time: string
+  is_available: boolean
+}
+
+export interface UserStatistics {
+  totalJobsCompleted: number
+  totalJobsAsTradie: number
+  totalJobsAsHelper: number
+  averageRating: number
+  totalReviews: number
+  yearsActive: number
+  referralsMade: number
+  totalEarnings: number
+  skillsVerified: string[]
+  consecutiveFiveStarRatings: number
+}
+
+export interface BadgeRequirementsResult {
+  eligible: boolean
+  criteriaData: Record<string, string | number | boolean>
+}
+
+export interface LeaderboardUser {
+  user: UserProfile
+  badge_count: number
+  latest_badge: Badge | null
+}
+
+// This represents the Stripe Card Element interface
+// In a real implementation, this would import from @stripe/stripe-js
+export type StripeCardElement = unknown
+
+export interface StripePaymentMethod {
+  id: string
+  type: 'card'
+  card?: {
+    brand: string
+    last4: string
+    exp_month: number
+    exp_year: number
+  }
+}
+
+export interface PaymentFeeBreakdown {
+  grossAmount: number
+  platformFee: number
+  stripeFee: number
+  netAmount: number
+}
+
+export interface BankAccountDetails {
+  accountNumber: string
+  bsb: string
+  accountHolderName: string
+  bankName?: string
+  valid: boolean
+}
+
+// =============================================================================
+// BACKWARD COMPATIBILITY ALIASES
+// =============================================================================
+// These aliases ensure existing code continues to work while allowing migration
+// to the enhanced interfaces over time.
+
+// Legacy interface aliases (for gradual migration)
+export type LegacyDispute = BasicDispute
+export type LegacyFraudAlert = BasicFraudAlert  
+export type LegacySystemMetrics = BasicSystemMetrics
+
+// Status type compatibility mapping
+export type AnyDisputeStatus = DisputeStatus | LegacyDisputeStatus
+export type AnyFraudAlertStatus = EnhancedFraudAlertStatus | LegacyFraudAlertStatus
+
+// =============================================================================
+// TYPE GUARDS AND UTILITY TYPES
+// =============================================================================
+
+export interface TypeGuards {
+  isLegacyDispute(dispute: Dispute | BasicDispute): dispute is BasicDispute
+  isEnhancedDispute(dispute: Dispute | BasicDispute): dispute is Dispute
+  isLegacyFraudAlert(alert: FraudAlert | BasicFraudAlert): alert is BasicFraudAlert
+  isEnhancedFraudAlert(alert: FraudAlert | BasicFraudAlert): alert is FraudAlert
+}
+
+// Union types for interfaces that can accept both legacy and enhanced versions
+export type AnyDispute = Dispute | BasicDispute
+export type AnyFraudAlert = FraudAlert | BasicFraudAlert
+export type AnySystemMetrics = SystemMetrics | BasicSystemMetrics

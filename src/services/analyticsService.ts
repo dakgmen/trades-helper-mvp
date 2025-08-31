@@ -68,7 +68,7 @@ export class AnalyticsService {
       // Get job counts
       const { data: jobs, error: jobsError } = await supabase
         .from('jobs')
-        .select('id, status, created_at, date_time')
+        .select('id, status, created_at, date_time, tradie_id, assigned_helper_id')
         .gte('created_at', startDate)
         .lte('created_at', endDate)
 
@@ -109,7 +109,10 @@ export class AnalyticsService {
         new_registrations: newRegistrations,
         jobs_posted: jobsPosted,
         jobs_completed: completedJobs,
+        total_jobs: jobsPosted, // Add missing property
+        completed_jobs: completedJobs, // Add missing property  
         total_payments: totalPayments,
+        total_revenue: totalPayments, // Add missing property
         average_job_value: Math.round(averageJobValue * 100) / 100,
         platform_revenue: Math.round(platformRevenue * 100) / 100,
         user_retention_rate: Math.round(retentionRate * 10) / 10
@@ -147,7 +150,7 @@ export class AnalyticsService {
   private static async calculateUserAnalytics(startDate: string, endDate: string) {
     try {
       // New registrations by day and role
-      const { data: newUsers, error: usersError } = await supabase
+      const { data: newUsers } = await supabase
         .from('profiles')
         .select('created_at, role')
         .gte('created_at', startDate)
@@ -173,7 +176,7 @@ export class AnalyticsService {
       }
 
       // Active users by role
-      const { data: activeUsers, error: activeError } = await supabase
+      const { data: activeUsers } = await supabase
         .from('profiles')
         .select('id, role')
         .eq('verified', true)
@@ -190,7 +193,7 @@ export class AnalyticsService {
       const thirtyDaysAgo = new Date()
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
       
-      const { data: recentActivity, error: activityError } = await supabase
+      const { data: recentActivity } = await supabase
         .from('jobs')
         .select('tradie_id, assigned_helper_id')
         .gte('created_at', thirtyDaysAgo.toISOString())
@@ -443,7 +446,7 @@ export class AnalyticsService {
       const suspicious: Array<{ id: string; tradie_id: string; reason: string }> = []
 
       // Group by tradie
-      const jobsByTradie = new Map<string, any[]>()
+      const jobsByTradie = new Map<string, Array<{ id: string; tradie_id: string; pay_rate: number; created_at: string; title: string }>>()
       jobs.forEach(job => {
         if (!jobsByTradie.has(job.tradie_id)) {
           jobsByTradie.set(job.tradie_id, [])
@@ -541,7 +544,10 @@ export class AnalyticsService {
       new_registrations: 0,
       jobs_posted: 0,
       jobs_completed: 0,
+      total_jobs: 0, // Add missing property
+      completed_jobs: 0, // Add missing property
       total_payments: 0,
+      total_revenue: 0, // Add missing property
       average_job_value: 0,
       platform_revenue: 0,
       user_retention_rate: 0

@@ -31,7 +31,8 @@ export class NotificationService {
       this.swRegistration = await navigator.serviceWorker.register('/sw.js')
       
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to initialize notifications' }
     }
   }
@@ -52,7 +53,8 @@ export class NotificationService {
       } else {
         return { granted: false, error: 'Notification permission dismissed' }
       }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { granted: false, error: 'Failed to request notification permission' }
     }
   }
@@ -108,7 +110,8 @@ export class NotificationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to subscribe to push notifications' }
     }
   }
@@ -146,7 +149,8 @@ export class NotificationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to unsubscribe from push notifications' }
     }
   }
@@ -168,7 +172,7 @@ export class NotificationService {
     title: string,
     message: string,
     type: NotificationType,
-    data?: Record<string, any>
+    data?: Record<string, unknown>
   ): Promise<{ notification: Notification | null; error: string | null }> {
     try {
       const { data: notification, error } = await supabase
@@ -189,7 +193,8 @@ export class NotificationService {
       }
 
       return { notification, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { notification: null, error: 'Failed to create notification' }
     }
   }
@@ -219,7 +224,8 @@ export class NotificationService {
       }
 
       return { notifications: data || [], error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { notifications: [], error: 'Failed to fetch notifications' }
     }
   }
@@ -237,7 +243,8 @@ export class NotificationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to mark notification as read' }
     }
   }
@@ -256,7 +263,8 @@ export class NotificationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to mark all notifications as read' }
     }
   }
@@ -274,7 +282,8 @@ export class NotificationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to delete notification' }
     }
   }
@@ -303,7 +312,8 @@ export class NotificationService {
       }
 
       return { preferences: data || defaultPreferences, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { preferences: null, error: 'Failed to get notification preferences' }
     }
   }
@@ -326,7 +336,8 @@ export class NotificationService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'Failed to update notification preferences' }
     }
   }
@@ -355,7 +366,7 @@ export class NotificationService {
     message: string,
     type: NotificationType,
     options?: {
-      data?: Record<string, any>
+      data?: Record<string, unknown>
       channels?: ('push' | 'email' | 'sms')[]
       priority?: 'low' | 'normal' | 'high' | 'critical'
       actions?: Array<{ action: string; title: string; url?: string }>
@@ -416,7 +427,8 @@ export class NotificationService {
       }
 
       return { success: true, channels: results }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, channels: {} }
     }
   }
@@ -427,7 +439,7 @@ export class NotificationService {
     title: string,
     message: string,
     options?: {
-      data?: Record<string, any>
+      data?: Record<string, unknown>
       priority?: 'low' | 'normal' | 'high' | 'critical'
       actions?: Array<{ action: string; title: string; url?: string }>
     }
@@ -464,8 +476,8 @@ export class NotificationService {
       })
 
       return response.ok
-    } catch (error) {
-      console.error('Error sending email notification:', error)
+    } catch (_error) {
+      console.error('Error sending email notification:', _error)
       return false
     }
   }
@@ -506,8 +518,8 @@ export class NotificationService {
       })
 
       return response.ok
-    } catch (error) {
-      console.error('Error sending SMS notification:', error)
+    } catch (_error) {
+      console.error('Error sending SMS notification:', _error)
       return false
     }
   }
@@ -573,8 +585,8 @@ export class NotificationService {
       }
 
       return { sent, failed }
-    } catch (error) {
-      console.error('Error sending bulk notifications:', error)
+    } catch (_error) {
+      console.error('Error sending bulk notifications:', _error)
       return { sent: 0, failed: 1 }
     }
   }
@@ -617,8 +629,8 @@ export class NotificationService {
         read_rate: Math.round(readRate * 10) / 10,
         avg_time_to_read_minutes: 0 // Would calculate from read timestamps
       }
-    } catch (error) {
-      console.error('Error getting notification statistics:', error)
+    } catch (_error) {
+      console.error('Error getting notification statistics:', _error)
       return {
         total_sent: 0,
         push_sent: 0,

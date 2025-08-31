@@ -1,0 +1,135 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<meta charset="utf-8"/>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-text: #4B5563;
+        --neutral-bg: #F9FAFB;
+      }
+      .urgent-badge {
+        background-color: var(--accent-color);
+        color: white;
+      }
+      .new-badge {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+      .standard-badge {
+        background-color: #D1D5DB;
+        color: #1F2937;
+      }
+    </style>
+</head>
+<body class="bg-gray-50" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 py-10 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-4xl">
+<h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">Open Jobs</h1>
+<div class="grid grid-cols-1 gap-6">
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center p-4">
+<div class="flex-grow">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-xl font-bold text-gray-900">Electrician Needed for Residential Wiring</h2>
+<span class="urgent-badge text-xs font-semibold px-2 py-1 rounded-full">URGENT</span>
+</div>
+<div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
+<p class="font-semibold text-lg text-green-600">$45/hr</p>
+<div class="flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Sydney, NSW</span>
+</div>
+<p>Sparky Solutions | 5 km away</p>
+</div>
+<p class="text-gray-600 text-sm">Looking for a licensed electrician for a full house rewiring project. Must have experience with modern smart home systems. Immediate start.</p>
+</div>
+<div class="flex flex-col items-end justify-between ml-6 flex-shrink-0">
+<button class="bg-[var(--primary-color)] text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Quick Apply
+                  </button>
+<p class="text-xs text-gray-400 mt-10">Posted: 2 hours ago</p>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center p-4">
+<div class="flex-grow">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-xl font-bold text-gray-900">Plumber for Bathroom Renovation</h2>
+<span class="new-badge text-xs font-semibold px-2 py-1 rounded-full">NEW</span>
+</div>
+<div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
+<p class="font-semibold text-lg text-green-600">$50/hr</p>
+<div class="flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Melbourne, VIC</span>
+</div>
+<p>AquaFix Plumbing | 12 km away</p>
+</div>
+<p class="text-gray-600 text-sm">Experienced plumber required for a complete bathroom renovation. Must be proficient in PEX and copper piping. Project starts next week.</p>
+</div>
+<div class="flex flex-col items-end justify-between ml-6 flex-shrink-0">
+<button class="bg-[var(--primary-color)] text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Quick Apply
+                  </button>
+<p class="text-xs text-gray-400 mt-10">Posted: 1 day ago</p>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center p-4">
+<div class="flex-grow">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-xl font-bold text-gray-900">Carpenter for Deck Installation</h2>
+<span class="standard-badge text-xs font-semibold px-2 py-1 rounded-full">STANDARD</span>
+</div>
+<div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
+<p class="font-semibold text-lg text-green-600">$40/hr</p>
+<div class="flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Brisbane, QLD</span>
+</div>
+<p>TimberCraft Carpentry | 8 km away</p>
+</div>
+<p class="text-gray-600 text-sm">We need a skilled carpenter to build a custom merbau deck. All materials provided. Must have own tools and ABN.</p>
+</div>
+<div class="flex flex-col items-end justify-between ml-6 flex-shrink-0">
+<button class="bg-[var(--primary-color)] text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Quick Apply
+                  </button>
+<p class="text-xs text-gray-400 mt-10">Posted: 3 days ago</p>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center p-4">
+<div class="flex-grow">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-xl font-bold text-gray-900">Painter for House Exterior</h2>
+<span class="urgent-badge text-xs font-semibold px-2 py-1 rounded-full">URGENT</span>
+</div>
+<div class="flex items-center text-sm text-gray-500 mb-3 space-x-4">
+<p class="font-semibold text-lg text-green-600">$35/hr</p>
+<div class="flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Perth, WA</span>
+</div>
+<p>ColorPro Painting | 15 km away</p>
+</div>
+<p class="text-gray-600 text-sm">Exterior painting of a two-story house. Preparation work (sanding, priming) is required. Must be comfortable working with heights.</p>
+</div>
+<div class="flex flex-col items-end justify-between ml-6 flex-shrink-0">
+<button class="bg-[var(--primary-color)] text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    Quick Apply
+                  </button>
+<p class="text-xs text-gray-400 mt-10">Posted: 4 hours ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

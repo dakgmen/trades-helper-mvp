@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Post a Job</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #2563EB;
+            --secondary-color: #16A34A;
+            --accent-color: #EA580C;
+            --neutral-background: #f8fafc;
+            --neutral-text: #475569;
+            --neutral-border: #e2e8f0;
+        }
+        .form-input {
+            @apply w-full rounded-lg border-[var(--neutral-border)] bg-white p-3 text-base font-normal leading-normal text-slate-800 placeholder:text-[var(--neutral-text)] focus:border-[var(--primary-color)] focus:outline-0 focus:ring-2 focus:ring-[var(--primary-color)]/50;
+        }
+        .form-label {
+            @apply text-base font-medium leading-normal text-slate-700 pb-2 block;
+        }
+        .form-section {
+            @apply bg-white p-6 sm:p-8 rounded-xl border border-[var(--neutral-border)] shadow-sm;
+        }
+        .form-section-title {
+            @apply text-2xl font-bold leading-tight tracking-tight text-slate-800 mb-6;
+        }
+        .step-active {
+            @apply bg-[var(--primary-color)] text-white;
+        }
+        .step-inactive {
+            @apply bg-slate-200 text-slate-500;
+        }
+    </style>
+</head>
+<body style="font-family: 'Work Sans', 'Noto Sans', sans-serif;">
+<div class="relative flex min-h-screen flex-col bg-[var(--neutral-background)] group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-20 bg-white shadow-md">
+<div class="container mx-auto flex items-center justify-between whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3 text-[var(--primary-color)]">
+<svg class="h-8 w-8" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0L0 12V36L24 48L48 36V12L24 0ZM24 4.5L42 14.25V33.75L24 43.5L6 33.75V14.25L24 4.5ZM21 21H27V33H21V21ZM21 15H27V18H21V15Z" fill-rule="evenodd"></path>
+</svg>
+<h2 class="text-2xl font-bold tracking-tighter">TradieHelper</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-base font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="text-base font-medium text-[var(--primary-color)] border-b-2 border-[var(--primary-color)]" href="#">Post a Job</a>
+<a class="text-base font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-100 text-slate-700 text-sm font-bold leading-normal tracking-wide hover:bg-slate-200 transition-colors">
+<span>Log In</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-wide hover:bg-blue-700 transition-colors">
+<span>Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<main class="container mx-auto flex-1 px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-4xl mx-auto">
+<header class="text-center mb-10">
+<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tighter text-slate-900">Post a Job</h1>
+<p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">Follow the steps below to find the perfect helper for your job. It's quick and easy!</p>
+</header>
+<div class="mb-8">
+<div class="flex items-center justify-center">
+<div class="flex items-center">
+<div class="flex items-center text-[var(--primary-color)]">
+<div class="step-active flex h-10 w-10 items-center justify-center rounded-full font-bold text-lg">1</div>
+<span class="ml-3 font-semibold hidden sm:inline">Job Details</span>
+</div>
+<div class="w-16 sm:w-24 h-1 bg-slate-300 mx-2"></div>
+<div class="flex items-center text-slate-500">
+<div class="step-inactive flex h-10 w-10 items-center justify-center rounded-full font-bold text-lg">2</div>
+<span class="ml-3 font-semibold hidden sm:inline">Location</span>
+</div>
+<div class="w-16 sm:w-24 h-1 bg-slate-300 mx-2"></div>
+<div class="flex items-center text-slate-500">
+<div class="step-inactive flex h-10 w-10 items-center justify-center rounded-full font-bold text-lg">3</div>
+<span class="ml-3 font-semibold hidden sm:inline">Skills &amp; Date</span>
+</div>
+<div class="w-16 sm:w-24 h-1 bg-slate-300 mx-2"></div>
+<div class="flex items-center text-slate-500">
+<div class="step-inactive flex h-10 w-10 items-center justify-center rounded-full font-bold text-lg">4</div>
+<span class="ml-3 font-semibold hidden sm:inline">Payment</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="form-section">
+<h3 class="form-section-title">Step 1: Job Details</h3>
+<div class="grid grid-cols-1 gap-6">
+<div>
+<label class="form-label" for="job-title">Job Title</label>
+<input class="form-input" id="job-title" placeholder="e.g., Experienced Carpenter for deck construction" type="text"/>
+</div>
+<div>
+<label class="form-label" for="job-description">Job Description</label>
+<textarea class="form-input min-h-40" id="job-description" placeholder="Describe the job in detail. Include tasks, required experience, and any specific materials or tools needed."></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h3 class="form-section-title">Step 2: Location</h3>
+<div class="space-y-6">
+<div>
+<label class="form-label" for="job-address">Job Address</label>
+<input class="form-input" id="job-address" placeholder="Enter the full job address" type="text"/>
+<p class="text-sm text-slate-500 mt-2">Start typing and select an address from the suggestions.</p>
+</div>
+<div class="aspect-h-9 aspect-w-16 rounded-lg overflow-hidden border border-slate-200">
+<img alt="Map of a suburban area with houses and streets." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOE89d2mM-9t7WRxweR-K4BRxysCqvb2mEpYg2qMKTxUhH6qZzfwguhnI3NR4aMEMc7-uY2sCbZWYFQwJ0GWT9Ta4ahMWW6WoBcPhMHc7RvWjgLXQNRU13GKyuKiCRPCxRpcowSM_9_jk7fiWHt8qbnBNsVjabHlU-DlZFTHlu3dU_6cCIzj8XYiwnRdmhySKcboj60JGiOuRvUP3IVoJ2v7Wlq-HFTXs6CrF1XvNaHceS-CB8b6a5OsYsYz1g4YZRD54lKt8WsNAE"/>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h3 class="form-section-title">Step 3: Skills &amp; Schedule</h3>
+<div class="space-y-8">
+<div>
+<label class="form-label">Required Skills</label>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Plumbing</button>
+<button class="flex items-center gap-x-2 rounded-full border border-[var(--primary-color)] bg-blue-50 px-4 py-2 text-sm font-medium text-[var(--primary-color)] hover:bg-blue-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Electrical</button>
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Carpentry</button>
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Painting</button>
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Landscaping</button>
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Cleaning</button>
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">Handyman</button>
+<button class="flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:border-[var(--primary-color)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">General Labour</button>
+</div>
+</div>
+<hr class="border-slate-200"/>
+<div>
+<label class="form-label">Date &amp; Time</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="form-label text-sm" for="job-date">Job Date</label>
+<input class="form-input" id="job-date" type="date" value="2024-07-26"/>
+</div>
+<div>
+<label class="form-label text-sm" for="start-time">Start Time</label>
+<input class="form-input" id="start-time" type="time" value="09:00"/>
+</div>
+<div class="md:col-span-2">
+<label class="form-label text-sm" for="duration">Estimated Duration</label>
+<select class="form-input" id="duration">
+<option>Select duration</option>
+<option>Half Day (up to 4 hours)</option>
+<option selected="">Full Day (approx. 8 hours)</option>
+<option>Multiple Days</option>
+<option>Ongoing</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h3 class="form-section-title">Step 4: Payment Details</h3>
+<div class="grid grid-cols-1 gap-6">
+<div>
+<label class="form-label">Pay Type</label>
+<div class="grid grid-cols-2 gap-4">
+<button class="text-center p-4 rounded-lg border-2 border-[var(--primary-color)] bg-blue-50 text-[var(--primary-color)] font-bold transition-all">
+<span class="block text-lg">Hourly Rate</span>
+<span class="text-sm font-normal">Pay per hour</span>
+</button>
+<button class="text-center p-4 rounded-lg border border-slate-300 bg-white text-slate-700 font-bold hover:border-slate-400 hover:bg-slate-50 transition-all">
+<span class="block text-lg">Fixed Price</span>
+<span class="text-sm font-normal">One-off payment</span>
+</button>
+</div>
+</div>
+<div>
+<label class="form-label" for="hourly-rate">Hourly Rate (AUD)</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<span class="text-slate-500 sm:text-lg">$</span>
+</div>
+<input class="form-input pl-10 text-lg" id="hourly-rate" placeholder="35.00" step="0.5" type="number"/>
+</div>
+<p class="text-sm text-slate-500 mt-2">Enter the rate per hour. Platform fees may apply.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4">
+<button class="w-full sm:w-auto flex items-center justify-center rounded-lg h-12 px-8 bg-slate-200 text-slate-700 text-base font-bold tracking-wide hover:bg-slate-300 transition-colors">
+<span>Back</span>
+</button>
+<button class="w-full sm:w-auto flex items-center justify-center rounded-lg h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold tracking-wide hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">
+<span>Continue to Next Step</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -19,11 +19,16 @@ global.ResizeObserver = vi.fn(() => ({
 }))
 
 // Mock IntersectionObserver
-global.IntersectionObserver = vi.fn(() => ({
+global.IntersectionObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),
   disconnect: vi.fn(),
-}))
+  root: null,
+  rootMargin: '',
+  thresholds: [],
+  takeRecords: vi.fn(() => []),
+})) as unknown as typeof IntersectionObserver
+global.IntersectionObserver.prototype = IntersectionObserver.prototype
 
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
@@ -74,9 +79,9 @@ Object.defineProperty(global, 'File', {
     type: string
     lastModified: number
 
-    constructor(chunks: any[], filename: string, options: any = {}) {
+    constructor(chunks: (string | ArrayBuffer)[], filename: string, options: { type?: string } = {}) {
       this.name = filename
-      this.size = chunks.reduce((acc, chunk) => acc + chunk.length, 0)
+      this.size = chunks.reduce((acc, chunk) => acc + (typeof chunk === 'string' ? chunk.length : chunk.byteLength), 0)
       this.type = options.type || ''
       this.lastModified = Date.now()
     }

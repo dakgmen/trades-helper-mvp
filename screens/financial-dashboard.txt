@@ -1,0 +1,243 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<meta charset="utf-8"/>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-background: #F8FAFC;
+        --neutral-text: #475569;
+        --neutral-border: #E2E8F0;
+      }
+    </style>
+</head>
+<body class="bg-[var(--neutral-background)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] bg-white px-10 py-3">
+<div class="flex items-center gap-4 text-slate-800">
+<div class="size-8 text-[var(--primary-color)]">
+<svg class="size-full" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h2 class="text-slate-800 text-lg font-bold leading-tight tracking-[-0.015em]">TradieHelper</h2>
+</div>
+<div class="flex flex-1 justify-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium leading-normal" href="#">Jobs</a>
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium leading-normal" href="#">Payments</a>
+<a class="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium leading-normal" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white hover:bg-slate-100 text-slate-500">
+<div class="text-slate-500" data-icon="Bell" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</div>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbnkZf5d8-zUtfahRYxWq6_e03YJJ-Y8DCLl7xGlL-t9DsYyPs_oqnlytoKuLboHnyrmJintgZs4WFHtGcqEHYR0OrB8MJFJIWpLZVLyMX_ftoRxoYx3umcDTJal7tl_V0cLVyHQmuXsutRPyHiohtAoS4uqvq1QzBnpzgeWEx6mH7248nxI2QYpv8TmLXcq1ltbcWWKbL83rwVBjFjnAzRuolPTTYz1a56F0V0rdEyIcU0KQnrdaQpcDbcLAhTDJDxOV5T9e0_h2U");'></div>
+</div>
+</header>
+<main class="px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-6xl">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 text-3xl font-bold leading-tight">Financial Dashboard</h1>
+<p class="text-[var(--neutral-text)] text-base font-normal leading-normal">Manage your earnings, payments, and fees effectively.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 text-sm font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-50">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-99.51,7.51a8,8,0,0,0,11,0l40-40a8,8,0,0,0-11.31-11.32L136,128.69V40a8,8,0,0,0-16,0v88.69L89.83,99.83a8,8,0,0,0-11.32,11.32Z"></path>
+</svg>
+                  Export Data
+                </button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 text-sm font-semibold bg-[var(--primary-color)] text-white hover:bg-blue-700">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V72H40V56ZM40,200V88H216l.06,112Z"></path>
+</svg>
+                  Tax Report
+                </button>
+</div>
+</div>
+<h2 class="text-slate-900 text-xl font-bold leading-tight mb-4">Earnings Overview</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white border border-[var(--neutral-border)]">
+<p class="text-[var(--neutral-text)] text-sm font-medium">Total Earnings</p>
+<p class="text-slate-900 text-3xl font-bold">$12,500 AUD</p>
+<p class="text-[var(--secondary-color)] text-sm font-medium flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                  +10% from last month
+                </p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white border border-[var(--neutral-border)]">
+<p class="text-[var(--neutral-text)] text-sm font-medium">Pending Payments</p>
+<p class="text-slate-900 text-3xl font-bold">$750 AUD</p>
+<p class="text-[var(--accent-color)] text-sm font-medium flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                  -5% from last month
+                </p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white border border-[var(--neutral-border)]">
+<p class="text-[var(--neutral-text)] text-sm font-medium">Average Job Earnings</p>
+<p class="text-slate-900 text-3xl font-bold">$500 AUD</p>
+<p class="text-[var(--secondary-color)] text-sm font-medium flex items-center gap-1">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                  +2% from last month
+                </p>
+</div>
+</div>
+<h2 class="text-slate-900 text-xl font-bold leading-tight mb-4">Payment History</h2>
+<div class="overflow-x-auto rounded-lg border border-[var(--neutral-border)] bg-white mb-8">
+<table class="w-full">
+<thead class="bg-slate-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Job</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Client</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Amount</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[var(--neutral-border)]">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">15 Jul 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Plumbing Repair</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">Sarah Thompson</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">$250 AUD</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Completed</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">10 Jul 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Electrical Installation</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">David Lee</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">$300 AUD</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Completed</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">05 Jul 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Gardening Service</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">Emily Carter</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">$200 AUD</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Completed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="text-slate-900 text-xl font-bold leading-tight mb-4">Pending Payments</h2>
+<div class="overflow-x-auto rounded-lg border border-[var(--neutral-border)] bg-white mb-8">
+<table class="w-full">
+<thead class="bg-slate-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Job</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Client</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Amount</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Due Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[var(--neutral-border)]">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">20 Jul 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Roofing Repair</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">Robert Green</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">$400 AUD</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--accent-color)] font-medium">25 Jul 2024</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">18 Jul 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">Tiling Service</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--neutral-text)]">Laura Evans</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">$350 AUD</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--accent-color)] font-medium">23 Jul 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="text-slate-900 text-xl font-bold leading-tight mb-4">Fee Breakdown</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="flex flex-col gap-4 rounded-lg border border-[var(--neutral-border)] bg-white p-6">
+<div class="flex flex-col">
+<p class="text-base font-medium text-slate-800">Total Fees Paid</p>
+<p class="text-[var(--neutral-text)] text-sm">This Month</p>
+</div>
+<p class="text-slate-900 text-4xl font-bold truncate">$500 AUD</p>
+<div class="h-48 flex items-end gap-4">
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--primary-color)] w-full rounded-t-sm" style="height: 40%;"></div>
+<p class="text-xs text-[var(--neutral-text)]">Jul 1</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--primary-color)] w-full rounded-t-sm" style="height: 50%;"></div>
+<p class="text-xs text-[var(--neutral-text)]">Jul 8</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--primary-color)] w-full rounded-t-sm" style="height: 40%;"></div>
+<p class="text-xs text-[var(--neutral-text)]">Jul 15</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--primary-color)] w-full rounded-t-sm" style="height: 80%;"></div>
+<p class="text-xs text-[var(--neutral-text)]">Jul 22</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--primary-color)] w-full rounded-t-sm" style="height: 100%;"></div>
+<p class="text-xs text-[var(--neutral-text)]">Jul 29</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[var(--neutral-border)] bg-white p-6">
+<div class="flex flex-col">
+<p class="text-base font-medium text-slate-800">Fee Distribution by Job Type</p>
+<p class="text-[var(--neutral-text)] text-sm">This Month</p>
+</div>
+<div class="h-48 flex items-end gap-4">
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--secondary-color)] w-full rounded-t-sm" style="height: 20%;"></div>
+<p class="text-xs text-center text-[var(--neutral-text)]">Plumbing</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--secondary-color)] w-full rounded-t-sm" style="height: 70%;"></div>
+<p class="text-xs text-center text-[var(--neutral-text)]">Electrical</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--secondary-color)] w-full rounded-t-sm" style="height: 80%;"></div>
+<p class="text-xs text-center text-[var(--neutral-text)]">Gardening</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--secondary-color)] w-full rounded-t-sm" style="height: 90%;"></div>
+<p class="text-xs text-center text-[var(--neutral-text)]">Painting</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+<div class="bg-[var(--secondary-color)] w-full rounded-t-sm" style="height: 70%;"></div>
+<p class="text-xs text-center text-[var(--neutral-text)]">Carpentry</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

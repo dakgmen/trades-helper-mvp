@@ -1,0 +1,60 @@
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run test:run
+
+> tradie-helper@0.0.0 test:run
+> vitest run
+
+
+ RUN  v3.2.4 C:/ClaudeProject/voicehealth_ai/tradie-helper
+
+ ✓ src/tests/services/simple.test.ts (6 tests) 2329ms
+   ✓ Service Integration Tests > should validate Stripe service structure  1381ms
+   ✓ Service Integration Tests > should validate Notification service structure  381ms
+ ✓ src/tests/services/geolocationService.test.ts (17 tests) 43ms
+(node:5444) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ src/tests/services/stripeService.test.ts (7 tests) 26ms
+ ✓ src/tests/services/fileUploadService.test.ts (8 tests) 26ms
+ ❯ src/tests/services/notificationService.test.ts (15 tests | 1 failed) 136ms
+   ✓ NotificationService > initialize > should initialize successfully with service worker support 12ms
+   ✓ NotificationService > initialize > should fail without service worker support 12ms
+   ✓ NotificationService > initialize > should fail without push manager support 1ms
+   ✓ NotificationService > requestPermission > should request permission successfully when granted 2ms
+   ✓ NotificationService > requestPermission > should handle permission denied 2ms
+   ✓ NotificationService > requestPermission > should handle permission dismissed 2ms
+   ✓ NotificationService > requestPermission > should fail without notification support 13ms
+   × NotificationService > subscribeToPush > should subscribe to push notifications successfully 55ms
+     → expected false to be true // Object.is equality
+   ✓ NotificationService > createNotification > should create notification successfully 18ms
+   ✓ NotificationService > getUserNotifications > should get user notifications successfully 2ms
+   ✓ NotificationService > getUserNotifications > should filter unread notifications 2ms
+   ✓ NotificationService > markAsRead > should mark notification as read successfully 3ms
+   ✓ NotificationService > getPreferences > should get notification preferences successfully 2ms
+   ✓ NotificationService > getPreferences > should return default preferences when none found 2ms
+   ✓ NotificationService > updatePreferences > should update notification preferences successfully 1ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+ successfully
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/tests/services/notificationService.test.ts:256:30
+    254|       const result = await notificationService.subscribeToPush('user123')
+    255| 
+    256|       expect(result.success).toBe(true)
+       |                              ^
+    257|       expect(result.error).toBeNull()
+    258|     })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  1 failed | 52 passed (53)
+   Start at  23:07:12
+   Duration  37.54s (transform 3.31s, setup 1.47s, collect 2.94s, tests 2.56s, environment 22.84s, prepare 3.37s)
+

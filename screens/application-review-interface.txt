@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<title>TradieHelper - Application Review</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #16a34a;
+        --accent-color: #ea580c;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-gray-50" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-white px-10 py-3 shadow-sm">
+<div class="flex items-center gap-4 text-gray-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 8.89l-1.44-1.44-7.56 7.56-7.56-7.56L4 8.89l9 9z M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+</svg>
+<h1 class="text-gray-800 text-2xl font-bold leading-tight tracking-[-0.015em]">TradieHelper</h1>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-base font-medium leading-normal" href="#">Find Tradies</a>
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-base font-medium leading-normal" href="#">Post a Job</a>
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-base font-medium leading-normal" href="#">Pricing</a>
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-base font-medium leading-normal" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-base font-medium leading-normal" href="#">Log In</a>
+<button class="flex min-w-[100px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors duration-300">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<div class="bg-white rounded-xl shadow-md p-6">
+<div class="mb-6">
+<nav class="text-sm font-medium text-gray-500">
+<a class="hover:text-[var(--primary-color)]" href="#">Applications</a>
+<span class="mx-2">/</span>
+<span class="text-gray-800">Review Application</span>
+</nav>
+<h2 class="mt-2 text-3xl font-bold text-gray-900">Review Application</h2>
+<p class="mt-1 text-gray-600">Review the application details for Alex Johnson, a qualified electrician applying for the 'Wiring a New Home' job.</p>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Application Timeline</h3>
+<div class="relative pl-8">
+<div class="absolute left-4 top-1 bottom-1 w-0.5 bg-gray-200"></div>
+<div class="flex items-start gap-4 mb-6">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--secondary-color)] text-white flex items-center justify-center z-10">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Application Received</p>
+<p class="text-sm text-gray-500">2 days ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4 mb-6">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--secondary-color)] text-white flex items-center justify-center z-10">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Application Viewed</p>
+<p class="text-sm text-gray-500">1 day ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center z-10">
+<span class="material-symbols-outlined">event</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Interview Scheduled</p>
+<p class="text-sm text-gray-500">Pending</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Skill Matching</h3>
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<p class="font-semibold text-gray-800">Electrical Wiring</p>
+<p class="text-sm font-medium text-gray-600">Expert</p>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<p class="font-semibold text-gray-800">Residential Construction</p>
+<p class="text-sm font-medium text-gray-600">Proficient</p>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<p class="font-semibold text-gray-800">Project Management</p>
+<p class="text-sm font-medium text-gray-600">Intermediate</p>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-4">Decision</h3>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-red-100 text-red-700 font-bold hover:bg-red-200 transition-colors duration-300">
+<span class="material-symbols-outlined">thumb_down</span>
+<span class="truncate">Decline Application</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-[var(--secondary-color)] text-white font-bold hover:bg-green-700 transition-colors duration-300">
+<span class="material-symbols-outlined">thumb_up</span>
+<span class="truncate">Accept Application</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div class="bg-white rounded-xl shadow-md p-6">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Applicant Profile</h3>
+<div class="flex flex-col items-center text-center">
+<div class="relative">
+<div class="w-32 h-32 rounded-full bg-center bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMiBCMcsaawnJ2w3SdvfMV5fM1EBBOQAlUg5X8am-tM6OzguKGw3ovJA6PXFbidzMpnDLrAIR1-JBoe8AFiJkidE_4HF4_2TzfznjD5oRzC759A54KoodsXDWfPHxIFjt73DPUl6-gNyABUviJprEtS1lg5R4D_6WhE-mjkZdtJyxct3-MgaiOjWHEf9r3N9Q2ADnpjEUeuw5PCp4YnVvU1zffZbDrYrjccAavphLVvfPDafFX7NVgwb32lfNq1CUYL_hA5aFeGuoT");'></div>
+<span class="absolute bottom-1 right-1 block h-6 w-6 rounded-full bg-[var(--secondary-color)] text-white flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-sm">verified</span>
+</span>
+</div>
+<p class="mt-4 text-2xl font-bold text-gray-900">Alex Johnson</p>
+<p class="text-gray-600">Electrician | 5 years experience</p>
+</div>
+<div class="mt-6 border-t border-gray-200 pt-6">
+<dl class="space-y-4">
+<div class="flex justify-between items-center">
+<dt class="text-sm font-medium text-gray-500">Verification Status</dt>
+<dd class="text-sm font-semibold text-green-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">verified</span>
+                        Verified
+                      </dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="text-sm font-medium text-gray-500">Rating</dt>
+<dd class="text-sm font-semibold text-gray-800 flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-yellow-500">star</span>
+                        4.8/5 (15 reviews)
+                      </dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="text-sm font-medium text-gray-500">Jobs Completed</dt>
+<dd class="text-sm font-semibold text-gray-800">22</dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="text-sm font-medium text-gray-500">Hourly Rate</dt>
+<dd class="text-sm font-semibold text-gray-800">$75.00 AUD</dd>
+</div>
+</dl>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-md p-6">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Contact</h3>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-gray-100 text-gray-800 font-bold hover:bg-gray-200 transition-colors duration-300">
+<span class="material-symbols-outlined">mail</span>
+<span class="truncate">Message Applicant</span>
+</button>
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-gray-100 text-gray-800 font-bold hover:bg-gray-200 transition-colors duration-300">
+<span class="material-symbols-outlined">call</span>
+<span class="truncate">Call Applicant</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

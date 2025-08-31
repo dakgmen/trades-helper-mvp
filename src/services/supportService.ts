@@ -218,7 +218,7 @@ export class SupportService {
     resolution?: string
   ): Promise<boolean> {
     try {
-      const updateData: any = {
+      const updateData: Partial<{ status: SupportTicketStatus; admin_id: string; resolution: string; updated_at: string; resolved_at: string }> = {
         status,
         updated_at: new Date().toISOString()
       }

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #16a34a;
+        --accent-color: #ea580c;
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-white px-10 py-3 shadow-sm">
+<div class="flex items-center gap-3 text-gray-800">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.75 7.5l3.25-3.25m0 0l3.25 3.25m-3.25-3.25v13.5m0-13.5L10 4.25m-3.25 3.25L3.5 14.25m3.25-6.75L10 10.75m6.75 7.5l-3.25 3.25m0 0l-3.25-3.25m3.25 3.25V7.5m0 13.5L14 19.75m3.25-3.25l3.25-6.75m-3.25 6.75L14 13.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h2 class="text-gray-800 text-xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6">
+<nav class="flex items-center gap-6">
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-sm font-medium" href="#">Find Jobs</a>
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-sm font-medium" href="#">Post a Job</a>
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-sm font-medium" href="#">My Jobs</a>
+<a class="text-gray-600 hover:text-[var(--primary-color)] text-sm font-medium" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white shadow-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTUODlufwZp0n6gE2gCQwULVnxeNCoa1lBAHYbQyTOCMDwR2dHP4fGiD_JvECq54priix18Oi2urwyPxcTcUqXqYieiw1sqAA-NMnOeZ4pftZ8R8Qm2kRMM1M-kbjHR2rxePs-a0PKjogDvRrAMeRDlJshq_aHftioCSsovD-lPP7F5n9_AFL2mu_EM_CxWmBqvlapClkh92evCIUMNL9fL2DCqXh_JO7pseZ1A1lXgjKSZ9mvjT20nJfSRTpTr5e1VHJ9NQvGhcBL");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-40 py-10">
+<div class="layout-content-container mx-auto flex max-w-4xl flex-col gap-8">
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-gray-800 text-4xl font-bold tracking-tight">Your Job Matches</h1>
+<p class="text-gray-500">Based on your profile and preferences, here are some jobs that might be a great fit for you.</p>
+</div>
+<div class="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white shadow-sm">
+<div class="flex items-center gap-6 p-6">
+<div class="flex-1">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-[var(--primary-color)]">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M251.34,112,183.88,44.08a96.1,96.1,0,0,0-135.77,0l-.09.09L34.25,58.4A8,8,0,0,0,45.74,69.53L59.47,55.35a79.92,79.92,0,0,1,18.71-13.9L124.68,88l-96,96a16,16,0,0,0,0,22.63l20.69,20.69a16,16,0,0,0,22.63,0l96-96,14.34,14.34h0L200,163.3a16,16,0,0,0,22.63,0l28.69-28.69A16,16,0,0,0,251.34,112ZM60.68,216,40,195.31l68-68L128.68,148ZM162.34,114.32,140,136.67,119.31,116l22.35-22.35a8,8,0,0,0,0-11.32L94.32,35a80,80,0,0,1,78.23,20.41l44.22,44.51L188,128.66l-14.34-14.34A8,8,0,0,0,162.34,114.32Zm49,37.66-12-12L228,111.25l12,12Z"></path>
+</svg>
+</div>
+<div>
+<p class="text-lg font-semibold text-gray-800">Plumbing Job - Leaking Tap</p>
+<div class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
+<span>Posted 2 days ago</span>
+<span class="text-gray-300">•</span>
+<span>123 Main Street, Sydney NSW 2000</span>
+<span class="text-gray-300">•</span>
+<span class="font-semibold text-gray-700">$50 - $75 AUD/hr</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="relative h-20 w-20">
+<svg class="h-full w-full" height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-gray-200" cx="18" cy="18" fill="none" r="16" stroke-width="2"></circle>
+<circle class="stroke-current text-[var(--secondary-color)]" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="15" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-xl font-bold text-gray-800">85%</span>
+</div>
+</div>
+<span class="text-xs font-medium text-gray-500">Match</span>
+</div>
+<button class="flex h-10 min-w-[84px] items-center justify-center rounded-md bg-[var(--primary-color)] px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
+                    View Details
+                  </button>
+<button class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6">
+<div class="flex-1">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-[var(--primary-color)]">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M251.34,112,183.88,44.08a96.1,96.1,0,0,0-135.77,0l-.09.09L34.25,58.4A8,8,0,0,0,45.74,69.53L59.47,55.35a79.92,79.92,0,0,1,18.71-13.9L124.68,88l-96,96a16,16,0,0,0,0,22.63l20.69,20.69a16,16,0,0,0,22.63,0l96-96,14.34,14.34h0L200,163.3a16,16,0,0,0,22.63,0l28.69-28.69A16,16,0,0,0,251.34,112ZM60.68,216,40,195.31l68-68L128.68,148ZM162.34,114.32,140,136.67,119.31,116l22.35-22.35a8,8,0,0,0,0-11.32L94.32,35a80,80,0,0,1,78.23,20.41l44.22,44.51L188,128.66l-14.34-14.34A8,8,0,0,0,162.34,114.32Zm49,37.66-12-12L228,111.25l12,12Z"></path>
+</svg>
+</div>
+<div>
+<p class="text-lg font-semibold text-gray-800">Electrical Work - New Wiring</p>
+<div class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
+<span>Posted 1 day ago</span>
+<span class="text-gray-300">•</span>
+<span>456 Oak Avenue, Melbourne VIC 3000</span>
+<span class="text-gray-300">•</span>
+<span class="font-semibold text-gray-700">$60 - $85 AUD/hr</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="relative h-20 w-20">
+<svg class="h-full w-full" height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-gray-200" cx="18" cy="18" fill="none" r="16" stroke-width="2"></circle>
+<circle class="stroke-current text-[var(--secondary-color)]" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="20" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-xl font-bold text-gray-800">80%</span>
+</div>
+</div>
+<span class="text-xs font-medium text-gray-500">Match</span>
+</div>
+<button class="flex h-10 min-w-[84px] items-center justify-center rounded-md bg-[var(--primary-color)] px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
+                    View Details
+                  </button>
+<button class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6">
+<div class="flex-1">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-[var(--primary-color)]">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M251.34,112,183.88,44.08a96.1,96.1,0,0,0-135.77,0l-.09.09L34.25,58.4A8,8,0,0,0,45.74,69.53L59.47,55.35a79.92,79.92,0,0,1,18.71-13.9L124.68,88l-96,96a16,16,0,0,0,0,22.63l20.69,20.69a16,16,0,0,0,22.63,0l96-96,14.34,14.34h0L200,163.3a16,16,0,0,0,22.63,0l28.69-28.69A16,16,0,0,0,251.34,112ZM60.68,216,40,195.31l68-68L128.68,148ZM162.34,114.32,140,136.67,119.31,116l22.35-22.35a8,8,0,0,0,0-11.32L94.32,35a80,80,0,0,1,78.23,20.41l44.22,44.51L188,128.66l-14.34-14.34A8,8,0,0,0,162.34,114.32Zm49,37.66-12-12L228,111.25l12,12Z"></path>
+</svg>
+</div>
+<div>
+<p class="text-lg font-semibold text-gray-800">Carpentry - Deck Repair</p>
+<div class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
+<span>Posted 3 days ago</span>
+<span class="text-gray-300">•</span>
+<span>789 Pine Road, Brisbane QLD 4000</span>
+<span class="text-gray-300">•</span>
+<span class="font-semibold text-gray-700">$55 - $80 AUD/hr</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="relative h-20 w-20">
+<svg class="h-full w-full" height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-gray-200" cx="18" cy="18" fill="none" r="16" stroke-width="2"></circle>
+<circle class="stroke-current text-[var(--accent-color)]" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="30" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-xl font-bold text-gray-800">70%</span>
+</div>
+</div>
+<span class="text-xs font-medium text-gray-500">Match</span>
+</div>
+<button class="flex h-10 min-w-[84px] items-center justify-center rounded-md bg-[var(--primary-color)] px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700">
+                    View Details
+                  </button>
+<button class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+<h3 class="text-lg font-semibold text-gray-800">Refine Your Preferences</h3>
+<p class="text-sm text-gray-500">Not seeing the right jobs? Adjust your preferences to get better matches.</p>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700" for="job-type">Job Type</label>
+<select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" id="job-type" name="job-type">
+<option>All</option>
+<option>Plumbing</option>
+<option>Electrical</option>
+<option>Carpentry</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700" for="location">Location</label>
+<input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" id="location" name="location" placeholder="e.g., Sydney, NSW" type="text"/>
+</div>
+</div>
+<button class="self-start rounded-md bg-[var(--accent-color)] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-orange-700">Update Preferences</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,174 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #16a34a;
+        --accent-color: #ea580c;
+        --neutral-background: #f1f5f9;
+        --neutral-text: #64748b;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 px-10 py-4 shadow-sm bg-white">
+<div class="flex items-center gap-4 text-slate-900">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L1 12l11 10 11-10L12 2zm0 17.5L3.5 12 12 4.5 20.5 12 12 19.5z"></path>
+<path d="M12 10.5l-6 4.5h12l-6-4.5z"></path>
+</svg>
+<h2 class="text-slate-900 text-xl font-bold leading-tight tracking-[-0.015em]">TradieHelper</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<nav class="flex items-center gap-8">
+<a class="text-slate-700 text-sm font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="text-slate-700 text-sm font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Post a Job</a>
+<a class="text-slate-700 text-sm font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">My Jobs</a>
+<a class="text-slate-700 text-sm font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">
+<span class="material-icons text-xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-200 hover:border-[var(--primary-color)] transition-all" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzS3UEHH7P2XyAq9OU3g6k9uXhntsJK9neV4IrARHvFSrZ5pb3Q9C5SrrNlopokztqf5VhrgamAQvcj-m5sKMyDMRLFwYjixfo7yIiEfya0ymr0XuFdH9-B72RjmgnosZcQQER9SE1ShMPnP7sBPI_we3ZyTTe45UBoMMwqDOFaw1dLw9vhJbj_ofzBIhnc3jk4oZhOLiGwksdAueE0_Wdyv6M-6MkZKg9YYB7AUm4Kbm9pxeRtjJyOwUr6kgbS9n2vDL_F6equUtY");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-12">
+<h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Your Achievements</h1>
+<p class="mt-4 text-lg leading-8 text-[var(--neutral-text)]">
+                Earn badges by completing tasks and engaging with the TradieHelper community. Share your progress and show off your accomplishments!
+              </p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+<h2 class="text-2xl font-bold text-slate-900 mb-6">Badge Collection</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+<div class="flex flex-col items-center text-center group">
+<div class="relative">
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 group-hover:border-[var(--primary-color)] transition-all duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfHa2Cq8iK_01zQsdRYDiK9so9_6SfxABHX7L32IwgTguJ-AT7iICVQgCDR6Jdu8V9PF-Qw_rDv2UVsignrjogLv8IUxYtMSBPI8ROV0doYiolaW2vJSyZ7U7pC5X3CDbUCAMQDflwB6w0IW_Zk1f7X1L_RZjnPEXuSl1lrM7EOPiSTr4RYN7oLjEkPjCUN5tEv05QSmIGEhlkNq1pkgDuDwF1RTTke5i5g_wViws4ucLd750sEed5h9REVJj4p_qEK2dvg1qLl5bZ");'></div>
+<div class="absolute -bottom-2 -right-2 bg-[var(--secondary-color)] rounded-full p-1.5 text-white">
+<span class="material-icons text-base">check</span>
+</div>
+</div>
+<div class="mt-4">
+<p class="text-slate-800 text-base font-semibold leading-normal">Newbie Navigator</p>
+<p class="text-[var(--neutral-text)] text-sm font-normal leading-normal">Complete your profile</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50">
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 group-hover:border-[var(--primary-color)] transition-all duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoA940m9gOUHzPcB5-6xMQq1vXMOVsegSIX6AFuJE7p0gaGfkjQsePoJoLVulyt_5zfWqEPAKnvMHExGwijjThopP-Ohz6OFZi1cor3u_eRp5sTQGOme7P5qshRSDiwMP8DqaP2Ifyx9QdyXaQtEye1SO6AOHfEvZmLHBa_2_LL9G6zXWXDN62tU04eLhbQY6b_vq8_gxnL8WvZwp7txZ2S_TiL__jGEfvXReNU2SXWqlzPONHY0KIq9jSs4GvqBACooRohgDJOW9T");'></div>
+<div class="mt-4">
+<p class="text-slate-800 text-base font-semibold leading-normal">Job Juggler</p>
+<p class="text-[var(--neutral-text)] text-sm font-normal leading-normal">Complete 5 jobs</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50">
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 group-hover:border-[var(--primary-color)] transition-all duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCE9Vfb1f1Dzb2DjoZ8jsmvHyF8vPVWO41ixRIHwdwfKLd6CRDPJ5x9ZLc7zFlJ83DcFvuJYRPZyPCFnw4cdeG_NyrngkQHhmuu8Os7TanDk1-e03GkN_0ztT0ySginDjLUGyKAUwH5SkDXAZ3QxySPXljbOXprwSvNGU7bzu-lgv6EVJhhHuylBQRi0ybEE-WQ_whCNCgcQpzSggV-uV4tuIzZB_VNoK5hNSwVA7M10Kwh2rOIDmk8VgjxsY4H2zMQL-wd3HO1YVRf");'></div>
+<div class="mt-4">
+<p class="text-slate-800 text-base font-semibold leading-normal">Review Rockstar</p>
+<p class="text-[var(--neutral-text)] text-sm font-normal leading-normal">Receive 10 positive reviews</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50">
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 group-hover:border-[var(--primary-color)] transition-all duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCor5eMJYGFP751iRZzhiB6-y06kyrdl2o4wru_ilSiRtUmoGXAvYfhWcIM1TEH9w7TVRAS8-8DArQwdjvuO-1HwfHdNSoHN8Y4YgOPVAXoolmBvKgk8VoBP678Uya-s7GTJx_pMSZPBPmamF0jSaX9b2nwzPpHR9IHmqEQi-OA1nhu6Mu9Hui-iZRimNdIyU0vOJ3d-OBDUyMs9-Ir1iaI7TZJ-_bJhTeO4wFd9UHcTYdGL5YYaa6pGH6heERMqtLcYensFQNJObv_");'></div>
+<div class="mt-4">
+<p class="text-slate-800 text-base font-semibold leading-normal">Community Connector</p>
+<p class="text-[var(--neutral-text)] text-sm font-normal leading-normal">Refer 3 friends</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50">
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 group-hover:border-[var(--primary-color)] transition-all duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBq2hYYLk8XZRa6lbdqij-9g12mPaGQBjGnsFcs56QAeJQfUVPX7D7eYanm98nNrvbjbaz3KPZ234F5_1piJwD5r4V19WAtZPssWXtG9ulM6OdXMb_5HxX69XQ8Wq3dcg_p8K-14ZQElRkp5L9iswfufw2ONvAK8ggVV4SgjptXAdQED0qBfGAfxG4zr5gvYZMbfC9y20LBFAjqblBPRWYj3XFVEcmzJhvjxtGRlHiZh4qd-hUBJR8miA3VKFRsdrlkrumex2EbZU62");'></div>
+<div class="mt-4">
+<p class="text-slate-800 text-base font-semibold leading-normal">Safety Champion</p>
+<p class="text-[var(--neutral-text)] text-sm font-normal leading-normal">Pass the safety quiz</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center group opacity-50">
+<div class="w-32 h-32 bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 group-hover:border-[var(--primary-color)] transition-all duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAhe1nLG1iSw-3IY8zDaxDFoYd7BPj1UE9TuJoJfnZY76iyTo4U2z1GevzXFfJDLFrDgHUNdio-W-si7_bij7bIzH9Up-sZCYTLppTBSMu2Lts03P81f4tjIKew-Ep0WTn5VTHDUGj9I9fP7wI7QjTeWvkNXp51Or_bWRk-ueQMGe1blgY9EVFh6MlQY917HhJoHutuzuziBGDsFvIU3x6CJAe13Dk2FiCk7xMnY3XOS2oNrNn1nnoCp3Q9X0CJONM-d8aCPD4Id3X");'></div>
+<div class="mt-4">
+<p class="text-slate-800 text-base font-semibold leading-normal">Payment Pro</p>
+<p class="text-[var(--neutral-text)] text-sm font-normal leading-normal">Process 5 payments</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="bg-white p-8 rounded-lg shadow-lg">
+<h2 class="text-2xl font-bold text-slate-900 mb-6">Your Progress</h2>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-center mb-2">
+<p class="text-slate-800 text-base font-medium leading-normal">Profile Completion</p>
+<p class="text-[var(--primary-color)] text-sm font-bold leading-normal">60%</p>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<p class="text-slate-800 text-base font-medium leading-normal">Jobs Completed</p>
+<p class="text-[var(--primary-color)] text-sm font-bold leading-normal">2/5</p>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<p class="text-slate-800 text-base font-medium leading-normal">Positive Reviews</p>
+<p class="text-[var(--primary-color)] text-sm font-bold leading-normal">8/10</p>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-2.5">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg">
+<h2 class="text-2xl font-bold text-slate-900 mb-6">Share Your Achievements</h2>
+<p class="text-[var(--neutral-text)] mb-6">Let your network know about your latest accomplishments on TradieHelper!</p>
+<div class="flex justify-around items-center">
+<button class="flex flex-col items-center gap-2 text-slate-600 hover:text-[#1877F2] transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 group-hover:bg-[#1877F2]/10 flex items-center justify-center transition-colors">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path>
+</svg>
+</div>
+<p class="text-sm font-medium">Facebook</p>
+</button>
+<button class="flex flex-col items-center gap-2 text-slate-600 hover:text-[#1DA1F2] transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 group-hover:bg-[#1DA1F2]/10 flex items-center justify-center transition-colors">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.54-.18-6.69-1.87-8.8-4.46-.37.63-.58 1.37-.58 2.15 0 1.49.76 2.8 1.91 3.56-.71 0-1.37-.22-1.95-.54v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.7 2.13 2.94 4.02 2.97-1.47 1.15-3.32 1.83-5.33 1.83-.35 0-.69-.02-1.03-.06 1.9 1.22 4.16 1.93 6.58 1.93 7.89 0 12.21-6.54 12.21-12.21 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.22z"></path>
+</svg>
+</div>
+<p class="text-sm font-medium">Twitter</p>
+</button>
+<button class="flex flex-col items-center gap-2 text-slate-600 hover:text-[#0A66C2] transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 group-hover:bg-[#0A66C2]/10 flex items-center justify-center transition-colors">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M21 3H3C2.45 3 2 3.45 2 4v16c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM8 18H5V9h3v9zm-1.5-10.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM19 18h-3v-4.75c0-1.25-.5-2.25-1.75-2.25S12.5 12 12.5 13.25V18h-3V9h3v1.34c.66-1.07 1.94-1.84 3.16-1.84 3.49 0 4.34 2.3 4.34 5.3V18z"></path>
+</svg>
+</div>
+<p class="text-sm font-medium">LinkedIn</p>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper Dashboard</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563eb;
+        --color-secondary: #16a34a;
+        --color-accent: #ea580c;
+        --color-neutral-background: #f8fafc;
+        --color-neutral-text: #334155;
+        --color-neutral-border: #e2e8f0;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex min-h-screen flex-col overflow-x-hidden" style="--color-primary: #2563EB; --color-secondary: #16A34A; --color-accent: #EA580C;">
+<div class="flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--color-neutral-border)] bg-white px-6 py-4 md:px-10">
+<div class="flex items-center gap-3">
+<svg class="h-8 w-8 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 17L12 22L22 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 12L12 17L22 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<h1 class="text-xl font-bold text-gray-900">TradieHelper</h1>
+</div>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--color-primary)]" href="#">Dashboard</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--color-primary)]" href="#">Jobs</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--color-primary)]" href="#">Applications</a>
+<a class="text-sm font-medium text-gray-600 hover:text-[var(--color-primary)]" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative flex cursor-pointer items-center justify-center rounded-full bg-gray-100 p-2 text-gray-600 hover:bg-gray-200">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-[var(--color-primary)] bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWP0ezYsDzK72wXjz93v8kGSolxsLyvt5OLIvOWErUDkntQbKq5wm_b2g588lUiVUF8uUNQHsVzb7OXQGGKcy5W_fckvjZsBMnwEptSraPhXX55NdqSuMuR3PM6HZ42HMbGIg-03Blc-IGmLKqORSI1hhdIWVNq0B4srKZ1vLinA6KWFNgyIsr3iuIingnCtdlTZ5EQxV8S1UKLREdYTntBBd0CcOvy3E9Mnsj7seRqkzg9x7A8NtCoj3fZc3wFIdhCvll2iTGnD4j");'></div>
+</div>
+</header>
+<main class="flex-1 bg-[var(--color-neutral-background)] p-4 md:p-8 lg:p-10">
+<div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3">
+<div class="lg:col-span-2">
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-gray-900">Welcome back, Mark!</h2>
+<p class="text-md text-[var(--color-neutral-text)]">Here's what's happening with your jobs today.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+<div class="flex transform flex-col items-center justify-center rounded-lg bg-[var(--color-primary)] p-8 text-white shadow-lg transition-transform hover:scale-105">
+<svg class="mb-4 h-12 w-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h3 class="text-xl font-bold">Post a New Job</h3>
+<p class="mt-1 text-center text-sm text-blue-100">Find the perfect helper for your next project.</p>
+<button class="mt-6 rounded-full bg-white px-6 py-2 font-semibold text-[var(--color-primary)] transition hover:bg-blue-50">Get Started</button>
+</div>
+<div class="flex transform flex-col items-center justify-center rounded-lg border border-[var(--color-neutral-border)] bg-white p-8 shadow-lg transition-transform hover:scale-105">
+<svg class="mb-4 h-12 w-12 text-[var(--color-secondary)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h3 class="text-xl font-bold text-gray-900">View Applications</h3>
+<p class="mt-1 text-center text-sm text-[var(--color-neutral-text)]">Review candidates and manage your applicants.</p>
+<button class="mt-6 rounded-full bg-[var(--color-secondary)] px-6 py-2 font-semibold text-white transition hover:bg-green-700">Review Now</button>
+</div>
+</div>
+<div class="mt-10">
+<h3 class="mb-4 text-xl font-bold text-gray-900">Job Statistics</h3>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-5 shadow-sm">
+<p class="text-sm font-medium text-[var(--color-neutral-text)]">Total Jobs Posted</p>
+<p class="text-3xl font-bold text-gray-900">15</p>
+</div>
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-5 shadow-sm">
+<p class="text-sm font-medium text-[var(--color-neutral-text)]">Active Jobs</p>
+<p class="text-3xl font-bold text-gray-900">8</p>
+</div>
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-5 shadow-sm">
+<p class="text-sm font-medium text-[var(--color-neutral-text)]">Completed Jobs</p>
+<p class="text-3xl font-bold text-gray-900">7</p>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<h3 class="mb-4 text-xl font-bold text-gray-900">Recent Activity</h3>
+<div class="overflow-x-auto rounded-lg border border-[var(--color-neutral-border)] bg-white shadow-sm">
+<table class="w-full text-left">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">Job Title</th>
+<th class="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">Status</th>
+<th class="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">Date Posted</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[var(--color-neutral-border)]">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Plumbing Job in Sydney</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold leading-5 text-[var(--color-primary)]">Active</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--color-neutral-text)]">20 Jul 2024</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Electrical Work in Melbourne</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-semibold leading-5 text-[var(--color-secondary)]">Completed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--color-neutral-text)]">15 Jul 2024</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Carpentry Project in Brisbane</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold leading-5 text-[var(--color-primary)]">Active</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[var(--color-neutral-text)]">10 Jul 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="space-y-8">
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold text-gray-900">Quick Actions</h3>
+<ul class="space-y-3">
+<li><a class="group flex items-center justify-between rounded-md p-3 hover:bg-gray-100" href="#"><span class="font-medium text-[var(--color-neutral-text)] group-hover:text-[var(--color-primary)]">Post a New Job</span><svg class="h-5 w-5 text-gray-400 group-hover:text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></li>
+<li><a class="group flex items-center justify-between rounded-md p-3 hover:bg-gray-100" href="#"><span class="font-medium text-[var(--color-neutral-text)] group-hover:text-[var(--color-primary)]">View Applications</span><svg class="h-5 w-5 text-gray-400 group-hover:text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></li>
+<li><a class="group flex items-center justify-between rounded-md p-3 hover:bg-gray-100" href="#"><span class="font-medium text-[var(--color-neutral-text)] group-hover:text-[var(--color-primary)]">Edit Profile</span><svg class="h-5 w-5 text-gray-400 group-hover:text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></li>
+</ul>
+</div>
+<div class="rounded-lg border border-[var(--color-neutral-border)] bg-white p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold text-gray-900">Support</h3>
+<ul class="space-y-3">
+<li><a class="group flex items-center justify-between rounded-md p-3 hover:bg-gray-100" href="#"><span class="font-medium text-[var(--color-neutral-text)] group-hover:text-[var(--color-primary)]">Contact Support</span><svg class="h-5 w-5 text-gray-400 group-hover:text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></li>
+<li><a class="group flex items-center justify-between rounded-md p-3 hover:bg-gray-100" href="#"><span class="font-medium text-[var(--color-neutral-text)] group-hover:text-[var(--color-primary)]">Help Centre</span><svg class="h-5 w-5 text-gray-400 group-hover:text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

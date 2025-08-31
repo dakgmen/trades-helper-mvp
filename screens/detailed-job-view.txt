@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper - Job Details</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+      }
+      .bg-primary { background-color: var(--primary-color); }
+      .text-primary { color: var(--primary-color); }
+      .border-primary { border-color: var(--primary-color); }
+      .bg-secondary { background-color: var(--secondary-color); }
+      .text-secondary { color: var(--secondary-color); }
+      .bg-accent { background-color: var(--accent-color); }
+      .text-accent { color: var(--accent-color); }
+    </style>
+</head>
+<body class="bg-gray-50">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-white px-10 py-4 shadow-sm">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3 text-gray-800">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h1 class="text-2xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-gray-600 hover:text-primary text-base font-medium transition-colors" href="#">Find Work</a>
+<a class="text-gray-600 hover:text-primary text-base font-medium transition-colors" href="#">Post a Job</a>
+<a class="text-gray-600 hover:text-primary text-base font-medium transition-colors" href="#">About Us</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</header>
+<main class="flex-1 bg-gray-50 py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-8">
+<div class="bg-white p-8 rounded-lg shadow-md">
+<div class="mb-6">
+<div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+<a class="hover:text-primary" href="#">Jobs</a>
+<span>/</span>
+<span class="font-medium text-gray-700">General Labourer - Immediate Start</span>
+</div>
+<h2 class="text-4xl font-bold text-gray-800">General Labourer - Immediate Start</h2>
+<p class="text-gray-500 mt-2">Posted 2 days ago · Full-time · <span class="font-semibold text-secondary">$35 - $45 AUD per hour</span></p>
+</div>
+<div class="prose max-w-none text-gray-600">
+<p>We are urgently seeking a reliable and hardworking General Labourer to join our friendly team for a construction project in Richmond, VIC. This is a fantastic opportunity for someone with a strong work ethic who is keen to get started straight away. You'll be assisting various tradespeople, keeping the site clean and safe, and performing a range of manual tasks.</p>
+<h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Key Responsibilities</h3>
+<ul class="list-disc pl-5 space-y-2">
+<li>Assisting tradespeople with their tasks (carpenters, electricians, etc.).</li>
+<li>Loading and unloading materials and equipment.</li>
+<li>Site clean-up and maintenance.</li>
+<li>Operating basic hand and power tools.</li>
+<li>Adhering to all site safety protocols.</li>
+</ul>
+<h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Required Skills &amp; Certifications</h3>
+<ul class="list-disc pl-5 space-y-2">
+<li>Valid White Card (essential).</li>
+<li>Previous experience in a similar role on a construction site.</li>
+<li>Physical fitness and ability to perform manual labour.</li>
+<li>Strong understanding of workplace health and safety.</li>
+<li>A reliable and punctual attitude.</li>
+<li>Own basic PPE (steel-cap boots, hard hat, high-vis clothing).</li>
+</ul>
+<h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Job Timeline</h3>
+<div class="relative border-l-2 border-primary pl-8 space-y-8">
+<div class="relative">
+<div class="absolute -left-[42px] top-1.5 h-4 w-4 bg-primary rounded-full"></div>
+<h4 class="font-semibold text-gray-700">Application Review</h4>
+<p class="text-sm text-gray-500">We review applications as they come in.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[42px] top-1.5 h-4 w-4 bg-primary rounded-full"></div>
+<h4 class="font-semibold text-gray-700">Phone Screening</h4>
+<p class="text-sm text-gray-500">Suitable candidates contacted within 2 business days.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[42px] top-1.5 h-4 w-4 bg-primary rounded-full"></div>
+<h4 class="font-semibold text-gray-700">Offer</h4>
+<p class="text-sm text-gray-500">Successful applicants can expect a quick offer.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-4">
+<div class="space-y-6">
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<button class="w-full h-12 px-6 bg-primary text-white font-bold rounded-lg hover:bg-blue-700 transition-colors text-lg">
+                            Apply Now
+                        </button>
+<button class="w-full h-12 px-6 mt-3 bg-gray-200 text-gray-700 font-bold rounded-lg hover:bg-gray-300 transition-colors">
+                            Save Job
+                        </button>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-3">Job Overview</h3>
+<ul class="space-y-4 text-gray-600">
+<li class="flex items-start">
+<svg class="h-6 w-6 mr-3 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div><strong class="font-semibold text-gray-700 block">Job Type:</strong> Full-time</div>
+</li>
+<li class="flex items-start">
+<svg class="h-6 w-6 mr-3 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div><strong class="font-semibold text-gray-700 block">Location:</strong> Richmond, VIC 3121</div>
+</li>
+<li class="flex items-start">
+<svg class="h-6 w-6 mr-3 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div><strong class="font-semibold text-gray-700 block">Salary:</strong> $35 - $45 AUD per hour</div>
+</li>
+<li class="flex items-start">
+<svg class="h-6 w-6 mr-3 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div><strong class="font-semibold text-gray-700 block">Start Date:</strong> Immediate</div>
+</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<h3 class="text-xl font-bold text-gray-800 mb-4">About the Tradie</h3>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXazgwhNfZGKIXCu36Sz_jG5IhhcUNFKP4Ea-mr5NR2qSs6F8WByuNeoTYgXv1mh0zWg_XGygDTIP16fes1WF2T7NCiJR8hbPDW7fGmc63dwwGO_osSyYD_ZGi5ZaOOWte77x40Mv5XfHlazlAohaw6mwnFuey41DU_KrbOd1IsTajGFkrV-w4sp5MrkrLBAULKvh5XQiIZdd_JkIAPNP96xKewyQnpol2TOMCYq8eUSa6MPLnrQbY4FXNik-0h0o3extbZJ12Xt5Z")'></div>
+<div>
+<h4 class="font-bold text-lg text-gray-800">Richmond Construction</h4>
+<div class="flex items-center text-sm text-gray-500 mt-1">
+<svg class="h-4 w-4 mr-1 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+<span>4.8 (15 Jobs Posted)</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-600 mt-4">We are a reputable building company with projects across Melbourne. We value safety, quality, and teamwork.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Location</h3>
+<div class="w-full h-48 rounded-lg overflow-hidden">
+<img alt="Map of Richmond, VIC" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7W7cA0cqxKkWhKcSrVWN0gPOL6w8AzNvIzfoT4FvCh42OAG3e6DFrzfYQml_d8TWVhwC5DdoWkftBJwd9aXUDF7KcOfLMVk9WpXlwD3SAcPJpFUiiWW7LeK8_AK12pT6wmVkrPeH_x09HPgGj-eGbLgMCkADOW4rr1C1Pbp9kr41E3ZqSomwchsbysfpG-qhZ8YHPEFlHkZ8HFLDgytodI-6OQ7ocbpB65AurMTHpTAiTfLK6mzIVz61WXe6Dmk9iY25aUk-wsYAf"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

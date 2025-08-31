@@ -24,7 +24,7 @@ export class FileUploadService {
       // Validate file
       const validationResult = this.validateFile(file, category)
       if (!validationResult.valid) {
-        return { fileUpload: null, error: validationResult.error }
+        return { fileUpload: null, error: validationResult.error || null }
       }
 
       // Generate unique filename
@@ -43,10 +43,7 @@ export class FileUploadService {
         return { fileUpload: null, error: uploadError.message }
       }
 
-      // Get public URL
-      const { data: urlData } = supabase.storage
-        .from('user-files')
-        .getPublicUrl(fileName)
+      // Public URL can be generated when needed using getPublicUrl
 
       // Save file metadata to database
       const { data: fileRecord, error: dbError } = await supabase
@@ -72,7 +69,8 @@ export class FileUploadService {
       onProgress?.(100)
 
       return { fileUpload: fileRecord, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { fileUpload: null, error: 'File upload failed' }
     }
   }
@@ -140,7 +138,8 @@ export class FileUploadService {
       }
 
       return { success: true, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { success: false, error: 'File deletion failed' }
     }
   }
@@ -167,7 +166,8 @@ export class FileUploadService {
       }
 
       return { files: data || [], error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { files: [], error: 'Failed to fetch files' }
     }
   }
@@ -180,7 +180,8 @@ export class FileUploadService {
         .getPublicUrl(filePath)
 
       return { url: data.publicUrl, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { url: null, error: 'Failed to get file URL' }
     }
   }
@@ -238,7 +239,8 @@ export class FileUploadService {
       }
 
       return { url: data.signedUrl, error: null }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       return { url: null, error: 'Failed to create signed URL' }
     }
   }

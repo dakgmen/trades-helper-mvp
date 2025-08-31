@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TradieHelper - Offline Mode</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-bg: #F8F9FA;
+        --neutral-text: #6C757D;
+      }
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+      .offline-banner {
+        background-color: var(--accent-color);
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+      }
+      .btn-primary:hover {
+        background-color: #1d4ed8;
+      }
+      .text-primary {
+        color: var(--primary-color);
+      }
+      .bg-secondary {
+        background-color: var(--secondary-color);
+      }
+      .icon-wrapper {
+        background-color: #eef2ff;
+        color: var(--primary-color);
+      }
+    </style>
+</head>
+<body class="bg-neutral-bg">
+<div class="flex size-full min-h-screen flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b bg-white px-10 py-3">
+<div class="flex items-center gap-4 text-slate-800">
+<svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.25 6.087c0-.66.54-1.2 1.2-1.2h3.6c.66 0 1.2.54 1.2 1.2v3.6c0 .66-.54 1.2-1.2 1.2h-3.6c-.66 0-1.2-.54-1.2-1.2V6.087z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M3.75 6.087c0-.66.54-1.2 1.2-1.2h3.6c.66 0 1.2.54 1.2 1.2v3.6c0 .66-.54 1.2-1.2 1.2H4.95c-.66 0-1.2-.54-1.2-1.2V6.087z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M3.75 14.812c0-.66.54-1.2 1.2-1.2h3.6c.66 0 1.2.54 1.2 1.2v3.6c0 .66-.54 1.2-1.2 1.2H4.95c-.66 0-1.2-.54-1.2-1.2v-3.6z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13.5 14.812H21m-7.5 3.675H21m-7.5 3.675H21M13.5 4.912H21" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h2 class="text-xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-slate-700 hover:text-primary" href="#">Find Work</a>
+<a class="text-sm font-medium text-slate-700 hover:text-primary" href="#">Post a Job</a>
+<a class="text-sm font-medium text-slate-700 hover:text-primary" href="#">My Jobs</a>
+<a class="text-sm font-medium text-slate-700 hover:text-primary" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<img alt="User Avatar" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB421QKNDJb6j0-tUW7bUk7rESMMcQeOulZwIKXVjpexMbh8Yr4hFktpQDcwZSnmTT4NbPXmPv8_SSDt8PUMNG63sqIvy_nuPSWw-9gz746myPec4u5C0h_MUPt1XtovbZZ4vKhkn68I2uR2kN8wwC9tcKFG00CC7lk8T8Tb-M-oUTmIMnvlEWGs92tRBQySEoEI82IquZA7DKCEzD2W3h2yqrukaFI6Cf54MsGJpcq-hMYJea1UKmqnkQu93eWdKxcB6S7kMn9VTLG"/>
+</div>
+</header>
+<div class="offline-banner flex items-center justify-center gap-2 p-2 text-white">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-9a1 1 0 112 0v4a1 1 0 11-2 0V9zm1-4a1 1 0 00-1 1v.01a1 1 0 102 0V6a1 1 0 00-1-1z" fill-rule="evenodd"></path>
+</svg>
+<p class="text-sm font-medium">You are currently in Offline Mode</p>
+</div>
+<main class="container mx-auto flex-1 p-4 sm:p-6 lg:p-8">
+<div class="mx-auto max-w-4xl">
+<div class="mb-8 text-center">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Offline Mode</h1>
+<p class="mt-2 text-lg text-neutral-text">Cached data is available. Some features are limited until you reconnect.</p>
+</div>
+<div class="space-y-8">
+<div class="rounded-lg border bg-white shadow-sm">
+<div class="p-6">
+<h3 class="text-lg font-semibold leading-6 text-slate-900">Cached Information</h3>
+<p class="mt-1 text-sm text-neutral-text">Recently viewed jobs available for offline viewing.</p>
+</div>
+<ul class="divide-y divide-slate-200">
+<li class="flex items-center justify-between p-4 hover:bg-slate-50 sm:p-6">
+<div class="flex items-center gap-4">
+<div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-lg">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<p class="text-base font-medium text-slate-800">Job: Fix Leaky Tap</p>
+<p class="text-sm text-neutral-text">Plumbing job in Sydney, NSW</p>
+</div>
+</div>
+<p class="text-base font-medium text-slate-800">AUD $250</p>
+</li>
+<li class="flex items-center justify-between p-4 hover:bg-slate-50 sm:p-6">
+<div class="flex items-center gap-4">
+<div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-lg">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<p class="text-base font-medium text-slate-800">Job: Install Ceiling Fan</p>
+<p class="text-sm text-neutral-text">Electrical work in Melbourne, VIC</p>
+</div>
+</div>
+<p class="text-base font-medium text-slate-800">AUD $180</p>
+</li>
+</ul>
+</div>
+<div class="rounded-lg border bg-white p-6 shadow-sm">
+<h3 class="text-lg font-semibold leading-6 text-slate-900">Sync Status</h3>
+<p class="mt-1 text-sm text-neutral-text">Last synced: 2 hours ago (AEST)</p>
+<div class="mt-4">
+<div class="flex items-center justify-between">
+<p class="text-sm font-medium text-primary">Syncing Data...</p>
+<p class="text-sm font-medium text-primary">60%</p>
+</div>
+<div class="mt-2 h-2 rounded-full bg-slate-200">
+<div class="h-2 rounded-full bg-secondary" style="width: 60%;"></div>
+</div>
+</div>
+<div class="mt-6 flex justify-center">
+<button class="btn-primary flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-white">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a5.002 5.002 0 008.057 4.287 1 1 0 11-1.228 1.635A7.002 7.002 0 013 12.101V15a1 1 0 11-2 0v-5a1 1 0 011-1h5a1 1 0 110 2H5.008z" fill-rule="evenodd"></path>
+</svg>
+<span>Retry Sync</span>
+</button>
+</div>
+</div>
+<div class="rounded-lg border bg-white shadow-sm">
+<div class="p-6">
+<h3 class="text-lg font-semibold leading-6 text-slate-900">Available Offline Actions</h3>
+<p class="mt-1 text-sm text-neutral-text">Perform these actions while offline. Changes will sync when you reconnect.</p>
+</div>
+<ul class="divide-y divide-slate-200">
+<a class="group flex cursor-pointer items-center justify-between p-4 hover:bg-slate-50 sm:p-6" href="#">
+<div class="flex items-center gap-4">
+<div class="icon-wrapper flex h-10 w-10 items-center justify-center rounded-lg">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-base font-medium text-slate-800">View Saved Jobs</p>
+</div>
+<svg class="h-5 w-5 text-slate-400 group-hover:text-slate-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="group flex cursor-pointer items-center justify-between p-4 hover:bg-slate-50 sm:p-6" href="#">
+<div class="flex items-center gap-4">
+<div class="icon-wrapper flex h-10 w-10 items-center justify-center rounded-lg">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-base font-medium text-slate-800">Manage Profile</p>
+</div>
+<svg class="h-5 w-5 text-slate-400 group-hover:text-slate-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="group flex cursor-pointer items-center justify-between p-4 hover:bg-slate-50 sm:p-6" href="#">
+<div class="flex items-center gap-4">
+<div class="icon-wrapper flex h-10 w-10 items-center justify-center rounded-lg">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-base font-medium text-slate-800">View Messages (Cached)</p>
+</div>
+<svg class="h-5 w-5 text-slate-400 group-hover:text-slate-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

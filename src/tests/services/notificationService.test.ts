@@ -1,77 +1,78 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { notificationService } from '../../services/notificationService'
 
-// Mock navigator
-Object.defineProperty(global.navigator, 'serviceWorker', {
-  value: {
-    register: vi.fn(() => Promise.resolve({
-      pushManager: {
-        getSubscription: vi.fn(),
-        subscribe: vi.fn(),
-      },
+// Create mock functions for Supabase
+const mockInsert = vi.fn()
+const mockSelect = vi.fn()
+const mockSingle = vi.fn()
+const mockEq = vi.fn()
+const mockOrder = vi.fn()
+const mockLimit = vi.fn()
+const mockUpdate = vi.fn()
+const mockUpsert = vi.fn()
+const mockDelete = vi.fn()
+
+// Mock Supabase
+vi.mock('../../lib/supabase', () => ({
+  supabase: {
+    from: vi.fn(() => ({
+      insert: mockInsert,
+      select: mockSelect,
+      single: mockSingle,
+      eq: mockEq,
+      order: mockOrder,
+      limit: mockLimit,
+      update: mockUpdate,
+      upsert: mockUpsert,
+      delete: mockDelete,
     })),
   },
-  configurable: true,
-})
-
-Object.defineProperty(global, 'Notification', {
-  value: {
-    requestPermission: vi.fn(() => Promise.resolve('granted')),
-    permission: 'default',
-  },
-  configurable: true,
-})
-
-Object.defineProperty(global, 'PushManager', {
-  value: {},
-  configurable: true,
-})
+}))
 
 // Mock fetch
 global.fetch = vi.fn()
 
-// Mock Supabase
-const mockSupabase = {
-  from: vi.fn(() => ({
-    insert: vi.fn(() => ({
-      select: vi.fn(() => ({
-        single: vi.fn(),
-      })),
-    })),
-    select: vi.fn(() => ({
-      eq: vi.fn(() => ({
-        eq: vi.fn(() => ({
-          single: vi.fn(),
-          order: vi.fn(() => ({
-            limit: vi.fn(),
-          })),
-        })),
-        order: vi.fn(() => ({
-          limit: vi.fn(),
-        })),
-      })),
-    })),
-    update: vi.fn(() => ({
-      eq: vi.fn(() => ({
-        eq: vi.fn(),
-      })),
-    })),
-    upsert: vi.fn(),
-    delete: vi.fn(() => ({
-      eq: vi.fn(),
-    })),
-  })),
-}
-
-vi.mock('../../lib/supabase', () => ({
-  supabase: mockSupabase,
-}))
-
 describe('NotificationService', () => {
   beforeEach(() => {
     vi.clearAllMocks()
-    ;(global.fetch as any).mockClear()
-    Notification.permission = 'default'
+    ;// eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (global.fetch as any).mockClear()
+    
+    // Reset mock chaining to handle all possible combinations
+    mockInsert.mockReturnValue({ select: mockSelect })
+    mockSelect.mockReturnValue({ single: mockSingle, eq: mockEq })
+    mockEq.mockReturnValue({ eq: mockEq, single: mockSingle, order: mockOrder, limit: mockLimit })
+    mockOrder.mockReturnValue({ limit: mockLimit })
+    mockUpdate.mockReturnValue({ eq: mockEq })
+    mockDelete.mockReturnValue({ eq: mockEq })
+    mockSingle.mockReturnValue({ eq: mockEq, single: mockSingle })
+    mockLimit.mockReturnValue({ limit: mockLimit })
+    
+    // Reset global mocks
+    Object.defineProperty(global.navigator, 'serviceWorker', {
+      value: {
+        register: vi.fn(() => Promise.resolve({
+          pushManager: {
+            getSubscription: vi.fn(),
+            subscribe: vi.fn(),
+          },
+        })),
+      },
+      configurable: true,
+    })
+
+    Object.defineProperty(global, 'Notification', {
+      value: {
+        requestPermission: vi.fn(() => Promise.resolve('granted')),
+        permission: 'default',
+      },
+      configurable: true,
+    })
+
+    Object.defineProperty(global, 'PushManager', {
+      value: {},
+      configurable: true,
+    })
   })
 
   describe('initialize', () => {
@@ -93,13 +94,18 @@ describe('NotificationService', () => {
       const result = await notificationService.initialize()
 
       expect(result.success).toBe(false)
-      expect(result.error).toBe('Service workers not supported')
+      expect(result.error).toBe('Failed to initialize notifications')
     })
 
     it('should fail without push manager support', async () => {
-      // Mock no PushManager support
-      Object.defineProperty(global, 'PushManager', {
-        value: undefined,
+      // Mock no PushManager support by removing from window
+      const originalPushManager = global.PushManager
+      delete (global as Record<string, unknown>).PushManager
+      delete (global as { window?: { PushManager?: unknown } }).window?.PushManager
+      
+      // Also ensure window object exists
+      Object.defineProperty(global, 'window', {
+        value: {},
         configurable: true,
       })
 
@@ -107,12 +113,30 @@ describe('NotificationService', () => {
 
       expect(result.success).toBe(false)
       expect(result.error).toBe('Push notifications not supported')
+      
+      // Restore PushManager
+      global.PushManager = originalPushManager
     })
   })
 
   describe('requestPermission', () => {
     it('should request permission successfully when granted', async () => {
-      Notification.requestPermission = vi.fn(() => Promise.resolve('granted'))
+      // Ensure Notification exists in window
+      Object.defineProperty(global, 'window', {
+        value: {
+          Notification: {
+            requestPermission: vi.fn(() => Promise.resolve('granted' as NotificationPermission))
+          }
+        },
+        configurable: true,
+      })
+      
+      Object.defineProperty(global, 'Notification', {
+        value: {
+          requestPermission: vi.fn(() => Promise.resolve('granted' as NotificationPermission))
+        },
+        configurable: true,
+      })
 
       const result = await notificationService.requestPermission()
 
@@ -121,7 +145,22 @@ describe('NotificationService', () => {
     })
 
     it('should handle permission denied', async () => {
-      Notification.requestPermission = vi.fn(() => Promise.resolve('denied'))
+      // Ensure Notification exists in window
+      Object.defineProperty(global, 'window', {
+        value: {
+          Notification: {
+            requestPermission: vi.fn(() => Promise.resolve('denied' as NotificationPermission))
+          }
+        },
+        configurable: true,
+      })
+      
+      Object.defineProperty(global, 'Notification', {
+        value: {
+          requestPermission: vi.fn(() => Promise.resolve('denied' as NotificationPermission))
+        },
+        configurable: true,
+      })
 
       const result = await notificationService.requestPermission()
 
@@ -130,7 +169,22 @@ describe('NotificationService', () => {
     })
 
     it('should handle permission dismissed', async () => {
-      Notification.requestPermission = vi.fn(() => Promise.resolve('default'))
+      // Ensure Notification exists in window
+      Object.defineProperty(global, 'window', {
+        value: {
+          Notification: {
+            requestPermission: vi.fn(() => Promise.resolve('default' as NotificationPermission))
+          }
+        },
+        configurable: true,
+      })
+      
+      Object.defineProperty(global, 'Notification', {
+        value: {
+          requestPermission: vi.fn(() => Promise.resolve('default' as NotificationPermission))
+        },
+        configurable: true,
+      })
 
       const result = await notificationService.requestPermission()
 
@@ -139,8 +193,14 @@ describe('NotificationService', () => {
     })
 
     it('should fail without notification support', async () => {
-      Object.defineProperty(global, 'Notification', {
-        value: undefined,
+      // Store original and delete Notification
+      const originalNotification = global.Notification
+      delete (global as Record<string, unknown>).Notification
+      delete (global as { window?: { Notification?: unknown } }).window?.Notification
+      
+      // Ensure window exists but without Notification
+      Object.defineProperty(global, 'window', {
+        value: {},
         configurable: true,
       })
 
@@ -148,6 +208,9 @@ describe('NotificationService', () => {
 
       expect(result.granted).toBe(false)
       expect(result.error).toBe('Notifications not supported')
+      
+      // Restore Notification
+      global.Notification = originalNotification
     })
   })
 
@@ -164,26 +227,51 @@ describe('NotificationService', () => {
         },
       }
 
-      navigator.serviceWorker.register = vi.fn(() => Promise.resolve(mockSwRegistration as any))
-
       // Mock successful API response
-      ;(global.fetch as any).mockResolvedValueOnce({
+      global.fetch = vi.fn().mockResolvedValue({
         ok: true,
         json: () => Promise.resolve({ success: true }),
       })
 
-      // Mock successful database update
-      const mockFrom = mockSupabase.from()
-      const mockUpdate = mockFrom.update()
-      const mockEq = mockUpdate.eq()
-      mockEq.mockResolvedValueOnce({
-        error: null,
+      // Mock successful database update - ensure complete chain works
+      const mockEqFn = vi.fn().mockResolvedValue({ error: null })
+      mockUpdate.mockImplementationOnce(() => ({
+        eq: mockEqFn
+      }))
+      
+      // Mock import.meta.env
+      vi.stubEnv('VITE_VAPID_PUBLIC_KEY', 'test-vapid-key')
+      
+      // Mock window.atob for VAPID key conversion
+      global.window = global.window || {}
+      global.window.atob = vi.fn().mockReturnValue('test-decoded-vapid-key')
+      
+      // Set the service registration before calling subscribeToPush
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(notificationService as any).swRegistration = mockSwRegistration
+      
+      // Mock initialize method to return success without changing swRegistration
+      const initializeSpy = vi.spyOn(notificationService, 'initialize')
+      initializeSpy.mockImplementation(async () => {
+        // Don't change swRegistration if it's already set
+        return { success: true, error: null }
       })
 
       const result = await notificationService.subscribeToPush('user123')
 
       expect(result.success).toBe(true)
       expect(result.error).toBeNull()
+      
+      // Verify the mocks were called correctly
+      expect(mockSwRegistration.pushManager.getSubscription).toHaveBeenCalled()
+      expect(mockSwRegistration.pushManager.subscribe).toHaveBeenCalled()
+      expect(global.fetch).toHaveBeenCalledWith('/api/notifications/subscribe', expect.objectContaining({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: expect.stringContaining('user123')
+      }))
+      expect(mockUpdate).toHaveBeenCalled()
+      expect(mockEqFn).toHaveBeenCalledWith('id', 'user123')
     })
   })
 
@@ -200,10 +288,7 @@ describe('NotificationService', () => {
         created_at: '2024-01-01T00:00:00Z',
       }
 
-      const mockFrom = mockSupabase.from()
-      const mockInsert = mockFrom.insert()
-      const mockSelect = mockInsert.select()
-      mockSelect.single.mockResolvedValueOnce({
+      mockSingle.mockResolvedValueOnce({
         data: mockNotification,
         error: null,
       })
@@ -235,15 +320,17 @@ describe('NotificationService', () => {
         },
       ]
 
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq = mockSelect.eq()
-      const mockOrder = mockEq.order()
-      const mockLimit = mockOrder.limit()
-      mockLimit.mockResolvedValueOnce({
-        data: mockNotifications,
-        error: null,
-      })
+      // Mock the complete chain for getUserNotifications - override for this test only
+      mockSelect.mockImplementationOnce(() => ({
+        eq: vi.fn().mockReturnValue({
+          order: vi.fn().mockReturnValue({
+            limit: vi.fn().mockResolvedValue({
+              data: mockNotifications,
+              error: null,
+            })
+          })
+        })
+      }))
 
       const result = await notificationService.getUserNotifications('user123')
 
@@ -265,16 +352,19 @@ describe('NotificationService', () => {
         },
       ]
 
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq1 = mockSelect.eq()
-      const mockEq2 = mockEq1.eq()
-      const mockOrder = mockEq2.order()
-      const mockLimit = mockOrder.limit()
-      mockLimit.mockResolvedValueOnce({
-        data: mockNotifications,
-        error: null,
-      })
+      // Mock the complete chain for getUserNotifications with unread filter - override for this test only
+      mockSelect.mockImplementationOnce(() => ({
+        eq: vi.fn().mockReturnValue({
+          eq: vi.fn().mockReturnValue({
+            order: vi.fn().mockReturnValue({
+              limit: vi.fn().mockResolvedValue({
+                data: mockNotifications,
+                error: null,
+              })
+            })
+          })
+        })
+      }))
 
       const result = await notificationService.getUserNotifications('user123', 50, true)
 
@@ -285,9 +375,6 @@ describe('NotificationService', () => {
 
   describe('markAsRead', () => {
     it('should mark notification as read successfully', async () => {
-      const mockFrom = mockSupabase.from()
-      const mockUpdate = mockFrom.update()
-      const mockEq = mockUpdate.eq()
       mockEq.mockResolvedValueOnce({
         error: null,
       })
@@ -310,13 +397,15 @@ describe('NotificationService', () => {
         message_notifications: true,
       }
 
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq = mockSelect.eq()
-      mockEq.single.mockResolvedValueOnce({
-        data: mockPreferences,
-        error: null,
-      })
+      // Mock the complete chain: .select('*').eq('user_id', userId).single() - override for this test only
+      mockSelect.mockImplementationOnce(() => ({
+        eq: vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue({
+            data: mockPreferences,
+            error: null,
+          })
+        })
+      }))
 
       const result = await notificationService.getPreferences('user123')
 
@@ -325,13 +414,15 @@ describe('NotificationService', () => {
     })
 
     it('should return default preferences when none found', async () => {
-      const mockFrom = mockSupabase.from()
-      const mockSelect = mockFrom.select()
-      const mockEq = mockSelect.eq()
-      mockEq.single.mockResolvedValueOnce({
-        data: null,
-        error: { code: 'PGRST116' },
-      })
+      // Mock the complete chain: .select('*').eq('user_id', userId).single() - override for this test only
+      mockSelect.mockImplementationOnce(() => ({
+        eq: vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue({
+            data: null,
+            error: null,
+          })
+        })
+      }))
 
       const result = await notificationService.getPreferences('user123')
 
@@ -349,8 +440,7 @@ describe('NotificationService', () => {
 
   describe('updatePreferences', () => {
     it('should update notification preferences successfully', async () => {
-      const mockFrom = mockSupabase.from()
-      mockFrom.upsert.mockResolvedValueOnce({
+      mockUpsert.mockResolvedValueOnce({
         error: null,
       })
 

@@ -1,0 +1,191 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-background: #F8FAFC;
+        --neutral-text: #475569;
+        --neutral-border: #E2E8F0;
+      }
+      .btn-primary {
+        @apply bg-blue-600 text-white hover:bg-blue-700;
+      }
+      .btn-secondary {
+        @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+      }
+      .status-accepted {
+         @apply bg-green-100 text-green-800;
+      }
+      .status-pending {
+        @apply bg-yellow-100 text-yellow-800;
+      }
+      .status-interviewing {
+        @apply bg-blue-100 text-blue-800;
+      }
+      </style>
+</head>
+<body class="bg-slate-50 text-slate-800" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 bg-white px-10 py-3 shadow-sm">
+<div class="flex items-center gap-3 text-slate-900">
+<svg class="h-8 w-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM12.75 8.25V11.25H15.75C16.1642 11.25 16.5 11.5858 16.5 12C16.5 12.4142 16.1642 12.75 15.75 12.75H12.75V15.75C12.75 16.1642 12.4142 16.5 12 16.5C11.5858 16.5 11.25 16.1642 11.25 15.75V12.75H8.25C7.83579 12.75 7.5 12.4142 7.5 12C7.5 11.5858 7.83579 11.25 8.25 11.25H11.25V8.25C11.25 7.83579 11.5858 7.5 12 7.5C12.4142 7.5 12.75 7.83579 12.75 8.25Z" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" href="#">Find Work</a>
+<a class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" href="#">Post a Job</a>
+<a class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" href="#">My Jobs</a>
+<a class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+<span class="sr-only">View notifications</span>
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg>
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-200" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCCX-jCUVVE2Lrtn3VIAdnA_C6M8kDrHl-drRbXC06hW_KgtEf6rMoq1PqBn0Ixpc2u-j5EGCdKIaTN3VBskXyzu-A2TS9BPNmkKIR11uJnWwcZkvH-mbnLzHet7palBtHbF7DNp-6H5pIxY2aOKBO-oibW9hTq_omR_Yw_ca0Wme0JXCej48i4VniKQ2La60hNoMURUBxI30S1I5v8d6FM7p5t3SJSBg-bcHb3JTuRldVXl0UzyWOG8MGxG6ljmQOXRA-Ipv10Vnt");'></div>
+</div>
+</header>
+<main class="flex-1 bg-slate-50 py-10 lg:px-10">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="mb-8">
+<h1 class="text-3xl font-bold leading-tight tracking-tight text-slate-900">Accepted Applications</h1>
+<p class="mt-1 text-base text-slate-500">Manage your accepted applications and take the next steps.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="rounded-lg border border-slate-200 bg-white p-5">
+<p class="text-sm font-medium text-slate-500">Total Applications</p>
+<p class="mt-1 text-3xl font-semibold text-slate-900">120</p>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white p-5">
+<p class="text-sm font-medium text-slate-500">Accepted</p>
+<p class="mt-1 text-3xl font-semibold text-green-600">45</p>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white p-5">
+<p class="text-sm font-medium text-slate-500">Pending</p>
+<p class="mt-1 text-3xl font-semibold text-yellow-500">75</p>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white p-5">
+<p class="text-sm font-medium text-slate-500">Interviewing</p>
+<p class="mt-1 text-3xl font-semibold text-blue-600">12</p>
+</div>
+</div>
+<div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<h2 class="text-lg font-medium text-slate-900">Filter by Status</h2>
+<div class="flex flex-wrap gap-2">
+<button class="rounded-full px-4 py-1.5 text-sm font-medium bg-blue-600 text-white">All <span class="ml-1.5 rounded-full bg-white/20 px-2 py-0.5 text-xs">120</span></button>
+<button class="rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200">Accepted <span class="ml-1.5 rounded-full bg-slate-200/50 px-2 py-0.5 text-xs text-slate-500">45</span></button>
+<button class="rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200">Pending <span class="ml-1.5 rounded-full bg-slate-200/50 px-2 py-0.5 text-xs text-slate-500">75</span></button>
+<button class="rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200">Interviewing <span class="ml-1.5 rounded-full bg-slate-200/50 px-2 py-0.5 text-xs text-slate-500">12</span></button>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<input class="block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" placeholder="Search applications..." type="search"/>
+<button class="btn-secondary flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium">Sort By</button>
+</div>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_200px] lg:grid-cols-[1fr_250px_200px] gap-6 items-start p-5 bg-white border border-slate-200 rounded-lg shadow-sm">
+<div class="flex gap-4 items-start">
+<div class="w-24 h-24 bg-cover bg-center rounded-md flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzeEx1YUwhV7eVGUWSDrNMXHwBqHuOLoIL5ioH1jeWL9aLp108GZCD_Vd44XHrYqABQT14INsJGfEFr8Dh9XRoP31YJSEPUWXQJLPdiMD2UsOg4jH-URAK_SMtMd5IR5t9szLwFgToqy9r0I7BeMAqGHSNWR6AWCNJ099x-c_RkWQ5hxki2zgdt5uAM87Al246K-qmIKYryTk_w4LB5trixhcV0T_prpKRZxUpPMoqYgtteWvk8O0eOA-iRjCtvoF1r1fXvielVgLD");'></div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-slate-900 hover:text-blue-600"><a href="#">John Smith</a></h3>
+<span class="inline-flex items-center rounded-full status-accepted px-2.5 py-0.5 text-xs font-medium">Accepted</span>
+</div>
+<p class="text-sm text-slate-500">Applied for: <span class="font-medium text-slate-700">Electrician Needed</span></p>
+<p class="text-sm text-slate-500">Posted by Sarah Thompson • 2 days ago</p>
+<div class="mt-3 text-sm text-slate-600">Rate: <span class="font-bold text-green-600">$45.00/hr AUD</span></div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-2 justify-self-start md:justify-self-end w-full">
+<button class="w-full btn-primary rounded-md px-4 py-2 text-sm font-semibold flex items-center justify-center gap-2"><svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H224a8,8,0,0,0,8-8V56A8,8,0,0,0,224,48ZM93.45,64,128,94.82,162.55,64ZM216,184H40V74.18l82.55,73.38a8,8,0,0,0,10.9,0L216,74.18Z"></path></svg>Message</button>
+<button class="w-full btn-secondary rounded-md px-4 py-2 text-sm font-medium">View Application</button>
+</div>
+<div class="text-sm text-slate-500 justify-self-start md:justify-self-end text-left md:text-right">
+<p>Application Date:</p>
+<p class="font-medium text-slate-700">15 June 2024, 10:30 AM (AEST)</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-[1fr_200px] lg:grid-cols-[1fr_250px_200px] gap-6 items-start p-5 bg-white border border-slate-200 rounded-lg shadow-sm">
+<div class="flex gap-4 items-start">
+<div class="w-24 h-24 bg-cover bg-center rounded-md flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6A0uz42jTQcY5JD5-vMMgQN9rE_fGxOMQ8pNn9ABsuXv5Ki28mijcz1QOfLuQC_d03ZU0J0WwsnUJxtxI9eMb2om2ZMsfC2EWeX3Ek0Pm0jaiKFa2PIOu2aBvyon5aGYDrw0wZaMgHyI3bnwnsrNteLtWACpgBlTPlrvKdB0cCbPHHvszt5azmllGWdbp-sopzc14As5jmNyVoKUI3eIe9PnRVMx8s5ToElUIYEgx5HNQpckwyQMzM4VP6jzmLTJ7V6fsp_yZT6zz");'></div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-slate-900 hover:text-blue-600"><a href="#">Jane Doe</a></h3>
+<span class="inline-flex items-center rounded-full status-pending px-2.5 py-0.5 text-xs font-medium">Pending</span>
+</div>
+<p class="text-sm text-slate-500">Applied for: <span class="font-medium text-slate-700">Plumbing Job</span></p>
+<p class="text-sm text-slate-500">Posted by Michael Davis • 3 days ago</p>
+<div class="mt-3 text-sm text-slate-600">Rate: <span class="font-bold text-green-600">$50.00/hr AUD</span></div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-2 justify-self-start md:justify-self-end w-full">
+<button class="w-full btn-primary rounded-md px-4 py-2 text-sm font-semibold flex items-center justify-center gap-2"><svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H224a8,8,0,0,0,8-8V56A8,8,0,0,0,224,48ZM93.45,64,128,94.82,162.55,64ZM216,184H40V74.18l82.55,73.38a8,8,0,0,0,10.9,0L216,74.18Z"></path></svg>Message</button>
+<button class="w-full btn-secondary rounded-md px-4 py-2 text-sm font-medium">View Application</button>
+</div>
+<div class="text-sm text-slate-500 justify-self-start md:justify-self-end text-left md:text-right">
+<p>Application Date:</p>
+<p class="font-medium text-slate-700">14 June 2024, 2:15 PM (AEST)</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-[1fr_200px] lg:grid-cols-[1fr_250px_200px] gap-6 items-start p-5 bg-white border border-slate-200 rounded-lg shadow-sm">
+<div class="flex gap-4 items-start">
+<div class="w-24 h-24 bg-cover bg-center rounded-md flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBd3RRGR9gTT2LDMWdQI6s-xgGQmDeY-2cMB6xlfxjb8IPkHuUdgR_ugPnPbjpXfT5_orbQa9ImTEryXcea2W6azmRMVfHrLfTokQVpy3dSk2HyxTkbzNbTNYpZtrhF8r23khce8Vvz4wOzeFwmo2aFgNeIy5nWd-xLXGu4IcuiBbY2e4NzEoT1UyZk8GYv9DkH3ClmpDm3xT4m7DyO1j7g-M78DvXDP4nzKF27lOK4njOovlnRqkSGqw0NnHs7Rw7Fvh8Rm9HSO19Y");'></div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-slate-900 hover:text-blue-600"><a href="#">Peter Jones</a></h3>
+<span class="inline-flex items-center rounded-full status-interviewing px-2.5 py-0.5 text-xs font-medium">Interviewing</span>
+</div>
+<p class="text-sm text-slate-500">Applied for: <span class="font-medium text-slate-700">Carpentry Work</span></p>
+<p class="text-sm text-slate-500">Posted by Emily Clark • 4 days ago</p>
+<div class="mt-3 text-sm text-slate-600">Rate: <span class="font-bold text-green-600">$40.00/hr AUD</span></div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-2 justify-self-start md:justify-self-end w-full">
+<button class="w-full btn-primary rounded-md px-4 py-2 text-sm font-semibold flex items-center justify-center gap-2"><svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M224,48H32a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H224a8,8,0,0,0,8-8V56A8,8,0,0,0,224,48ZM93.45,64,128,94.82,162.55,64ZM216,184H40V74.18l82.55,73.38a8,8,0,0,0,10.9,0L216,74.18Z"></path></svg>Message</button>
+<button class="w-full btn-secondary rounded-md px-4 py-2 text-sm font-medium">View Application</button>
+</div>
+<div class="text-sm text-slate-500 justify-self-start md:justify-self-end text-left md:text-right">
+<p>Application Date:</p>
+<p class="font-medium text-slate-700">13 June 2024, 9:00 AM (AEST)</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center">
+<nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+<a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0" href="#">
+<span class="sr-only">Previous</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M12.79 5.23a.75.75 0 010 1.06L9.06 10l3.73 3.71a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-current="page" class="relative z-10 inline-flex items-center bg-blue-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" href="#">1</a>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0" href="#">2</a>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">3</a>
+<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-slate-700 ring-1 ring-inset ring-slate-300 focus:outline-offset-0">...</span>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">8</a>
+<a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-slate-400 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0" href="#">
+<span class="sr-only">Next</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M7.21 14.77a.75.75 0 010-1.06L10.94 10 7.21 6.29a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z" fill-rule="evenodd"></path></svg>
+</a>
+</nav>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

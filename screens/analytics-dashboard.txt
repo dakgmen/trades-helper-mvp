@@ -1,0 +1,163 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #16a34a;
+        --accent-color: #ea580c;
+        --neutral-background: #f8fafc;
+        --neutral-text: #64748b;
+        --neutral-border: #e2e8f0;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col bg-[var(--neutral-background)] group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--neutral-border)] px-10 py-4 shadow-sm">
+<div class="flex items-center gap-3 text-gray-900">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"></path>
+</svg>
+<h2 class="text-xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Dashboard</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Jobs</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Tradies</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Helpers</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Payments</a>
+<a class="hover:text-[var(--primary-color)] transition-colors" href="#">Support</a>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</button>
+<div class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPdbGfhXRITrV_D-ljK3JWcLqlPWls1kqNkmV1rpsY1qSvJDn7h2-RBfrQQYRBlnMEKwxLP9Eg0Tud-9Y-5FBt5MtXatGFOTimsYwKC4IZeR5x7pygdVmtbnxOiKGMLWJaSRQw3-uiXYj3oM9O7LNUjYLVh3244vGmf1rW7vA93VAVExnO9xVJPcw71HTJi_tX_J6tjFxkm8IScJSVYNhQVC88vKkXSHqtVO9zxPuyAEJu06FJl0U9UxUK1Fx27VwWZhv5o8ajmI2y");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-bold text-gray-900">Analytics Dashboard</h1>
+<p class="text-[var(--neutral-text)]">Track your platform performance with real-time data and insights.</p>
+</div>
+<button class="flex items-center gap-2 min-w-[84px] max-w-[480px] cursor-pointer justify-center overflow-hidden rounded-md h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-bold shadow-sm hover:bg-blue-700 transition-colors">
+<svg class="bi bi-download" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+<path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+</svg>
+<span class="truncate">Export Data (CSV)</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white border border-[var(--neutral-border)] shadow-sm">
+<p class="text-sm font-medium text-[var(--neutral-text)]">Total Jobs Posted</p>
+<p class="text-3xl font-bold text-gray-900">1,250</p>
+<div class="flex items-center text-sm">
+<svg class="w-4 h-4 mr-1 text-[var(--secondary-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<p class="text-[var(--secondary-color)] font-semibold">+15% vs last month</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white border border-[var(--neutral-border)] shadow-sm">
+<p class="text-sm font-medium text-[var(--neutral-text)]">Active Tradies</p>
+<p class="text-3xl font-bold text-gray-900">850</p>
+<div class="flex items-center text-sm">
+<svg class="w-4 h-4 mr-1 text-[var(--secondary-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<p class="text-[var(--secondary-color)] font-semibold">+10% vs last month</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white border border-[var(--neutral-border)] shadow-sm">
+<p class="text-sm font-medium text-[var(--neutral-text)]">Helper Applications</p>
+<p class="text-3xl font-bold text-gray-900">3,400</p>
+<div class="flex items-center text-sm">
+<svg class="w-4 h-4 mr-1 text-[var(--secondary-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<p class="text-[var(--secondary-color)] font-semibold">+20% vs last month</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="flex flex-col gap-4 rounded-lg border border-[var(--neutral-border)] p-6 bg-white shadow-sm">
+<h3 class="text-lg font-bold text-gray-900">Job Postings Over Time</h3>
+<div class="flex min-h-[250px] flex-1 flex-col gap-4">
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="var(--primary-color)" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_1131_5935)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1131_5935" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="var(--primary-color)" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="var(--primary-color)" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="flex justify-around text-xs font-medium text-[var(--neutral-text)]">
+<p>Week 1</p>
+<p>Week 2</p>
+<p>Week 3</p>
+<p>Week 4</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[var(--neutral-border)] p-6 bg-white shadow-sm">
+<h3 class="text-lg font-bold text-gray-900">Helper Applications by Category</h3>
+<div class="grid min-h-[250px] grid-flow-col gap-4 grid-rows-[1fr_auto] items-end justify-items-center">
+<div class="w-full bg-[var(--primary-color)] bg-opacity-20 rounded-t-md" style="height: 90%;"></div>
+<p class="text-xs font-medium text-[var(--neutral-text)]">Plumbing</p>
+<div class="w-full bg-[var(--primary-color)] bg-opacity-20 rounded-t-md" style="height: 50%;"></div>
+<p class="text-xs font-medium text-[var(--neutral-text)]">Electrical</p>
+<div class="w-full bg-[var(--primary-color)] bg-opacity-20 rounded-t-md" style="height: 20%;"></div>
+<p class="text-xs font-medium text-[var(--neutral-text)]">Carpentry</p>
+<div class="w-full bg-[var(--primary-color)] bg-opacity-20 rounded-t-md" style="height: 80%;"></div>
+<p class="text-xs font-medium text-[var(--neutral-text)]">Painting</p>
+<div class="w-full bg-[var(--primary-color)] bg-opacity-20 rounded-t-md" style="height: 40%;"></div>
+<p class="text-xs font-medium text-[var(--neutral-text)]">Landscaping</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-[var(--neutral-border)] p-6 bg-white shadow-sm">
+<h3 class="text-lg font-bold text-gray-900">Average Job Completion Time</h3>
+<div class="flex min-h-[250px] flex-1 flex-col gap-4">
+<div class="flex items-center text-sm">
+<svg class="w-4 h-4 mr-1 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<p class="text-[var(--accent-color)] font-semibold">-5% vs last month</p>
+</div>
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="var(--accent-color)" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint1_linear_1131_5935)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_1131_5935" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="var(--accent-color)" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="var(--accent-color)" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="flex justify-around text-xs font-medium text-[var(--neutral-text)]">
+<p>Week 1</p>
+<p>Week 2</p>
+<p>Week 3</p>
+<p>Week 4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

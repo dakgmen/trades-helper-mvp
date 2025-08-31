@@ -16,6 +16,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const context = useContext(AuthContext)
   if (context === undefined) {
@@ -99,8 +100,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 bio: null, 
                 skills: null, 
                 white_card_url: null, 
-                id_document_url: null, 
-                verified: false, 
+                id_document_url: null,
+                avatar_url: null,
+                verified: false,
+                latitude: null,
+                longitude: null,
+                location_address: null,
+                stripe_account_id: null,
+                push_token: null,
                 created_at: new Date().toISOString(), 
                 updated_at: new Date().toISOString() 
               })
@@ -119,8 +126,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
               bio: null, 
               skills: null, 
               white_card_url: null, 
-              id_document_url: null, 
-              verified: false, 
+              id_document_url: null,
+              avatar_url: null,
+              verified: false,
+              latitude: null,
+              longitude: null,
+              location_address: null,
+              stripe_account_id: null,
+              push_token: null,
               created_at: new Date().toISOString(), 
               updated_at: new Date().toISOString() 
             })
@@ -191,7 +204,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true)
       console.log('🔍 AuthContext: Starting signIn for', email)
       
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })

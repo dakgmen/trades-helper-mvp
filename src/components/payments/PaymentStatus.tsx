@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { supabase } from '../../lib/supabase'
 import type { Payment } from '../../types'
 
@@ -20,11 +20,7 @@ export const PaymentStatus: React.FC<PaymentStatusProps> = ({ jobId }) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    fetchPayments()
-  }, [jobId])
-
-  const fetchPayments = async () => {
+  const fetchPayments = useCallback(async () => {
     if (!user) return
 
     try {
@@ -59,12 +55,16 @@ export const PaymentStatus: React.FC<PaymentStatusProps> = ({ jobId }) => {
       } else {
         setPayments(data || [])
       }
-    } catch (err) {
+    } catch {
       setError('Failed to load payments')
     } finally {
       setLoading(false)
     }
-  }
+  }, [user, jobId])
+
+  useEffect(() => {
+    fetchPayments()
+  }, [fetchPayments])
 
   const handleReleasePayment = async (paymentId: string) => {
     try {

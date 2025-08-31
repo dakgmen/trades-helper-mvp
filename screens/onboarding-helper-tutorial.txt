@@ -1,0 +1,90 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563EB;
+        --color-secondary: #16A34A;
+        --color-accent: #EA580C;
+        --color-neutral-100: #F3F4F6;
+        --color-neutral-400: #9CA3AF;
+        --color-neutral-800: #1F2937;
+        --color-neutral-900: #111827;
+      }
+      body {
+        font-family: "Work Sans", sans-serif;
+      }
+    </style>
+<title>TradieHelper - Onboarding Tutorial</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<header class="bg-white shadow-sm">
+<nav class="container mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-[var(--color-primary)]">
+<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.5a.75.75 0 0 1 .75.75v.518a12.013 12.013 0 0 1 8.583 8.583H21.75a.75.75 0 0 1 0 1.5h-.917a12.013 12.013 0 0 1-8.583 8.583v.917a.75.75 0 0 1-1.5 0v-.917a12.013 12.013 0 0 1-8.583-8.583H2.25a.75.75 0 0 1 0-1.5h.917A12.013 12.013 0 0 1 11.75 3.768V3.25a.75.75 0 0 1 .75-.75Zm0 1.5a10.51 10.51 0 0 0-7.443 3.057.75.75 0 0 1-1.06-1.06A12.01 12.01 0 0 1 12 4.018v-.018Zm0 14.5a10.51 10.51 0 0 0 7.443-3.057.75.75 0 1 1 1.06 1.06A12.01 12.01 0 0 1 12 19.982v.018Z"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-[var(--color-neutral-900)]">TradieHelper</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors" href="#">Find Work</a>
+<a class="text-sm font-semibold text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors" href="#">My Jobs</a>
+<a class="text-sm font-semibold text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors" href="#">Messages</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 text-[var(--color-neutral-800)] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)]">
+<span class="sr-only">View notifications</span>
+<svg class="h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 8a6 6 0 0 1 12 0v5a2 2 0 0 0 2 2h0a2 2 0 0 0-2-2v-5a6 6 0 0 1-12 0v5a2 2 0 0 0-2 2h0a2 2 0 0 0 2-2z"></path><path d="M18 13v3a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3"></path><path d="M12 21v-3"></path><path d="M12 3a2 2 0 0 1 2 2v1"></path><path d="M10 5.5A3.5 3.5 0 0 1 13.5 2H12a2 2 0 0 0-2 2z"></path>
+</svg>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent)] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-[var(--color-accent)]"></span>
+</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white shadow-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCP5WKwOQPiDiYz9j2rBk_YWAkSsAQhmUi9r7vqzo_SZBUIVWjMVxasMRdw1NKDS67Ny5MIQ6WhT5RQW0EFQeq9Ftu7SCvb4xnCpr32GRx7cCXmmfFUg1Y9tLe9iv14dEgkp6YnhFwedWS8da2EgBNx1-7BI_uZL2RQuVC6nntL63XapQjM9n7_NbvhNAfpA85ogJ6WXo7v35M7sR7Y7f3714Ku3YwtnZrS6lWQeKBu2gzReUP2bSGYYWuE7Sp63mvvH0OJm8ZzXrMi");'></div>
+</div>
+</nav>
+</header>
+<main class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="max-w-xl w-full space-y-8 bg-white p-8 sm:p-10 rounded-2xl shadow-lg">
+<div class="text-center">
+<div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-lg mb-6" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmlSlWomDLpJQt_XngtL9jC8-yZGHTEn7kP6T3fT6Y4mhrYto50CTxEIcFdHKsS2b-d2ZjcPbcZDyMmqCVurIFmi9tWivj81jnWFKeOkGdwDlo2krsXepanOTL_2l-NHvh-bA_JI5HDIp_NoidJUkw35rsaulGlcjJnqI9crkLqGfue1bHQ2Hp6GunMGzeEyTZRCICO08cFugA1JOr-smvzn2IwBNysJIi5BBNSAcNc8ZelEZTTLWwpHFwlDvqqXFoZT68YpeC_DAM");'></div>
+<h2 class="text-3xl font-bold text-[var(--color-neutral-900)]">Welcome to TradieHelper!</h2>
+<p class="mt-2 text-md text-[var(--color-neutral-800)]">
+              Let's get you started with finding your perfect tradie job. This quick tutorial will show you how to navigate the app and apply for jobs.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+<a class="w-full sm:w-auto text-sm font-semibold text-[var(--color-neutral-400)] hover:text-[var(--color-neutral-900)] transition-colors" href="#">Skip for now</a>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-[var(--color-primary)] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all">
+<span>Start Tutorial</span>
+<svg class="h-5 w-5" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+</button>
+</div>
+<div class="pt-4 text-center">
+<div class="flex items-center justify-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[var(--color-primary)]"></span>
+<span class="w-2 h-2 rounded-full bg-gray-300"></span>
+<span class="w-2 h-2 rounded-full bg-gray-300"></span>
+<span class="w-2 h-2 rounded-full bg-gray-300"></span>
+</div>
+<p class="text-xs text-gray-500 mt-2">Step 1 of 4</p>
+</div>
+</div>
+</main>
+<footer class="bg-white">
+<div class="container mx-auto px-6 lg:px-10 py-6 text-center text-sm text-[var(--color-neutral-400)]">
+<p>© 2024 TradieHelper. All rights reserved.</p>
+<p class="mt-1">Need help? <a class="font-semibold text-[var(--color-primary)] hover:underline" href="#">Contact Support</a></p>
+</div>
+</footer>
+</div>
+
+</body></html>

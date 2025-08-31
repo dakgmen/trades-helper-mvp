@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase'
-import type { Availability, AvailabilityPattern } from '../types'
+import type { Availability, AvailabilityPattern, AvailableHelperWithDistance } from '../types'
 
 export class AvailabilityService {
   // Set availability for a helper
@@ -78,13 +78,9 @@ export class AvailabilityService {
     latitude?: number,
     longitude?: number,
     radiusKm: number = 50
-  ): Promise<Array<{
-    helper: any
-    availability: Availability[]
-    distance?: number
-  }>> {
+  ): Promise<AvailableHelperWithDistance[]> {
     try {
-      let query = supabase
+      const query = supabase
         .from('availability')
         .select(`
           *,
@@ -151,7 +147,7 @@ export class AvailabilityService {
       })
 
       // Convert to array and sort by distance if available
-      let availableHelpers = Array.from(helperMap.values())
+      const availableHelpers = Array.from(helperMap.values())
 
       if (latitude && longitude) {
         availableHelpers.sort((a, b) => {
@@ -297,9 +293,9 @@ export class AvailabilityService {
       }
 
       // Group by date
-      const schedule: { [key: string]: Availability[] } = {}
+      const schedule: { [key: string]: Availability[] } = {};
       
-      (data as Availability[]).forEach(availability => {
+      (data || []).forEach((availability: Availability) => {
         const date = availability.date
         if (!schedule[date]) {
           schedule[date] = []
@@ -346,7 +342,7 @@ export class AvailabilityService {
   }): Promise<void> {
     try {
       const startDate = new Date(availabilityData.date)
-      const slots: any[] = []
+      const slots: Array<Omit<Availability, 'id' | 'booking_id'>> = []
       
       let daysToAdd = 0
       let occurrences = 0

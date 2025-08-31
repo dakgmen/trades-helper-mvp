@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { signIn, signOut } from './helpers/auth'
+import { signIn } from './helpers/auth'
 
 test.describe('Admin Verification and Management', () => {
   test.describe('Admin Access Control', () => {
@@ -123,7 +123,8 @@ test.describe('Admin Verification and Management', () => {
       if (await helperCard.isVisible()) {
         // Should show document links if documents exist
         const whiteCardLink = helperCard.getByRole('link', { name: 'View Document' }).first()
-        const idDocLink = helperCard.getByRole('link', { name: 'View Document' }).nth(1)
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const _idDocLink = helperCard.getByRole('link', { name: 'View Document' }).nth(1)
         
         if (await whiteCardLink.isVisible()) {
           await expect(whiteCardLink).toHaveAttribute('target', '_blank')

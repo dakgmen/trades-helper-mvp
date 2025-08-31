@@ -137,7 +137,7 @@ export class DisputeService {
     resolution?: string
   ): Promise<boolean> {
     try {
-      const updateData: any = {
+      const updateData: Partial<{ status: string; admin_notes: string; resolution: string; updated_at: string; resolved_at: string; resolved_by_admin_id: string }> = {
         status,
         admin_notes: adminNotes,
         updated_at: new Date().toISOString()

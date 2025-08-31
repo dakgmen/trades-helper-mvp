@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-50: #f0f9ff;
+      --primary-100: #e0f2fe;
+      --primary-200: #bae6fd;
+      --primary-300: #7dd3fc;
+      --primary-400: #38bdf8;
+      --primary-500: #0ea5e9;
+      --primary-600: #0284c7;
+      --primary-700: #0369a1;
+      --primary-800: #075985;
+      --primary-900: #0c4a6e;
+      --primary-950: #082f49;
+    }
+    .terms-content::-webkit-scrollbar {
+      width: 12px;
+    }
+    .terms-content::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 10px;
+    }
+    .terms-content::-webkit-scrollbar-thumb {
+      background: #e2e8f0;
+      border-radius: 10px;
+      border: 3px solid #f1f5f9;
+    }
+    .terms-content::-webkit-scrollbar-thumb:hover {
+      background: #cbd5e1;
+    }
+  </style>
+</head>
+<body class="bg-gray-50" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex min-h-screen flex-col items-center justify-center bg-gray-50/50 p-4">
+<div aria-hidden="true" class="fixed inset-0 bg-black/30 backdrop-blur-sm"></div>
+<div class="relative w-full max-w-4xl rounded-xl bg-white shadow-2xl">
+<div class="flex flex-col rounded-xl border border-gray-200 bg-white">
+<div class="border-b border-gray-200 px-6 py-4">
+<h1 class="text-2xl font-bold text-gray-900">
+            Terms and Conditions
+          </h1>
+<p class="mt-1 text-sm text-gray-600">
+            Last updated: 24 October 2023
+          </p>
+</div>
+<div class="relative">
+<div class="h-1 w-full bg-gray-200">
+<div class="h-1 bg-blue-600" style="width: 35%;"></div>
+</div>
+<div class="prose prose-sm max-h-[60vh] overflow-y-auto px-6 py-5 text-gray-700 terms-content">
+<p>
+              Welcome to TradieHelper! By using our platform, you agree to the
+              following terms and conditions. Please read them carefully. These
+              terms govern your use of TradieHelper and provide information
+              about the TradieHelper service, outlined below. By creating an
+              account or using TradieHelper, you agree to these terms.
+            </p>
+<h3>1. Acceptance of Terms</h3>
+<p>
+              By accessing or using TradieHelper, you agree to be bound by
+              these Terms and Conditions and our Privacy Policy. If you do not
+              agree to these terms, please do not use our platform.
+            </p>
+<h3>2. Definitions</h3>
+<ul>
+<li>
+<strong>"TradieHelper"</strong> refers to the online platform
+                that connects tradespeople (tradies) with individuals seeking
+                assistance (helpers).
+              </li>
+<li>
+<strong>"User"</strong> refers to any person who accesses or
+                uses TradieHelper, including tradies and helpers.
+              </li>
+<li>
+<strong>"Job"</strong> refers to a task or project posted by a
+                tradie for which a helper can apply.
+              </li>
+<li>
+<strong>"Profile"</strong> refers to the information provided
+                by a user, including their skills, experience, and contact
+                details.
+              </li>
+</ul>
+<h3>3. User Accounts</h3>
+<p>
+              To use TradieHelper, you must create a user account. You agree to
+              provide accurate and complete information during the registration
+              process and to keep your account information up-to-date. You are
+              responsible for maintaining the confidentiality of your account
+              credentials and for all activities that occur under your account.
+            </p>
+<h3>4. Tradie Responsibilities</h3>
+<p>
+              Tradies are responsible for accurately describing the job
+              requirements, providing clear instructions, and ensuring a safe
+              working environment for helpers. Tradies must comply with all
+              applicable laws and regulations, including those related to
+              employment, taxation, and workplace safety.
+            </p>
+<h3>5. Helper Responsibilities</h3>
+<p>
+              Helpers are responsible for accurately representing their skills
+              and experience, completing jobs to the best of their ability, and
+              communicating effectively with tradies. Helpers must comply with
+              all applicable laws and regulations, including those related to
+              employment and taxation.
+            </p>
+<h3>6. Governing Law</h3>
+<p>
+              These Terms and Conditions are governed by and construed in
+              accordance with the laws of Australia. Any disputes arising out of
+              or in connection with these terms shall be subject to the
+              exclusive jurisdiction of the courts of Australia.
+            </p>
+<h3>7. Contact Information</h3>
+<p>
+              If you have any questions or concerns about these Terms and
+              Conditions, please contact us at
+              <a href="mailto:support@tradiehelper.com.au">support@tradiehelper.com.au</a>.
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-center justify-between gap-4 rounded-b-xl border-t border-gray-200 bg-gray-50 px-6 py-4 sm:flex-row">
+<div class="flex items-center space-x-3">
+<input class="h-5 w-5 rounded border-gray-300 text-primary-600 shadow-sm focus:ring-primary-500" id="accept-terms" type="checkbox"/>
+<label class="text-sm font-medium text-gray-700" for="accept-terms">I have read and agree to the Terms and Conditions</label>
+</div>
+<div class="flex w-full shrink-0 space-x-3 sm:w-auto">
+<button class="flex w-full items-center justify-center rounded-lg bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-200 hover:bg-gray-50 sm:w-auto">
+              Decline
+            </button>
+<button class="flex w-full items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
+              Accept
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

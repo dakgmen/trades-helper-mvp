@@ -11,54 +11,11 @@ import { ApplicationsList } from './components/applications/ApplicationsList'
 import { PaymentStatus } from './components/payments/PaymentStatus'
 import { EnhancedAdminDashboard } from './components/admin/EnhancedAdminDashboard'
 import { AvailabilityCalendar } from './components/availability/AvailabilityCalendar'
+import { EnhancedNavigation } from './components/layout/EnhancedNavigation'
+import { EnhancedTradieDashboard } from './components/dashboard/EnhancedTradieDashboard'
+import { EnhancedHelperDashboard } from './components/dashboard/EnhancedHelperDashboard'
 import './App.css'
 
-function Navigation() {
-  const { user, profile, signOut } = useAuth()
-
-  if (!user) return null
-
-  return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold text-blue-600">TradieHelper</h1>
-            <div className="hidden md:flex space-x-4">
-              {profile?.role === 'tradie' && (
-                <>
-                  <a href="/jobs/my" className="text-gray-700 hover:text-blue-600">My Jobs</a>
-                  <a href="/jobs/post" className="text-gray-700 hover:text-blue-600">Post Job</a>
-                  <a href="/applications" className="text-gray-700 hover:text-blue-600">Applications</a>
-                </>
-              )}
-              {profile?.role === 'helper' && (
-                <>
-                  <a href="/jobs" className="text-gray-700 hover:text-blue-600">Find Jobs</a>
-                  <a href="/applications" className="text-gray-700 hover:text-blue-600">My Applications</a>
-                  <a href="/availability" className="text-gray-700 hover:text-blue-600">My Availability</a>
-                </>
-              )}
-              <a href="/payments" className="text-gray-700 hover:text-blue-600">Payments</a>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-600">
-              {profile?.full_name || user.email}
-            </span>
-            <button
-              onClick={() => signOut()}
-              className="text-sm text-red-600 hover:text-red-700"
-            >
-              Sign Out
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
-}
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
@@ -92,60 +49,56 @@ function ApplicationsListWrapper() {
   return <ApplicationsList viewType={profile?.role === 'tradie' ? 'tradie' : 'helper'} />
 }
 
+function AvailabilityWrapper() {
+  const { user } = useAuth()
+  return (
+    <div>
+      <EnhancedNavigation />
+      <div className="max-w-6xl mx-auto p-6">
+        <h2 className="text-2xl font-bold mb-6">My Availability</h2>
+        <AvailabilityCalendar helperId={user?.id || ''} editable={true} />
+      </div>
+    </div>
+  )
+}
+
 function Dashboard() {
   const { profile } = useAuth()
 
   if (!profile?.full_name) {
     return (
-      <div className="max-w-4xl mx-auto p-6">
-        <h2 className="text-2xl font-bold mb-6">Complete Your Profile</h2>
-        <ProfileForm onSuccess={() => window.location.reload()} />
+      <div>
+        <EnhancedNavigation />
+        <div className="max-w-4xl mx-auto p-6">
+          <h2 className="text-2xl font-bold mb-6">Complete Your Profile</h2>
+          <ProfileForm onSuccess={() => window.location.reload()} />
+        </div>
       </div>
     )
   }
 
-  return (
-    <div className="max-w-6xl mx-auto p-6">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Welcome back, {profile.full_name}!
-        </h2>
-        <p className="text-gray-600 mt-2">
-          {profile.role === 'tradie' 
-            ? 'Manage your jobs and find reliable helpers' 
-            : 'Find jobs that match your skills'}
-        </p>
-      </div>
+  if (profile.role === 'tradie') {
+    return <EnhancedTradieDashboard />
+  }
 
-      {profile.role === 'tradie' ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Actions</h3>
-            <div className="space-y-3">
-              <a
-                href="/jobs/post"
-                className="block p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center"
-              >
-                Post New Job
-              </a>
-              <a
-                href="/applications"
-                className="block p-4 bg-green-600 text-white rounded-lg hover:bg-green-700 text-center"
-              >
-                View Applications
-              </a>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Recent Activity</h3>
-            <ApplicationsList viewType="tradie" />
-          </div>
+  if (profile.role === 'helper') {
+    return <EnhancedHelperDashboard />
+  }
+
+  // Default fallback for other roles
+  return (
+    <div>
+      <EnhancedNavigation />
+      <div className="max-w-6xl mx-auto p-6">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">
+            Welcome back, {profile.full_name}!
+          </h2>
+          <p className="text-gray-600 mt-2">
+            Your dashboard is loading...
+          </p>
         </div>
-      ) : (
-        <div>
-          <JobFeed userRole="helper" />
-        </div>
-      )}
+      </div>
     </div>
   )
 }
@@ -161,10 +114,7 @@ function App() {
               path="/"
               element={
                 <ProtectedRoute>
-                  <div>
-                    <Navigation />
-                    <Dashboard />
-                  </div>
+                  <Dashboard />
                 </ProtectedRoute>
               }
             />
@@ -173,7 +123,7 @@ function App() {
               element={
                 <ProtectedRoute>
                   <div>
-                    <Navigation />
+                    <EnhancedNavigation />
                     <div className="max-w-4xl mx-auto p-6">
                       <ProfileForm />
                     </div>
@@ -186,7 +136,7 @@ function App() {
               element={
                 <ProtectedRoute requiredRole="tradie">
                   <div>
-                    <Navigation />
+                    <EnhancedNavigation />
                     <div className="max-w-4xl mx-auto p-6">
                       <JobPostForm onSuccess={() => window.location.href = '/'} />
                     </div>
@@ -199,7 +149,7 @@ function App() {
               element={
                 <ProtectedRoute>
                   <div>
-                    <Navigation />
+                    <EnhancedNavigation />
                     <JobFeed />
                   </div>
                 </ProtectedRoute>
@@ -210,7 +160,7 @@ function App() {
               element={
                 <ProtectedRoute>
                   <div>
-                    <Navigation />
+                    <EnhancedNavigation />
                     <div className="max-w-6xl mx-auto p-6">
                       <ApplicationsListWrapper />
                     </div>
@@ -223,7 +173,7 @@ function App() {
               element={
                 <ProtectedRoute>
                   <div>
-                    <Navigation />
+                    <EnhancedNavigation />
                     <div className="max-w-6xl mx-auto p-6">
                       <PaymentStatus />
                     </div>
@@ -235,13 +185,7 @@ function App() {
               path="/availability"
               element={
                 <ProtectedRoute requiredRole="helper">
-                  <div>
-                    <Navigation />
-                    <div className="max-w-6xl mx-auto p-6">
-                      <h2 className="text-2xl font-bold mb-6">My Availability</h2>
-                      <AvailabilityCalendar />
-                    </div>
-                  </div>
+                  <AvailabilityWrapper />
                 </ProtectedRoute>
               }
             />
@@ -250,7 +194,7 @@ function App() {
               element={
                 <ProtectedRoute requiredRole="admin">
                   <div>
-                    <Navigation />
+                    <EnhancedNavigation />
                     <EnhancedAdminDashboard />
                   </div>
                 </ProtectedRoute>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<title>TradieHelper - Trust and Safety Hub</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --color-primary: #2563eb;
+        --color-secondary: #16a34a;
+        --color-accent: #ea580c;
+        --color-neutral-100: #f8fafc;
+        --color-neutral-200: #e2e8f0;
+        --color-neutral-300: #cbd5e1;
+        --color-neutral-400: #94a3b8;
+        --color-neutral-500: #64748b;
+        --color-neutral-600: #475569;
+        --color-neutral-700: #334155;
+        --color-neutral-800: #1e293b;
+        --color-neutral-900: #0f172a;
+      }
+      .icon {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+      }
+    </style>
+</head>
+<body class="bg-neutral-100" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 bg-white shadow-sm">
+<div class="container mx-auto flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3" href="#">
+<svg class="size-8 text-[var(--color-primary)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h1 class="text-xl font-bold text-[var(--color-neutral-800)]">
+                TradieHelper
+              </h1>
+</a>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-[var(--color-neutral-600)] transition-colors hover:text-[var(--color-primary)]" href="#">Find Work</a>
+<a class="text-sm font-medium text-[var(--color-neutral-600)] transition-colors hover:text-[var(--color-primary)]" href="#">Post a Job</a>
+<a class="text-sm font-bold text-[var(--color-primary)]" href="#">Safety</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-neutral-500)] transition-colors hover:bg-[var(--color-neutral-200)] hover:text-[var(--color-neutral-700)]">
+<span class="icon">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBreQ8Au5TJEXT5Taxp1A7nPUdkVsGOqaP1yvuzkXKbA2Rk2wHL9vwb2j4fSkyDhd9MFOLVsPdrwp_es5sE6Weiqqq4pVstjuDIjrdOcoGUYbhxva8N3pOyxy5OcsVqOV_5QkLhMCYyY-6e2e3Kqt0zWdmwOtRmeNt0V6Pj-G6omGZakGL1A0jV9i4v-7OB7S1t8xtCNZWvqf-gI6VtEMQ1g_7v9Au1Zo8lL-RVArBQWlfiCrdzFsnmueft4xVKYfEDPPhrFkcd5xBD");'></div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-6 py-12">
+<div class="max-w-4xl mx-auto">
+<div class="mb-12 text-center">
+<span class="icon text-6xl text-[var(--color-primary)]">health_and_safety</span>
+<h1 class="mt-4 text-4xl font-bold tracking-tighter text-[var(--color-neutral-900)] sm:text-5xl">
+                Trust and Safety Hub
+              </h1>
+<p class="mt-4 text-lg text-[var(--color-neutral-500)]">
+                Your safety is our top priority. Find resources and tools to
+                ensure a safe experience on TradieHelper.
+              </p>
+</div>
+<div class="space-y-12">
+<section>
+<h2 class="flex items-center gap-3 text-2xl font-bold text-[var(--color-neutral-800)]">
+<span class="icon text-[var(--color-secondary)]">checklist</span>
+                  Safety Guidelines
+                </h2>
+<p class="mt-2 text-base text-[var(--color-neutral-600)]">
+                  At TradieHelper, we are committed to providing a safe and
+                  secure environment for all users. Please review our
+                  guidelines to ensure a positive experience.
+                </p>
+<div class="mt-6 space-y-4">
+<div class="flex items-start gap-4 rounded-lg bg-white p-4 shadow-sm">
+<span class="icon text-[var(--color-primary)]">verified_user</span>
+<p class="text-base text-[var(--color-neutral-700)]">
+                      Always
+                      <strong class="font-semibold">verify the identity</strong>
+                      of tradies or helpers before accepting a job or hiring
+                      someone.
+                    </p>
+</div>
+<div class="flex items-start gap-4 rounded-lg bg-white p-4 shadow-sm">
+<span class="icon text-[var(--color-primary)]">chat</span>
+<p class="text-base text-[var(--color-neutral-700)]">
+<strong class="font-semibold">Communicate clearly</strong>
+                      and set expectations regarding the scope of work, payment
+                      terms (AUD $), and safety procedures.
+                    </p>
+</div>
+<div class="flex items-start gap-4 rounded-lg bg-white p-4 shadow-sm">
+<span class="icon text-[var(--color-primary)]">report</span>
+<p class="text-base text-[var(--color-neutral-700)]">
+<strong class="font-semibold">Report any suspicious
+                      activity</strong> or safety concerns immediately through
+                      our platform.
+                    </p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
+<section>
+<h2 class="flex items-center gap-3 text-2xl font-bold text-[var(--color-neutral-800)]">
+<span class="icon text-[var(--color-accent)]">report_problem</span>
+                    Reporting Tools
+                  </h2>
+<p class="mt-2 text-base text-[var(--color-neutral-600)]">
+                    If you encounter any issues or have safety concerns, please
+                    use the following tools to report them.
+                  </p>
+<div class="mt-6 flex flex-col gap-4 sm:flex-row">
+<button class="flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-primary)] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-blue-700">
+<span class="icon">person_remove</span>
+<span class="truncate">Report a User</span>
+</button>
+<button class="flex w-full items-center justify-center gap-2 rounded-md bg-[var(--color-neutral-200)] px-4 py-3 text-sm font-bold text-[var(--color-neutral-700)] transition-colors hover:bg-[var(--color-neutral-300)]">
+<span class="icon">flag</span>
+<span class="truncate">Report a Job</span>
+</button>
+</div>
+</section>
+<section>
+<h2 class="flex items-center gap-3 text-2xl font-bold text-[var(--color-neutral-800)]">
+<span class="icon text-red-600">emergency</span>
+                    Emergency Contacts
+                  </h2>
+<p class="mt-2 text-base text-[var(--color-neutral-600)]">
+                    In case of an emergency, please contact the appropriate
+                    authorities immediately.
+                  </p>
+<div class="mt-6 rounded-lg bg-white p-4 shadow-sm">
+<ul class="divide-y divide-[var(--color-neutral-200)]">
+<li class="flex justify-between py-3">
+<span class="text-sm text-[var(--color-neutral-600)]">Emergency Services (Police, Fire, Ambulance)</span>
+<span class="text-sm font-bold text-[var(--color-neutral-800)]">000</span>
+</li>
+<li class="flex justify-between py-3">
+<span class="text-sm text-[var(--color-neutral-600)]">Police (Non-Emergency)</span>
+<span class="text-sm font-bold text-[var(--color-neutral-800)]">131 444</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+<section>
+<h2 class="flex items-center gap-3 text-2xl font-bold text-[var(--color-neutral-800)]">
+<span class="icon text-[var(--color-secondary)]">shield</span>
+                    Insurance Information
+                  </h2>
+<p class="mt-2 text-base text-[var(--color-neutral-600)]">
+                    TradieHelper provides insurance coverage for certain
+                    situations. Please review our insurance policy for details.
+                  </p>
+<div class="mt-6">
+<a class="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-neutral-200)] px-4 py-3 text-sm font-bold text-[var(--color-neutral-700)] transition-colors hover:bg-[var(--color-neutral-300)]" href="#">
+<span class="icon">description</span>
+<span class="truncate">View Insurance Policy</span>
+</a>
+</div>
+</section>
+<section>
+<h2 class="flex items-center gap-3 text-2xl font-bold text-[var(--color-neutral-800)]">
+<span class="icon text-[var(--color-accent)]">gpp_good</span>
+                    Australian Safety Standards
+                  </h2>
+<p class="mt-2 text-base text-[var(--color-neutral-600)]">
+                    All tradies and helpers on our platform are expected to
+                    adhere to Australian safety standards. For more
+                    information, please visit the Safe Work Australia website.
+                  </p>
+<div class="mt-6">
+<a class="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--color-neutral-200)] px-4 py-3 text-sm font-bold text-[var(--color-neutral-700)] transition-colors hover:bg-[var(--color-neutral-300)]" href="#" rel="noopener noreferrer" target="_blank">
+<span class="icon">launch</span>
+<span class="truncate">Safe Work Australia</span>
+</a>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white border-t border-[var(--color-neutral-200)]">
+<div class="container mx-auto px-6 py-8">
+<div class="flex flex-col items-center justify-between md:flex-row">
+<div class="flex items-center gap-3">
+<svg class="h-6 w-6 text-[var(--color-primary)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<p class="text-base font-semibold text-[var(--color-neutral-800)]">TradieHelper</p>
+</div>
+<p class="mt-4 text-sm text-[var(--color-neutral-500)] md:mt-0">© 2024 TradieHelper. All rights reserved.</p>
+<div class="mt-4 flex gap-4 md:mt-0">
+<a class="text-sm text-[var(--color-neutral-500)] hover:text-[var(--color-primary)]" href="#">Terms of Service</a>
+<a class="text-sm text-[var(--color-neutral-500)] hover:text-[var(--color-primary)]" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

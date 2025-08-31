@@ -83,7 +83,7 @@ export const DisputeForm: React.FC<DisputeFormProps> = ({
       } else {
         setError('Failed to create dispute. Please try again.')
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred while creating the dispute.')
     } finally {
       setIsSubmitting(false)

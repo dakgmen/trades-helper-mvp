@@ -1,0 +1,13 @@
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run lint
+
+> tradie-helper@0.0.0 lint
+> eslint .
+
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\tests\services\notificationService.test.ts
+  104:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  199:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 2 problems (2 errors, 0 warnings)
+
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> 

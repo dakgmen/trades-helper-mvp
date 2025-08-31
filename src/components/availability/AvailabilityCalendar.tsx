@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { AvailabilityService } from '../../services/availabilityService'
 import type { Availability, AvailabilityPattern } from '../../types'
 
@@ -23,11 +23,7 @@ export const AvailabilityCalendar: React.FC<AvailabilityCalendarProps> = ({
 
   const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-  useEffect(() => {
-    loadAvailability()
-  }, [currentWeek, helperId])
-
-  const loadAvailability = async () => {
+  const loadAvailability = useCallback(async () => {
     setLoading(true)
     try {
       const weekStart = getWeekStart(currentWeek)
@@ -40,7 +36,11 @@ export const AvailabilityCalendar: React.FC<AvailabilityCalendarProps> = ({
     } finally {
       setLoading(false)
     }
-  }
+  }, [currentWeek, helperId])
+
+  useEffect(() => {
+    loadAvailability()
+  }, [loadAvailability])
 
   const getWeekStart = (date: Date): Date => {
     const d = new Date(date)

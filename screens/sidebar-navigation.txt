@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper Sidebar</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-bg: #F8FAFC;
+        --neutral-text: #475569;
+        --neutral-border: #E2E8F0;
+      }
+      .notification-badge {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        width: 18px;
+        height: 18px;
+        border-radius: 9999px;
+        background-color: var(--accent-color);
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+      }
+    </style>
+</head>
+<body class="bg-gray-50" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-row group/design-root overflow-x-hidden">
+<aside class="flex flex-col w-72 bg-white border-r border-slate-200">
+<div class="flex items-center gap-3 p-4 border-b border-slate-200 h-20">
+<img alt="Alex profile picture" class="size-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpr4LB0BkxGXeenCJERpoFeUAfdOAtyNkV6p8JZLuHt0Bnbzd9sOBLFcOScnQr9laX4IY5Ydu4MhhAD-X1x8zTCAmCWtZb5rWz297RgWsUbSOpelpFTq7B6ZmdNwjWStxwiIfX3YN74RaL6uMdRDGgY46MXBS2EwfVZHB9_v88p-hBzwZ_BRiT0eQV7pRcFZsMzlkCZGochOWsGXSqABnYrskYZqaZuQPLQofmx2Fn4OnQx3mXA0IQ_CVWJFvpRRE-2bcj28bqVfcb"/>
+<div class="flex flex-col">
+<h1 class="text-slate-800 text-base font-semibold">Alex Patullo</h1>
+<p class="text-slate-500 text-sm font-normal">Tradie Account</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 p-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-50 text-blue-600" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,88H144V40a8,8,0,0,0-8-8H120a8,8,0,0,0-8,8v48H40a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8h72v48a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V120h72a8,8,0,0,0,8-8V96A8,8,0,0,0,216,88Z"></path>
+</svg>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H80v8a8,8,0,0,0,16,0V72h64v8a8,8,0,0,0,16,0V72h40Z"></path>
+</svg>
+<span class="text-sm font-medium">Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+</svg>
+<span class="text-sm font-medium">Helpers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31L188.69,80H160ZM56,216V40h88v48a8,8,0,0,0,8,8h48V216Z"></path>
+</svg>
+<span class="text-sm font-medium">Payments</span>
+</a>
+<a class="relative flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,211a16,16,0,0,0,20.24,20.24l34.12-11.35A104.09,104.09,0,1,0,128,24Zm0,192a88.1,88.1,0,0,1-45.42-12.26l-2.12-1.2-25.53,8.49,8.49-25.53-1.2-2.12A88,88,0,1,1,128,216Z"></path>
+</svg>
+<span class="text-sm font-medium">Messages</span>
+<span class="notification-badge">3</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"></path>
+</svg>
+<span class="text-sm font-medium">Reviews</span>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-slate-200">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg h-10 px-4 bg-blue-600 text-white text-sm font-bold leading-normal tracking-wide hover:bg-blue-700 transition-colors">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H136v88a8,8,0,0,1-16,0V136H32a8,8,0,0,1,0-16h88V32a8,8,0,0,1,16,0v88h88A8,8,0,0,1,224,128Z"></path>
+</svg>
+<span class="truncate">Post a New Job</span>
+</button>
+<div class="flex flex-col gap-1 mt-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06ZM216,128a88,88,0,1,1-88-88A88.1,88.1,0,0,1,216,128Z"></path>
+</svg>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-100" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-48a8,8,0,0,1,16,0v16a8,8,0,0,1-16,0Zm8-88a20,20,0,0,0-20,20,8,8,0,0,0,16,0,4,4,0,0,1,8,0c0,5.2-6.52,9.66-8.36,11.22A28,28,0,0,0,112,136a8,8,0,0,0,16,0,12,12,0,0,1,12-12c8.84,0,24-7.41,24-28A20,20,0,0,0,128,72Z"></path>
+</svg>
+<span class="text-sm font-medium">Help Centre</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-baseline justify-between">
+<div>
+<h1 class="text-3xl font-bold text-slate-800">Dashboard</h1>
+<p class="text-slate-500 mt-1">Welcome back, Alex. Here's what's happening.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-white text-slate-700 border border-slate-300 text-sm font-bold hover:bg-slate-50 transition-colors">
+<span>Find a Helper</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-green-600 text-white text-sm font-bold hover:bg-green-700 transition-colors">
+<svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H136v88a8,8,0,0,1-16,0V136H32a8,8,0,0,1,0-16h88V32a8,8,0,0,1,16,0v88h88A8,8,0,0,1,224,128Z"></path>
+</svg>
+<span>Post a Job</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="bg-white p-6 rounded-xl border border-slate-200">
+<p class="text-slate-500 text-base font-medium">Jobs Posted</p>
+<p class="text-slate-800 text-3xl font-bold mt-2">12</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200">
+<p class="text-slate-500 text-base font-medium">Helpers Hired</p>
+<p class="text-slate-800 text-3xl font-bold mt-2">8</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200">
+<p class="text-slate-500 text-base font-medium">Average Rating</p>
+<div class="flex items-center gap-2 mt-2">
+<p class="text-slate-800 text-3xl font-bold">4.8</p>
+<svg class="text-orange-400" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Z"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-white p-6 rounded-xl border border-slate-200">
+<h2 class="text-xl font-bold text-slate-800">Recent Activity</h2>
+<div class="flow-root mt-6">
+<ul class="-mb-8" role="list">
+<li>
+<div class="relative pb-8">
+<span aria-hidden="true" class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-slate-200"></span>
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center ring-8 ring-white">
+<svg class="h-5 w-5 text-blue-600" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H80v8a8,8,0,0,0,16,0V72h64v8a8,8,0,0,0,16,0V72h40Z"></path>
+</svg>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm text-slate-700">New job posted: <a class="font-medium text-slate-900" href="#">Plumber needed for bathroom renovation</a></p>
+</div>
+<div class="text-right text-sm whitespace-nowrap text-slate-500">
+<time datetime="2023-10-21">2 days ago</time>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="relative pb-8">
+<span aria-hidden="true" class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-slate-200"></span>
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center ring-8 ring-white">
+<svg class="h-5 w-5 text-green-600" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Z"></path>
+</svg>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm text-slate-700">Helper <a class="font-medium text-slate-900" href="#">Sarah J.</a> accepted your job offer</p>
+</div>
+<div class="text-right text-sm whitespace-nowrap text-slate-500">
+<time datetime="2023-10-20">3 days ago</time>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="relative">
+<div class="relative flex space-x-3">
+<div>
+<span class="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center ring-8 ring-white">
+<svg class="h-5 w-5 text-orange-500" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31L188.69,80H160ZM56,216V40h88v48a8,8,0,0,0,8,8h48V216Z"></path>
+</svg>
+</span>
+</div>
+<div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+<div>
+<p class="text-sm text-slate-700">Payment of <span class="font-medium text-slate-900">$250</span> sent to <a class="font-medium text-slate-900" href="#">Sarah J.</a></p>
+</div>
+<div class="text-right text-sm whitespace-nowrap text-slate-500">
+<time datetime="2023-10-18">5 days ago</time>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

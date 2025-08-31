@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { supabase } from '../../lib/supabase'
 import type { Job } from '../../types'
 import { JobCard } from './JobCard'
@@ -33,9 +33,10 @@ export const JobFeed: React.FC<JobFeedProps> = ({ userRole = 'helper' }) => {
     return () => {
       subscription.unsubscribe()
     }
-  }, [filters])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-  const fetchJobs = async () => {
+  const fetchJobs = useCallback(async () => {
     try {
       let query = supabase
         .from('jobs')
@@ -65,12 +66,12 @@ export const JobFeed: React.FC<JobFeedProps> = ({ userRole = 'helper' }) => {
       } else {
         setJobs(data || [])
       }
-    } catch (err) {
+    } catch {
       setError('Failed to load jobs')
     } finally {
       setLoading(false)
     }
-  }
+  }, [filters])
 
   const handleApplyToJob = async (jobId: string) => {
     try {
@@ -94,7 +95,7 @@ export const JobFeed: React.FC<JobFeedProps> = ({ userRole = 'helper' }) => {
         alert('Application submitted successfully!')
         fetchJobs() // Refresh to update application status
       }
-    } catch (err) {
+    } catch {
       alert('Failed to apply to job')
     }
   }

@@ -1,0 +1,521 @@
+(base) PS C:\Users\Dakurah Menance> 
+(base) PS C:\Users\Dakurah Menance> cd C:\ClaudeProject\voicehealth_ai\tradie-helper
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run typecheck 2>&1 | tee typescript-final-validation.txt
+
+> tradie-helper@0.0.0 typecheck
+> tsc --noEmit
+
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run lint 2>&1 | tee eslint-final-validation.txt
+
+> tradie-helper@0.0.0 lint
+> eslint .
+
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\admin\AdminDashboard.tsx
+   24:11  error  'Payment' is defined but never used                                    @typescript-eslint/no-unused-vars
+   77:56  error  Unexpected any. Specify a different type                               @typescript-eslint/no-explicit-any
+  184:5   error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions      
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\admin\EnhancedAdminDashboard.tsx
+  418:36  error  'color' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\applications\ApplicationReviewInterface.tsx
+  74:6  warning  React Hook useEffect has a missing dependency: 'fetchApplications'. Either include it or remove the dependency array 
+ react-hooks/exhaustive-deps
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\applications\ApplicationsList.tsx
+   1:38  error    'useCallback' is defined but never used
+  @typescript-eslint/no-unused-vars
+  13:52  error    Unexpected any. Specify a different type
+  @typescript-eslint/no-explicit-any
+  19:6   warning  React Hook useEffect has a missing dependency: 'fetchApplications'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\availability\AvailabilityCalendar.tsx
+  28:6  warning  React Hook useEffect has a missing dependency: 'loadAvailability'. Either include it or remove the dependency array  
+react-hooks/exhaustive-deps
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\disputes\DisputeForm.tsx
+  86:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\jobs\AdvancedJobDiscovery.tsx
+  54:6  warning  React Hook useEffect has a missing dependency: 'fetchJobs'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\jobs\JobFeed.tsx
+  36:6   warning  React Hook useEffect has a missing dependency: 'fetchJobs'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  68:14  error    'err' is defined but never used                                                                               @typescript-eslint/no-unused-vars
+  97:14  error    'err' is defined but never used                                                                               @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\jobs\JobPostForm.tsx
+  58:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\jobs\MultiStepJobPostForm.tsx
+  95:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\messages\MessageThread.tsx
+  47:6  warning  React Hook useEffect has a missing dependency: 'fetchMessages'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\messages\MessagingDashboard.tsx
+  34:6   warning  React Hook useEffect has a missing dependency: 'fetchConversations'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  62:35  error    Unexpected any. Specify a different type
+   @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\notifications\NotificationCenter.tsx
+   83:6  warning  React Hook useEffect has a missing dependency: 'applyFilter'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  164:9  error    Unexpected lexical declaration in case block                                                                    no-case-declarations
+  169:9  error    Unexpected lexical declaration in case block                                                                    no-case-declarations
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\payments\PaymentStatus.tsx
+  25:6   warning  React Hook useEffect has a missing dependency: 'fetchPayments'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  62:14  error    'err' is defined but never used                                                                                   @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\payments\StripeConnectOnboarding.tsx
+  116:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\components\profile\MultiStepProfileForm.tsx
+  129:14  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\context\AuthContext.tsx
+   19:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+  206:15  error  'data' is assigned a value but never used
+           @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\hooks\useJobs.ts
+  35:5  error  Unnecessary try/catch wrapper  no-useless-catch
+  45:5  error  Unnecessary try/catch wrapper  no-useless-catch
+  56:5  error  Unnecessary try/catch wrapper  no-useless-catch
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\analyticsService.ts
+  150:38  error  'usersError' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  176:41  error  'activeError' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  193:44  error  'activityError' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  446:44  error  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\availabilityService.ts
+   82:13  error  Unexpected any. Specify a different type                     @typescript-eslint/no-explicit-any
+   87:11  error  'query' is never reassigned. Use 'const' instead             prefer-const
+  154:11  error  'availableHelpers' is never reassigned. Use 'const' instead  prefer-const
+  302:7   error  Unexpected newline between function and ( of function call   no-unexpected-multiline
+  302:43  error  Unexpected any. Specify a different type                     @typescript-eslint/no-explicit-any
+  349:20  error  Unexpected any. Specify a different type                     @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\badgeService.ts
+    2:33  error  'BadgeCriteria' is defined but never used            @typescript-eslint/no-unused-vars
+   93:34  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  148:34  error  'jobsError' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  155:45  error  'ratingError' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  162:39  error  'referralsError' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  169:38  error  'paymentsError' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  176:43  error  'reviewsError' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  245:12  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  246:64  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  250:42  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  436:11  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  458:27  error  Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\disputeService.ts
+  140:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\fileUploadService.ts
+   72:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  140:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  167:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  180:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  238:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\geolocationService.ts
+  110:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  144:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  226:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  285:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  309:14  error  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\jobCategoryService.ts
+  49:75  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  75:74  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\notificationService.ts
+   34:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+   55:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  111:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  149:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  171:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  192:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  222:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  240:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  259:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  277:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  306:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  329:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  358:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  419:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  430:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\stripeService.ts
+   54:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+   76:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+   99:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  124:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  147:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  170:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  176:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  176:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  196:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  223:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  245:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  295:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  314:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  348:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  388:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  422:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  432:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  453:14  error  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\services\supportService.ts
+  221:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\tests\services\fileUploadService.test.ts
+   64:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   71:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  106:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  150:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  161:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  196:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  241:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  270:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\tests\services\geolocationService.test.ts
+   40:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  356:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  365:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  376:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\tests\services\notificationService.test.ts
+   73:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  167:92  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  170:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\tests\services\stripeService.test.ts
+   21:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   34:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   52:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   61:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   88:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  103:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  118:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  133:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\src\tests\setup.ts
+  30:8   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  81:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  81:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\admin.test.ts
+    2:18  error  'signOut' is defined but never used             @typescript-eslint/no-unused-vars
+  126:15  error  'idDocLink' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\app-debug.test.ts
+  1:16  error  'expect' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\applications.test.ts
+  206:13  error  'rejectedApplications' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\auth.test.ts
+  2:35  error  'TEST_USERS' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\debug.test.ts
+  1:16  error  'expect' is defined but never used  @typescript-eslint/no-unused-vars
+
+  1:16  error  'expect' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\global.setup.ts
+    1:25  error  'expect' is defined but never used         @typescript-eslint/no-unused-vars
+   66:13  error  'data' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   80:14  error  'cleanupError' is defined but never used   @typescript-eslint/no-unused-vars
+  160:14  error  'jobError' is defined but never used       @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\mobile.test.ts
+  1:24  error  'devices' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\payments.test.ts
+  282:15  error  'releaseButton' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\performance.test.ts
+  118:70  error  'context' is defined but never used       @typescript-eslint/no-unused-vars
+  150:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  160:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\ClaudeProject\voicehealth_ai\tradie-helper\tests\e2e\signup-inspection.test.ts
+  1:16  error  'expect' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 143 problems (134 errors, 9 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run build 2>&1 | tee build-final-validation.txt
+
+> tradie-helper@0.0.0 build
+> tsc -b && vite build
+
+src/components/admin/AdminDashboard.tsx(24,11): error TS6196: 'Payment' is declared but never used.
+src/components/admin/AdminDashboard.tsx(83,38): error TS2448: Block-scoped variable 'fetchData' used before its declaration.
+src/components/admin/AdminDashboard.tsx(83,38): error TS2454: Variable 'fetchData' is used before being assigned.
+src/components/admin/EnhancedAdminDashboard.tsx(6,10): error TS1484: 'SystemMetrics' is a type and must be imported using a type-only 
+import when 'verbatimModuleSyntax' is enabled.
+src/components/admin/EnhancedAdminDashboard.tsx(6,25): error TS1484: 'Dispute' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/admin/EnhancedAdminDashboard.tsx(6,34): error TS1484: 'SupportTicket' is a type and must be imported using a type-only 
+import when 'verbatimModuleSyntax' is enabled.
+src/components/admin/EnhancedAdminDashboard.tsx(6,49): error TS1484: 'FraudAlert' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/admin/EnhancedAdminDashboard.tsx(56,24): error TS2345: Argument of type '{ overview: SystemMetrics; trends: SystemMetrics[]; userAnalytics: { new_registrations_by_day: { date: string; count: number; role: string; }[]; active_users_by_role: { ...; }; churn_rate: number; }; jobAnalytics: { ...; }; financialAnalytics: { ...; }; }' is not assignable to parameter of type 'SetStateAction<SystemMetrics | null>'.
+  Type '{ overview: SystemMetrics; trends: SystemMetrics[]; userAnalytics: { new_registrations_by_day: { date: string; count: number; 
+role: string; }[]; active_users_by_role: { ...; }; churn_rate: number; }; jobAnalytics: { ...; }; financialAnalytics: { ...; }; }' is 
+missing the following properties from type 'SystemMetrics': total_users, active_users, total_jobs, completed_jobs, and 9 more.        
+src/components/admin/EnhancedAdminDashboard.tsx(83,42): error TS2339: Property 'total_users' does not exist on type 'string | number'.  Property 'total_users' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(90,42): error TS2339: Property 'active_users' does not exist on type 'string | number'.
+  Property 'active_users' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(97,42): error TS2339: Property 'jobs_completed' does not exist on type 'string | number'.
+  Property 'jobs_completed' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(104,46): error TS2339: Property 'platform_revenue' does not exist on type 'string | number'.
+  Property 'platform_revenue' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(142,42): error TS2367: This comparison appears to be unintentional because the types '"active" | "investigating" | "resolved" | "false_positive"' and '"pending"' have no overlap.
+src/components/admin/EnhancedAdminDashboard.tsx(168,79): error TS2339: Property 'active_users_by_role' does not exist on type 'string 
+| number'.
+  Property 'active_users_by_role' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(172,79): error TS2339: Property 'active_users_by_role' does not exist on type 'string 
+| number'.
+  Property 'active_users_by_role' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(179,45): error TS2339: Property 'churn_rate' does not exist on type 'string | number'.  Property 'churn_rate' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(192,44): error TS2339: Property 'completion_rate' does not exist on type 'string | number'.
+  Property 'completion_rate' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(198,44): error TS2339: Property 'avg_time_to_completion_hours' does not exist on type 
+'string | number'.
+  Property 'avg_time_to_completion_hours' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(204,51): error TS2339: Property 'avg_transaction_value' does not exist on type 'string | number'.
+  Property 'avg_transaction_value' does not exist on type 'string'.
+src/components/admin/EnhancedAdminDashboard.tsx(242,30): error TS2339: Property 'job' does not exist on type 'Dispute'.
+src/components/admin/EnhancedAdminDashboard.tsx(254,21): error TS2367: This comparison appears to be unintentional because the types '"investigating" | "resolved" | "closed"' and '"in_review"' have no overlap.
+src/components/admin/EnhancedAdminDashboard.tsx(312,66): error TS2339: Property 'user' does not exist on type 'SupportTicket'.        
+src/components/admin/EnhancedAdminDashboard.tsx(313,66): error TS2339: Property 'user' does not exist on type 'SupportTicket'.
+src/components/admin/EnhancedAdminDashboard.tsx(418,36): error TS6133: 'color' is declared but its value is never read.
+src/components/applications/ApplicationsList.tsx(1,38): error TS6133: 'useCallback' is declared but its value is never read.
+src/context/AuthContext.tsx(206,15): error TS6133: 'data' is declared but its value is never read.
+src/hooks/useJobs.ts(36,49): error TS2345: Argument of type 'Omit<Job, "id" | "created_at" | "updated_at">' is not assignable to parameter of type '{ title: string; description?: string | undefined; location: string; date_time: string; duration_hours: number; pay_rate: number; }'.
+  Types of property 'description' are incompatible.
+    Type 'string | null' is not assignable to type 'string | undefined'.
+      Type 'null' is not assignable to type 'string | undefined'.
+src/services/analyticsService.ts(105,7): error TS2739: Type '{ date: string; total_users: number; active_users: number; new_registrations: number; jobs_posted: number; jobs_completed: number; total_payments: number; average_job_value: number; platform_revenue: number; user_retention_rate: number; }' is missing the following properties from type 'SystemMetrics': total_jobs, completed_jobs, total_revenue
+src/services/analyticsService.ts(150,38): error TS6133: 'usersError' is declared but its value is never read.
+src/services/analyticsService.ts(176,41): error TS6133: 'activeError' is declared but its value is never read.
+src/services/analyticsService.ts(193,44): error TS6133: 'activityError' is declared but its value is never read.
+src/services/analyticsService.ts(537,5): error TS2739: Type '{ date: string; total_users: number; active_users: number; new_registrations: number; jobs_posted: number; jobs_completed: number; total_payments: number; average_job_value: number; platform_revenue: number; user_retention_rate: number; }' is missing the following properties from type 'SystemMetrics': total_jobs, completed_jobs, total_revenue
+src/services/availabilityService.ts(300,59): error TS2349: This expression is not callable.
+  Type '{}' has no call signatures.
+src/services/badgeService.ts(2,33): error TS6196: 'BadgeCriteria' is declared but never used.
+src/services/badgeService.ts(148,34): error TS6133: 'jobsError' is declared but its value is never read.
+src/services/badgeService.ts(155,45): error TS6133: 'ratingError' is declared but its value is never read.
+src/services/badgeService.ts(162,39): error TS6133: 'referralsError' is declared but its value is never read.
+src/services/badgeService.ts(169,38): error TS6133: 'paymentsError' is declared but its value is never read.
+src/services/badgeService.ts(176,43): error TS6133: 'reviewsError' is declared but its value is never read.
+src/services/fileUploadService.ts(27,36): error TS2322: Type 'string | undefined' is not assignable to type 'string | null'.
+  Type 'undefined' is not assignable to type 'string | null'.
+src/tests/services/fileUploadService.test.ts(2,10): error TS2440: Import declaration conflicts with local declaration of 'supabase'.
+src/tests/services/fileUploadService.test.ts(206,48): error TS2554: Expected 1 arguments, but got 0.
+src/tests/services/fileUploadService.test.ts(207,30): error TS2339: Property 'mockResolvedValueOnce' does not exist on type '(paths: string[]) => Promise<{ data: FileObject[]; error: null; } | { data: null; error: StorageError; }>'.
+src/tests/services/geolocationService.test.ts(84,57): error TS6133: 'success' is declared but its value is never read.
+src/tests/services/geolocationService.test.ts(99,57): error TS6133: 'success' is declared but its value is never read.
+src/tests/services/geolocationService.test.ts(114,57): error TS6133: 'success' is declared but its value is never read.
+src/tests/services/geolocationService.test.ts(265,33): error TS2339: Property 'not' does not exist on type '{ limit: Mock<Procedure>; 
+}'.
+src/tests/services/geolocationService.test.ts(287,33): error TS2339: Property 'not' does not exist on type '{ limit: Mock<Procedure>; 
+}'.
+src/tests/services/geolocationService.test.ts(328,31): error TS2339: Property 'eq' does not exist on type '{ not: Mock<() => { limit: 
+Mock<Procedure>; }>; }'.
+src/tests/services/notificationService.test.ts(179,14): error TS2339: Property 'mockResolvedValueOnce' does not exist on type '{ eq: Mock<Procedure>; }'.
+src/tests/services/notificationService.test.ts(291,14): error TS2339: Property 'mockResolvedValueOnce' does not exist on type '{ eq: Mock<Procedure>; }'.
+src/tests/services/notificationService.test.ts(316,14): error TS2339: Property 'single' does not exist on type '{ eq: Mock<() => { single: Mock<Procedure>; order: Mock<() => { limit: Mock<Procedure>; }>; }>; order: Mock<() => { limit: Mock<Procedure>; }>; }'.
+src/tests/services/notificationService.test.ts(331,14): error TS2339: Property 'single' does not exist on type '{ eq: Mock<() => { single: Mock<Procedure>; order: Mock<() => { limit: Mock<Procedure>; }>; }>; order: Mock<() => { limit: Mock<Procedure>; }>; }'.
+src/types/index.ts(170,3): error TS2687: All declarations of 'resolved_at' must have identical modifiers.
+src/types/index.ts(171,3): error TS2687: All declarations of 'resolution' must have identical modifiers.
+src/types/index.ts(183,3): error TS2687: All declarations of 'resolved_at' must have identical modifiers.
+src/types/index.ts(229,3): error TS2717: Subsequent property declarations must have the same type.  Property 'status' must be of type 
+'"open" | "investigating" | "resolved" | "closed"', but here has type '"open" | "resolved" | "in_review" | "dismissed"'.
+src/types/index.ts(231,3): error TS2687: All declarations of 'resolution' must have identical modifiers.
+src/types/index.ts(231,3): error TS2717: Subsequent property declarations must have the same type.  Property 'resolution' must be of type 'string | undefined', but here has type 'string | null'.
+src/types/index.ts(234,3): error TS2687: All declarations of 'resolved_at' must have identical modifiers.
+src/types/index.ts(234,3): error TS2717: Subsequent property declarations must have the same type.  Property 'resolved_at' must be of 
+type 'string | undefined', but here has type 'string | null'.
+src/types/index.ts(387,3): error TS2717: Subsequent property declarations must have the same type.  Property 'status' must be of type 
+'"active" | "investigating" | "resolved" | "false_positive"', but here has type '"pending" | "investigating" | "resolved" | "false_positive"'.
+src/types/index.ts(390,3): error TS2687: All declarations of 'resolved_at' must have identical modifiers.
+src/types/index.ts(390,3): error TS2717: Subsequent property declarations must have the same type.  Property 'resolved_at' must be of 
+type 'string | undefined', but here has type 'string | null'.
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run test:run 2>&1 | tee test-suite-validation.txt
+
+> tradie-helper@0.0.0 test:run
+> vitest run
+
+
+ RUN  v3.2.4 C:/ClaudeProject/voicehealth_ai/tradie-helper
+
+ Γ¥» src/tests/services/fileUploadService.test.ts (8 tests | 6 failed) 90ms
+   ├ù FileUploadService > uploadFile > should upload file successfully 35ms
+     ΓåÆ mockFrom is not a function
+   Γ£ô FileUploadService > uploadFile > should reject file that is too large 3ms
+   Γ£ô FileUploadService > uploadFile > should reject invalid file type 1ms
+   ├ù FileUploadService > uploadFile > should handle storage upload error 25ms
+     ΓåÆ expected 'File upload failed' to be 'Storage error' // Object.is equality
+   ├ù FileUploadService > uploadMultipleFiles > should upload multiple files successfully 16ms
+     ΓåÆ expected [] to have a length of 2 but got +0
+   ├ù FileUploadService > deleteFile > should delete file successfully 2ms
+     ΓåÆ mockFrom.select is not a function
+   ├ù FileUploadService > getUserFiles > should get user files successfully 2ms
+     ΓåÆ mockFrom.select is not a function
+   ├ù FileUploadService > getUserFiles > should filter files by category 2ms
+     ΓåÆ mockFrom.select is not a function
+node.exe : (node:936) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+At C:\Program Files\nodejs\npm.ps1:29 char:3
++   & $NODE_EXE $NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:936) [DEP...native instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ Γ£ô src/tests/services/stripeService.test.ts (7 tests) 82ms
+ Γ£ô src/tests/services/simple.test.ts (6 tests) 126ms
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Suites 2 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+ FAIL  src/tests/services/geolocationService.test.ts [ src/tests/services/geolocationService.test.ts ]
+Error: [vitest] There was an error when mocking a module. If you are using "vi.mock" factory, make sure there are no top level 
+variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock
+ Γ¥» src/services/geolocationService.ts:1:1
+      1| import { supabase } from '../lib/supabase'
+       | ^
+      2| import type { LocationData, JobMatch, Job, UserProfile } from '../typeΓÇª
+      3| 
+Caused by: ReferenceError: Cannot access 'mockSupabase' before initialization
+ Γ¥» src/tests/services/geolocationService.test.ts:34:13
+ Γ¥» src/services/geolocationService.ts:1:1
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/8]ΓÄ»
+ FAIL  src/tests/services/notificationService.test.ts [ src/tests/services/notificationService.test.ts ]
+Error: [vitest] There was an error when mocking a module. If you are using "vi.mock" factory, make sure there are no top level        
+variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock
+ Γ¥» src/services/notificationService.ts:1:1
+      1| import { supabase } from '../lib/supabase'
+       | ^
+      2| import type { Notification, NotificationPreferences, NotificationType ΓÇª
+      3| 
+Caused by: ReferenceError: Cannot access 'mockSupabase' before initialization
+ Γ¥» src/tests/services/notificationService.test.ts:67:13
+ Γ¥» src/services/notificationService.ts:1:1
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/8]ΓÄ»
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 6 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+ FAIL  src/tests/services/fileUploadService.test.ts > FileUploadService > uploadFile > should upload file successfully
+TypeError: mockFrom is not a function
+ Γ¥» src/tests/services/fileUploadService.test.ts:72:26
+     70|       // Mock database insert
+     71|       const mockFrom = (supabase as any).from()
+     72|       const mockInsert = mockFrom().insert()
+       |                          ^
+     73|       const mockSelect = mockInsert.select()
+     74|       mockSelect.single.mockResolvedValueOnce({
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[3/8]ΓÄ»
+ FAIL  src/tests/services/fileUploadService.test.ts > FileUploadService > uploadFile > should handle storage upload error
+AssertionError: expected 'File upload failed' to be 'Storage error' // Object.is equality
+Expected: "Storage error"
+Received: "File upload failed"
+ Γ¥» src/tests/services/fileUploadService.test.ts:115:28
+    113| 
+    114|       expect(result.fileUpload).toBeNull()
+    115|       expect(result.error).toBe('Storage error')
+       |                            ^
+    116|     })
+    117|   })
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[4/8]ΓÄ»
+ FAIL  src/tests/services/fileUploadService.test.ts > FileUploadService > uploadMultipleFiles > should upload multiple files 
+successfully
+AssertionError: expected [] to have a length of 2 but got +0
+- Expected
++ Received
+- 2
++ 0
+ Γ¥» src/tests/services/fileUploadService.test.ts:176:30
+    174|       const result = await fileUploadService.uploadMultipleFiles(mockFΓÇª
+    175| 
+    176|       expect(result.uploads).toHaveLength(2)
+       |                              ^
+    177|       expect(result.errors).toHaveLength(0)
+    178|       expect(result.uploads).toEqual(mockFileUploads)
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[5/8]ΓÄ»
+ FAIL  src/tests/services/fileUploadService.test.ts > FileUploadService > deleteFile > should delete file successfully
+TypeError: mockFrom.select is not a function
+ Γ¥» src/tests/services/fileUploadService.test.ts:197:35
+    195|       // Mock database fetch
+    196|       const mockFrom = supabase.from as any
+    197|       const mockSelect = mockFrom.select()
+       |                                   ^
+    198|       const mockEq1 = mockSelect.eq()
+    199|       const mockEq2 = mockEq1.eq()
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[6/8]ΓÄ»
+    240| 
+    241|       const mockFrom = supabase.from as any
+    242|       const mockSelect = mockFrom.select()
+       |                                   ^
+    243|       const mockEq = mockSelect.eq()
+    244|       const mockOrder = mockEq.order()
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[7/8]ΓÄ»
+ FAIL  src/tests/services/fileUploadService.test.ts > FileUploadService > getUserFiles > should filter files by category
+    269| 
+    270|       const mockFrom = supabase.from as any
+    271|       const mockSelect = mockFrom.select()
+       |                                   ^
+    272|       const mockEq1 = mockSelect.eq()
+    273|       const mockEq2 = mockEq1.eq()
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[8/8]ΓÄ»
+
+      Tests  6 failed | 15 passed (21)
+   Duration  140.62s (transform 4.37s, setup 2.25s, collect 8.99s, tests 298ms, environment 65.90s, prepare 4.59s)
+
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> 
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> echo "=== ESLINT ERROR COUNT ===" > validation-summary.txt
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper>  npm run lint 2>&1 | grep -c "error" >> validation-summary.txt
+grep : The term 'grep' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of   
+the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:22
++  npm run lint 2>&1 | grep -c "error" >> validation-summary.txt
++                      ~~~~
+    + CategoryInfo          : ObjectNotFound: (grep:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> echo "=== TYPESCRIPT ERROR COUNT ===" >> validation-summary.txt
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run typecheck 2>&1 | grep -c "error" >> validation-summary.txt
+grep : The term 'grep' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of   
+the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:26
++ npm run typecheck 2>&1 | grep -c "error" >> validation-summary.txt
++                          ~~~~
+    + CategoryInfo          : ObjectNotFound: (grep:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> echo "=== BUILD STATUS ===" >> validation-summary.txt
+.txt || echo "BUILD: FAILED" >> validation-summary.txt
+At line:1 char:32
++ npm run build > /dev/null 2>&1 && echo "BUILD: SUCCESS" >> validation ...
++                                ~~
+The token '&&' is not a valid statement separator in this version.
+At line:1 char:83
++ ... ll 2>&1 && echo "BUILD: SUCCESS" >> validation-summary.txt || echo "B ...
++                                                                ~~
+The token '||' is not a valid statement separator in this version.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+ 
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm run build > /dev/null 2>&1 && echo "BUILD: SUCCESS" >> validation-summary.txt || echo "BUILD: FAILED" >>validation-summary.txt
+At line:1 char:32
++ npm run build > /dev/null 2>&1 && echo "BUILD: SUCCESS" >> validation ...
++                                ~~
+The token '&&' is not a valid statement separator in this version.
+At line:1 char:83
++ ... ll 2>&1 && echo "BUILD: SUCCESS" >> validation-summary.txt || echo "B ...
++                                                                ~~
+The token '||' is not a valid statement separator in this version.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+ 
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> npm list --depth=0 > package-dependencies.txt 2>&1
+(base) PS C:\ClaudeProject\voicehealth_ai\tradie-helper> 
