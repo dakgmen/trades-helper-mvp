@@ -1,0 +1,225 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-background: #F8FAFC;
+        --neutral-text: #475569;
+      }
+      .bg-primary { background-color: var(--primary-color); }
+      .text-primary { color: var(--primary-color); }
+      .bg-secondary { background-color: var(--secondary-color); }
+      .text-secondary { color: var(--secondary-color); }
+      .bg-accent { background-color: var(--accent-color); }
+      .text-accent { color: var(--accent-color); }
+    </style>
+</head>
+<body class="bg-[var(--neutral-background)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-slate-200 px-10 py-4 shadow-sm">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3 text-[#1e293b]">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h1 class="text-2xl font-bold tracking-tighter text-slate-900">TradieHelper</h1>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-base font-medium text-slate-600 hover:text-primary transition-colors" href="#">Find a Tradie</a>
+<a class="text-base font-medium text-slate-600 hover:text-primary transition-colors" href="#">Post a Job</a>
+<a class="text-base font-medium text-slate-600 hover:text-primary transition-colors" href="#">Resources</a>
+<a class="text-base font-bold text-primary" href="#">Blog</a>
+</nav>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide shadow-sm hover:bg-blue-700 transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-100 text-slate-800 text-sm font-bold leading-normal tracking-wide hover:bg-slate-200 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-12 bg-slate-50">
+<div class="layout-content-container flex flex-col w-full max-w-6xl px-4">
+<div class="text-center mb-12">
+<h1 class="text-5xl font-extrabold text-slate-900 tracking-tight">The TradieHelper Blog</h1>
+<p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Your go-to source for construction industry insights, Australian workplace news, and essential resources for tradies and helpers.</p>
+</div>
+<div class="px-4 py-6 mb-8">
+<div class="relative max-w-2xl mx-auto">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-slate-400">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border-slate-300 bg-white h-14 placeholder:text-slate-400 pl-12 pr-6 text-lg" placeholder="Search articles, topics, or keywords..." value=""/>
+</div>
+</div>
+<section class="mb-16">
+<h2 class="text-3xl font-bold text-slate-900 tracking-tight px-4 pb-6 pt-5 border-b border-slate-200 mb-6">Featured Articles</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGiN9232yxRn0O8YuDAYWpb01Y9KY8uhsHItv9XUExcasOz3WAGafKQuEXm76o0FpmI4hcRaoO6wzEMGNp6qIzlUBIQNctWziErMOgyNI8yrqVO_jxy6-GCDuflafiICWg5dRw7AgoMjUT5qHIPRDmmx9itgEtBtpdkv69ev61HWxMkCe95zergwrMUf6UFrR6oTUJmNpHNBNEP4nf5yS9gPnOU5dmIMRVf3p7oJN7MpOn9yxsaMefPp5s9j6r1J2rbrB4TznahJ_8");'></div>
+<div class="p-2">
+<p class="text-secondary text-sm font-bold">Technology</p>
+<h3 class="text-xl font-bold text-slate-800 group-hover:text-primary transition-colors">The Future of Construction: Embracing Technology</h3>
+<p class="text-slate-500 text-base mt-2">Explore how technology is reshaping the construction industry in Australia.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpXOv4rr6NyA1GDPer2_6Yyuv1Sd4U3qO6md25RGQvMw03otYNaFtM9h2Z0gQMALsiICl6AzBx7_1TsLatMoOxkktEukkGZ3Ziqh_xONxXXL29HvMp-XH2bEGFKnVLKsxINQr2tN5GlFbVHvWeyAsGjM0LnQFMX7f-qzwgWxl7cRWLoemjWaqpR8keYvugFIIqkeHgaPLz492qJkanmX2OxNDGJhQ2oTXR0-4BzEbugrpsGfYKi7SvUPfc1eRgRVAf8c8YbdQC5j3J");'></div>
+<div class="p-2">
+<p class="text-accent text-sm font-bold">Safety</p>
+<h3 class="text-xl font-bold text-slate-800 group-hover:text-primary transition-colors">Safety First: Best Practices for Construction Sites</h3>
+<p class="text-slate-500 text-base mt-2">Learn essential safety measures to ensure a secure working environment.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrU1zn7ieIne9ZJr8oEnxD9--TGiVmxQneqM7qlhnFt7ieYn9DPFQ-XsS4oKDnBq4rYPrfToZXAj8klvZnjlsqFdhVTpkJ5MwtsY8xB3HnTA5TTmz_6hm3Ag8Co-b0Q40QOAfkVFRFFvO8X3OTFNseKqEQzd6wPLTioZjwWGg30dsNOkyZma8pwTLYnr86HggFRYgp6plp1dgPR7AjZV9wzUF1TkLEWMmVHjTfCo5B2-cu6z46C8hU_2G9v7ehjACaiX9ZaYaJ09qo");'></div>
+<div class="p-2">
+<p class="text-green-600 text-sm font-bold">Sustainability</p>
+<h3 class="text-xl font-bold text-slate-800 group-hover:text-primary transition-colors">Sustainable Building: Trends and Innovations</h3>
+<p class="text-slate-500 text-base mt-2">Discover the latest advancements in eco-friendly construction methods.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+<div class="lg:col-span-2">
+<h2 class="text-3xl font-bold text-slate-900 tracking-tight px-4 pb-6 pt-5 border-b border-slate-200 mb-6">Latest Articles</h2>
+<div class="space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 group">
+<div class="md:col-span-1 bg-center bg-no-repeat aspect-video md:aspect-square bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBU4pk63LABii3tD6kRWL9okCMhO4LhwZ3MQ2iGUH0p9lqj3X3NQj9FeD6H_x_OdSN55F5hZtMP5NvOHn_qwz2xBpB_uXqc8SWGUY-66fiEY-5FE9hkOATZ2OjY0ssFCSmc7DneW6r4bf6Wi0i88kf_8ljXThjLem8NwfkFd9ryeNVzmP9z8i3-76PdudgySRDXT0nyeafGBncRPKvXp3hgrSpO1ejmkxCh35HHOw1g5dVrTGTXCjCzETkuW5iqvPrL08-grq7NqWTt");'></div>
+<div class="md:col-span-2">
+<p class="text-sm font-medium text-primary">Industry Insights</p>
+<h3 class="text-2xl font-bold text-slate-800 mt-1 group-hover:text-primary transition-colors">Navigating the Australian Construction Market</h3>
+<p class="text-slate-500 text-base mt-3">A comprehensive guide to the current state of the Australian construction market, offering valuable insights for tradies and businesses alike.</p>
+<p class="text-sm text-slate-400 mt-4">By John Citizen • 15 June 2024</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 group">
+<div class="md:col-span-1 bg-center bg-no-repeat aspect-video md:aspect-square bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEN-huza3OsgaOpHxgghQtoh9yllgX8Qvxa169oXbQDt3L_x6FmjvMyIOWpUbce1D1R-Q-3cm4Px2VEYhcAl8nI7KJ2kkyLZmtqJBZOLvl3OSYP8KW5cZ5Gcm0A0JSHYn7iceUkzi_KsQvNMzIOo4vbYGkRU5Y3sFPf_4b75RN5Vs16WTElt9bu34Xauk_lrYpEVkmRIl3_JjVtVW_sMQKdiR_75G_IkY-hL8Nccu8ECMA65xIB3uCSlc7mIVx6ReaL_DnPXh-OXag");'></div>
+<div class="md:col-span-2">
+<p class="text-sm font-medium text-primary">Industry Insights</p>
+<h3 class="text-2xl font-bold text-slate-800 mt-1 group-hover:text-primary transition-colors">Understanding Construction Contracts in Australia</h3>
+<p class="text-slate-500 text-base mt-3">Key considerations for construction contracts to protect your interests and ensure fair agreements.</p>
+<p class="text-sm text-slate-400 mt-4">By Jane Smith • 12 June 2024</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 group">
+<div class="md:col-span-1 bg-center bg-no-repeat aspect-video md:aspect-square bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA84a3Xu7ah-p8JZUvGcKz4boshze9nPwMPjHIaAToDyEpWb9PWTJrDuBW10B1MPCxovgveKlQLX0QW4lVl_qzD5AM809MEBArlzRZo5eVEeiN9oKXo3-LMBpJQv4yW76uXmRCSMPcv_07Myvqmn_9CbFrr_kFMCErOIk014GZY0sPYsoPzEkL893uQHE8OyInQtsu2bZ-aC2c5revliRj7iK7_gDh-xNQaONyCpG-hUumiwaH0uNLiodEszUFeGjhbjm0Em1ae_C-a");'></div>
+<div class="md:col-span-2">
+<p class="text-sm font-medium text-accent">Workplace News</p>
+<h3 class="text-2xl font-bold text-slate-800 mt-1 group-hover:text-primary transition-colors">Fair Work Regulations Update</h3>
+<p class="text-slate-500 text-base mt-3">Stay informed about the latest changes in fair work regulations affecting tradies across Australia.</p>
+<p class="text-sm text-slate-400 mt-4">By Bruce Wayne • 10 June 2024</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 group">
+<div class="md:col-span-1 bg-center bg-no-repeat aspect-video md:aspect-square bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkxGO0OyUSAkdgHIPByepPX6kFCebUJhG-faxHhnp15YgZFe_6T336SaBXKBsE4ZrLxfuuKKQ7jhsOrzI5xpzSLi2J7OxLz2Gme1ENiLDzBX_JXFLmEErruzxv0nXxpjgJsOZsVC0la_885noWBPk7eHTWnbu7D0QCZKiGtHK6JMyYXhp1l2_Qs8AUu-zzmd7pkHhBGGuYbP4WHextJaiQQNlv-uJzGG7iWzdj3c6wxbTG9-Ve7NGMlRaogcFNxhVVyCT2mPOlCEar");'></div>
+<div class="md:col-span-2">
+<p class="text-sm font-medium text-accent">Workplace News</p>
+<h3 class="text-2xl font-bold text-slate-800 mt-1 group-hover:text-primary transition-colors">Mental Health Support in the Construction Industry</h3>
+<p class="text-slate-500 text-base mt-3">Resources and support for mental health in the demanding construction environment. It's okay to not be okay.</p>
+<p class="text-sm text-slate-400 mt-4">By Diana Prince • 8 June 2024</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="lg:col-span-1">
+<div class="sticky top-12">
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight pb-4 pt-5 border-b border-slate-200 mb-6">Resource Categories</h2>
+<div class="flex gap-2 flex-wrap">
+<a class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 hover:bg-primary hover:text-white transition-colors px-4" href="#">
+<p class="text-sm font-medium">Safety</p>
+</a>
+<a class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 hover:bg-primary hover:text-white transition-colors px-4" href="#">
+<p class="text-sm font-medium">Legal</p>
+</a>
+<a class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 hover:bg-primary hover:text-white transition-colors px-4" href="#">
+<p class="text-sm font-medium">Finance</p>
+</a>
+<a class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 hover:bg-primary hover:text-white transition-colors px-4" href="#">
+<p class="text-sm font-medium">Technology</p>
+</a>
+<a class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 hover:bg-primary hover:text-white transition-colors px-4" href="#">
+<p class="text-sm font-medium">Sustainability</p>
+</a>
+<a class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-100 hover:bg-primary hover:text-white transition-colors px-4" href="#">
+<p class="text-sm font-medium">Career Development</p>
+</a>
+</div>
+<div class="mt-12">
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight pb-4 border-b border-slate-200 mb-6">Recent Posts</h2>
+<ul class="space-y-4">
+<li><a class="font-medium text-slate-600 hover:text-primary" href="#">Skills Shortage Solutions in Australia</a></li>
+<li><a class="font-medium text-slate-600 hover:text-primary" href="#">The Impact of Government Policies on Construction</a></li>
+<li><a class="font-medium text-slate-600 hover:text-primary" href="#">Eco-Friendly Building Practices</a></li>
+<li><a class="font-medium text-slate-600 hover:text-primary" href="#">Financial Planning for Your Business</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<footer class="bg-slate-800 text-slate-400">
+<div class="max-w-6xl mx-auto px-4 py-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1">
+<h3 class="text-lg font-bold text-white mb-4">TradieHelper</h3>
+<p class="text-sm">Connecting Australian tradies with helpers. Find jobs, post jobs, and access valuable resources for your career in construction.</p>
+</div>
+<div>
+<h4 class="font-semibold text-white mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-white mb-4">Resources</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Safety Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Legal Advice</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Financial Tips</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tech Tools</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-white mb-4">Connect With Us</h4>
+<div class="flex space-x-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path></svg></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-slate-700 pt-8 text-center text-sm">
+<p>© 2024 TradieHelper. All rights reserved. Built in Australia.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

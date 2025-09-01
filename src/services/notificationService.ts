@@ -1,11 +1,39 @@
+import EmailService from './EmailService'
 import { supabase } from '../lib/supabase'
-import type { Notification, NotificationPreferences, NotificationType } from '../types'
+import type { NotificationType, NotificationPreferences, Notification } from '../types'
+
+interface JobApplication {
+  id: string
+  job_id: string
+  helper_id: string
+  tradie_id: string
+  status: 'pending' | 'accepted' | 'rejected' | 'completed'
+  message?: string
+  created_at: string
+}
+
+interface Job {
+  id: string
+  title: string
+  description: string
+  location: string
+  rate: number
+  rate_type: 'hourly' | 'daily' | 'fixed'
+  tradie_id: string
+  status: 'open' | 'assigned' | 'completed'
+}
+
+interface UserProfile {
+  id: string
+  email: string
+  full_name?: string
+  company_name?: string
+  role: 'tradie' | 'helper'
+}
 
 export class NotificationService {
   private static instance: NotificationService
   private swRegistration: ServiceWorkerRegistration | null = null
-
-  private constructor() {}
 
   public static getInstance(): NotificationService {
     if (!NotificationService.instance) {
@@ -14,26 +42,41 @@ export class NotificationService {
     return NotificationService.instance
   }
 
-  // Initialize push notifications
+  // Initialize service worker
   async initialize(): Promise<{ success: boolean; error: string | null }> {
     try {
-      // Check if service workers are supported
-      if (!('serviceWorker' in navigator)) {
-        return { success: false, error: 'Service workers not supported' }
+      if ('serviceWorker' in navigator) {
+        this.swRegistration = await navigator.serviceWorker.register('/sw.js')
+        return { success: true, error: null }
       }
+      return { success: false, error: 'Service worker not supported' }
+    } catch (error) {
+      return { success: false, error: error instanceof Error ? error.message : 'Failed to initialize service worker' }
+    }
+  }
 
-      // Check if push notifications are supported
-      if (!('PushManager' in window)) {
-        return { success: false, error: 'Push notifications not supported' }
-      }
+  /**
+   * Send notification when a helper applies for a job
+   */
+  public async notifyJobApplication(
+    _application: JobApplication,
+    job: Job,
+    helperProfile: UserProfile,
+    tradieProfile: UserProfile
+  ): Promise<void> {
+    try {
+      // Notify the tradie about the new application
+      await EmailService.sendJobNotificationEmail(
+        tradieProfile.email,
+        tradieProfile.full_name || tradieProfile.company_name || 'Tradie',
+        job.title,
+        helperProfile.full_name || 'Helper',
+        'new_application'
+      )
 
-      // Register service worker
-      this.swRegistration = await navigator.serviceWorker.register('/sw.js')
-      
-      return { success: true, error: null }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (_error) {
-      return { success: false, error: 'Failed to initialize notifications' }
+      console.log(`✅ Job application notification sent to tradie: ${tradieProfile.email}`)
+    } catch (error) {
+      console.error('❌ Failed to send job application notification:', error)
     }
   }
 
@@ -569,13 +612,13 @@ export class NotificationService {
       for (let i = 0; i < users.length; i += batchSize) {
         const batch = users.slice(i, i + batchSize)
         
-        const promises = batch.map(user => 
+        const promises = batch.map((user: { id: string }) => 
           this.sendMultiChannelNotification(user.id, title, message, type, options)
         )
 
         const results = await Promise.allSettled(promises)
         
-        results.forEach(result => {
+        results.forEach((result: PromiseSettledResult<{ success: boolean; channels: Record<string, boolean> }>) => {
           if (result.status === 'fulfilled' && result.value.success) {
             sent++
           } else {
@@ -618,7 +661,7 @@ export class NotificationService {
       }
 
       const totalSent = notifications.length
-      const readNotifications = notifications.filter(n => n.read)
+      const readNotifications = notifications.filter((n: { read: boolean }) => n.read)
       const readRate = totalSent > 0 ? (readNotifications.length / totalSent) * 100 : 0
 
       return {

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #16a34a;
+        --accent-color: #ea580c;
+        --neutral-gray-light: #f3f4f6;
+        --neutral-gray-dark: #374151;
+      }
+      body {
+        font-family: "Work Sans", "Noto Sans", sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 bg-white shadow-md">
+<div class="container mx-auto flex items-center justify-between whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-4 text-[var(--primary-color)]">
+<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h1 class="text-2xl font-bold tracking-tight">TradieHelper</h1>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Find Work</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Post a Job</a>
+<a class="text-base font-bold text-[var(--primary-color)]" href="#">Safety</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Help</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex min-w-[96px] items-center justify-center rounded-md h-11 px-5 bg-transparent text-[var(--primary-color)] text-base font-semibold transition-colors hover:bg-gray-100">
+                Log In
+              </button>
+<button class="flex min-w-[96px] items-center justify-center rounded-md h-11 px-5 bg-[var(--primary-color)] text-white text-base font-semibold shadow-sm transition-transform hover:scale-105">
+                Sign Up
+              </button>
+</div>
+</div>
+</header>
+<main class="flex-1 bg-gray-50 py-12 md:py-20">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Trust and Safety</h1>
+<p class="mt-4 text-lg text-gray-600">Your security is our top priority. Learn how we keep our community safe.</p>
+</div>
+<div class="space-y-12">
+<div class="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+<div class="flex items-start gap-6">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-white">
+<span class="material-icons">health_and_safety</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Workplace Safety Standards</h2>
+<p class="mt-3 text-base text-gray-700">
+                        TradieHelper is committed to ensuring a safe working environment for all users. We adhere to Australian Work Health and Safety (WHS) regulations, which
+                        set the standards for workplace safety. These regulations cover a wide range of areas, including risk management, hazard identification, and emergency
+                        preparedness. It's crucial for both tradies and helpers to understand and comply with these standards to prevent accidents and injuries.
+                      </p>
+</div>
+</div>
+</div>
+<div class="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+<div class="flex items-start gap-6">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--secondary-color)] text-white">
+<span class="material-icons">shield</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Insurance Information</h2>
+<p class="mt-3 text-base text-gray-700">
+                        Having appropriate insurance is essential for anyone working on TradieHelper. Tradies should have public liability insurance to cover potential damages or
+                        injuries to third parties. Helpers should ensure they have personal accident insurance to cover injuries sustained while working. We strongly recommend
+                        verifying insurance coverage before starting any job.
+                      </p>
+</div>
+</div>
+</div>
+<div class="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+<div class="flex items-start gap-6">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary-color)] text-white">
+<span class="material-icons">verified_user</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-gray-900">User Verification</h2>
+<p class="mt-3 text-base text-gray-700">
+                        To enhance trust and safety, TradieHelper employs a user verification process. This involves verifying users' identities and credentials to ensure they are
+                        who they claim to be. Verified users are marked with a badge on their profiles, providing an additional layer of confidence for other users.
+                      </p>
+</div>
+</div>
+</div>
+<div class="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+<div class="flex items-start gap-6">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--accent-color)] text-white">
+<span class="material-icons">report</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Reporting Tools</h2>
+<p class="mt-3 text-base text-gray-700">
+                        TradieHelper provides robust reporting tools to address any safety concerns or violations of our terms of service. If you encounter any issues, such as
+                        unsafe work practices or misconduct, you can report the user or job directly through the platform. Our team will investigate all reports promptly and take
+                        appropriate action.
+                      </p>
+</div>
+</div>
+</div>
+<div class="rounded-lg border border-[var(--accent-color)] bg-orange-50 p-8 shadow-sm">
+<div class="flex items-start gap-6">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--accent-color)] text-white">
+<span class="material-icons">emergency</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Emergency Procedures</h2>
+<p class="mt-3 text-base text-gray-700">
+                        In case of an emergency, your safety is the top priority. Here are some key steps to follow:
+                      </p>
+<ol class="mt-4 list-decimal space-y-2 pl-5 text-base text-gray-700">
+<li><strong>Assess the Situation:</strong> Ensure your own safety first. If it's safe to do so, assess the situation and any injuries.</li>
+<li><strong>Call Emergency Services:</strong> For serious injuries or life-threatening situations, call emergency services immediately (dial <strong>000</strong> in Australia).</li>
+<li><strong>Notify TradieHelper:</strong> After addressing the immediate emergency, notify TradieHelper about the incident through our support channels.</li>
+<li><strong>Provide Information:</strong> Be prepared to provide details about the incident, including the location, nature of the emergency, and any injuries.</li>
+</ol>
+<div class="mt-6 rounded-md bg-white p-4 border border-gray-200">
+<p class="font-bold text-gray-800">Emergency Contact Information:</p>
+<ul class="mt-2 space-y-1 text-base text-gray-600">
+<li><strong>Emergency Services:</strong> 000</li>
+<li><strong>TradieHelper Support:</strong> Contact us via the 'Help' section on our website or app.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+<div class="flex items-start gap-6">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--secondary-color)] text-white">
+<span class="material-icons">rule</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Safety Guidelines</h2>
+<p class="mt-3 text-base text-gray-700">
+                        To maintain a safe working environment, please adhere to the following guidelines:
+                      </p>
+<ul class="mt-4 list-disc space-y-2 pl-5 text-base text-gray-700">
+<li><strong>Communicate Clearly:</strong> Discuss the job requirements, potential hazards, and safety measures before starting work.</li>
+<li><strong>Use Appropriate Gear:</strong> Ensure you and your helper have the necessary personal protective equipment (PPE), such as helmets, gloves, and safety glasses.</li>
+<li><strong>Follow Instructions:</strong> Helpers should follow the tradie's instructions carefully and ask for clarification if needed.</li>
+<li><strong>Take Breaks:</strong> Avoid working for extended periods without breaks to prevent fatigue and maintain focus.</li>
+<li><strong>Report Concerns:</strong> Immediately report any safety concerns or potential hazards to the tradie or TradieHelper.</li>
+</ul>
+<p class="mt-4 text-base text-gray-700">
+                        By following these guidelines and adhering to Australian WHS standards, we can create a safer and more productive environment for everyone on TradieHelper.
+                      </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-gray-800 text-gray-400">
+<div class="container mx-auto px-6 py-8">
+<div class="flex flex-col items-center justify-between md:flex-row">
+<div class="mb-4 md:mb-0">
+<p>© 2023 TradieHelper. All rights reserved.</p>
+</div>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

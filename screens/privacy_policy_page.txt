@@ -1,0 +1,158 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Work+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #eff6ff;
+        --primary-100: #dbeafe;
+        --primary-200: #bfdbfe;
+        --primary-300: #93c5fd;
+        --primary-400: #60a5fa;
+        --primary-500: #3b82f6;
+        --primary-600: #2563eb;
+        --primary-700: #1d4ed8;
+        --primary-800: #1e40af;
+        --primary-900: #1e3a8a;
+        --primary-950: #172554;
+        --secondary-50: #f0fdf4;
+        --secondary-100: #dcfce7;
+        --secondary-200: #bbf7d0;
+        --secondary-300: #86efac;
+        --secondary-400: #4ade80;
+        --secondary-500: #22c55e;
+        --secondary-600: #16a34a;
+        --secondary-700: #15803d;
+        --secondary-800: #166534;
+        --secondary-900: #14532d;
+        --secondary-950: #052e16;
+        --accent-50: #fff7ed;
+        --accent-100: #ffedd5;
+        --accent-200: #fed7aa;
+        --accent-300: #fdba74;
+        --accent-400: #fb923c;
+        --accent-500: #f97316;
+        --accent-600: #ea580c;
+        --accent-700: #c2410c;
+        --accent-800: #9a3412;
+        --accent-900: #7c2d12;
+        --accent-950: #431407;
+      }
+    </style>
+</head>
+<body class="bg-gray-50" style='font-family: "Work Sans", "Inter", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 bg-white px-10 py-4 shadow-sm">
+<div class="flex items-center gap-3 text-gray-800">
+<svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+<h2 class="text-xl font-bold tracking-tight text-gray-900">TradieHelper</h2>
+</div>
+<div class="flex flex-1 items-center justify-end gap-6">
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors" href="#">Find Work</a>
+<a class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors" href="#">Post a Job</a>
+<a class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors" href="#">Pricing</a>
+<a class="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-gray-100 text-gray-800 text-base font-semibold leading-normal tracking-[-0.015em] hover:bg-gray-200 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-blue-600 text-white text-base font-semibold leading-normal tracking-[-0.015em] hover:bg-blue-700 transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 bg-gray-50 py-12 sm:py-16 lg:py-20">
+<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<div class="mb-8">
+<h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">Privacy Policy</h1>
+<p class="mt-2 text-lg text-gray-500">Last updated: 15th July 2024</p>
+</div>
+<div class="prose prose-lg max-w-none space-y-8 rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">1. Introduction</h2>
+<p class="mt-4 text-gray-600">
+                            TradieHelper Pty Ltd (ACN 123 456 789) is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal information in accordance with the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth).
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">2. Collection of Personal Information</h2>
+<p class="mt-4 text-gray-600">
+                            We collect personal information that is reasonably necessary for our functions and activities. This may include your name, contact details (email, phone, address), professional qualifications, payment information, and job preferences. We collect information directly from you, through our website, applications, and interactions with our staff.
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">3. Use of Personal Information</h2>
+<p class="mt-4 text-gray-600">
+                            We use your personal information to provide our services, including matching tradies with helpers, processing payments, communicating with you, and improving our platform. We may also use your information for marketing purposes, subject to your consent.
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">4. Disclosure of Personal Information</h2>
+<p class="mt-4 text-gray-600">
+                            We may disclose your personal information to third parties, such as other users of our platform, service providers, and regulatory authorities, where required by law. We take reasonable steps to ensure that these third parties handle your information securely and in accordance with the APPs.
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">5. Security of Personal Information</h2>
+<p class="mt-4 text-gray-600">
+                            We implement various security measures to protect your personal information from misuse, interference, loss, and unauthorized access, modification, or disclosure. These measures include encryption, access controls, and regular security assessments.
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">6. Access and Correction</h2>
+<p class="mt-4 text-gray-600">
+                            You have the right to access and correct the personal information we hold about you. To request access or correction, please contact our Privacy Officer using the details provided below. We may charge a reasonable fee for providing access to your information.
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">7. Cookies</h2>
+<p class="mt-4 text-gray-600">
+                            Our website uses cookies to enhance your browsing experience. Cookies are small text files stored on your device that help us remember your preferences and improve our services. You can manage your cookie settings through your browser.
+                        </p>
+</section>
+<section>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">8. Contact Us</h2>
+<p class="mt-4 text-gray-600">
+                            If you have any questions or concerns about this Privacy Policy or our handling of your personal information, please contact our Privacy Officer at:
+                        </p>
+<address class="mt-4 not-italic text-gray-600">
+                            Privacy Officer<br/>
+                            TradieHelper Pty Ltd<br/>
+                            123 George Street, Sydney, NSW 2000, Australia<br/>
+                            Email: <a class="text-blue-600 hover:underline" href="mailto:privacy@tradiehelper.com.au">privacy@tradiehelper.com.au</a><br/>
+                            Phone: +61 2 9123 4567
+                        </address>
+</section>
+</div>
+</div>
+</main>
+<footer class="bg-white border-t border-gray-200">
+<div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+<div class="flex justify-center space-x-6 md:order-2">
+<a class="text-gray-500 hover:text-gray-600" href="#">Terms of Service</a>
+<a class="text-gray-500 hover:text-gray-600" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-gray-600" href="#">Contact Us</a>
+</div>
+<div class="mt-8 md:order-1 md:mt-0">
+<p class="text-center text-base text-gray-500">© 2024 TradieHelper Pty Ltd. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

@@ -123,7 +123,7 @@ describe('Service Integration Tests', () => {
       },
     }))
 
-    const { NotificationService } = await import('../../services/notificationService')
+    const { NotificationService } = await import('../../services/NotificationService')
     const service = NotificationService.getInstance()
     
     expect(service).toBeDefined()

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { TermsAndConditions } from '../legal/TermsAndConditions'
+import EmailService from '../../services/EmailService'
 
 interface SignupFormProps {
   onSuccess?: () => void
@@ -62,6 +63,14 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLog
       if (authError) {
         setError(authError.message)
       } else {
+        // Send welcome email
+        try {
+          const userName = email.split('@')[0] // Use email prefix as name temporarily
+          await EmailService.sendWelcomeEmail(email, userName, role)
+        } catch (emailError) {
+          console.error('Failed to send welcome email:', emailError)
+          // Don't block signup for email failure
+        }
         onSuccess?.()
       }
     } catch (error) {

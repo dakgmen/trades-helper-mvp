@@ -1,5 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { notificationService } from '../../services/notificationService'
+import { NotificationService } from '../../services/NotificationService'
+
+const notificationService = NotificationService.getInstance()
 
 // Create mock functions for Supabase
 const mockInsert = vi.fn()
@@ -252,10 +254,7 @@ describe('NotificationService', () => {
       
       // Mock initialize method to return success without changing swRegistration
       const initializeSpy = vi.spyOn(notificationService, 'initialize')
-      initializeSpy.mockImplementation(async () => {
-        // Don't change swRegistration if it's already set
-        return { success: true, error: null }
-      })
+      initializeSpy.mockResolvedValue({ success: true, error: null })
 
       const result = await notificationService.subscribeToPush('user123')
 

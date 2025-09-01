@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<title>TradieHelper Enterprise</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body>
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Roboto", "Work Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 shadow-sm">
+<div class="flex items-center gap-3 text-gray-800">
+<div class="w-8 h-8 text-blue-600">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h2 class="text-2xl font-bold leading-tight tracking-tighter">TradieHelper</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center items-center gap-8">
+<a class="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors" href="#">For Tradies</a>
+<a class="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors" href="#">For Businesses</a>
+<a class="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors" href="#">Pricing</a>
+<a class="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-blue-600 text-white text-sm font-bold leading-normal tracking-wide shadow-sm hover:bg-blue-700 transition-colors">
+<span class="truncate">Post a Job</span>
+</button>
+<button class="flex min-w-[90px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-gray-100 text-gray-800 text-sm font-bold leading-normal tracking-wide hover:bg-gray-200 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative flex flex-col items-center justify-center min-h-[500px] bg-cover bg-center bg-no-repeat text-white px-4 py-20" style='background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSzv8WdporB046ssQe3M4agCvRxeB4Fx4ePn6wlipwswpOxasV9ldebGgJtUFyJ6BIv7YPhMulJN5VBUSf2Nku_GRabQwsFiUW15lvPi4ljZ1BvTvMrFPSetPE54jkTdAMr62uNrUVW6wlQJDWUBuRQEm7mYL6jYE12XQ3Pt27WDeyLeCFww5ROyoKwh8ioAENVwqwwPF6jdQJjKzXidA4Mnz6oJ4kq7NnpoEU326GyS3hOkZfQYoqOaQUgUwKQkoTySz6ZafFaSeB");'>
+<div class="max-w-4xl text-center">
+<h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tighter mb-4">Streamline Your Workforce with TradieHelper Enterprise</h1>
+<p class="text-lg md:text-xl font-light max-w-3xl mx-auto mb-8">
+                Efficiently manage your hiring needs with our tailored solutions for construction companies. Find skilled tradies and helpers quickly and at scale.
+              </p>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="flex items-center justify-center rounded-md h-12 px-6 bg-blue-600 text-white text-base font-bold shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+<span class="truncate">Request a Demo</span>
+</button>
+<button class="flex items-center justify-center rounded-md h-12 px-6 bg-white text-blue-600 text-base font-bold shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">
+<span class="truncate">Contact Sales</span>
+</button>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 bg-gray-50">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-800 tracking-tight">Why Choose TradieHelper for Your Business?</h2>
+<p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                  TradieHelper Enterprise offers a comprehensive suite of tools and services designed to meet the unique demands of construction companies.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+<div class="text-green-500 mb-4">
+<svg fill="currentColor" height="48" viewBox="0 0 256 256" width="48" xmlns="http://www.w3.org/2000/svg">
+<path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Bulk Hiring Solutions</h3>
+<p class="text-gray-600">Easily manage multiple job postings and applications with our intuitive platform. Hire teams for large projects with ease.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+<div class="text-orange-500 mb-4">
+<svg fill="currentColor" height="48" viewBox="0 0 256 256" width="48" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Enterprise-Grade Features</h3>
+<p class="text-gray-600">Access advanced features like custom onboarding, reporting, and integration with your existing systems.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+<div class="text-blue-600 mb-4">
+<svg fill="currentColor" height="48" viewBox="0 0 256 256" width="48" xmlns="http://www.w3.org/2000/svg">
+<path d="M205.66,61.64l-144,144a8,8,0,0,1-11.32-11.32l144-144a8,8,0,0,1,11.32,11.31ZM50.54,101.44a36,36,0,0,1,50.92-50.91h0a36,36,0,0,1-50.92,50.91ZM56,76A20,20,0,1,0,90.14,61.84h0A20,20,0,0,0,56,76ZM216,180a36,36,0,1,1-10.54-25.46h0A35.76,35.76,0,0,1,216,180Zm-16,0a20,20,0,1,0-5.86,14.14A19.87,19.87,0,0,0,200,180Z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Volume Discounts</h3>
+<p class="text-gray-600">Benefit from significant cost savings with our tiered pricing structure, offering discounts for high-volume hiring.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 bg-white">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-800 tracking-tight">Success Stories from Aussie Builders</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="flex flex-col bg-gray-50 rounded-lg overflow-hidden shadow-md">
+<img alt="Construction site" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEZCSMNtwmM3t5C7m6Qxd9yn5FHKpqmu4YgwxG1mlstOFdr732s6qPCH0RpbbD_tYWhnHq5XjpwpoZNv5gSZd-HF0iDRPdkyQ_0r885MSQX-3rkVaro6HYa354irpnKT9COhdND2axiMRW0BN64otrx_fdSmK42I_JTB12ZXXyEZxDMytbK2KbTRK8XL5oQRD8qJEi0IRNg7wOw5KZ8BnPkMCkdaoPAVV6Guh7GoHzSTcAFezirIi2DSONFkbdM32ezFe6d4ri6bsi"/>
+<div class="p-6 flex flex-col flex-1">
+<blockquote class="text-gray-700 text-lg italic mb-4 flex-1">
+                      "TradieHelper has transformed our hiring process. We've reduced our time-to-hire by 40% and significantly improved the quality of our workforce."
+                    </blockquote>
+<footer class="text-gray-600 font-medium">Mark Thompson, Project Manager at BuildRight Constructions</footer>
+</div>
+</div>
+<div class="flex flex-col bg-gray-50 rounded-lg overflow-hidden shadow-md">
+<img alt="Construction workers" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJw6HkseGZXJWaJweBFPDHLB7mYk2dUdLdGEGFMjF7azuGrQ2a7lfL2owahI7PHtLVmVSOkgjPDJd5aezHDTq5E0zX7iqx-WPaQ-lhyHjmrmHC0PIOrUMda9O4bViNcB7J-wc6aqdKc6dmkYlovCF8SeuJ8Th974PMdYFXET83fEWA-S5cZ9bnAPAIt1tBtbsI4p7WjdHEIIJChGbf5MPrwTW5e4R8FrlrpyfTpe2NE9uN9XYBEVtc_UDl4HaiRJX6eLMHe4qjhSEQ"/>
+<div class="p-6 flex flex-col flex-1">
+<blockquote class="text-gray-700 text-lg italic mb-4 flex-1">
+                      "The bulk hiring feature is a game-changer. We can now staff entire projects in a fraction of the time, keeping our projects on schedule and within budget."
+                    </blockquote>
+<footer class="text-gray-600 font-medium">Sarah Chen, HR Director at Apex Builders</footer>
+</div>
+</div>
+<div class="flex flex-col bg-gray-50 rounded-lg overflow-hidden shadow-md">
+<img alt="Construction manager" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ewikGIzSEGbnGkn7E0ejxTvTzKg8GgYBJR8O7S5MnqrW5ny0pNFmdbHwGvktNsE1EKnEV3yXg-15QAyuSX7f6j7l5nSoFy0VlSjKy20Tfm7Obzyu7WXgxLkP9wowg3v0TRWcD7stVkXRN6s6h_WYpqxXSWFM2W0nS6tEkx8DTEv_KxFWq_TRB7CLo9QD6rBfRH_V8bCbUscvRtTzxQ0YaLE6ij28whYqQ-JVy4fo0kd97JQyW5uUUxRr-l8WLv7DyeGDxr64zKmh"/>
+<div class="p-6 flex flex-col flex-1">
+<blockquote class="text-gray-700 text-lg italic mb-4 flex-1">
+                      "The dedicated account management and volume discounts have made TradieHelper an invaluable partner. We're seeing a clear return on our investment."
+                    </blockquote>
+<footer class="text-gray-600 font-medium">David Lee, Operations Manager at Skyline Developments</footer>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 bg-gray-50">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-800 tracking-tight">Empowering Your Hiring Process</h2>
+<p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                  TradieHelper Enterprise provides a robust set of features to streamline your workflow and optimize your hiring strategy.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center">
+<img alt="Dashboard" class="w-full h-48 object-cover rounded-lg shadow-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKf2YFG9fWBayQ1DUM9zt5IVO-ivzyzPCUQUy2q-U-y6O61J00pNgRRXdpSHNEv968tzxEx4s8KmPKh2vUucYzf-lbRC_2svmUdzofq86anHMi6cJC05GcQW1BLNxX9Bat2Q3z6ltSA-ttlDdUePZEE4R_fw08Zn-qWEc2jUcNOfjY2gOf-p6wnKquG92Al-Z3y_a62IpKDMlmPZ6CnGZXafVZWp_KfajhxoSP6vypkulNzf6BcVIhGyhmTIRgJvlv6pLetI7ZTbyR"/>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Centralized Dashboard</h3>
+<p class="text-gray-600">Manage all your job postings, applications, and communications from a single, user-friendly interface.</p>
+</div>
+<div class="text-center">
+<img alt="Reporting" class="w-full h-48 object-cover rounded-lg shadow-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6bLYZtmB-u8XSZrqn-j57DypKcvmnbGKRv4UB2WIUd9DIG6IvSpAU9aEhwFOe9i5zRpVD7jWg2pXX6LlCNDzvhumH24PSSLiyaUXz7zxuW3Dg-r9Uzmb-9G7qivPSyNvFvS9R6qG97N7jXkVGDOn4VF87DleCH1oxnSjx-xUoeWs_Qo2THl9q6Aa1134_AxGO8yPUDbdd4AFafMk_wzuo0POB_pGXjiD0zyL2mDBPupZVADNayTJtO4seBXYzqJ2zd2sboXdP4IUk"/>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Comprehensive Reporting</h3>
+<p class="text-gray-600">Gain insights into your hiring performance with detailed reports on key metrics, helping you make data-driven decisions.</p>
+</div>
+<div class="text-center">
+<img alt="Integrations" class="w-full h-48 object-cover rounded-lg shadow-md mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHhSZrJ3me1tvM-60oSpL3qwu2CxVu3nwegwEYjLJYWkksTFGMx5Z4jhSaixvdDVFgPY-NCTmGKtrctHsaRcJHIzkogNQ8HXBtLhMHcv-y1qaa0zlPrSDlCpDguNywplwbLXujv17lkdz-iO466kmykSV7kgEnpQ3ACDFk-bPvBeKoABz8R90Vo93O8YKjBrxsTTst0fA9XwxFYbW4YE5xCHA3lBpkqVP5AmTs6Pb20BX7zhpxNxM8m5dfF3SWjmM9vQHlMSwpuOxK"/>
+<h3 class="text-xl font-bold text-gray-800 mb-2">Seamless Integrations</h3>
+<p class="text-gray-600">Integrate TradieHelper with your existing HR and project management tools for a unified workflow.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 bg-blue-600 text-white">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl font-bold tracking-tight mb-4">Ready to Transform Your Hiring?</h2>
+<p class="text-lg font-light mb-8">Schedule a demo to see how TradieHelper Enterprise can benefit your construction company.</p>
+<button class="flex items-center justify-center rounded-md h-12 px-6 bg-white text-blue-600 text-base font-bold shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105 mx-auto">
+<span class="truncate">Request a Demo</span>
+</button>
+</div>
+</section>
+</main>
+<footer class="bg-gray-800 text-gray-400 py-12 px-4">
+<div class="max-w-6xl mx-auto text-center">
+<div class="flex flex-wrap items-center justify-center gap-6 mb-8">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Contact Us</a>
+</div>
+<p>© 2024 TradieHelper. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,335 @@
+<html><head>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #2563EB;
+        --secondary-color: #16A34A;
+        --accent-color: #EA580C;
+        --neutral-text: #374151;
+        --neutral-background: #F9FAFB;
+      }
+    </style>
+</head>
+<body class="bg-[var(--neutral-background)]" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 bg-white">
+<div class="flex items-center gap-4 text-[var(--primary-color)]">
+<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h2 class="text-2xl font-bold tracking-tight text-gray-900">TradieHelper</h2>
+</div>
+<nav class="flex flex-1 justify-center gap-10">
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Find Tradies</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Post a Job</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Pricing</a>
+<a class="text-base font-medium text-gray-600 hover:text-[var(--primary-color)] transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[96px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-5 bg-transparent text-[var(--primary-color)] text-base font-bold leading-normal tracking-wide border-2 border-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[96px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-5 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-wide hover:bg-blue-700 transition-colors">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative bg-cover bg-center" style='background-image: linear-gradient(rgba(37, 99, 235, 0.8), rgba(37, 99, 235, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIz0AnYkq7yhmXtHy4X-xPwqWLpCOxAsr--bEoABxdobq97YceBaiXKNF4b2dKeL4S-tsYNOgpfPTt5eqjFNGkl2gavmVs_DBUVra6k2G9Dp338NyZU2uVc4Wg0tp_pH_Q3ehGULvQrw7P5TrWsIo5kXfshytGlFgFX6IycEiFP50lSfFsqa1Ro2xNYtfoMg7zES3QmONRtekZZ1FrpDa5qw_B1CFjUoL3LJ_ErVXr2AvKj41RyfuJW4JXl9wU2EUJhTsBkbxcGpRY");'>
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 text-center">
+<h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">Partner with TradieHelper and Grow Your Business</h1>
+<p class="mt-6 max-w-3xl mx-auto text-xl text-blue-100">Join our affiliate program and earn commissions by connecting your network with Australia's leading tradie and helper job matching platform.</p>
+<div class="mt-10">
+<a class="inline-block rounded-lg bg-[var(--accent-color)] px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-orange-700 transition-transform transform hover:scale-105" href="#">Become a Partner</a>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">How It Works</h2>
+<p class="mt-4 text-lg text-gray-500">A simple process to start earning.</p>
+</div>
+<div class="mt-12">
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<div class="pt-6">
+<div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+<div class="-mt-6">
+<div>
+<span class="inline-flex items-center justify-center rounded-md bg-[var(--primary-color)] p-3 shadow-lg">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</div>
+<h3 class="mt-8 text-lg font-bold tracking-tight text-gray-900">Sign Up</h3>
+<p class="mt-5 text-base text-gray-500">Join our partner program in minutes. It's quick, easy, and free.</p>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+<div class="-mt-6">
+<div>
+<span class="inline-flex items-center justify-center rounded-md bg-[var(--primary-color)] p-3 shadow-lg">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.217 10.907a2.25 2.25 0 100 4.186m0-4.186L11.75 7.5M11.75 7.5L14.25 5.25M7.217 10.907l4.533 2.533m-4.533-2.533l-2.25-1.5m2.25 1.5l-2.25 4.5M16.783 13.093a2.25 2.25 0 100-4.186m0 4.186l-4.533-2.533m4.533 2.533l2.25 1.5m-2.25-1.5l2.25-4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</div>
+<h3 class="mt-8 text-lg font-bold tracking-tight text-gray-900">Promote TradieHelper</h3>
+<p class="mt-5 text-base text-gray-500">Share your unique referral link with your network through various channels.</p>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<div class="flow-root rounded-lg bg-gray-50 px-6 pb-8">
+<div class="-mt-6">
+<div>
+<span class="inline-flex items-center justify-center rounded-md bg-[var(--primary-color)] p-3 shadow-lg">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0a.75.75 0 00-.75-.75h-.75m0 0A.75.75 0 012.25 3h.75m15 1.5V6a.75.75 0 01-.75.75h-.75m0 0v-.75a.75.75 0 01.75-.75h.75m0 0a.75.75 0 00-.75-.75h-.75m0 0A.75.75 0 0118.75 3h.75m-7.5 12.75h.008v.008h-.008v-.008zm0 0a.75.75 0 01.75.75v.75a.75.75 0 01-1.5 0v-.75a.75.75 0 01.75-.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</div>
+<h3 class="mt-8 text-lg font-bold tracking-tight text-gray-900">Earn Commissions</h3>
+<p class="mt-5 text-base text-gray-500">Receive payouts in AUD for every successful referral that signs up.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-gray-50 py-20">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Earning Potential</h2>
+<p class="mt-4 text-lg text-gray-500">See what you can earn with our competitive commission structure.</p>
+</div>
+<div class="mt-12 flex justify-center">
+<div class="rounded-lg bg-[var(--secondary-color)] p-8 shadow-xl text-white text-center w-full max-w-md">
+<p class="text-xl font-medium">Average Commission Per Referral</p>
+<p class="mt-4 text-6xl font-bold tracking-tight">$250<span class="text-4xl font-medium"> AUD</span></p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-extrabold text-gray-900 text-center">Partner Success Stories</h2>
+<div class="mt-12 grid gap-8 lg:grid-cols-3">
+<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+<div class="flex-shrink-0">
+<img alt="Sarah, construction consultant" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpIQfN9dJoR7IqKBmok0QCC52w40H8-vxkUJCH3R7piMsmpa9nYWohAtMljGkPAWVk9Xw0tDNdzXOMFoG2vbYWEPO1O2JJwMs8V3NR7sP_LFXZpHsKZ-_dcDEDEJxWleXmhFP7yCfbQmOE-qqdp119ZytVyIdCj2i-t52JMjQZXAqWr80iGx86KAlVKSbxn3XkpwbhMwHfN9yhFvq-2PfGwUqqs8LmQH1HB9YsV9fJyfGlY3QL6V6a_26ASsIucaT-TIv0WdjbEqXY"/>
+</div>
+<div class="flex flex-1 flex-col justify-between bg-white p-6">
+<div class="flex-1">
+<p class="text-xl font-semibold text-[var(--primary-color)]">Sarah's Story</p>
+<p class="mt-3 text-base text-gray-500">"As a construction consultant, TradieHelper's partner program has been a game-changer. I've increased my revenue by 20% simply by referring my network."</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+<div class="flex-shrink-0">
+<img alt="Mark, landscaping supplier" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5g38vYdxw6heIE-zrfyaR1oSLzpOK-j5rOaoq_b85NrrEFCY7cSTDTKAb_9qRNPelo5yh_AYjyjmQFy479SB8oyzYg9A_rsReRj9v0zs7LcWFcEGjOzJ5sFoZhFNxcKgkLmea5J7l6KZlPYFQiIluRX8-8DLSMgdqfhV4B0Lu4fS9uAS9UE8uY1q13DXcXMMVupRgpuVzYAgjGUgsoYqzUNp3iUNn9tCHzciQpwHHz-7CoU39wYBTHBY_FKlL8a2BLZ-ytXr50faW"/>
+</div>
+<div class="flex flex-1 flex-col justify-between bg-white p-6">
+<div class="flex-1">
+<p class="text-xl font-semibold text-[var(--primary-color)]">Mark's Story</p>
+<p class="mt-3 text-base text-gray-500">"Partnering with TradieHelper has expanded my customer base significantly. It's a win-win for my landscaping supply business and my clients."</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+<div class="flex-shrink-0">
+<img alt="Emily, electrical engineer" class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1joFUazyWtSb1zs1z6fNDF6lUxJYr-OhURtaQs9YmaijlArlpjynOBzPcqXrCWniDrAtozmGO-xnxRpxxQ3RqI42s2AncKwHZ8Jp4blJXe2kJW7kVGVEd8fKt-aY_kV6aYlw-W6loY3xoxcy03isjL-55_DT5zOE3uysHEZuPiSWKLVEyvRJcTrFkkSIpD26wEcexZw5BubCPOXAG6jySbAjCIxmT4EkzerCNOaWh_v3nNmXY6xt37NRUlRnC2flMDwMR99oW3P-o"/>
+</div>
+<div class="flex flex-1 flex-col justify-between bg-white p-6">
+<div class="flex-1">
+<p class="text-xl font-semibold text-[var(--primary-color)]">Emily's Story</p>
+<p class="mt-3 text-base text-gray-500">"The referral program helped me find new clients and boost my project pipeline. The marketing materials are a huge plus."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-gray-50 py-20">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="lg:text-center">
+<h2 class="text-base font-semibold uppercase tracking-wider text-[var(--primary-color)]">Everything you need</h2>
+<p class="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl">Marketing Materials &amp; Partner Benefits</p>
+<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">We provide you with all the tools and support to succeed.</p>
+</div>
+<div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--primary-color)] text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium leading-6 text-gray-900">Banner Ads</h3>
+<p class="mt-2 text-base text-gray-500">Professionally designed banner ads in various sizes.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--primary-color)] text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium leading-6 text-gray-900">Social Media Templates</h3>
+<p class="mt-2 text-base text-gray-500">Ready-to-use templates for all major social platforms.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--primary-color)] text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium leading-6 text-gray-900">Email Templates</h3>
+<p class="mt-2 text-base text-gray-500">Engaging email copy to send to your mailing lists.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--primary-color)] text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H17z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium leading-6 text-gray-900">Dedicated Support</h3>
+<p class="mt-2 text-base text-gray-500">Our partner team is here to help you every step of the way.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--primary-color)] text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium leading-6 text-gray-900">Performance Tracking</h3>
+<p class="mt-2 text-base text-gray-500">Real-time dashboard to track your referrals and earnings.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--primary-color)] text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1H8m12 8a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium leading-6 text-gray-900">Fast Payouts</h3>
+<p class="mt-2 text-base text-gray-500">Reliable and timely payments for all your hard work.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="mx-auto max-w-lg px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-extrabold text-gray-900 text-center">Ready to Join?</h2>
+<p class="mt-4 text-lg text-gray-500 text-center">Apply now to become a TradieHelper partner.</p>
+<form class="mt-8 space-y-6">
+<div>
+<label class="sr-only" for="email">Email Address</label>
+<input autocomplete="email" class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] focus:z-10 sm:text-base" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+</div>
+<div>
+<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-base font-medium rounded-lg text-white bg-[var(--primary-color)] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] transition-colors" type="submit">
+                    Apply Now
+                  </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<footer class="bg-gray-800 text-white">
+<div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+<div class="xl:grid xl:grid-cols-3 xl:gap-8">
+<div class="space-y-8 xl:col-span-1">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535_footer)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535_footer">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h2 class="text-2xl font-bold tracking-tight">TradieHelper</h2>
+</div>
+<p class="text-gray-400 text-base">Australia's leading tradie and helper job matching platform.</p>
+</div>
+<div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+<div class="md:grid md:grid-cols-2 md:gap-8">
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Company</h3>
+<ul class="mt-4 space-y-4">
+<li><a class="text-base text-gray-300 hover:text-white" href="#">About Us</a></li>
+<li><a class="text-base text-gray-300 hover:text-white" href="#">Careers</a></li>
+<li><a class="text-base text-gray-300 hover:text-white" href="#">Press</a></li>
+</ul>
+</div>
+<div class="mt-12 md:mt-0">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Legal</h3>
+<ul class="mt-4 space-y-4">
+<li><a class="text-base text-gray-300 hover:text-white" href="#">Privacy Policy</a></li>
+<li><a class="text-base text-gray-300 hover:text-white" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-8">
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Support</h3>
+<ul class="mt-4 space-y-4">
+<li><a class="text-base text-gray-300 hover:text-white" href="#">Contact Us</a></li>
+<li><a class="text-base text-gray-300 hover:text-white" href="#">Help Centre</a></li>
+<li><a class="text-base text-gray-300 hover:text-white" href="#">FAQ</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-gray-700 pt-8">
+<p class="text-base text-gray-400 xl:text-center">© 2023 TradieHelper. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

@@ -10,6 +10,13 @@ import { JobFeed } from './components/jobs/JobFeed'
 import { JobDetail } from './components/jobs/JobDetail'
 import { PublicProfile } from './components/profile/PublicProfile'
 import { LandingPage } from './components/landing/LandingPage'
+import { PricingPage } from './components/marketing/PricingPage'
+import { AboutPage } from './components/marketing/AboutPage'
+import { ContactPage } from './components/marketing/ContactPage'
+import { FeaturesPage } from './components/marketing/FeaturesPage'
+import { HowItWorksPage } from './components/marketing/HowItWorksPage'
+import { HelpCenterPage } from './components/marketing/HelpCenterPage'
+import { EmailTestComponent } from './components/testing/EmailTestComponent'
 import { ApplicationsList } from './components/applications/ApplicationsList'
 import { PaymentStatus } from './components/payments/PaymentStatus'
 import { EnhancedAdminDashboard } from './components/admin/EnhancedAdminDashboard'
@@ -118,8 +125,19 @@ function App() {
             {/* Public Landing Page */}
             <Route path="/landing" element={<LandingPage />} />
             
+            {/* Public Marketing Pages */}
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/help" element={<HelpCenterPage />} />
+            <Route path="/test-email" element={<EmailTestComponent />} />
+            
             {/* Authentication */}
             <Route path="/auth" element={<AuthPage />} />
+            <Route path="/signin" element={<AuthPage />} />
+            <Route path="/signup" element={<AuthPage />} />
             
             {/* Job Detail - Public access */}
             <Route path="/jobs/:id" element={<JobDetail />} />

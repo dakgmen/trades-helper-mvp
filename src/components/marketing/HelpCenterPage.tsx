@@ -1,0 +1,249 @@
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export const HelpCenterPage: React.FC = () => {
+  const navigate = useNavigate()
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // TODO: Implement search functionality
+    console.log('Searching for:', searchQuery)
+  }
+
+  return (
+    <div className="bg-gray-50 relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
+      <div className="layout-container flex h-full grow flex-col">
+        {/* Header */}
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 bg-white">
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-3 text-gray-800">
+              <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path clipRule="evenodd" d="M24 0L48 24L24 48L0 24L24 0ZM36 21H12L24 9L36 21Z" fill="currentColor" fillRule="evenodd"></path>
+              </svg>
+              <h1 className="text-2xl font-bold tracking-tight">TradieHelper</h1>
+            </div>
+            <nav className="hidden md:flex items-center gap-8">
+              <button onClick={() => navigate('/')} className="text-gray-600 hover:text-blue-600 text-base font-medium">Home</button>
+              <button onClick={() => navigate('/jobs')} className="text-gray-600 hover:text-blue-600 text-base font-medium">Jobs</button>
+              <button onClick={() => navigate('/jobs')} className="text-gray-600 hover:text-blue-600 text-base font-medium">Tradies</button>
+              <button onClick={() => navigate('/jobs')} className="text-gray-600 hover:text-blue-600 text-base font-medium">Helpers</button>
+              <button onClick={() => navigate('/about')} className="text-gray-600 hover:text-blue-600 text-base font-medium">About Us</button>
+            </nav>
+          </div>
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => navigate('/jobs/create')}
+              className="flex items-center justify-center rounded-lg h-10 px-4 bg-green-600 text-white text-base font-bold transition-colors hover:bg-green-700"
+            >
+              <span className="truncate">Post a Job</span>
+            </button>
+            <button 
+              onClick={() => navigate('/signin')}
+              className="flex items-center justify-center rounded-lg h-10 px-4 bg-gray-100 text-gray-800 text-base font-bold transition-colors hover:bg-gray-200"
+            >
+              <span className="truncate">Log In</span>
+            </button>
+            <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-gray-200" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMc54CNPldmCoYNqe6DreMfSfxE0sp3FDo4HChGQEuRQcHhbSIhzH45gzzM71XUslkYVpF_Fq1E4MB24z8Su32DFUdfdC5o9C4Z5t8-PNwNfv3k2tgxJr5JvQHJ00Ycui1GPnh6EDFidnCc_BjuksuwDUWmaKNdL7PKDWi6WdSuna9JDTkC4rPI3c1ka9_-jjKjIAYro_SFe4wpmuY9AWlETsecaOQa1lLslYE8vbnJxtcsdhNVciklKaK36UtkCow8Hh2rSK-Fnz8")'}}></div>
+          </div>
+        </header>
+
+        <main className="flex-1">
+          {/* Hero Section with Search */}
+          <section className="w-full py-20 md:py-32 bg-blue-600 text-white text-center">
+            <div className="container mx-auto px-4 md:px-6">
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">How can we help you, mate?</h1>
+              <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-8">Find answers, guides, and support for TradieHelper.</p>
+              <div className="max-w-2xl mx-auto">
+                <form onSubmit={handleSearchSubmit}>
+                  <label className="relative text-gray-400 focus-within:text-gray-600 block">
+                    <svg className="pointer-events-none w-6 h-6 absolute top-1/2 transform -translate-y-1/2 left-4" fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                    </svg>
+                    <input 
+                      className="form-input w-full py-4 pl-12 pr-4 rounded-lg text-lg text-gray-800 bg-white border-2 border-transparent focus:border-green-600 focus:ring-0" 
+                      placeholder="Search for help, e.g., 'how to post a job'" 
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </label>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          {/* Help Topics Grid */}
+          <section className="py-16 md:py-24">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Popular Topics */}
+                <div className="flex flex-col gap-8">
+                  <h2 className="text-2xl font-bold text-gray-800 border-b-2 border-blue-600 pb-2">Popular Topics</h2>
+                  <button 
+                    onClick={() => navigate('/help/getting-started')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Getting Started</h3>
+                      <p className="text-gray-600">New to TradieHelper? Start here.</p>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => navigate('/help/account')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Account Management</h3>
+                      <p className="text-gray-600">Manage your profile and settings.</p>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => navigate('/help/job-posting')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Job Posting</h3>
+                      <p className="text-gray-600">Learn how to post and manage jobs.</p>
+                    </div>
+                  </button>
+                </div>
+
+                {/* For Tradies */}
+                <div className="flex flex-col gap-8">
+                  <h2 className="text-2xl font-bold text-gray-800 border-b-2 border-green-600 pb-2">For Tradies</h2>
+                  <button 
+                    onClick={() => navigate('/help/insurance')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-green-100 rounded-lg text-green-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M251.34,112,183.88,44.08a96.1,96.1,0,0,0-135.77,0l-.09.09L34.25,58.4A8,8,0,0,0,45.74,69.53L59.47,55.35a79.92,79.92,0,0,1,18.71-13.9L124.68,88l-96,96a16,16,0,0,0,0,22.63l20.69,20.69a16,16,0,0,0,22.63,0l96-96,14.34,14.34h0L200,163.3a16,16,0,0,0,22.63,0l28.69-28.69A16,16,0,0,0,251.34,112ZM60.68,216,40,195.31l68-68L128.68,148ZM162.34,114.32,140,136.67,119.31,116l22.35-22.35a8,8,0,0,0,0-11.32L94.32,35a80,80,0,0,1,78.23,20.41l44.22,44.51L188,128.66l-14.34-14.34A8,8,0,0,0,162.34,114.32Zm49,37.66-12-12L228,111.25l12,12Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Insurance & Licensing</h3>
+                      <p className="text-gray-600">Aussie requirements for tradies.</p>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => navigate('/help/payments')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-green-100 rounded-lg text-green-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M184,89.57V84c0-25.08-37.83-44-88-44S8,58.92,8,84v40c0,20.89,26.25,37.49,64,42.46V172c0,25.08,37.83,44,88,44s88-18.92,88-44V132C248,111.3,222.58,94.68,184,89.57ZM232,132c0,13.22-30.79,28-72,28-3.73,0-7.43-.13-11.08-.37C170.49,151.77,184,139,184,124V105.74C213.87,110.19,232,122.27,232,132ZM72,150.25V126.46A183.74,183.74,0,0,0,96,128a183.74,183.74,0,0,0,24-1.54v23.79A163,163,0,0,1,96,152,163,163,0,0,1,72,150.25Zm96-40.32V124c0,8.39-12.41,17.4-32,22.87V123.5C148.91,120.37,159.84,115.71,168,109.93ZM96,56c41.21,0,72,14.78,72,28s-30.79,28-72,28S24,97.22,24,84,54.79,56,96,56ZM24,124V109.93c8.16,5.78,19.09,10.44,32,13.57v23.37C36.41,141.4,24,132.39,24,124Zm64,48v-4.17c2.63.1,5.29.17,8,.17,3.88,0,7.67-.13,11.39-.35A121.92,121.92,0,0,0,120,171.41v23.46C100.41,189.4,88,180.39,88,172Zm48,26.25V174.4a179.48,179.48,0,0,0,24,1.6,183.74,183.74,0,0,0,24-1.54v23.79a165.45,165.45,0,0,1-48,0Zm64-3.38V171.5c12.91-3.13,23.84-7.79,32-13.57V172C232,180.39,219.59,189.4,200,194.87Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Payment & Invoicing (AUD)</h3>
+                      <p className="text-gray-600">Getting paid in Australian Dollars.</p>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => navigate('/help/taxes')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-green-100 rounded-lg text-green-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Tax & Superannuation</h3>
+                      <p className="text-gray-600">Understand your obligations.</p>
+                    </div>
+                  </button>
+                </div>
+
+                {/* For Helpers */}
+                <div className="flex flex-col gap-8">
+                  <h2 className="text-2xl font-bold text-gray-800 border-b-2 border-orange-600 pb-2">For Helpers</h2>
+                  <button 
+                    onClick={() => navigate('/help/profile-building')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-orange-100 rounded-lg text-orange-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M119.76,217.94A8,8,0,0,1,112,224a8.13,8.13,0,0,1-2-.24l-32-8a8,8,0,0,1-2.5-1.11l-24-16a8,8,0,1,1,8.88-13.31l22.84,15.23,30.66,7.67A8,8,0,0,1,119.76,217.94Zm132.69-96.46a15.89,15.89,0,0,1-8,9.25l-23.68,11.84-55.08,55.09a8,8,0,0,1-7.6,2.1l-64-16a8.06,8.06,0,0,1-2.71-1.25L35.86,142.87,11.58,130.73a16,16,0,0,1-7.16-21.46L29.27,59.58h0a16,16,0,0,1,21.46-7.16l22.06,11,53-15.14a8,8,0,0,1,4.4,0l53,15.14,22.06-11a16,16,0,0,1,21.46,7.16l24.85,49.69A15.9,15.9,0,0,1,252.45,121.48Zm-46.18,12.94L179.06,80H147.24L104,122c12.66,8.09,32.51,10.32,50.32-7.63a8,8,0,0,1,10.68-.61l34.41,27.57Zm-187.54-18,17.69,8.85L61.27,75.58,43.58,66.73ZM188,152.66l-27.71-22.19c-19.54,16-44.35,18.11-64.91,5a16,16,0,0,1-2.72-24.82.6.6,0,0,1,.08-.08L137.6,67.06,128,64.32,77.58,78.73,50.21,133.46l49.2,35.15,58.14,14.53Zm49.24-36.24L212.42,66.73l-17.69,8.85,24.85,49.69Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Building Your Profile</h3>
+                      <p className="text-gray-600">Tips to attract the best jobs.</p>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => navigate('/help/agreements')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-orange-100 rounded-lg text-orange-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Agreements & Contracts</h3>
+                      <p className="text-gray-600">Understand your work agreements.</p>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => navigate('/help/timezones')}
+                    className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                  >
+                    <div className="p-3 bg-orange-100 rounded-lg text-orange-600">
+                      <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">Time Zones & Scheduling</h3>
+                      <p className="text-gray-600">Manage jobs across time zones.</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Section */}
+          <section className="bg-gray-100 py-16 md:py-24">
+            <div className="container mx-auto px-4 md:px-6 text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Still can't find what you're looking for?</h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
+                No worries, mate. Our support team is here to help. Shoot us a message and we'll get back to you ASAP.
+              </p>
+              <button 
+                onClick={() => navigate('/contact')}
+                className="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-colors"
+              >
+                Submit a Support Ticket
+              </button>
+            </div>
+          </section>
+        </main>
+
+        {/* Footer */}
+        <footer className="bg-gray-800 text-white py-12">
+          <div className="container mx-auto px-4 md:px-6 text-center">
+            <p>© 2024 TradieHelper. All rights reserved. Proudly Australian.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  )
+}

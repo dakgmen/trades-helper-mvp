@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Work+Sans%3Awght%40400%3B500%3B600%3B700&amp;family=Inter%3Awght%40400%3B500%3B600%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>TradieHelper Careers</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #eff6ff;
+        --primary-100: #dbeafe;
+        --primary-200: #bfdbfe;
+        --primary-300: #93c5fd;
+        --primary-400: #60a5fa;
+        --primary-500: #3b82f6;
+        --primary-600: #2563eb;
+        --primary-700: #1d4ed8;
+        --primary-800: #1e40af;
+        --primary-900: #1e3a8a;
+        --secondary-50: #f0fdf4;
+        --secondary-100: #dcfce7;
+        --secondary-200: #bbf7d0;
+        --secondary-300: #86efac;
+        --secondary-400: #4ade80;
+        --secondary-500: #22c55e;
+        --secondary-600: #16a34a;
+        --secondary-700: #15803d;
+        --secondary-800: #166534;
+        --secondary-900: #14532d;
+        --accent-50: #fff7ed;
+        --accent-100: #ffedd5;
+        --accent-200: #fed7aa;
+        --accent-300: #fdba74;
+        --accent-400: #fb923c;
+        --accent-500: #f97316;
+        --accent-600: #ea580c;
+        --accent-700: #c2410c;
+        --accent-800: #9a3412;
+        --accent-900: #7c2d12;
+        --neutral-50: #f8fafc;
+        --neutral-100: #f1f5f9;
+        --neutral-200: #e2e8f0;
+        --neutral-300: #cbd5e1;
+        --neutral-400: #94a3b8;
+        --neutral-500: #64748b;
+        --neutral-600: #475569;
+        --neutral-700: #334155;
+        --neutral-800: #1e293b;
+        --neutral-900: #0f172a;
+      }
+    </style>
+</head>
+<body class="bg-neutral-50" style='font-family: "Work Sans", "Inter", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-200 bg-white/80 px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-3 text-neutral-800">
+<svg class="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4L4 24L24 44L44 24L24 4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="4"></path>
+<path d="M34 24L24 34L14 24L24 14L34 24Z" stroke="currentColor" stroke-linejoin="round" stroke-width="4"></path>
+</svg>
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em]">TradieHelper</h2>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-base font-medium leading-normal text-neutral-600 hover:text-primary-600" href="#">For Tradies</a>
+<a class="text-base font-medium leading-normal text-neutral-600 hover:text-primary-600" href="#">For Helpers</a>
+<a class="text-base font-medium leading-normal text-neutral-600 hover:text-primary-600" href="#">Safety</a>
+<a class="text-base font-medium leading-normal text-neutral-600 hover:text-primary-600" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary-600 text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary-700">
+<span class="truncate">Post a job</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-neutral-100 text-neutral-800 text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-neutral-200">
+<span class="truncate">Log in</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 flex-col">
+<section class="relative flex min-h-[50vh] items-center justify-center bg-cover bg-center py-20" style='background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5KXi9v67Y-7GCqLTjc1Ie4MvrS9mhIIImWryFOOO4T-S2d31ykJX1rJoDM1G1gyjn3lpeTfuwVx7UHUBhTpv6LvGZ9AEVeNcGFOg4wAg7163d_6aZoQg2h9CZBb2whG-ADTXWDgRzrgG78cK5x8YC9vHlJJ_1mui6KihKgmfUu1N7z-xh9DRCskGew8InzF9y-fppNzkUYy_CT_dg_CS4WczTCq83vGpQH66JKFfZuCQIgtDAKUOO4C3wqWAxiwn9-7019YMe6RUw");'>
+<div class="container mx-auto px-4 text-center text-white">
+<h1 class="text-5xl font-extrabold leading-tight tracking-tighter md:text-6xl">Join the TradieHelper Team</h1>
+<p class="mx-auto mt-4 max-w-2xl text-lg font-light leading-relaxed text-neutral-200">
+                Be part of a dynamic team connecting skilled tradies with eager helpers across Australia. Explore opportunities to grow your career in a supportive and innovative
+                environment.
+              </p>
+<button class="mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 mx-auto bg-primary-600 text-white text-lg font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105">
+<span class="truncate">View Open Positions</span>
+</button>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center">
+<h2 class="text-4xl font-bold tracking-tight text-neutral-800">Our Culture &amp; Values</h2>
+<p class="mx-auto mt-4 max-w-3xl text-lg text-neutral-600">
+                  At TradieHelper, we foster a culture of collaboration, innovation, and support. We value teamwork, continuous learning, and making a real impact on the Australian
+                  trades industry.
+                </p>
+</div>
+<div class="mt-12 grid grid-cols-1 gap-4 overflow-hidden rounded-xl md:grid-cols-4 md:grid-rows-2">
+<div class="relative col-span-1 h-64 w-full bg-cover bg-center md:col-span-2 md:row-span-2" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-vztTgxAfxIkN5CA8F9goVk4BNlxWnRRHWrlGfPuHxCM6A9D_tVCsew-y1ntA4TbdQLov46YTL4KbvLfniRyIK6UYO4Wtmy-FWkdmPjsL1wBxW57THnG0YIWYehZ0vuH-ngPvhGXZ4m00BuT_6_IUh8_kMfTtCvSSENWK9FVYLbPZJ94OuTzDj9uE3YFGFUPvl3-y2mnZx5B6-GQNR42Lf9SPTF8_p9JDd5gyvxN6V8sZQ3L5PI_BY22Wn-Ahe6TQ9x5dR0tUMFPo");'></div>
+<div class="relative h-64 w-full bg-cover bg-center md:col-span-2" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZ8rZoArRM6XwDhA4mC8ZCEeHBLkvGEymu422Sez2_GG0CHslEOYdezfkQjanwaCL8kpgD0aAWY_EsOSiqTfJ2H5n58p0r-LlOtAdZPMV-wVDyRxGJPEjv9_SxyIvIsAZjk1um-UHxV0m4uIJBJ54aUZH5eKzsluoK-42cTi1-aecyaaFOsK9chj5_70ji5Cya7jCI8ySvc8OqGqyH9ZLVBXHAmKE6S-RLgdjdb6ZxHm6KJbnSkJN4eEAMyi7sQwkeGduRoj6NluGs");'></div>
+<div class="relative h-64 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3rsEx84ubdCszd3I3sNKiQvSnWeRVW0wiogquZoQvFrjNl4cJ_iNlqjtAr04T1WVriu8yBVtnOBJFitgvsoVBz7Y5ftGMtvvI8cqTpLU4hdxbvemmeYM-gx9OSMgZBnOG5uWSseqsGsC8OOrRWhnH2TZF67Cflv19dTHzeRPAHaQjdkv3N8pwpBnqBLLteTn0ER9r6OickcZKoQxUz0JMTrqb1mRrICfA-bIQjZe3y5wsR2J0e73kKL13KBnJWRCLO0Rk3gXUPA7u");'></div>
+<div class="relative h-64 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZG1oezkC7OYJ404u9MrJ6ua_7e_yKqgcDxqWDTkYtJXifjUvpGkiajpn98ojwg-D4Aq2hZzn7P3VcMvB4Zf9mLN4gTHl3FWonPs-F1El0uzZpveiNfq-dDxgWmX28FjbJxAJ7kXtCXSGPNWrTRVIAw-ajfg_xkODCzgev4j5zMV1rxkBnbnFB-k5SZybXPXc2P79eF5BNuXVCbyfq8xrp-m3w-goh70tfn5g1L4XtVxLTL_PZ22ISqTmh8u0k4K2YTZRojaw85o0c");'></div>
+</div>
+</div>
+</section>
+<section class="bg-white py-20" id="open-positions">
+<div class="container mx-auto px-4">
+<div class="text-center">
+<h2 class="text-4xl font-bold tracking-tight text-neutral-800">Open Positions</h2>
+<p class="mx-auto mt-4 max-w-3xl text-lg text-neutral-600">Find your next opportunity and join our talented team.</p>
+</div>
+<div class="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-2">
+<div class="flex flex-col justify-between gap-6 rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-shadow hover:shadow-lg">
+<div>
+<h3 class="text-xl font-bold text-neutral-800">Software Engineer</h3>
+<p class="mt-2 text-neutral-600">
+                      Develop and maintain our platform, ensuring a seamless experience for tradies and helpers. Work with cutting-edge technologies and contribute to a growing
+                      Australian tech company.
+                    </p>
+</div>
+<button class="flex w-fit items-center justify-center rounded-lg bg-primary-600 px-5 py-2.5 text-base font-semibold text-white transition-colors hover:bg-primary-700">
+<span>Apply Now</span>
+</button>
+</div>
+<div class="flex flex-col justify-between gap-6 rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-shadow hover:shadow-lg">
+<div>
+<h3 class="text-xl font-bold text-neutral-800">Customer Support Specialist</h3>
+<p class="mt-2 text-neutral-600">
+                      Provide exceptional support to our users, addressing inquiries and resolving issues promptly. Be the voice of TradieHelper and ensure customer satisfaction.
+                    </p>
+</div>
+<button class="flex w-fit items-center justify-center rounded-lg bg-primary-600 px-5 py-2.5 text-base font-semibold text-white transition-colors hover:bg-primary-700">
+<span>Apply Now</span>
+</button>
+</div>
+<div class="flex flex-col justify-between gap-6 rounded-xl border border-neutral-200 bg-neutral-50 p-6 transition-shadow hover:shadow-lg">
+<div>
+<h3 class="text-xl font-bold text-neutral-800">Marketing Manager</h3>
+<p class="mt-2 text-neutral-600">
+                      Drive our marketing efforts, creating and executing campaigns to reach tradies and helpers across Australia. Shape our brand and grow our user base.
+                    </p>
+</div>
+<button class="flex w-fit items-center justify-center rounded-lg bg-primary-600 px-5 py-2.5 text-base font-semibold text-white transition-colors hover:bg-primary-700">
+<span>Apply Now</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="container mx-auto px-4">
+<div class="text-center">
+<h2 class="text-4xl font-bold tracking-tight text-neutral-800">Employee Benefits</h2>
+<p class="mx-auto mt-4 max-w-3xl text-lg text-neutral-600">We invest in our team's success and well-being.</p>
+</div>
+<div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+<svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path>
+</svg>
+</div>
+<h3 class="mt-4 text-xl font-bold text-neutral-800">Competitive Salary</h3>
+</div>
+<div class="rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-secondary-100 text-secondary-600">
+<svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M152,120H136V56h8a32,32,0,0,1,32,32,8,8,0,0,0,16,0,48.05,48.05,0,0,0-48-48h-8V24a8,8,0,0,0-16,0V40h-8a48,48,0,0,0,0,96h8v64H104a32,32,0,0,1-32-32,8,8,0,0,0-16,0,48.05,48.05,0,0,0,48,48h16v16a8,8,0,0,0,16,0V216h16a48,48,0,0,0,0-96Zm-40,0a32,32,0,0,1,0-64h8v64Zm40,80H136V136h16a32,32,0,0,1,0,64Z"></path>
+</svg>
+</div>
+<h3 class="mt-4 text-xl font-bold text-neutral-800">Comprehensive Benefits</h3>
+</div>
+<div class="rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-100 text-accent-600">
+<svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path>
+</svg>
+</div>
+<h3 class="mt-4 text-xl font-bold text-neutral-800">Professional Development</h3>
+</div>
+<div class="rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm">
+<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+<svg fill="currentColor" height="32" viewBox="0 0 256 256" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"></path>
+</svg>
+</div>
+<h3 class="mt-4 text-xl font-bold text-neutral-800">Flexible Work Arrangements</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white py-20">
+<div class="container mx-auto px-4">
+<div class="text-center">
+<h2 class="text-4xl font-bold tracking-tight text-neutral-800">How to Apply</h2>
+<p class="mx-auto mt-4 max-w-3xl text-lg text-neutral-600">Our application process is simple and straightforward.</p>
+</div>
+<div class="relative mt-12">
+<div aria-hidden="true" class="absolute left-1/2 top-0 -ml-px h-full w-0.5 bg-neutral-200"></div>
+<div class="space-y-12">
+<div class="relative flex items-start">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white">1</div>
+<div class="ml-6">
+<h3 class="text-xl font-bold text-neutral-800">Browse Openings</h3>
+<p class="mt-2 text-neutral-600">Explore our current job listings and find a role that matches your skills and interests.</p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white">2</div>
+<div class="ml-6">
+<h3 class="text-xl font-bold text-neutral-800">Submit Your Application</h3>
+<p class="mt-2 text-neutral-600">
+                        Click 'Apply Now' on the job posting and complete the application form. Ensure your CV and cover letter are tailored to the specific role.
+                      </p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white">3</div>
+<div class="ml-6">
+<h3 class="text-xl font-bold text-neutral-800">Interview Process</h3>
+<p class="mt-2 text-neutral-600">
+                        If your application is shortlisted, you'll be invited for an interview. This may include a phone screening, followed by one or more interviews with the
+                        hiring team.
+                      </p>
+</div>
+</div>
+<div class="relative flex items-start">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white">4</div>
+<div class="ml-6">
+<h3 class="text-xl font-bold text-neutral-800">Offer &amp; Onboarding</h3>
+<p class="mt-2 text-neutral-600">
+                        Successful candidates will receive a job offer. Once accepted, you'll go through our onboarding process to get you set up for success at TradieHelper.
+                      </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-neutral-800 text-neutral-300">
+<div class="container mx-auto px-4 py-12">
+<div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+<div class="flex items-center gap-3 text-white">
+<svg class="h-8 w-8 text-primary-500" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4L4 24L24 44L44 24L24 4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="4"></path>
+<path d="M34 24L24 34L14 24L24 14L34 24Z" stroke="currentColor" stroke-linejoin="round" stroke-width="4"></path>
+</svg>
+<h2 class="text-2xl font-bold">TradieHelper</h2>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="hover:text-white" href="#">About Us</a>
+<a class="hover:text-white" href="#">Contact</a>
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</nav>
+<div class="flex justify-center gap-6">
+<a class="hover:text-white" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+</svg>
+</a>
+<a class="hover:text-white" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+</svg>
+</a>
+<a class="hover:text-white" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+</svg>
+</a>
+</div>
+</div>
+<div class="mt-8 border-t border-neutral-700 pt-8 text-center">
+<p>© 2024 TradieHelper. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
