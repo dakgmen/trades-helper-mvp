@@ -1,3 +1,5 @@
 export { Button } from './Button'
 export { Card, CardHeader, CardContent, CardFooter } from './Card'
 export { StatCard } from './StatCard'
+export { Modal, ModalFooter, ConfirmModal } from './Modal'
+export { Toast, ToastContainer, useToast } from './Toast'

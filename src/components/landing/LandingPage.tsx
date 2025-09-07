@@ -9,7 +9,7 @@ export const LandingPage: React.FC = () => {
   // Redirect authenticated users to dashboard
   React.useEffect(() => {
     if (user) {
-      navigate('/')
+      navigate('/dashboard')
     }
   }, [user, navigate])
 
@@ -43,13 +43,13 @@ export const LandingPage: React.FC = () => {
         </div>
         <nav className="hidden md:flex items-center gap-8">
           <button
-            onClick={() => navigate('/jobs')}
+            onClick={() => navigate(user ? '/jobs' : '/auth')}
             className="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
             Find Work
           </button>
           <button
-            onClick={() => navigate('/jobs/post')}
+            onClick={() => navigate(user ? '/jobs/post' : '/auth')}
             className="text-base font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
             Post a Job
@@ -97,7 +97,7 @@ export const LandingPage: React.FC = () => {
                 Get Started Free
               </button>
               <button
-                onClick={() => navigate('/jobs')}
+                onClick={() => navigate(user ? '/jobs' : '/auth')}
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-bold border-2 border-blue-600 hover:bg-blue-50 transition-colors"
               >
                 Browse Jobs
@@ -330,16 +330,16 @@ export const LandingPage: React.FC = () => {
             <div>
               <h4 className="font-bold mb-4">For Tradies</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><button onClick={() => navigate('/jobs/post')}>Post a Job</button></li>
-                <li><button onClick={() => navigate('/jobs')}>Browse Helpers</button></li>
-                <li><a href="#">Pricing</a></li>
+                <li><button onClick={() => navigate(user ? '/jobs/post' : '/auth')}>Post a Job</button></li>
+                <li><button onClick={() => navigate(user ? '/jobs' : '/auth')}>Browse Helpers</button></li>
+                <li><button onClick={() => navigate('/pricing')}>Pricing</button></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">For Helpers</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><button onClick={() => navigate('/jobs')}>Find Jobs</button></li>
-                <li><a href="#">How it Works</a></li>
+                <li><button onClick={() => navigate(user ? '/jobs' : '/auth')}>Find Jobs</button></li>
+                <li><button onClick={() => navigate('/how-it-works')}>How it Works</button></li>
                 <li><a href="#">Success Stories</a></li>
               </ul>
             </div>

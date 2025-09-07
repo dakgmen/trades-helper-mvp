@@ -7,12 +7,14 @@ interface MessageThreadProps {
   jobId: string
   recipientId: string
   recipientName: string
+  onTyping?: (isTyping: boolean) => void
 }
 
 export const MessageThread: React.FC<MessageThreadProps> = ({
   jobId,
   recipientId,
-  recipientName
+  recipientName,
+  onTyping
 }) => {
   const { user } = useAuth()
   const [messages, setMessages] = useState<Message[]>([])
@@ -177,7 +179,10 @@ export const MessageThread: React.FC<MessageThreadProps> = ({
           <input
             type="text"
             value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
+            onChange={(e) => {
+              setNewMessage(e.target.value)
+              onTyping?.(e.target.value.length > 0)
+            }}
             placeholder="Type your message..."
             className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={sending}

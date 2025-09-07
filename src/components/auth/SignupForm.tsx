@@ -9,7 +9,7 @@ interface SignupFormProps {
 }
 
 export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLogin }) => {
-  const { signUp, signOut } = useAuth()
+  const { signUp, clearAuthState } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -22,9 +22,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({ onSuccess, onSwitchToLog
   const handleReset = async () => {
     console.log('🔄 Clearing cached authentication state')
     setError(null)
-    await signOut()
-    localStorage.clear()
-    sessionStorage.clear()
+    await clearAuthState()
     window.location.reload()
   }
 

@@ -21,9 +21,10 @@ interface EmailOptions {
 export class EmailService {
   private static instance: EmailService
   private isInitialized = false
+  private isBrowser = typeof window !== 'undefined'
 
   private constructor() {
-    this.initialize()
+    // Don't initialize immediately - do it lazily when needed
   }
 
   public static getInstance(): EmailService {
@@ -33,7 +34,15 @@ export class EmailService {
     return EmailService.instance
   }
 
-  private initialize(): void {
+  private async initialize(): Promise<void> {
+    if (this.isInitialized) return
+
+    // Skip initialization in browser environment
+    if (this.isBrowser) {
+      console.warn('EmailService: SendPulse API not supported in browser environment')
+      return
+    }
+
     try {
       const apiUserId = import.meta.env.VITE_SENDPULSE_API_USER_ID || process.env.SENDPULSE_API_USER_ID
       const apiSecret = import.meta.env.VITE_SENDPULSE_API_SECRET || process.env.SENDPULSE_API_SECRET
@@ -44,53 +53,72 @@ export class EmailService {
         return
       }
 
-      sendpulse.init(apiUserId, apiSecret, tokenStorage, (token: unknown) => {
-        if (token && typeof token === 'object' && token !== null && 'access_token' in token) {
-          this.isInitialized = true
-          console.log('SendPulse API initialized successfully')
-        } else {
-          console.error('Failed to initialize SendPulse API')
-        }
+      return new Promise((resolve, reject) => {
+        sendpulse.init(apiUserId, apiSecret, tokenStorage, (token: unknown) => {
+          if (token && typeof token === 'object' && token !== null && 'access_token' in token) {
+            this.isInitialized = true
+            console.log('SendPulse API initialized successfully')
+            resolve()
+          } else {
+            console.error('Failed to initialize SendPulse API')
+            reject(new Error('Failed to initialize SendPulse API'))
+          }
+        })
       })
     } catch (error) {
       console.error('Error initializing SendPulse:', error)
+      throw error
     }
   }
 
   public async sendEmail(options: EmailOptions): Promise<boolean> {
-    return new Promise((resolve) => {
+    // In browser environment, just log and return false
+    if (this.isBrowser) {
+      console.warn('EmailService: Email sending not supported in browser environment. Email would be sent:', options)
+      return false
+    }
+
+    try {
+      await this.initialize()
+      
       if (!this.isInitialized) {
         console.error('EmailService not initialized')
-        resolve(false)
-        return
+        return false
       }
 
-      const emailData = {
-        html: options.html,
-        text: options.text || this.stripHtml(options.html),
-        subject: options.subject,
-        from: options.from,
-        to: options.to
-      }
-
-      sendpulse.smtpSendMail((data: unknown) => {
-        if (data && typeof data === 'object' && data !== null && 'result' in data && (data as { result: boolean }).result === true) {
-          console.log('Email sent successfully:', data)
-          resolve(true)
-        } else {
-          console.error('Failed to send email:', data)
-          resolve(false)
+      return new Promise((resolve) => {
+        const emailData = {
+          html: options.html,
+          text: options.text || this.stripHtml(options.html),
+          subject: options.subject,
+          from: options.from,
+          to: options.to
         }
-      }, emailData)
-    })
+
+        sendpulse.smtpSendMail((data: unknown) => {
+          if (data && typeof data === 'object' && data !== null && 'result' in data && (data as { result: boolean }).result === true) {
+            console.log('Email sent successfully:', data)
+            resolve(true)
+          } else {
+            console.error('Failed to send email:', data)
+            resolve(false)
+          }
+        }, emailData)
+      })
+    } catch (error) {
+      console.error('Error sending email:', error)
+      return false
+    }
   }
 
-  public async sendContactFormEmail(formData: {
+  public static async sendContactFormEmail(formData: {
     fullName: string
     email: string
     subject: string
     message: string
   }): Promise<boolean> {
+    const instance = EmailService.getInstance()
+    await instance.initialize()
     const emailOptions: EmailOptions = {
       from: {
         name: 'TradieHelper Contact Form',
@@ -103,13 +131,15 @@ export class EmailService {
         }
       ],
       subject: `Contact Form: ${formData.subject}`,
-      html: this.getContactFormTemplate(formData)
+      html: instance.getContactFormTemplate(formData)
     }
 
-    return this.sendEmail(emailOptions)
+    return instance.sendEmail(emailOptions)
   }
 
-  public async sendWelcomeEmail(userEmail: string, userName: string, userRole: 'tradie' | 'helper'): Promise<boolean> {
+  public static async sendWelcomeEmail(userEmail: string, userName: string, userRole: 'tradie' | 'helper'): Promise<boolean> {
+    const instance = EmailService.getInstance()
+    await instance.initialize()
     const emailOptions: EmailOptions = {
       from: {
         name: 'TradieHelper Team',
@@ -122,19 +152,21 @@ export class EmailService {
         }
       ],
       subject: `Welcome to TradieHelper, ${userName}!`,
-      html: this.getWelcomeTemplate(userName, userRole)
+      html: instance.getWelcomeTemplate(userName, userRole)
     }
 
-    return this.sendEmail(emailOptions)
+    return instance.sendEmail(emailOptions)
   }
 
-  public async sendJobNotificationEmail(
+  public static async sendJobNotificationEmail(
     recipientEmail: string,
     recipientName: string,
     jobTitle: string,
     tradieCompany: string,
     notificationType: 'new_application' | 'job_assigned' | 'job_completed'
   ): Promise<boolean> {
+    const instance = EmailService.getInstance()
+    await instance.initialize()
     const emailOptions: EmailOptions = {
       from: {
         name: 'TradieHelper Notifications',
@@ -146,11 +178,11 @@ export class EmailService {
           name: recipientName
         }
       ],
-      subject: this.getJobNotificationSubject(notificationType, jobTitle),
-      html: this.getJobNotificationTemplate(recipientName, jobTitle, tradieCompany, notificationType)
+      subject: instance.getJobNotificationSubject(notificationType, jobTitle),
+      html: instance.getJobNotificationTemplate(recipientName, jobTitle, tradieCompany, notificationType)
     }
 
-    return this.sendEmail(emailOptions)
+    return instance.sendEmail(emailOptions)
   }
 
   private getContactFormTemplate(formData: {
@@ -344,4 +376,5 @@ export class EmailService {
   }
 }
 
-export default EmailService.getInstance()
+// Export the class, not an instance to prevent immediate initialization
+export default EmailService

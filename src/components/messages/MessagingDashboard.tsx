@@ -154,7 +154,16 @@ export const MessagingDashboard: React.FC = () => {
   }
 
   return (
-    <div className="bg-gray-100">
+    <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" 
+         style={{
+           '--color-primary': '#2563EB',
+           '--color-secondary': '#16A34A', 
+           '--color-accent': '#EA580C',
+           '--color-neutral-text': '#374151',
+           '--color-neutral-background': '#F3F4F6',
+           '--checkbox-tick-svg': 'url("data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e")',
+           fontFamily: '"Work Sans", "Noto Sans", sans-serif'
+         } as React.CSSProperties}>
       <div className="flex h-screen">
         {/* Sidebar */}
         <aside className="w-96 flex-shrink-0 border-r border-gray-200 bg-gray-50 flex flex-col">
@@ -181,12 +190,13 @@ export const MessagingDashboard: React.FC = () => {
               <div className="relative flex items-start">
                 <div className="flex h-6 items-center">
                   <input 
-                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
+                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600 custom-checkbox"
                     id="unread" 
                     name="unread" 
                     type="checkbox"
                     checked={showUnreadOnly}
                     onChange={(e) => setShowUnreadOnly(e.target.checked)}
+                    style={{'--checkbox-tick-svg': 'var(--checkbox-tick-svg)'} as React.CSSProperties}
                   />
                 </div>
                 <div className="ml-3 text-sm leading-6">
@@ -196,12 +206,13 @@ export const MessagingDashboard: React.FC = () => {
               <div className="relative flex items-start">
                 <div className="flex h-6 items-center">
                   <input 
-                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
+                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600 custom-checkbox"
                     id="priority" 
                     name="priority" 
                     type="checkbox"
                     checked={showPriorityOnly}
                     onChange={(e) => setShowPriorityOnly(e.target.checked)}
+                    style={{'--checkbox-tick-svg': 'var(--checkbox-tick-svg)'} as React.CSSProperties}
                   />
                 </div>
                 <div className="ml-3 text-sm leading-6">

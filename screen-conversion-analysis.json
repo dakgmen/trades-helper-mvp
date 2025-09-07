@@ -1,0 +1,1186 @@
+{
+  "total": 72,
+  "existing": 32,
+  "needsConversion": 40,
+  "byPriority": {
+    "HIGH": [
+      {
+        "filename": "accepted-applications.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "advanced-job-search.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/AdvancedJobSearch.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "application-details.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "application-history-view.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "application-plumbing-installation.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "application-review-interface.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "auth-landing-page.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "detailed-job-view.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobDetail.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "financial-dashboard.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/financial/FinancialDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "helper-dashboard.txt",
+        "category": "CORE_DASHBOARDS",
+        "priority": "HIGH",
+        "type": "Dashboard",
+        "existing": "src/components/dashboard/EnhancedHelperDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "intelligent-job-matching.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "job-card.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobCard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "job-discovery-feed.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobFeed.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "job-progress-tracker.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobProgressTracker.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "manage-applications.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "multi-step-job-posting-form.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/MultiStepJobPostForm.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "onboarding-helper-profile.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-helper-tutorial.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-role-selection.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/onboarding/RoleSelection.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "onboarding-tradie-profile.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-tradie-tutorial.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "payment-history.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/payments/PaymentHistory.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "rejected-applications.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "secure-payment-flow.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/payments/SecurePaymentFlow.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "stripe-connect-onboarding.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/payments/StripeConnectOnboarding.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "tradie-dashboard.txt",
+        "category": "CORE_DASHBOARDS",
+        "priority": "HIGH",
+        "type": "Dashboard",
+        "existing": "src/components/dashboard/EnhancedTradieDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "tradie-job-management-dashboard.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "transparent-fee-breakdown.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "MEDIUM": [
+      {
+        "filename": "admin-dashboard-disputes.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminDisputeManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-jobs.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminJobManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-overview.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminDashboardOverview.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-payments.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminPaymentManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-users.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminUserManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "analytics-dashboard.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "booking-confirmation-screen.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "communication-preferences.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "fraud-detection-interface.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "interactive-avalaibility-calendar.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/scheduling/InteractiveAvailabilityCalendar.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "job-messaging-interface.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "messaging-dashboard.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": "src/components/messaging/MessagingDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "multi-step-profile-form.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/profile/MultiStepProfileForm.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "notification-center.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": "src/components/notifications/NotificationCenter.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "profile-editing-page.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/profile/ProfileForm.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "public-profile-view.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/profile/PublicProfile.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "schedule-overview.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "user-management-interface.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "LOW": [
+      {
+        "filename": "about_us_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/AboutPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "achievement-badge-system.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "b2b_landing_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "blog_homepage.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "careers_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "contact_us_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/marketing/ContactPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "dispute-resolution-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "emergency-safety-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "features_showcase_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/FeaturesPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "help_center_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/marketing/HelpCenterPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "how_it_works_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/HowItWorksPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "offline-mode-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "partner_affiliate_program_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "post-job-review-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "privacy_policy_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "referral-proram-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "referral-proramme.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "review-display-system.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "sidebar-navigation.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "success_stories_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "support-ticket-system.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "system-settings.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/settings/SystemSettings.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "terms-and-conditions.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/legal/TermsAndConditions.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "transparent_pricing_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/PricingPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "trust-and-safety-hub.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "trust_safety_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ]
+  },
+  "byCategory": {
+    "MARKETING_PAGES": [
+      {
+        "filename": "about_us_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/AboutPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "b2b_landing_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "blog_homepage.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "careers_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "features_showcase_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/FeaturesPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "how_it_works_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/HowItWorksPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "partner_affiliate_program_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "success_stories_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "transparent_pricing_page.txt",
+        "category": "MARKETING_PAGES",
+        "priority": "LOW",
+        "type": "Page",
+        "existing": "src/components/marketing/PricingPage.tsx",
+        "status": "EXISTS"
+      }
+    ],
+    "CORE_JOB_MANAGEMENT": [
+      {
+        "filename": "accepted-applications.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "advanced-job-search.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/AdvancedJobSearch.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "application-details.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "application-history-view.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "application-plumbing-installation.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "application-review-interface.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "detailed-job-view.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobDetail.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "intelligent-job-matching.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "job-card.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobCard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "job-discovery-feed.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobFeed.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "job-progress-tracker.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/JobProgressTracker.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "manage-applications.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "multi-step-job-posting-form.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": "src/components/jobs/MultiStepJobPostForm.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "rejected-applications.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "tradie-job-management-dashboard.txt",
+        "category": "CORE_JOB_MANAGEMENT",
+        "priority": "HIGH",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "SUPPORT_FEATURES": [
+      {
+        "filename": "achievement-badge-system.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "contact_us_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/marketing/ContactPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "dispute-resolution-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "emergency-safety-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "help_center_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/marketing/HelpCenterPage.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "offline-mode-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "post-job-review-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "privacy_policy_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "referral-proram-interface.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "referral-proramme.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "review-display-system.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "sidebar-navigation.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "support-ticket-system.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "system-settings.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/settings/SystemSettings.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "terms-and-conditions.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": "src/components/legal/TermsAndConditions.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "trust-and-safety-hub.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "trust_safety_page.txt",
+        "category": "SUPPORT_FEATURES",
+        "priority": "LOW",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "ADMIN_MANAGEMENT": [
+      {
+        "filename": "admin-dashboard-disputes.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminDisputeManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-jobs.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminJobManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-overview.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminDashboardOverview.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-payments.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminPaymentManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "admin-dashboard-users.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": "src/components/admin/AdminUserManagement.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "analytics-dashboard.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "fraud-detection-interface.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "user-management-interface.txt",
+        "category": "ADMIN_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Dashboard",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "CORE_ONBOARDING": [
+      {
+        "filename": "auth-landing-page.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-helper-profile.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-helper-tutorial.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-role-selection.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/onboarding/RoleSelection.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "onboarding-tradie-profile.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "onboarding-tradie-tutorial.txt",
+        "category": "CORE_ONBOARDING",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "PROFILE_MANAGEMENT": [
+      {
+        "filename": "booking-confirmation-screen.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "interactive-avalaibility-calendar.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/scheduling/InteractiveAvailabilityCalendar.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "multi-step-profile-form.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/profile/MultiStepProfileForm.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "profile-editing-page.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/profile/ProfileForm.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "public-profile-view.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": "src/components/profile/PublicProfile.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "schedule-overview.txt",
+        "category": "PROFILE_MANAGEMENT",
+        "priority": "MEDIUM",
+        "type": "Form",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "MESSAGING_COMMUNICATION": [
+      {
+        "filename": "communication-preferences.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "job-messaging-interface.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      },
+      {
+        "filename": "messaging-dashboard.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": "src/components/messaging/MessagingDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "notification-center.txt",
+        "category": "MESSAGING_COMMUNICATION",
+        "priority": "MEDIUM",
+        "type": "Interface",
+        "existing": "src/components/notifications/NotificationCenter.tsx",
+        "status": "EXISTS"
+      }
+    ],
+    "CORE_PAYMENTS": [
+      {
+        "filename": "financial-dashboard.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/financial/FinancialDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "payment-history.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/payments/PaymentHistory.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "secure-payment-flow.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/payments/SecurePaymentFlow.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "stripe-connect-onboarding.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": "src/components/payments/StripeConnectOnboarding.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "transparent-fee-breakdown.txt",
+        "category": "CORE_PAYMENTS",
+        "priority": "HIGH",
+        "type": "Flow",
+        "existing": null,
+        "status": "NEEDS_CONVERSION"
+      }
+    ],
+    "CORE_DASHBOARDS": [
+      {
+        "filename": "helper-dashboard.txt",
+        "category": "CORE_DASHBOARDS",
+        "priority": "HIGH",
+        "type": "Dashboard",
+        "existing": "src/components/dashboard/EnhancedHelperDashboard.tsx",
+        "status": "EXISTS"
+      },
+      {
+        "filename": "tradie-dashboard.txt",
+        "category": "CORE_DASHBOARDS",
+        "priority": "HIGH",
+        "type": "Dashboard",
+        "existing": "src/components/dashboard/EnhancedTradieDashboard.tsx",
+        "status": "EXISTS"
+      }
+    ]
+  },
+  "conversionPlan": []
+}

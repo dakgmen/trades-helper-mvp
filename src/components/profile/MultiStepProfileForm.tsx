@@ -1,76 +1,92 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { supabase } from '../../lib/supabase'
 
 interface ProfileFormData {
   full_name: string
+  email: string
   phone: string
   location: string
-  bio: string
-  skills: string[]
-  experience_years: number
-  hourly_rate: number
-  availability: string[]
-  profile_image_url?: string
-  license_number?: string
   abn?: string
-  insurance_details?: string
+  primary_trade: string
+  additional_skills: string[]
+  white_card_file?: File
+  photo_id_file?: File
+}
+
+interface DocumentUploadStatus {
+  white_card?: {
+    file: File | null
+    uploaded: boolean
+    url?: string
+  }
+  photo_id?: {
+    file: File | null
+    uploaded: boolean
+    url?: string
+  }
 }
 
 interface MultiStepProfileFormProps {
-  role: 'tradie' | 'helper'
   onSuccess?: () => void
 }
 
-export const MultiStepProfileForm: React.FC<MultiStepProfileFormProps> = ({ role, onSuccess }) => {
-  const { user, updateProfile } = useAuth()
+export const MultiStepProfileForm: React.FC<MultiStepProfileFormProps> = ({ onSuccess }) => {
+  const { user } = useAuth()
   const [currentStep, setCurrentStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const whiteCardInputRef = useRef<HTMLInputElement>(null)
+  const photoIdInputRef = useRef<HTMLInputElement>(null)
   
   const [formData, setFormData] = useState<ProfileFormData>({
     full_name: '',
+    email: user?.email || '',
     phone: '',
-    location: '',
-    bio: '',
-    skills: [],
-    experience_years: 0,
-    hourly_rate: 35,
-    availability: [],
-    profile_image_url: '',
-    license_number: '',
+    location: 'New South Wales',
     abn: '',
-    insurance_details: ''
+    primary_trade: '',
+    additional_skills: []
   })
 
-  const availableSkills = [
+  const [documentStatus, setDocumentStatus] = useState<DocumentUploadStatus>({
+    white_card: { file: null, uploaded: false },
+    photo_id: { file: null, uploaded: false }
+  })
+
+  const primaryTrades = [
     'Plumbing', 'Electrical', 'Carpentry', 'Painting', 
-    'Landscaping', 'Cleaning', 'Handyman', 'General Labour',
-    'Roofing', 'Tiling', 'Demolition', 'Concreting'
+    'Landscaping', 'Bricklaying', 'Tiling'
   ]
 
-  const availabilityOptions = [
-    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 
-    'Friday', 'Saturday', 'Sunday'
+  const additionalSkillsOptions = [
+    'Demolition', 'First Aid Certified', 'Forklift Licence', 'Welding'
   ]
 
-  const totalSteps = role === 'tradie' ? 4 : 3
+  const stateOptions = [
+    'New South Wales', 'Victoria', 'Queensland', 'Western Australia',
+    'South Australia', 'Tasmania', 'Australian Capital Territory', 'Northern Territory'
+  ]
 
-  const handleSkillToggle = (skill: string) => {
+  const totalSteps = 4
+
+  const handleAdditionalSkillToggle = (skill: string) => {
     setFormData(prev => ({
       ...prev,
-      skills: prev.skills.includes(skill) 
-        ? prev.skills.filter(s => s !== skill)
-        : [...prev.skills, skill]
+      additional_skills: prev.additional_skills.includes(skill) 
+        ? prev.additional_skills.filter(s => s !== skill)
+        : [...prev.additional_skills, skill]
     }))
   }
 
-  const handleAvailabilityToggle = (day: string) => {
-    setFormData(prev => ({
+  const handleFileUpload = (type: 'white_card' | 'photo_id', file: File) => {
+    setDocumentStatus(prev => ({
       ...prev,
-      availability: prev.availability.includes(day) 
-        ? prev.availability.filter(d => d !== day)
-        : [...prev.availability, day]
+      [type]: {
+        file,
+        uploaded: false,
+        url: URL.createObjectURL(file)
+      }
     }))
   }
 
@@ -93,27 +109,44 @@ export const MultiStepProfileForm: React.FC<MultiStepProfileFormProps> = ({ role
     setError(null)
 
     try {
+      // Upload documents first if they exist
+      let whiteCardUrl = ''
+      let photoIdUrl = ''
+
+      if (documentStatus.white_card?.file) {
+        const whiteCardFile = documentStatus.white_card.file
+        const { data: whiteCardData, error: whiteCardError } = await supabase.storage
+          .from('documents')
+          .upload(`white-cards/${user.id}/${whiteCardFile.name}`, whiteCardFile)
+        
+        if (whiteCardError) throw whiteCardError
+        whiteCardUrl = whiteCardData.path
+      }
+
+      if (documentStatus.photo_id?.file) {
+        const photoIdFile = documentStatus.photo_id.file
+        const { data: photoIdData, error: photoIdError } = await supabase.storage
+          .from('documents')
+          .upload(`photo-ids/${user.id}/${photoIdFile.name}`, photoIdFile)
+        
+        if (photoIdError) throw photoIdError
+        photoIdUrl = photoIdData.path
+      }
+
       const profileData = {
         user_id: user.id,
         full_name: formData.full_name,
+        email: formData.email,
         phone: formData.phone,
         location: formData.location,
-        bio: formData.bio,
-        skills: formData.skills,
-        experience_years: formData.experience_years,
-        hourly_rate: formData.hourly_rate,
-        availability: formData.availability,
-        role: role,
+        abn: formData.abn,
+        primary_trade: formData.primary_trade,
+        additional_skills: formData.additional_skills,
+        white_card_url: whiteCardUrl,
+        photo_id_url: photoIdUrl,
+        role: 'tradie',
         verified: false,
         updated_at: new Date().toISOString()
-      }
-
-      if (role === 'tradie') {
-        Object.assign(profileData, {
-          license_number: formData.license_number,
-          abn: formData.abn,
-          insurance_details: formData.insurance_details
-        })
       }
 
       const { error: profileError } = await supabase
@@ -123,293 +156,331 @@ export const MultiStepProfileForm: React.FC<MultiStepProfileFormProps> = ({ role
       if (profileError) {
         setError(profileError.message)
       } else {
-        updateProfile?.(profileData)
         onSuccess?.()
       }
-    } catch {
-      setError('Failed to create profile')
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to create profile'
+      setError(errorMessage)
     }
     
     setLoading(false)
   }
 
-  const getStepTitle = (step: number) => {
-    if (role === 'tradie') {
-      switch (step) {
-        case 1: return 'Personal Info'
-        case 2: return 'Skills & Experience'
-        case 3: return 'Business Details'
-        case 4: return 'Availability & Rates'
-        default: return 'Personal Info'
-      }
-    } else {
-      switch (step) {
-        case 1: return 'Personal Info'
-        case 2: return 'Skills & Experience'
-        case 3: return 'Availability & Rates'
-        default: return 'Personal Info'
-      }
-    }
-  }
+  // TODO: getStepTitle function currently unused
+  // const getStepTitle = (step: number) => { ... }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto flex items-center justify-between whitespace-nowrap px-6 py-4">
-          <div className="flex items-center gap-3">
-            <svg className="h-8 w-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.43L19.57 8.5L12 12.57L4.43 8.5L12 4.43ZM4 9.87L11 13.92V19.97L4 15.9V9.87Z"></path>
+    <div className="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style={{ backgroundColor: 'var(--neutral-bg, #F8FAFC)' }}>
+      <div className="layout-container flex h-full grow flex-col">
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid px-10 py-4 bg-white" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>
+          <div className="flex items-center gap-3 text-slate-800">
+            <svg className="h-8 w-8" style={{ color: 'var(--primary-color, #2563EB)' }} fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L1 9l4 1.5V17h2v-7h2v7h2v-7h2v7h2v-5.5L23 9z"></path>
+              <path d="M12 4.44L19.36 9h-2.72l-5.64-3.38L8.36 9H5.64z"></path>
             </svg>
-            <h1 className="text-2xl font-bold text-gray-900">TradieHelper</h1>
+            <h1 className="text-slate-800 text-xl font-bold">TradieHelper</h1>
           </div>
-          <div className="text-sm font-medium text-gray-600">
-            Setting up your {role} profile
-          </div>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Complete Your Profile</h2>
-            <p className="mt-2 text-gray-600">Help others get to know you better</p>
-          </div>
-
-          {/* Progress Steps */}
-          <div className="mb-8">
-            <div className="flex justify-center">
-              <div className="flex items-center">
-                {Array.from({ length: totalSteps }, (_, index) => index + 1).map((step, index) => (
-                  <React.Fragment key={step}>
-                    <div className="flex items-center">
-                      <div className={`flex h-8 w-8 items-center justify-center rounded-full font-semibold text-sm ${
-                        currentStep >= step 
-                          ? 'bg-blue-600 text-white' 
-                          : 'bg-gray-300 text-gray-500'
-                      }`}>
-                        {step}
-                      </div>
-                      <span className="ml-2 text-sm font-medium hidden sm:inline">{getStepTitle(step)}</span>
-                    </div>
-                    {index < totalSteps - 1 && <div className="w-12 h-1 bg-gray-300 mx-3"></div>}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
-              {error}
-            </div>
-          )}
-
-          {/* Step Content */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            {currentStep === 1 && (
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold text-gray-900">Personal Information</h3>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    value={formData.full_name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="04XX XXX XXX"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
-                  <input
-                    type="text"
-                    value={formData.location}
-                    onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Sydney, NSW"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">About You</label>
-                  <textarea
-                    value={formData.bio}
-                    onChange={(e) => setFormData(prev => ({ ...prev, bio: e.target.value }))}
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Tell others about your experience, work style, and what makes you great to work with..."
-                  />
-                </div>
-              </div>
-            )}
-
-            {currentStep === 2 && (
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold text-gray-900">Skills & Experience</h3>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Skills</label>
-                  <div className="flex flex-wrap gap-2">
-                    {availableSkills.map(skill => (
-                      <button
-                        key={skill}
-                        type="button"
-                        onClick={() => handleSkillToggle(skill)}
-                        className={`px-3 py-1 rounded-full text-sm font-medium border transition-colors ${
-                          formData.skills.includes(skill)
-                            ? 'bg-blue-100 text-blue-700 border-blue-300'
-                            : 'bg-white text-gray-700 border-gray-300 hover:border-blue-300'
-                        }`}
-                      >
-                        {skill}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Years of Experience</label>
-                  <select
-                    value={formData.experience_years}
-                    onChange={(e) => setFormData(prev => ({ ...prev, experience_years: parseInt(e.target.value) }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value={0}>Less than 1 year</option>
-                    <option value={1}>1 year</option>
-                    <option value={2}>2 years</option>
-                    <option value={3}>3 years</option>
-                    <option value={5}>5+ years</option>
-                    <option value={10}>10+ years</option>
-                    <option value={15}>15+ years</option>
-                  </select>
-                </div>
-              </div>
-            )}
-
-            {role === 'tradie' && currentStep === 3 && (
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold text-gray-900">Business Details</h3>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">ABN (Optional)</label>
-                  <input
-                    type="text"
-                    value={formData.abn}
-                    onChange={(e) => setFormData(prev => ({ ...prev, abn: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="12 345 678 901"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">License Number (Optional)</label>
-                  <input
-                    type="text"
-                    value={formData.license_number}
-                    onChange={(e) => setFormData(prev => ({ ...prev, license_number: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your professional license number"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Insurance Details (Optional)</label>
-                  <textarea
-                    value={formData.insurance_details}
-                    onChange={(e) => setFormData(prev => ({ ...prev, insurance_details: e.target.value }))}
-                    rows={3}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Public liability insurance details, policy number, etc."
-                  />
-                </div>
-              </div>
-            )}
-
-            {currentStep === totalSteps && (
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold text-gray-900">Availability & Rates</h3>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Available Days</label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {availabilityOptions.map(day => (
-                      <label key={day} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={formData.availability.includes(day)}
-                          onChange={() => handleAvailabilityToggle(day)}
-                          className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                        />
-                        <span className="text-sm text-gray-700">{day}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Hourly Rate (AUD)</label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <span className="text-gray-500 sm:text-sm">$</span>
-                    </div>
-                    <input
-                      type="number"
-                      value={formData.hourly_rate}
-                      onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: parseFloat(e.target.value) || 0 }))}
-                      className="w-full pl-7 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="35.00"
-                      min="20"
-                      max="150"
-                      step="0.50"
-                    />
-                  </div>
-                  <p className="text-sm text-gray-500 mt-1">This will be your default rate. You can adjust it for specific jobs.</p>
-                </div>
-              </div>
-            )}
-
-            {/* Navigation */}
-            <div className="flex justify-between items-center pt-8 border-t">
-              <button 
-                onClick={handleBack}
-                disabled={currentStep === 1}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Back
+          <div className="flex flex-1 justify-end items-center gap-6">
+            <nav className="flex items-center gap-6">
+              <a className="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium transition-colors" href="#">Find Work</a>
+              <a className="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium transition-colors" href="#">Post a Job</a>
+              <a className="text-slate-600 hover:text-[var(--primary-color)] text-sm font-medium transition-colors" href="#">About Us</a>
+            </nav>
+            <div className="h-6 w-px" style={{ backgroundColor: 'var(--neutral-border, #E2E8F0)' }}></div>
+            <div className="flex gap-3">
+              <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-white text-slate-700 border hover:bg-slate-50 text-sm font-bold transition-colors" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>
+                <span className="truncate">Log In</span>
               </button>
-              {currentStep < totalSteps ? (
-                <button 
-                  onClick={handleNext}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-                >
-                  Next Step
-                </button>
-              ) : (
-                <button 
-                  onClick={handleSubmit}
-                  disabled={loading}
-                  className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50"
-                >
-                  {loading ? 'Creating Profile...' : 'Complete Profile'}
-                </button>
-              )}
+              <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 text-white hover:bg-blue-700 text-sm font-bold transition-colors" style={{ backgroundColor: 'var(--primary-color, #2563EB)' }}>
+                <span className="truncate">Sign Up</span>
+              </button>
             </div>
           </div>
-        </div>
-      </main>
+        </header>
+
+        <main className="flex flex-1 justify-center py-10 lg:py-16">
+          <div className="w-full max-w-4xl px-4">
+            <div className="bg-white rounded-xl shadow-sm p-8">
+              <div className="mb-8">
+                <div className="flex justify-between items-center mb-2">
+                  <h2 className="text-slate-800 text-lg font-semibold">Profile Completion</h2>
+                  <p className="text-sm font-medium" style={{ color: 'var(--neutral-text, #475569)' }}>Step {currentStep} of {totalSteps}</p>
+                </div>
+                <div className="w-full bg-slate-200 rounded-full h-2.5">
+                  <div 
+                    className="h-2.5 rounded-full transition-all duration-300" 
+                    style={{ 
+                      backgroundColor: 'var(--primary-color, #2563EB)',
+                      width: `${(currentStep / totalSteps) * 100}%`
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              {error && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+                  {error}
+                </div>
+              )}
+
+              <div className="space-y-10">
+                {currentStep === 1 && (
+                  <section>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6 border-b pb-4" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>Personal Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                      <label className="flex flex-col gap-2">
+                        <p className="text-slate-700 text-sm font-medium">Full Name</p>
+                        <input 
+                          className="form-input w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" 
+                          placeholder="e.g. John Smith" 
+                          type="text"
+                          value={formData.full_name}
+                          onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value }))}
+                        />
+                      </label>
+                      <label className="flex flex-col gap-2">
+                        <p className="text-slate-700 text-sm font-medium">Email Address</p>
+                        <input 
+                          className="form-input w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" 
+                          placeholder="you@example.com" 
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                        />
+                      </label>
+                      <label className="flex flex-col gap-2">
+                        <p className="text-slate-700 text-sm font-medium">Phone Number</p>
+                        <input 
+                          className="form-input w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" 
+                          placeholder="e.g. 0412 345 678" 
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                        />
+                      </label>
+                      <label className="flex flex-col gap-2">
+                        <p className="text-slate-700 text-sm font-medium">Location (State)</p>
+                        <select 
+                          className="form-select w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition text-slate-700"
+                          value={formData.location}
+                          onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
+                        >
+                          {stateOptions.map(state => (
+                            <option key={state} value={state}>{state}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <label className="flex flex-col gap-2 md:col-span-2">
+                        <div className="flex items-center gap-2">
+                          <p className="text-slate-700 text-sm font-medium">ABN (Australian Business Number)</p>
+                          <span className="text-slate-400 cursor-help text-base" title="An ABN is required for all business in Australia.">ℹ️</span>
+                        </div>
+                        <input 
+                          className="form-input w-full md:w-1/2 rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition" 
+                          placeholder="e.g. 53 004 085 616" 
+                          type="text"
+                          value={formData.abn}
+                          onChange={(e) => setFormData(prev => ({ ...prev, abn: e.target.value }))}
+                        />
+                      </label>
+                    </div>
+                  </section>
+                )}
+
+                {currentStep === 2 && (
+                  <section>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6 border-b pb-4" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>Upload Documents</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="flex flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed p-6 text-center" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>
+                        <span className="text-5xl" style={{ color: 'var(--accent-color, #EA580C)' }}>🎫</span>
+                        <h4 className="text-slate-800 text-base font-semibold">Upload White Card</h4>
+                        <p className="text-sm max-w-xs" style={{ color: 'var(--neutral-text, #475569)' }}>A construction induction card is required for site work.</p>
+                        <input
+                          ref={whiteCardInputRef}
+                          type="file"
+                          accept="image/*,.pdf"
+                          className="hidden"
+                          onChange={(e) => e.target.files?.[0] && handleFileUpload('white_card', e.target.files[0])}
+                        />
+                        <button 
+                          onClick={() => whiteCardInputRef.current?.click()}
+                          className="flex items-center gap-2 min-w-[120px] justify-center rounded-md h-10 px-4 text-sm font-bold transition-colors"
+                          style={{ 
+                            backgroundColor: 'var(--accent-color, #EA580C)10',
+                            color: 'var(--accent-color, #EA580C)'
+                          }}
+                        >
+                          <span>📎</span>
+                          <span className="truncate">Browse Files</span>
+                        </button>
+                        {documentStatus.white_card?.file && (
+                          <p className="text-sm text-green-600">✓ {documentStatus.white_card.file.name}</p>
+                        )}
+                      </div>
+                      <div className="flex flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed p-6 text-center" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>
+                        <span className="text-5xl" style={{ color: 'var(--secondary-color, #16A34A)' }}>🆔</span>
+                        <h4 className="text-slate-800 text-base font-semibold">Upload Photo ID</h4>
+                        <p className="text-sm max-w-xs" style={{ color: 'var(--neutral-text, #475569)' }}>e.g., Driver's Licence or Passport for verification.</p>
+                        <input
+                          ref={photoIdInputRef}
+                          type="file"
+                          accept="image/*,.pdf"
+                          className="hidden"
+                          onChange={(e) => e.target.files?.[0] && handleFileUpload('photo_id', e.target.files[0])}
+                        />
+                        <button 
+                          onClick={() => photoIdInputRef.current?.click()}
+                          className="flex items-center gap-2 min-w-[120px] justify-center rounded-md h-10 px-4 text-sm font-bold transition-colors"
+                          style={{ 
+                            backgroundColor: 'var(--secondary-color, #16A34A)10',
+                            color: 'var(--secondary-color, #16A34A)'
+                          }}
+                        >
+                          <span>📎</span>
+                          <span className="truncate">Browse Files</span>
+                        </button>
+                        {documentStatus.photo_id?.file && (
+                          <p className="text-sm text-green-600">✓ {documentStatus.photo_id.file.name}</p>
+                        )}
+                      </div>
+                    </div>
+                  </section>
+                )}
+
+                {currentStep === 3 && (
+                  <section>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6 border-b pb-4" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>Skills & Trade</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                      <label className="flex flex-col gap-2">
+                        <p className="text-slate-700 text-sm font-medium">Primary Trade</p>
+                        <select 
+                          className="form-select w-full rounded-md border-[var(--neutral-border)] focus:ring-2 focus:ring-[var(--primary-color)]/50 focus:border-[var(--primary-color)] transition text-slate-700"
+                          value={formData.primary_trade}
+                          onChange={(e) => setFormData(prev => ({ ...prev, primary_trade: e.target.value }))}
+                        >
+                          <option value="" disabled>Select your trade...</option>
+                          {primaryTrades.map(trade => (
+                            <option key={trade} value={trade}>{trade}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <div className="flex flex-col gap-2">
+                        <p className="text-slate-700 text-sm font-medium">Additional Skills (Optional)</p>
+                        <div className="flex flex-wrap gap-2 pt-1">
+                          {additionalSkillsOptions.map(skill => {
+                            const isSelected = formData.additional_skills.includes(skill)
+                            return (
+                              <button
+                                key={skill}
+                                type="button"
+                                onClick={() => handleAdditionalSkillToggle(skill)}
+                                className={`flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full px-3 transition-colors ${
+                                  isSelected 
+                                    ? 'text-[var(--primary-color)] px-3'
+                                    : 'bg-slate-100 hover:bg-slate-200 text-slate-600'
+                                }`}
+                                style={isSelected ? { backgroundColor: 'var(--primary-color, #2563EB)10' } : {}}
+                              >
+                                <p className="text-sm font-medium">{skill}</p>
+                                {isSelected && <span>✓</span>}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                )}
+
+                {currentStep === 4 && (
+                  <section>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-6 border-b pb-4" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>Profile Preview</h3>
+                    <div className="space-y-6">
+                      <div className="bg-slate-50 rounded-lg p-6">
+                        <h4 className="text-lg font-semibold text-slate-800 mb-4">Your Profile Summary</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Name</p>
+                            <p className="text-slate-800">{formData.full_name || 'Not provided'}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Email</p>
+                            <p className="text-slate-800">{formData.email || 'Not provided'}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Phone</p>
+                            <p className="text-slate-800">{formData.phone || 'Not provided'}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Location</p>
+                            <p className="text-slate-800">{formData.location}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Primary Trade</p>
+                            <p className="text-slate-800">{formData.primary_trade || 'Not selected'}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Additional Skills</p>
+                            <p className="text-slate-800">{formData.additional_skills.length > 0 ? formData.additional_skills.join(', ') : 'None selected'}</p>
+                          </div>
+                        </div>
+                        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">White Card</p>
+                            <p className="text-slate-800">{documentStatus.white_card?.file ? '✓ Uploaded' : '❌ Not uploaded'}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">Photo ID</p>
+                            <p className="text-slate-800">{documentStatus.photo_id?.file ? '✓ Uploaded' : '❌ Not uploaded'}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p className="text-blue-800 text-sm">
+                          ✨ <strong>Ready to submit!</strong> Your profile will be reviewed within 24-48 hours. 
+                          You'll receive a notification once it's approved and you can start applying for jobs.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+                )}
+
+              <div className="flex justify-end pt-6 border-t" style={{ borderColor: 'var(--neutral-border, #E2E8F0)' }}>
+                  {currentStep > 1 && (
+                    <button
+                      onClick={handleBack}
+                      className="mr-4 flex min-w-[120px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-md h-11 px-6 bg-slate-100 text-slate-700 hover:bg-slate-200 text-base font-bold transition-colors"
+                    >
+                      <span>←</span>
+                      <span className="truncate ml-2">Back</span>
+                    </button>
+                  )}
+                  {currentStep < totalSteps ? (
+                    <button 
+                      onClick={handleNext}
+                      className="flex min-w-[120px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-md h-11 px-6 text-white hover:bg-blue-700 text-base font-bold transition-colors"
+                      style={{ backgroundColor: 'var(--primary-color, #2563EB)' }}
+                    >
+                      <span className="truncate">Next Step</span>
+                      <span className="ml-2">→</span>
+                    </button>
+                  ) : (
+                    <button 
+                      onClick={handleSubmit}
+                      disabled={loading}
+                      className="flex min-w-[120px] max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-md h-11 px-6 text-white hover:bg-green-700 text-base font-bold transition-colors disabled:opacity-50"
+                      style={{ backgroundColor: 'var(--secondary-color, #16A34A)' }}
+                    >
+                      <span className="truncate">{loading ? 'Creating Profile...' : 'Complete Profile'}</span>
+                      <span className="ml-2">✓</span>
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   )
 }

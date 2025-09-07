@@ -9,6 +9,7 @@ export interface UserProfile {
   id_document_url: string | null
   avatar_url: string | null
   verified: boolean
+  status?: 'active' | 'suspended' | 'inactive'
   latitude: number | null
   longitude: number | null
   location_address: string | null
@@ -33,6 +34,11 @@ export interface Job {
   assigned_helper_id: string | null
   required_skills: string[] | null
   urgency: 'low' | 'medium' | 'high'
+  featured?: boolean
+  hourly_rate?: number
+  budget?: number
+  experience_level?: 'entry' | 'intermediate' | 'advanced'
+  client?: Partial<UserProfile>
   created_at: string
   updated_at: string
 }
@@ -121,6 +127,39 @@ export interface JobFilters {
   }
   radius?: number
   status?: JobStatus[]
+}
+
+// Application filter interface
+export interface ApplicationFilters {
+  status: 'all' | 'pending' | 'accepted' | 'rejected'
+  dateRange: '7days' | '30days' | '90days' | 'all'
+  sortBy: 'created_at' | 'job_title' | 'status'
+  sortOrder: 'desc' | 'asc'
+}
+
+// Application interface (for displaying application data)
+export interface Application {
+  id: string
+  job_id: string
+  job_title: string
+  helper_id: string
+  status: 'pending' | 'accepted' | 'rejected'
+  created_at: string
+  updated_at: string
+}
+
+// Bulk action interface
+export interface BulkAction {
+  action: 'accept' | 'reject' | 'delete'
+  applicationIds: string[]
+}
+
+// Progress step interface for job tracker
+export interface ProgressStep {
+  title: string
+  date: string
+  completed: boolean
+  status: 'completed' | 'pending' | 'in_progress'
 }
 
 // Geolocation interfaces
