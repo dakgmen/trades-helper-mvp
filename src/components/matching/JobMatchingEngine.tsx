@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { EnhancedNavigation } from '../layout/EnhancedNavigation'
 import MobileNavigation from '../layout/MobileNavigation'
@@ -108,14 +108,6 @@ export const JobMatchingEngine: React.FC = () => {
   const [filterUrgency, setFilterUrgency] = useState<string>('all')
   const [sortBy, setSortBy] = useState<'match_score' | 'distance' | 'budget' | 'created_at'>('match_score')
 
-  useEffect(() => {
-    if (user && profile?.role === 'helper') {
-      getCurrentLocation()
-      loadPreferences()
-      fetchMatchedJobs()
-    }
-  }, [user, profile])
-
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -132,7 +124,7 @@ export const JobMatchingEngine: React.FC = () => {
     }
   }
 
-  const loadPreferences = async () => {
+  const loadPreferences = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('job_matching_preferences')
@@ -149,7 +141,7 @@ export const JobMatchingEngine: React.FC = () => {
     } catch (error) {
       console.error('Error loading preferences:', error)
     }
-  }
+  }, [user?.id, matchingCriteria])
 
   const savePreferences = async () => {
     try {
@@ -168,53 +160,6 @@ export const JobMatchingEngine: React.FC = () => {
       setShowPreferences(false)
     } catch (error) {
       console.error('Error saving preferences:', error)
-    }
-  }
-
-  const fetchMatchedJobs = async () => {
-    try {
-      setRefreshing(true)
-      
-      // In a real implementation, this would use a sophisticated matching algorithm
-      // For now, we'll simulate matching based on basic criteria
-      let query = supabase
-        .from('jobs')
-        .select(`
-          *,
-          tradie:profiles!tradie_id(id, full_name, avatar_url),
-          applications:job_applications(count),
-          saved_jobs:saved_jobs(user_id)
-        `)
-        .eq('status', 'open')
-
-      // Apply category filter
-      if (preferences.categories.length > 0) {
-        query = query.in('category', preferences.categories)
-      }
-
-      // Apply budget filter
-      query = query
-        .gte('budget_min', preferences.min_budget)
-        .lte('budget_max', preferences.max_budget)
-
-      const { data: jobs, error } = await query
-        .order('created_at', { ascending: false })
-        .limit(50)
-
-      if (error) throw error
-
-      // Calculate match scores and process jobs
-      const processedJobs = jobs?.map(job => calculateMatchScore(job)) || []
-      
-      // Sort by match score by default
-      const sortedJobs = processedJobs.sort((a, b) => b.match_score - a.match_score)
-      
-      setMatchedJobs(sortedJobs)
-    } catch (error) {
-      console.error('Error fetching matched jobs:', error)
-    } finally {
-      setLoading(false)
-      setRefreshing(false)
     }
   }
 
@@ -264,20 +209,76 @@ export const JobMatchingEngine: React.FC = () => {
       match_score: Math.round(score),
       applications_count: (job as MatchingJob & {applications?: Array<unknown>}).applications?.length || 0,
       is_saved: (job as MatchingJob & {saved_jobs?: Array<{user_id: string}>}).saved_jobs?.some((s: {user_id: string}) => s.user_id === user?.id) || false,
-      is_applied: false // Would need to check job_applications table
+      is_applied: false
     }
   }
 
   const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
-    const R = 6371 // Earth's radius in km
+    const R = 6371 // Earth's radius in kilometers
     const dLat = (lat2 - lat1) * Math.PI / 180
     const dLng = (lng2 - lng1) * Math.PI / 180
     const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-              Math.sin(dLng/2) * Math.sin(dLng/2)
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng/2) * Math.sin(dLng/2)
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
     return R * c
   }
+
+  const fetchMatchedJobs = useCallback(async () => {
+    try {
+      setRefreshing(true)
+      
+      // In a real implementation, this would use a sophisticated matching algorithm
+      // For now, we'll simulate matching based on basic criteria
+      let query = supabase
+        .from('jobs')
+        .select(`
+          *,
+          tradie:profiles!tradie_id(id, full_name, avatar_url),
+          applications:job_applications(count),
+          saved_jobs:saved_jobs(user_id)
+        `)
+        .eq('status', 'open')
+
+      // Apply category filter
+      if (preferences.categories.length > 0) {
+        query = query.in('category', preferences.categories)
+      }
+
+      // Apply budget filter
+      query = query
+        .gte('budget_min', preferences.min_budget)
+        .lte('budget_max', preferences.max_budget)
+
+      const { data: jobs, error } = await query
+        .order('created_at', { ascending: false })
+        .limit(50)
+
+      if (error) throw error
+
+      // Calculate match scores and process jobs
+      const processedJobs = jobs?.map(job => calculateMatchScore(job)) || []
+      
+      // Sort by match score by default
+      const sortedJobs = processedJobs.sort((a, b) => b.match_score - a.match_score)
+      
+      setMatchedJobs(sortedJobs)
+    } catch (error) {
+      console.error('Error fetching matched jobs:', error)
+    } finally {
+      setLoading(false)
+      setRefreshing(false)
+    }
+  }, [preferences, calculateMatchScore])
+
+  useEffect(() => {
+    if (user && profile?.role === 'helper') {
+      getCurrentLocation()
+      loadPreferences()
+      fetchMatchedJobs()
+    }
+  }, [user, profile, loadPreferences, fetchMatchedJobs])
+
 
   const saveJob = async (jobId: string) => {
     try {
